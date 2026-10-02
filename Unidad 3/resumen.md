@@ -255,3 +255,7 @@ Video: https://youtu.be/191SI7D2Ahg
 ### Ejercicios de la guía sugeridos en el material
 
 Binomial: 4, 5, 6 y 7 · Poisson: 10 a 13 · Uniforme: 14 y 15 · Exponencial: 16 a 21 · Normal y el resto: los ejercicios restantes de la guía.
+
+---
+
+[← Volver al menú principal](../README.md)

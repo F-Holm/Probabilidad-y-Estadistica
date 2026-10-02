@@ -803,3 +803,7 @@ e) $4\cdot4 + 9\cdot9 - 2\cdot2\cdot3\cdot2\sqrt6 = 97 - 24\sqrt6 \approx 38{,}2
 **Respuesta:** a) 7 b) 36 c) 2√6 d) 13 + 4√6 e) 97 − 24√6
 
 </details>
+
+---
+
+[← Volver al menú principal](../README.md)

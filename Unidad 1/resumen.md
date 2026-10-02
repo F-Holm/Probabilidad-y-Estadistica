@@ -231,3 +231,7 @@ $P(A) = 0{,}06 + 0{,}075 + 0{,}105 = 0{,}24$; $P(J/A) = 0{,}105/0{,}24 = 0{,}437
 3. Elegir la herramienta: Laplace si hay equiprobabilidad; tabla o Venn si hay dos características; árbol si hay etapas; probabilidad total + Bayes si hay una partición y se pide "la causa" dado el efecto.
 4. Para "al menos uno", conviene casi siempre el complemento: 1 − P(ninguno).
 5. Revisar si hay reposición o independencia antes de multiplicar probabilidades.
+
+---
+
+[← Volver al menú principal](../README.md)

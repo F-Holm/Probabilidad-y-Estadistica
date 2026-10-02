@@ -1192,3 +1192,7 @@ b) Con la aproximación de independencia que usa la resolución del aula: P(T) =
 **Respuesta:** ambas propiedades quedan demostradas.
 
 </details>
+
+---
+
+[← Volver al menú principal](../README.md)

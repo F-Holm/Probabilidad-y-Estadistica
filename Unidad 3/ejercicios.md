@@ -740,3 +740,7 @@ que es una densidad normal. Para a < 0 se procede igual, con |a|.
 **Respuesta:** Y ~ N(aμ + b; a²σ²), es decir, media aμ + b y desvío |a|σ.
 
 </details>
+
+---
+
+[← Volver al menú principal](../README.md)

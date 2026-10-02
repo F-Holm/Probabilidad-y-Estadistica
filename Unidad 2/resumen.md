@@ -343,3 +343,7 @@ Comunes a las dos: $E(aX + b) = aE(X) + b$; $V(aX + b) = a^2V(X)$; $\sigma = \sq
 - Valor esperado: 3a, 3b (sólo E(X)), 3c, 6c, 8a y 8b (sólo valor esperado) y 13.
 - Varianza: hasta el ejercicio 13 inclusive.
 - VAC: ejercicio 14; el 15 está resuelto en la sección 6.
+
+---
+
+[← Volver al menú principal](../README.md)
