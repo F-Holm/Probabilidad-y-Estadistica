@@ -6,6 +6,8 @@ Cada ejercicio tiene un botón **Solución**. Al abrirlo aparece la respuesta y,
 
 Notación: Φ(z) = P(Z < z) para Z ~ N(0; 1). Los valores numéricos se obtienen con tabla o con la app *Probability Distributions*.
 
+> **Referencias:** ⭐ = ejercicio sugerido como prioritario en los apuntes de la cátedra.
+
 ---
 
 ### 1) Refrigeradores devueltos
@@ -85,7 +87,7 @@ d) Es el complemento de a) y b) (tres palos distintos): $1 - 0{,}5466 - 0{,}0486
 
 ---
 
-### 4) Sobreventa de pasajes
+### 4) Sobreventa de pasajes ⭐
 
 El 4 % de los pasajeros no se presenta. Se venden 72 pasajes para 70 asientos. ¿P(pueden viajar todos los que se presentan)?
 
@@ -106,7 +108,7 @@ $P(X \le 70) = 1 - P(71) - P(72) = 1 - 72\cdot0{,}96^{71}\cdot0{,}04 - 0{,}96^{7
 
 ---
 
-### 5) Pinchaduras
+### 5) Pinchaduras ⭐
 
 El 25 % de los neumáticos se pinchan. Entre 6: a) P(al menos 2 se pinchan) b) P(a lo sumo 3 no se pinchan) c) P(no se supera el número esperado de pinchaduras).
 
@@ -129,7 +131,7 @@ c) E(X) = 6·0,25 = 1,5 ⇒ $P(X \le 1) \approx 0{,}534$.
 
 ---
 
-### 6) Motores de cuatriciclos
+### 6) Motores de cuatriciclos ⭐
 
 El 5 % no supera la prueba. a) Entre 5, P(al menos uno no pasa). b) Entre 20, cantidad esperada que pasa. c) Entre 7, P(no todos pero sí la mayoría no pasan).
 
@@ -151,7 +153,7 @@ c) Fallan ~ Bin(7; 0,05). "La mayoría pero no todos" = 4, 5 o 6 ⇒ $\sum_{k=4}
 
 ---
 
-### 7) Proyectos de calidad y expansión
+### 7) Proyectos de calidad y expansión ⭐
 
 El 30 % está en calidad, el 50 % en expansión y el 70 % en al menos uno. Se eligen 5 empleados. P de: a) al menos 2 en exactamente un proyecto b) a lo sumo 3 en ambos c) todos en algún proyecto.
 
@@ -220,7 +222,7 @@ $$\frac{P(k+1)}{P(k)} = \frac{\binom n{k+1}p^{k+1}(1-p)^{n-k-1}}{\binom nkp^k(1-
 
 ---
 
-### 10) Cabina de peaje
+### 10) Cabina de peaje ⭐
 
 Pasan autos según un proceso de Poisson con α = 20 autos/h. El peaje cuesta \$45 y todos pagan con \$50; Fabián empieza con un solo billete de \$5.
 a) P(algún automovilista se queda sin vuelto en los primeros 5 min). b) ¿Cuánto puede tardar en el café para que P(no llega ningún auto) = 1/10?
@@ -243,7 +245,7 @@ b) $P(X = 0) = e^{-20t} = 0{,}1 \Rightarrow t = \frac{\ln10}{20}$ h ≈ 0,115 h 
 
 ---
 
-### 11) Sala de emergencias de Moquehue
+### 11) Sala de emergencias de Moquehue ⭐
 
 Los pacientes por semana son Poisson con media 3. Se pueden atender 4 por semana; el resto se deriva. a) P(derivar alguno). b) Derivados esperados por semana. c) ¿Cuántos se deberían poder atender para no derivar en el 90 % de las semanas?
 
@@ -266,7 +268,7 @@ c) P(X ≤ 4) = 0,815 no alcanza; P(X ≤ 5) = 0,916 ≥ 0,90 ⇒ 5 pacientes.
 
 ---
 
-### 12) Fila del ANSES
+### 12) Fila del ANSES ⭐
 
 P(ningún arribo en 5 min) = $e^{-1}$. a) Llegadas esperadas en una hora. b) P(pasan más de 6 min entre dos arribos consecutivos).
 
@@ -308,7 +310,7 @@ $P(k+1) = \frac{e^{-\lambda}\lambda^{k+1}}{(k+1)!} = \frac\lambda{k+1}\cdot\frac
 
 ---
 
-### 14) Uniforme con datos
+### 14) Uniforme con datos ⭐
 
 X uniforme con E = 15 y P(13 ≤ X ≤ 18,5) = 0,55. Hallar V(X) y P(X ≤ 13).
 
@@ -329,7 +331,7 @@ $V = \frac{10^2}{12} = \frac{25}3$. $P(X \le 13) = \frac{13 - 10}{10} = 0{,}3$.
 
 ---
 
-### 15) Peso de bultos
+### 15) Peso de bultos ⭐
 
 El peso es uniforme en (a, b): el 20 % pesa menos de 4 kg y el 40 % más de 8 kg. a) P(5 < X < 9). b) De 8 bultos, P(ninguno pesa entre 5 y 9). c) Cantidad esperada entre 5 y 9.
 
@@ -352,7 +354,7 @@ c) 8·0,4 = 3,2
 
 ---
 
-### 16) Amplificadores (mezcla de exponenciales)
+### 16) Amplificadores (mezcla de exponenciales) ⭐
 
 El 10 % de los amplificadores tiene duración media de 20000 h y el resto, de 50000 h (exponenciales). a) Proporción que falla antes de 60000 h. b) P(supera 40000 h / supera 20000 h).
 
@@ -395,7 +397,7 @@ $1 - (1 - 0{,}8459)^n \ge 0{,}9 \Rightarrow 0{,}1541^n \le 0{,}1 \Rightarrow n \
 
 ---
 
-### 18) Clases sociales por ingreso
+### 18) Clases sociales por ingreso ⭐
 
 El ingreso es Exp(λ = 0,00005). Hallar los cuantiles 0,2, 0,4, 0,6 y 0,8.
 
@@ -435,7 +437,7 @@ $P(Y > y) = P(X > y/c) = e^{-(\lambda/c)y}$ ⇒ es la función de supervivencia 
 
 ---
 
-### 20) Pilas
+### 20) Pilas ⭐
 
 El 20 % dura menos de 400 h (exponencial). De 5 pilas, P(todas duran menos de 500 h).
 
@@ -455,7 +457,7 @@ $e^{-400\lambda} = 0{,}8 \Rightarrow P(X < 500) = 1 - 0{,}8^{1{,}25} \approx 0{,
 
 ---
 
-### 21) Baterías de dos fábricas
+### 21) Baterías de dos fábricas ⭐
 
 H (60 %): duración Exp con media 100 (miles de h). M (40 %): duración U[80, 130]. a) P(H dura > 90 / dura > 70). b) P(una batería cualquiera dura ≤ 90). c) P(es de H / dura ≤ 90).
 
@@ -477,7 +479,7 @@ c) Bayes: $0{,}3560/0{,}436 = 0{,}8165$.
 
 ---
 
-### 22) Cajero de banco
+### 22) Cajero de banco ⭐
 
 Atiende según un proceso de Poisson con 2 clientes cada 15 min (α = 2/15 por min). a) P(atender un cliente lleva más de 20 min). b) Más de 10 min. c) Más de 40 min dado que lleva más de 30. d) Comparar b) y c). e) P(se atienden 30 clientes en menos de 4 h).
 
@@ -587,7 +589,7 @@ b) En paralelo, falla cuando fallan ambas: T = máx. $F(t) = (1 - e^{-t/100})^2$
 
 ---
 
-### 27) Normal N(5; 10)
+### 27) Normal N(5; 10) ⭐
 
 a) P(X < 0), P(X > 10), P(X ≥ 15). b) P(−20 < X < 15) y P(−5 ≤ X ≤ 30). c) x tal que P(X > x) = 0,05. d) x tal que P(X < x) = 0,23.
 
@@ -653,7 +655,7 @@ b) Ahora los límites quedan a 1,5σ (arriba) y 4,5σ (abajo): (1 − Φ(1,5)) +
 
 ---
 
-### 30) Peso de los alumnos ~ N(75; 7)
+### 30) Peso de los alumnos ~ N(75; 7) ⭐
 
 a) P(pesa más de 95 kg). b) De 15000 alumnos, cuántos pesan entre 80 y 95 kg. c) Peso no superado por el 10 %. d) De 10 alumnos, P(al menos la mitad pesa más de 80 kg).
 
@@ -676,7 +678,7 @@ d) p = P(X > 80) = 0,2375; Y ~ Bin(10; 0,2375) ⇒ P(Y ≥ 5) ≈ 0,0644. La gu�
 
 ---
 
-### 31) Longitud de piezas
+### 31) Longitud de piezas ⭐
 
 Normal: el 15 % mide menos de 13 mm y el 10 % más de 14 mm. No es apta si mide menos de 12,8 o más de 13,8 mm. a) P(no apta). b) Se acepta una bolsa de 10 piezas si tiene a lo sumo una no apta: P(aceptar).
 

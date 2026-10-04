@@ -4,6 +4,8 @@ Ejercicios de la **Práctica 2 de la Guía de TP** (Variables aleatorias).
 
 Cada ejercicio tiene un botón **Solución**. Al abrirlo aparece la respuesta y, arriba de ella, un segundo botón **Solución paso a paso** con el desarrollo completo.
 
+> **Referencias:** ⭐ = ejercicio sugerido como prioritario en los apuntes de la cátedra. ⏭️ = no es necesario resolverlo.
+
 ---
 
 ### 1) Recorrido y clasificación
@@ -57,7 +59,7 @@ Una v.a. es **discreta** si su recorrido es finito o infinito numerable (se pued
 
 ---
 
-### 2) Estaciones de servicio
+### 2) Estaciones de servicio ⏭️
 
 Las estaciones A, B y C tienen 5, 3 y 2 surtidores. Recorrido de: a) U: total de surtidores en uso b) V: (en uso en B; en uso en C) c) W: estaciones con exactamente 2 surtidores en uso d) X: diferencia de surtidores en uso entre A y B.
 
@@ -80,7 +82,7 @@ Las estaciones A, B y C tienen 5, 3 y 2 surtidores. Recorrido de: a) U: total de
 
 ---
 
-### 3) Bolillas azules
+### 3) Bolillas azules ⭐
 
 De una caja con 6 azules y 2 rojas se extraen 3 sin reposición. X = cantidad de azules.
 a) Función de probabilidad. b) E(X) y V(X). c) E(X²), E(1/X), E(1/X²) y V(X²).
@@ -112,7 +114,7 @@ c) Con $E(g(X)) = \sum g(x)P(x)$:
 
 ---
 
-### 4) Dos urnas
+### 4) Dos urnas ⏭️
 
 A: 6 rojas y 4 blancas. B: 2 rojas y 7 blancas. Se pasa una bolita al azar de A a B y luego se extraen 2 de B. X = rojas extraídas.
 a) Función de probabilidad con reposición. b) Gráfico. c) Ídem sin reposición.
@@ -155,7 +157,7 @@ Probabilidad total:
 
 ---
 
-### 5) Neumáticos con baja presión
+### 5) Neumáticos con baja presión ⭐
 
 | x | 0 | 1 | 2 | 3 | 4 |
 |---|---|---|---|---|---|
@@ -187,7 +189,7 @@ d) $k(5 + 4 + 3 + 2 + 1) = 15k = 1 \Rightarrow k = 1/15$.
 
 ---
 
-### 6) Llegadas tarde
+### 6) Llegadas tarde ⭐
 
 | x | 0 | 1 | 2 | 3 | 4 |
 |---|---|---|---|---|---|
@@ -215,7 +217,7 @@ c) La distribución queda 0,4 / 0,2 / 0,2 / 0,15 / 0,05 ⇒ la moda es 0. $E(X) 
 
 ---
 
-### 7) Cadenas de eslabones
+### 7) Cadenas de eslabones ⏭️
 
 Se producen cadenas de 15, 25, 30 y 40 eslabones en proporciones 2:3:4:6. Se eligen dos al azar con reposición. X = promedio de eslabones e Y = longitud máxima.
 a) Funciones de probabilidad. b) Esperanza y varianza de ambas.
@@ -249,7 +251,7 @@ $E(Y) = \frac{15\cdot4 + 25\cdot21 + 30\cdot56 + 40\cdot144}{225} = \frac{8025}{
 
 ---
 
-### 8) Lavarropas
+### 8) Lavarropas ⭐
 
 | x (kg) | 5 | 7,5 | 10 |
 |---|---|---|---|
@@ -275,7 +277,7 @@ b) $E(Y) = 20\cdot7{,}625 - 7{,}5 = 145$. $\sigma(Y) = |20|\,\sigma(X) = 20\cdot
 
 ---
 
-### 9) Gimnasio Sporties
+### 9) Gimnasio Sporties ⭐
 
 $F(x)$: 0 (x < 1); 0,1 [1,2); 0,4 [2,3); 0,6 [3,6); 0,9 [6,12); 1 (x ≥ 12).
 a) P(X < 5), P(X > 2), P(3 ≤ X ≤ 6), P(3 < X ≤ 6). b) P(X < 6 / X ≥ 3).
@@ -326,7 +328,7 @@ c) $P(M = k) = F(k)^2 - F(k-1)^2$: 256, 320, 208, 116, 61 (/961).
 
 ---
 
-### 11) Cajas de cambio
+### 11) Cajas de cambio ⭐
 
 Lotes de 5 cajas, de las cuales 2 son defectuosas; se inspeccionan 2. a) Espacio muestral. b) Funciones de probabilidad y de distribución de W = defectuosas seleccionadas. c) Esperanza, mediana y moda.
 
@@ -348,7 +350,7 @@ c) E(W) = 0,6 + 0,2 = 0,8. La mediana es el primer valor con F ≥ 0,5 ⇒ 1. La
 
 ---
 
-### 12) Herramienta alquilada
+### 12) Herramienta alquilada ⭐
 
 $P(x) = \frac{c}{x+1}$, con $R_X = \{0, 1, 2, 3\}$. a) Hallar c. b) Si se cobra \$100 por cada uso, costo mensual esperado (20 días hábiles).
 
@@ -370,7 +372,7 @@ Costo mensual = $20\cdot100\cdot E(X) = \$1840$ (linealidad de la esperanza).
 
 ---
 
-### 13) Stock de taladros
+### 13) Stock de taladros ⏭️
 
 F de la demanda semanal: 0,2; 0,55; 0,8; 0,95; 1 (x = 0, …, 4). Cada taladro vendido deja \$350 y cada uno no vendido pierde \$80. ¿Cuántos conviene tener en stock?
 
@@ -397,7 +399,7 @@ Con stock s, el beneficio es $G = 350\min(D, s) - 80\max(s - D, 0)$. Se calcula 
 
 ---
 
-### 14) ¿Funciones de densidad?
+### 14) ¿Funciones de densidad? ⭐
 
 a) $3x^2$ en [0,1] b) $3e^{-x/3}$ para x > 0 c) $\frac23(x - 1)$ en [0,3].
 
@@ -420,7 +422,7 @@ c) f < 0 para x < 1 → no (aunque el área dé 1).
 
 ---
 
-### 15) Porcentaje de fallas
+### 15) Porcentaje de fallas ⭐
 
 $f(x) = a(x - x^3)$ para 0 < x ≤ 1. a) Hallar a. b) F(x). c) E(X) y V(X).
 
@@ -442,7 +444,7 @@ c) $E(X) = \int_0^1(4x^2 - 4x^4)dx = \frac43 - \frac45 = \frac8{15}$. $E(X^2) = 
 
 ---
 
-### 16) Densidad con parámetro m
+### 16) Densidad con parámetro m ⭐
 
 $f(x) = \frac1{72}(x + 1)^2$ en [−1, m]. a) Hallar m. b) F(x). c) P(−1 ≤ X < 3) y P(−1 < X < 3). d) Percentil 75. e) Densidad de Y = 2X + 1 y su mediana. f) E(X) y V(Y).
 
@@ -489,7 +491,7 @@ $P(A\cap B) = P(-\frac12 < X < \frac12) = 2\int_0^{1/2}x\,dx = \frac14$. Como $\
 
 ---
 
-### 18) Componentes eléctricos
+### 18) Componentes eléctricos ⭐
 
 $f(t) = 1$ en [0, ½) y $\frac12e^{-(t - 1/2)}$ para t > ½ (en años). a) F(t). b) % regulares (< 3 meses), buenos (3 meses a 3 años) y muy buenos (> 3 años). c) Cajas de 20: si hay 1 o más regulares, se regala otra caja. P(recibir una caja de regalo).
 
@@ -604,7 +606,7 @@ $\frac{F(b/2) - F(b)}{F(b/2)} = \frac{b^3/8 - b^3}{b^3/8 + 1} = \frac{-7b^3}{b^3
 
 ---
 
-### 23) Costo de un proceso
+### 23) Costo de un proceso ⭐
 
 El tiempo tiene E = 2 h y V = 0,5 h². El costo es \$3 por hora más \$8 fijos. E(C) y V(C).
 
@@ -668,7 +670,7 @@ b) $E(\pi R^2) = \pi E[(10 + u)^2] = \pi(100 + 20E(u) + E(u^2))$, con E(u) = 0 y
 
 ---
 
-### 26) Pacientes regulares y de urgencia
+### 26) Pacientes regulares y de urgencia ⭐
 
 | X₁ \ X₂ | 0 | 1 | 2 |
 |---|---|---|---|
@@ -698,7 +700,7 @@ d) X₁: 0,19 / 0,30 / 0,25 / 0,26. X₂: 0,19 / 0,40 / 0,41. P(1,1) = 0,15 ≠ 
 
 ---
 
-### 27) Conjunta c(x + y)
+### 27) Conjunta c(x + y) ⭐
 
 f(x; y) = c(x + y) con x, y ∈ {1, 2, 3}. a) Hallar c. b) P(X = 1 ∧ Y < 4), P(Y = 1), P(X < 2 / Y < 2). c) Cov(X; Y) y ρ.
 
@@ -724,7 +726,7 @@ c) E(X) = E(Y) = 13/6, E(X²) = 16/3 ⇒ V = 23/36. E(XY) = 14/3 ⇒ Cov = 14/3 
 
 ---
 
-### 28) Cartuchos de bolígrafo
+### 28) Cartuchos de bolígrafo ⭐
 
 3 azules, 2 rojos y 3 verdes; se eligen 2. X = azules, Y = rojos. a) p(x, y). b) P(X + Y ≤ 1). c) P(X = 0 / Y = 1) y P(Y = 1 / X = 0).
 
@@ -782,7 +784,7 @@ No son independientes: P(0, 0) = 0, pero $P_X(0)P_Y(0) = (2c)^2 > 0$ (si c > 0).
 
 ---
 
-### 30) Propiedades con dos variables
+### 30) Propiedades con dos variables ⭐
 
 E(X₁) = 1, E(X₂) = −2, V(X₁) = 4, V(X₂) = 9, ρ = √6/3. Hallar: a) E(3X₁ − 2X₂) b) V(3X₁) c) Cov(X₁; X₂) d) V(X₁ + X₂) e) V(2X₁ − 3X₂).
 

@@ -4,6 +4,8 @@ Resúmenes de teoría y ejercicios resueltos de la materia, armados a partir del
 
 ## Menú
 
+📐 **[Resumen de fórmulas](FORMULAS.md)**: todas las fórmulas de las Unidades 1 a 3 en una sola página.
+
 | Unidad | Tema | Teoría | Ejercicios | Material original |
 |---|---|---|---|---|
 | 1 | Probabilidades | [Resumen](Unidad%201/resumen.md) | [Ejercicios](Unidad%201/ejercicios.md) | [Aula virtual](Unidad%201/Aula%20Virtual) |

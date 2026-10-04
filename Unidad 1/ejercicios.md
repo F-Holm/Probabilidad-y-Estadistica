@@ -4,11 +4,13 @@ Ejercicios de la **Práctica 1 de la Guía de TP** (Probabilidades) y, al final,
 
 Cada ejercicio tiene un botón **Solución**. Al abrirlo aparece la respuesta y, arriba de ella, un segundo botón **Solución paso a paso** con el desarrollo completo.
 
+> **Referencias:** ⭐ = ejercicio sugerido como prioritario en los apuntes de la cátedra. ⏭️ = no es necesario resolverlo.
+
 ---
 
 ## Práctica 1 — Guía de TP
 
-### 1) Espacios muestrales
+### 1) Espacios muestrales ⭐
 
 Para cada uno de los siguientes experimentos, definir el espacio muestral:
 - a) Se analiza un tubo de ensayo con una muestra para detectar la presencia o ausencia de una molécula contaminante.
@@ -108,7 +110,7 @@ d) P(A) = 3/8, P(B) = 7/8, P(A∪B) = 7/8, P(A∩B) = 3/8
 
 ---
 
-### 4) Moneda cargada
+### 4) Moneda cargada ⭐
 
 Una moneda está cargada de modo que la probabilidad de cara es el triple que la de cruz. Calcular ambas probabilidades.
 
@@ -161,7 +163,7 @@ Extra (de la resolución del aula virtual):
 
 ---
 
-### 6) Blanco cuadrado
+### 6) Blanco cuadrado ⭐
 
 Un blanco cuadrado de 2,5 m de lado recibe disparos independientes que impactan al azar en cualquier punto. Hallar la probabilidad de que:
 a) un disparo impacte a menos de 1 m del centro.
@@ -219,7 +221,7 @@ b) A = {2, 4, 6}, B = {1, 2, 3, 6}, C = {5}. **No** se puede usar Laplace, porqu
 
 ---
 
-### 8) Anteojos
+### 8) Anteojos ⭐
 
 Una clase tiene 6 varones y 10 mujeres. La tercera parte de los varones y la quinta parte de las mujeres usan anteojos. Probabilidad de que un alumno al azar:
 a) use anteojos o sea mujer. b) sea varón y no use anteojos.
@@ -249,7 +251,7 @@ b) $P(V \cap \bar A) = \frac4{16} = \frac14$ (es justo el complemento de a).
 
 ---
 
-### 9) Motores a inyección
+### 9) Motores a inyección ⭐
 
 Se eligen al azar 3 motores de 10, entre los cuales 4 son a inyección. Probabilidad de que:
 a) ninguno sea a inyección. b) a lo sumo uno lo sea. c) al menos dos lo sean.
@@ -400,7 +402,7 @@ c) $P(A\cup B/C) = \frac{P[(A\cap C)\cup(B\cap C)]}{P(C)} = \frac{P(A\cap C) + P
 
 ---
 
-### 15) Cubos entre dos cajas
+### 15) Cubos entre dos cajas ⏭️
 
 La caja I tiene 7 azules y 3 verdes; la caja II, 6 azules y 4 verdes. Se pasa un cubo al azar de I a II y luego uno al azar de II a I.
 a) Probabilidad de sacar un azul de I y un verde de II. b) Probabilidad de que las cajas queden como al principio.
@@ -496,7 +498,7 @@ $P(A^c/B) = \frac{P(A^c\cap B)}{P(B)} = \frac{1/12}{1/3} = \frac14$.
 
 ---
 
-### 19) P(B/A) en casos especiales
+### 19) P(B/A) en casos especiales ⭐
 
 Calcular P(B/A) si: a) $A \subseteq B$ b) A y B son incompatibles.
 
@@ -517,7 +519,7 @@ b) $A\cap B = \emptyset \Rightarrow P(B/A) = \frac{0}{P(A)} = 0$.
 
 ---
 
-### 20) Dos dados, suma ≥ 8
+### 20) Dos dados, suma ≥ 8 ⭐
 
 Se tira un dado dos veces. Probabilidad de que la suma sea ≥ 8 si: a) sale un 4 en el primer dado. b) sale un 4 en al menos uno de los dados.
 
@@ -541,7 +543,7 @@ $P = \frac{5/36}{11/36} = \frac5{11}$.
 
 ---
 
-### 21) Caminos bloqueados
+### 21) Caminos bloqueados ⭐
 
 Hay tres caminos de A a B (A₁, A₂ el más corto, A₃) y dos de B a C (B₁, B₂). Cada uno está bloqueado con probabilidad 0,1, de manera independiente.
 a) Probabilidad de que haya algún camino abierto de A a C. b) Si el camino más corto de A a B está cerrado, probabilidad de poder llegar de C a A.
@@ -567,7 +569,7 @@ b) A₂ está cerrado, así que quedan A₁ y A₃: $[1 - 0{,}1^2]\cdot[1 - 0{,}
 
 ---
 
-### 22) Urna sin reposición
+### 22) Urna sin reposición ⭐
 
 Una urna tiene 7 rojas y 3 blancas. Se sacan 3 sin reposición. Probabilidad de que: a) las dos primeras sean rojas y la tercera blanca. b) exactamente una sea blanca.
 
@@ -588,7 +590,7 @@ b) La blanca puede salir en la 1.ª, la 2.ª o la 3.ª extracción (RRB, RBR, BR
 
 ---
 
-### 23) Dos urnas, igual color
+### 23) Dos urnas, igual color ⏭️
 
 La urna A tiene 3 rojas y 2 blancas; la urna B, 2 rojas y 5 blancas. Se elige una urna al azar, se saca una bola y se coloca en la otra urna; luego se saca una bola de esa segunda urna. Probabilidad de que las dos bolas sean del mismo color.
 
@@ -664,7 +666,7 @@ d) $\frac14\cdot\frac23 = \frac16$
 
 ---
 
-### 26) Cajoneras
+### 26) Cajoneras ⭐
 
 Hay tres cajoneras con dos cajones cada una: plata–plata, plata–oro y oro–oro. Se elige una cajonera al azar y se abre un cajón: sale oro. ¿Probabilidad de que el otro cajón también tenga oro?
 
@@ -686,7 +688,7 @@ El otro cajón tiene oro sólo si es la cajonera E₃. Por Bayes: $P(E_3/O) = \f
 
 ---
 
-### 27) Test diagnóstico
+### 27) Test diagnóstico ⭐
 
 1 de cada 25 adultos tiene la enfermedad. El test da positivo en el 98 % de los enfermos y en el 3 % de los sanos.
 a) P(test positivo). b) P(enfermo / positivo). c) P(sano / negativo).
@@ -711,7 +713,7 @@ c) $P(-) = 0{,}932$ y $P(E^c\cap -) = 0{,}96\cdot0{,}97 = 0{,}9312$ ⇒ $\frac{0
 
 ---
 
-### 28) Un artículo de cada caja
+### 28) Un artículo de cada caja ⭐
 
 La caja A tiene 3 defectuosos de 8; la B, 2 de 5; la C, 4 de 10. Se extrae un artículo de cada caja.
 a) P(todos defectuosos). b) P(sólo uno defectuoso). c) P(el defectuoso es de A / sólo uno es defectuoso).
@@ -743,7 +745,7 @@ c) $\frac{54/400}{174/400} = \frac{54}{174} = \frac9{29}$.
 
 ---
 
-### 29) Deporte
+### 29) Deporte ⭐
 
 Practican deporte el 40 % de los hombres y el 55 % de las mujeres; el 70 % de los estudiantes son mujeres. Si un estudiante hace deporte, ¿probabilidad de que sea mujer?
 
@@ -764,7 +766,7 @@ Bayes: $P(M/D) = \frac{0{,}385}{0{,}505} = \frac{77}{101} \approx 0{,}7624$.
 
 ---
 
-### 30) Aerolíneas Cordobesas
+### 30) Aerolíneas Cordobesas ⭐
 
 El 30 % viaja con familia, el 25 % con amigos y el resto solo. Viajan de noche: la mitad de los que van con familia, el 70 % de los que van con amigos y el 25 % de los que viajan solos.
 a) P(no viaja de noche). b) P(viaja con amigos / viaja de noche).
