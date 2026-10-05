@@ -1,6 +1,6 @@
 # 1.er Parcial — Tema 2 (05/2026)
 
-Probabilidad y Estadística — UTN FRBA. Enunciado y resolución tomados de [PrimerosParciales.pdf](../pdf/PrimerosParciales.pdf).
+Probabilidad y Estadística — UTN FRBA.
 
 > **Aprobación:** al menos 2 de los primeros 4 puntos correctamente resueltos.
 > **Promoción:** aprobación + el punto V o el VI correctamente resuelto. Los puntos V y VI sólo se corrigen si se alcanza la aprobación.
