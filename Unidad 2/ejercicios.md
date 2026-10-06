@@ -10,17 +10,18 @@ Cada ejercicio tiene un botón **Solución**. Al abrirlo aparece la respuesta y,
 
 ### 1) Recorrido y clasificación
 
-Indicar el recorrido de cada v.a. y clasificarla:
-- a) Q: estudiantes ausentes el primer día, de 20 inscriptos.
-- b) R: tiempo de espera en la caja de un banco.
-- c) S: temperatura máxima y mínima de un día en La Plata.
-- d) T: bicicletas en stock al final de un día, si la semana empezó con 120 y no hubo reposición.
-- e) U: hijos que tiene una pareja hasta tener 3 mujeres, con un tope de 8 hijos.
-- f) V: meses del año en que una fábrica excede los límites de contaminación.
-- g) W: dinero que se obtiene al sacar 3 monedas de una caja con 2 de 50 ctv, 3 de 25 ctv y 4 de \$1.
-- h) X: presión de un neumático cargado con 32 libras, medida un día cualquiera.
-- i) Y: tiradas de una moneda hasta obtener dos caras o dos cecas consecutivas.
-- j) Z: ruedas que, recolocadas al azar, quedan en su posición original.
+Para cada variable aleatoria definida a continuación, indicar el recorrido y clasificarla:
+
+- a) Q: "Número de estudiantes en la lista de un curso en particular que están ausentes el primer día de clase, de los 20 inscriptos".
+- b) R: "Tiempo de espera en una caja de un banco antes de ser atendido".
+- c) S: "Temperatura máxima y mínima medida en la estación meteorológica de La Plata un día cualquiera del año".
+- d) T: "Cantidad de bicicletas en stock en una bicicletería al finalizar un día de la semana, si comenzó la semana con 120 unidades y no realizó reposición".
+- e) U: "Número de hijos que debe tener una pareja hasta tener 3 mujeres, siendo su tope 8 hijos".
+- f) V: "Cantidad de meses del año en que una fábrica excede los límites permitidos de contaminación ambiental".
+- g) W: "Cantidad de dinero que se puede extraer sacando tres monedas de una caja que tiene 2 de 50 ctv, 3 de 25 ctv y 4 de 1 peso".
+- h) X: "Presión de un neumático de un coche que ha sido cargado con 32 libras y medido un día cualquiera".
+- i) Y: "Número de veces que se debe lanzar al aire una moneda para obtener dos caras o dos cecas consecutivas".
+- j) Z: "Número de ruedas que, al recolocarlas al azar en un auto, ocupan su posición original".
 
 <details>
 <summary><b>Solución</b></summary>
@@ -61,7 +62,12 @@ Una v.a. es **discreta** si su recorrido es finito o infinito numerable (se pued
 
 ### 2) Estaciones de servicio ⏭️
 
-Las estaciones A, B y C tienen 5, 3 y 2 surtidores. Recorrido de: a) U: total de surtidores en uso b) V: (en uso en B; en uso en C) c) W: estaciones con exactamente 2 surtidores en uso d) X: diferencia de surtidores en uso entre A y B.
+Se seleccionaron tres estaciones de servicio A, B y C de la ciudad de Buenos Aires, que cuentan respectivamente con 5, 3 y 2 surtidores. En estas estaciones no siempre están todos los surtidores en uso. Dar el recorrido de las siguientes variables aleatorias:
+
+- a) U: "Número total de surtidores en uso entre las estaciones seleccionadas".
+- b) V: "(Número de surtidores en uso de la estación B ; Número de surtidores en uso de la estación C)".
+- c) W: "Número de estaciones que tienen exactamente 2 surtidores en uso".
+- d) X: "Diferencia en el número de surtidores en servicio entre la estación A y la B".
 
 <details>
 <summary><b>Solución</b></summary>
@@ -76,7 +82,12 @@ Las estaciones A, B y C tienen 5, 3 y 2 surtidores. Recorrido de: a) U: total de
 
 </details>
 
-**Respuesta:** a) {0, …, 10} b) {(x₁; x₂) / 0 ≤ x₁ ≤ 3, 0 ≤ x₂ ≤ 2} c) {0, 1, 2, 3} d) {−3, …, 5}
+**Respuesta:**
+
+- a) {0, …, 10}
+- b) {(x₁; x₂) / 0 ≤ x₁ ≤ 3, 0 ≤ x₂ ≤ 2}
+- c) {0, 1, 2, 3}
+- d) {−3, …, 5}
 
 </details>
 
@@ -84,8 +95,11 @@ Las estaciones A, B y C tienen 5, 3 y 2 surtidores. Recorrido de: a) U: total de
 
 ### 3) Bolillas azules ⭐
 
-De una caja con 6 azules y 2 rojas se extraen 3 sin reposición. X = cantidad de azules.
-a) Función de probabilidad. b) E(X) y V(X). c) E(X²), E(1/X), E(1/X²) y V(X²).
+De una caja con 6 bolillas azules y 2 rojas se extraen 3 sin reposición. Sea X: "cantidad de bolillas azules entre las tres extraídas".
+
+- a) Hallar la función de probabilidad puntual de X.
+- b) Hallar E(X) y V(X).
+- c) Hallar E(X²), E(1/X), E(1/X²) y V(X²).
 
 <details>
 <summary><b>Solución</b></summary>
@@ -99,6 +113,7 @@ Casos posibles: $\binom83 = 56$. Como hay sólo 2 rojas, X ≥ 1.
 - $P(3) = \binom63/56 = 20/56 = 5/14$
 
 b) $E(X) = \frac{1\cdot6 + 2\cdot30 + 3\cdot20}{56} = \frac{126}{56} = \frac94$.
+
 $E(X^2) = \frac{6 + 120 + 180}{56} = \frac{153}{28}$ ⇒ $V(X) = \frac{153}{28} - \frac{81}{16} = \frac{45}{112}$.
 
 c) Con $E(g(X)) = \sum g(x)P(x)$:
@@ -108,7 +123,11 @@ c) Con $E(g(X)) = \sum g(x)P(x)$:
 
 </details>
 
-**Respuesta:** a) P(1) = 3/28, P(2) = 15/28, P(3) = 5/14 b) E = 9/4, V = 45/112 c) 153/28; 83/168; 0,2808; 7,7487
+**Respuesta:**
+
+- a) P(1) = 3/28, P(2) = 15/28, P(3) = 5/14
+- b) E = 9/4, V = 45/112
+- c) 153/28; 83/168; 0,2808; 7,7487
 
 </details>
 
@@ -116,8 +135,11 @@ c) Con $E(g(X)) = \sum g(x)P(x)$:
 
 ### 4) Dos urnas ⏭️
 
-A: 6 rojas y 4 blancas. B: 2 rojas y 7 blancas. Se pasa una bolita al azar de A a B y luego se extraen 2 de B. X = rojas extraídas.
-a) Función de probabilidad con reposición. b) Gráfico. c) Ídem sin reposición.
+Se tienen dos urnas. La urna A tiene 6 bolitas rojas y 4 blancas. La urna B tiene 2 bolitas rojas y 7 blancas. Se extrae una bolita al azar de A y se coloca en B. A continuación se extraen de B, **con reposición**, 2 bolitas. Sea X: "cantidad de bolitas rojas extraídas de la urna B".
+
+- a) Hallar la función de probabilidad de X.
+- b) Graficar la función de probabilidad de X.
+- c) Repetir (a) pero considerando que las extracciones de B son **sin** reposición.
 
 <details>
 <summary><b>Solución</b></summary>
@@ -151,7 +173,10 @@ Probabilidad total:
 
 </details>
 
-**Respuesta:** a) 0,55 / 0,38 / 0,07 c) 119/225 / 19/45 / 11/225
+**Respuesta:**
+
+- a) 0,55 / 0,38 / 0,07
+- c) 119/225 / 19/45 / 11/225
 
 </details>
 
@@ -159,13 +184,18 @@ Probabilidad total:
 
 ### 5) Neumáticos con baja presión ⭐
 
+Sea X = número de neumáticos de un automóvil, seleccionado al azar, que tienen baja la presión.
+
 | x | 0 | 1 | 2 | 3 | 4 |
 |---|---|---|---|---|---|
-| p₁ | 0,20 | 0,30 | 0,10 | 0,07 | 0,03 |
-| p₂ | 0,40 | 0,10 | 0,10 | 0,10 | 0,30 |
-| p₃ | 0,40 | 0,15 | 0,10 | 0,15 | 0,30 |
+| p₁(x) | 0,20 | 0,30 | 0,10 | 0,07 | 0,03 |
+| p₂(x) | 0,40 | 0,10 | 0,10 | 0,10 | 0,30 |
+| p₃(x) | 0,40 | 0,15 | 0,10 | 0,15 | 0,30 |
 
-a) ¿Cuál es función de probabilidad? b) Su F(x). c) P(2 < X < 4), P(X < 2) y P(X ≠ 0). d) Si p(x) = k(5 − x), ¿cuánto vale k?
+- a) ¿Cuál de las tres funciones pᵢ(x) de la tabla es una función de probabilidad puntual para X?
+- b) Obtener la función de distribución acumulada de X.
+- c) Con la función de probabilidad seleccionada en (a), calcular P(2 < X < 4), P(X < 2) y P(X ≠ 0).
+- d) Si p(x) = k·(5 − x) para x = 0, 1, 2, 3, 4, ¿cuál debe ser el valor de la constante k para que p sea una función de probabilidad?
 
 <details>
 <summary><b>Solución</b></summary>
@@ -183,7 +213,12 @@ d) $k(5 + 4 + 3 + 2 + 1) = 15k = 1 \Rightarrow k = 1/15$.
 
 </details>
 
-**Respuesta:** a) p₂ b) F = 0 (x < 0); 0,4 [0,1); 0,5 [1,2); 0,6 [2,3); 0,7 [3,4); 1 (x ≥ 4) c) 0,1; 0,5; 0,6 d) k = 1/15
+**Respuesta:**
+
+- a) p₂
+- b) F = 0 (x < 0); 0,4 [0,1); 0,5 [1,2); 0,6 [2,3); 0,7 [3,4); 1 (x ≥ 4)
+- c) 0,1; 0,5; 0,6
+- d) k = 1/15
 
 </details>
 
@@ -191,11 +226,15 @@ d) $k(5 + 4 + 3 + 2 + 1) = 15k = 1 \Rightarrow k = 1/15$.
 
 ### 6) Llegadas tarde ⭐
 
+La siguiente distribución de probabilidad corresponde a la variable aleatoria X: "cantidad de llegadas tarde a la clase de Probabilidad y Estadística en marzo de un alumno elegido al azar".
+
 | x | 0 | 1 | 2 | 3 | 4 |
 |---|---|---|---|---|---|
 | p(x) | 0,3 + k | 2k | 0,2 | 0,1 + 5k² | 0,05 |
 
-a) Hallar k. b) P(X = 3). c) Valor más probable; ¿coincide con el valor esperado?
+- a) Hallar el valor de k.
+- b) Calcular la probabilidad de que las tardanzas de un alumno elegido al azar sean 3.
+- c) Hallar el número más probable de tardanzas. ¿Coincide con el valor esperado de tardanzas?
 
 <details>
 <summary><b>Solución</b></summary>
@@ -211,7 +250,11 @@ c) La distribución queda 0,4 / 0,2 / 0,2 / 0,15 / 0,05 ⇒ la moda es 0. $E(X) 
 
 </details>
 
-**Respuesta:** a) k = 0,1 b) 0,15 c) Moda = 0, E(X) = 1,25; no coinciden.
+**Respuesta:**
+
+- a) k = 0,1
+- b) 0,15
+- c) Moda = 0, E(X) = 1,25; no coinciden.
 
 </details>
 
@@ -219,8 +262,12 @@ c) La distribución queda 0,4 / 0,2 / 0,2 / 0,15 / 0,05 ⇒ la moda es 0. $E(X) 
 
 ### 7) Cadenas de eslabones ⏭️
 
-Se producen cadenas de 15, 25, 30 y 40 eslabones en proporciones 2:3:4:6. Se eligen dos al azar con reposición. X = promedio de eslabones e Y = longitud máxima.
-a) Funciones de probabilidad. b) Esperanza y varianza de ambas.
+En una fábrica se producen cadenas con 15, 25, 30 o 40 eslabones, en proporciones 2 : 3 : 4 : 6. Se vuelca toda la producción en una sola cinta transportadora. Se eligen de la cinta, al azar, dos cadenas con reposición.
+
+Se definen las variables aleatorias X: "promedio de eslabones de las cadenas elegidas" e Y: "longitud máxima de las cadenas elegidas". Determinar su recorrido.
+
+- a) Hallar la función de probabilidad puntual de cada una de las variables.
+- b) Calcular el valor esperado y la varianza de ambas variables.
 
 <details>
 <summary><b>Solución</b></summary>
@@ -241,11 +288,15 @@ Una cadena (L): P(15) = 2/15, P(25) = 3/15, P(30) = 4/15, P(40) = 6/15. Dos cade
 **Y = máx**: $P(Y \le y) = P(L \le y)^2$ ⇒ P(15) = 4/225, P(25) = 25/225 − 4/225 = 21/225, P(30) = 81/225 − 25/225 = 56/225, P(40) = 1 − 81/225 = 144/225.
 
 b) E(L) = 31 y V(L) = 1035 − 961 = 74. Como X es el promedio de dos independientes: E(X) = 31 y V(X) = 74/2 = 37.
+
 $E(Y) = \frac{15\cdot4 + 25\cdot21 + 30\cdot56 + 40\cdot144}{225} = \frac{8025}{225} \approx 35{,}67$; $V(Y) \approx 38{,}22$.
 
 </details>
 
-**Respuesta:** a) tablas de arriba b) E(X) = 31, V(X) = 37; E(Y) ≈ 35,67, V(Y) ≈ 38,2. (La guía da E(Y) = 35,2, pero la cuenta da 8025/225 ≈ 35,67.)
+**Respuesta:**
+
+- a) tablas de arriba
+- b) E(X) = 31, V(X) = 37; E(Y) ≈ 35,67, V(Y) ≈ 38,2. (La guía da E(Y) = 35,2, pero la cuenta da 8025/225 ≈ 35,67.)
 
 </details>
 
@@ -253,11 +304,14 @@ $E(Y) = \frac{15\cdot4 + 25\cdot21 + 30\cdot56 + 40\cdot144}{225} = \frac{8025}{
 
 ### 8) Lavarropas ⭐
 
-| x (kg) | 5 | 7,5 | 10 |
-|---|---|---|---|
-| p | 0,25 | 0,45 | 0,30 |
+Sea X la capacidad (en kg) de un lavarropas comprado por el próximo cliente que elige la marca *Cándida*. La función de probabilidad puntual de X está dada por:
 
-a) E(X) y V(X). b) Si el precio es Y = 20X − 7,5, hallar E(Y) y σ(Y).
+| xᵢ | 5 | 7,5 | 10 |
+|---|---|---|---|
+| p(xᵢ) | 0,25 | 0,45 | 0,30 |
+
+- a) Calcular el valor esperado y la varianza de la variable X.
+- b) Si el precio del lavarropas es Y = 20X − 7,5, hallar el valor esperado y el desvío estándar del precio del lavarropas *Cándida*.
 
 <details>
 <summary><b>Solución</b></summary>
@@ -271,7 +325,10 @@ b) $E(Y) = 20\cdot7{,}625 - 7{,}5 = 145$. $\sigma(Y) = |20|\,\sigma(X) = 20\cdot
 
 </details>
 
-**Respuesta:** a) 7,625 y 3,4219 b) E(Y) = 145, σ(Y) = 37
+**Respuesta:**
+
+- a) 7,625 y 3,4219
+- b) E(Y) = 145, σ(Y) = 37
 
 </details>
 
@@ -279,8 +336,14 @@ b) $E(Y) = 20\cdot7{,}625 - 7{,}5 = 145$. $\sigma(Y) = |20|\,\sigma(X) = 20\cdot
 
 ### 9) Gimnasio Sporties ⭐
 
-$F(x)$: 0 (x < 1); 0,1 [1,2); 0,4 [2,3); 0,6 [3,6); 0,9 [6,12); 1 (x ≥ 12).
-a) P(X < 5), P(X > 2), P(3 ≤ X ≤ 6), P(3 < X ≤ 6). b) P(X < 6 / X ≥ 3).
+La cadena de gimnasios *Sporties* ofrece a sus socios un plan anual con opciones de pago. Para un socio seleccionado al azar, sea X = número de meses para pagar el plan. La función de distribución acumulada de X es:
+
+$$F(x) = \begin{cases} 0 & x < 1 \\ 0{,}1 & 1 \le x < 2 \\ 0{,}4 & 2 \le x < 3 \\ 0{,}6 & 3 \le x < 6 \\ 0{,}9 & 6 \le x < 12 \\ 1 & x \ge 12 \end{cases}$$
+
+Utilizando la función de distribución, calcular las siguientes probabilidades:
+
+- a) P(X < 5), P(X > 2), P(3 ≤ X ≤ 6) y P(3 < X ≤ 6).
+- b) P(X < 6 / X ≥ 3).
 
 <details>
 <summary><b>Solución</b></summary>
@@ -289,6 +352,7 @@ a) P(X < 5), P(X > 2), P(3 ≤ X ≤ 6), P(3 < X ≤ 6). b) P(X < 6 / X ≥ 3).
 <summary>Solución paso a paso</summary>
 
 Los saltos de F dan $R_X = \{1, 2, 3, 6, 12\}$ con P = 0,1 / 0,3 / 0,2 / 0,3 / 0,1.
+
 a)
 - P(X < 5) = F(3) = 0,6
 - P(X > 2) = 1 − F(2) = 0,6
@@ -299,7 +363,10 @@ b) $\frac{P(3 \le X < 6)}{P(X \ge 3)} = \frac{P(X = 3)}{0{,}6} = \frac{0{,}2}{0{
 
 </details>
 
-**Respuesta:** a) 0,6; 0,6; 0,5; 0,3 b) 1/3
+**Respuesta:**
+
+- a) 0,6; 0,6; 0,5; 0,3
+- b) 1/3
 
 </details>
 
@@ -307,7 +374,13 @@ b) $\frac{P(3 \le X < 6)}{P(X \ge 3)} = \frac{P(X = 3)}{0{,}6} = \frac{0{,}2}{0{
 
 ### 10) Máquinas tejedoras
 
-$p(x) = \frac{16}{31}(\frac12)^x$, para x = 0, …, 4. a) P(se detiene algún día). b) Con independencia entre días: P(el máximo de lunes y martes es 2). c) Distribución del máximo.
+Las máquinas tejedoras de una fábrica de elásticos utilizan rayo láser para detectar los hilos rotos. Cuando se detecta un hilo roto, se detiene la máquina tejedora. Consideremos la variable aleatoria X: "cantidad de veces que se detiene la máquina por día". La función de probabilidad de X está dada por:
+
+$$p(x) = \frac{16}{31}\left(\frac12\right)^x \quad \text{para } x = 0, 1, 2, 3, 4 \quad (\text{y } 0 \text{ en otro caso})$$
+
+- a) ¿Cuál es la probabilidad de que un día dado se detenga la máquina?
+- b) Si las detenciones en dos días consecutivos son independientes, hallar la probabilidad de que el máximo de detenciones entre las del lunes y las del martes sea exactamente 2.
+- c) Hallar la función de probabilidad puntual del número máximo de detenciones por día, considerando lunes y martes.
 
 <details>
 <summary><b>Solución</b></summary>
@@ -316,13 +389,20 @@ $p(x) = \frac{16}{31}(\frac12)^x$, para x = 0, …, 4. a) P(se detiene algún d�
 <summary>Solución paso a paso</summary>
 
 p = 16, 8, 4, 2, 1 (/31); F = 16, 24, 28, 30, 31 (/31).
+
 a) $1 - p(0) = 15/31$.
+
 b) Para el máximo M de dos independientes: $P(M \le k) = F(k)^2$ ⇒ $P(M = 2) = F(2)^2 - F(1)^2 = \frac{784 - 576}{961} = \frac{208}{961}$.
+
 c) $P(M = k) = F(k)^2 - F(k-1)^2$: 256, 320, 208, 116, 61 (/961).
 
 </details>
 
-**Respuesta:** a) 15/31 b) 208/961 c) 256, 320, 208, 116, 61 (sobre 961)
+**Respuesta:**
+
+- a) 15/31
+- b) 208/961
+- c) 256, 320, 208, 116, 61 (sobre 961)
 
 </details>
 
@@ -330,7 +410,11 @@ c) $P(M = k) = F(k)^2 - F(k-1)^2$: 256, 320, 208, 116, 61 (/961).
 
 ### 11) Cajas de cambio ⭐
 
-Lotes de 5 cajas, de las cuales 2 son defectuosas; se inspeccionan 2. a) Espacio muestral. b) Funciones de probabilidad y de distribución de W = defectuosas seleccionadas. c) Esperanza, mediana y moda.
+Un fabricante de automóviles tiene un programa de control de calidad que incluye la inspección de materiales recibidos para verificar que no tengan defectos. Supongamos que recibe las cajas de cambio para los automóviles en lotes de 5 unidades. Se seleccionan al azar dos cajas de un lote y se las inspecciona para decidir si son defectuosas o no.
+
+- a) Describir el espacio muestral asociado a este experimento.
+- b) Supongamos que el lote tiene dos cajas defectuosas y definamos la variable aleatoria W: "número de cajas defectuosas seleccionadas". Hallar las funciones de probabilidad y de distribución de la variable W.
+- c) Hallar el valor esperado, el valor mediano y el valor más probable de la variable W.
 
 <details>
 <summary><b>Solución</b></summary>
@@ -339,12 +423,17 @@ Lotes de 5 cajas, de las cuales 2 son defectuosas; se inspeccionan 2. a) Espacio
 <summary>Solución paso a paso</summary>
 
 a) Clasificando cada caja seleccionada: {BB, BD, DB, DD}.
+
 b) Es hipergeométrica: $\binom52 = 10$ casos. P(0) = $\binom32/10$ = 0,3; P(1) = 2·3/10 = 0,6; P(2) = 1/10 = 0,1. F: 0,3; 0,9; 1.
+
 c) E(W) = 0,6 + 0,2 = 0,8. La mediana es el primer valor con F ≥ 0,5 ⇒ 1. La moda también es 1.
 
 </details>
 
-**Respuesta:** b) 0,3 / 0,6 / 0,1 c) E = 0,8, mediana = moda = 1
+**Respuesta:**
+
+- b) 0,3 / 0,6 / 0,1
+- c) E = 0,8, mediana = moda = 1
 
 </details>
 
@@ -352,7 +441,12 @@ c) E(W) = 0,6 + 0,2 = 0,8. La mediana es el primer valor con F ≥ 0,5 ⇒ 1. La
 
 ### 12) Herramienta alquilada ⭐
 
-$P(x) = \frac{c}{x+1}$, con $R_X = \{0, 1, 2, 3\}$. a) Hallar c. b) Si se cobra \$100 por cada uso, costo mensual esperado (20 días hábiles).
+La cantidad de veces por día que se usa en la fábrica una herramienta para reparar ciertos equipos puede modelarse mediante una variable que tiene la siguiente función de probabilidad:
+
+$$P(x) = \frac{c}{x+1}, \quad \text{siendo el recorrido de la variable } R_X = \{0, 1, 2, 3\}$$
+
+- a) Hallar el valor de la constante c.
+- b) Si esta herramienta se alquila a 100 pesos cada vez que se usa, hallar el valor esperado del costo de alquiler mensual (20 días hábiles).
 
 <details>
 <summary><b>Solución</b></summary>
@@ -360,13 +454,30 @@ $P(x) = \frac{c}{x+1}$, con $R_X = \{0, 1, 2, 3\}$. a) Hallar c. b) Si se cobra 
 <details>
 <summary>Solución paso a paso</summary>
 
-a) $c(1 + \frac12 + \frac13 + \frac14) = c\cdot\frac{25}{12} = 1 \Rightarrow c = \frac{12}{25}$.
-b) $E(X) = c(0 + \frac12 + \frac23 + \frac34) = \frac{12}{25}\cdot\frac{23}{12} = 0{,}92$ usos por día.
-Costo mensual = $20\cdot100\cdot E(X) = \$1840$ (linealidad de la esperanza).
+**a) Hallar c**
+
+Las probabilidades de los 4 valores tienen que sumar 1:
+
+$$P(0) + P(1) + P(2) + P(3) = \frac{c}{1} + \frac{c}{2} + \frac{c}{3} + \frac{c}{4} = 1$$
+
+$$c\left(1 + \frac12 + \frac13 + \frac14\right) = c\cdot\frac{25}{12} = 1 \quad\Rightarrow\quad c = \frac{12}{25}$$
+
+**b) Costo mensual esperado**
+
+Usos esperados por día:
+
+$$E(X) = 0\cdot\frac{c}{1} + 1\cdot\frac{c}{2} + 2\cdot\frac{c}{3} + 3\cdot\frac{c}{4} = c\left(\frac12 + \frac23 + \frac34\right) = \frac{12}{25}\cdot\frac{23}{12} = 0{,}92$$
+
+El costo de un mes es C = 100 · (usos en los 20 días hábiles). Por linealidad de la esperanza:
+
+$$E(C) = 100\cdot20\cdot E(X) = 2000\cdot0{,}92 = 1840$$
 
 </details>
 
-**Respuesta:** a) c = 12/25 b) \$1840
+**Respuesta:**
+
+- a) c = 12/25
+- b) 1840 pesos por mes
 
 </details>
 
@@ -374,7 +485,13 @@ Costo mensual = $20\cdot100\cdot E(X) = \$1840$ (linealidad de la esperanza).
 
 ### 13) Stock de taladros ⏭️
 
-F de la demanda semanal: 0,2; 0,55; 0,8; 0,95; 1 (x = 0, …, 4). Cada taladro vendido deja \$350 y cada uno no vendido pierde \$80. ¿Cuántos conviene tener en stock?
+La demanda semanal de taladros en cierto local comercial de la localidad de Arroyo Seco sigue la siguiente función de distribución de probabilidades:
+
+| x | 0 | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|---|
+| F(x) | 0,2 | 0,55 | 0,8 | 0,95 | 1 |
+
+Cada taladro vendido origina una ganancia de 350 pesos, pero los que no se venden originan una pérdida de 80 pesos por unidad. ¿Cuántos taladros convendría disponer en stock para maximizar el beneficio semanal esperado?
 
 <details>
 <summary><b>Solución</b></summary>
@@ -383,6 +500,7 @@ F de la demanda semanal: 0,2; 0,55; 0,8; 0,95; 1 (x = 0, …, 4). Cada taladro v
 <summary>Solución paso a paso</summary>
 
 Demanda: P = 0,2 / 0,35 / 0,25 / 0,15 / 0,05.
+
 Con stock s, el beneficio es $G = 350\min(D, s) - 80\max(s - D, 0)$. Se calcula E(G) para cada s:
 
 | s | 0 | 1 | 2 | 3 | 4 |
@@ -393,7 +511,7 @@ Con stock s, el beneficio es $G = 350\min(D, s) - 80\max(s - D, 0)$. Se calcula 
 
 </details>
 
-**Respuesta:** conviene tener **3** taladros (beneficio esperado ≈ \$383,5).
+**Respuesta:** conviene tener **3** taladros (beneficio esperado ≈ 383,5 pesos).
 
 </details>
 
@@ -401,7 +519,11 @@ Con stock s, el beneficio es $G = 350\min(D, s) - 80\max(s - D, 0)$. Se calcula 
 
 ### 14) ¿Funciones de densidad? ⭐
 
-a) $3x^2$ en [0,1] b) $3e^{-x/3}$ para x > 0 c) $\frac23(x - 1)$ en [0,3].
+Indicar cuál o cuáles de las siguientes son funciones de densidad de probabilidad:
+
+- a) f(x) = 3x² si 0 ≤ x ≤ 1, y f(x) = 0 en otro caso.
+- b) f(x) = 3e^(−x/3) si x > 0, y f(x) = 0 en otro caso.
+- c) f(x) = (2/3)(x − 1) si 0 ≤ x ≤ 3, y f(x) = 0 en otro caso.
 
 <details>
 <summary><b>Solución</b></summary>
@@ -410,13 +532,20 @@ a) $3x^2$ en [0,1] b) $3e^{-x/3}$ para x > 0 c) $\frac23(x - 1)$ en [0,3].
 <summary>Solución paso a paso</summary>
 
 Se verifica que f ≥ 0 y que el área total sea 1.
+
 a) $\int_0^1 3x^2\,dx = 1$ y f ≥ 0 → sí.
+
 b) $\int_0^\infty 3e^{-x/3}\,dx = 9 \neq 1$ → no.
+
 c) f < 0 para x < 1 → no (aunque el área dé 1).
 
 </details>
 
-**Respuesta:** a) sí b) no c) no
+**Respuesta:**
+
+- a) sí
+- b) no
+- c) no
 
 </details>
 
@@ -424,7 +553,13 @@ c) f < 0 para x < 1 → no (aunque el área dé 1).
 
 ### 15) Porcentaje de fallas ⭐
 
-$f(x) = a(x - x^3)$ para 0 < x ≤ 1. a) Hallar a. b) F(x). c) E(X) y V(X).
+El porcentaje de fallas de una producción industrial está dado por la variable aleatoria X, cuya función de densidad es:
+
+$$f_X(x) = \begin{cases} a(x - x^3) & 0 < x \le 1 \\ 0 & \text{en otro caso} \end{cases}$$
+
+- a) Hallar el valor de a.
+- b) Hallar la función de distribución de probabilidades.
+- c) Hallar el valor esperado y la varianza.
 
 <details>
 <summary><b>Solución</b></summary>
@@ -433,12 +568,18 @@ $f(x) = a(x - x^3)$ para 0 < x ≤ 1. a) Hallar a. b) F(x). c) E(X) y V(X).
 <summary>Solución paso a paso</summary>
 
 a) $a\int_0^1(x - x^3)dx = a(\frac12 - \frac14) = \frac a4 = 1 \Rightarrow a = 4$.
+
 b) $F(x) = \int_0^x (4t - 4t^3)dt = 2x^2 - x^4$ en [0,1]; 0 antes y 1 después.
+
 c) $E(X) = \int_0^1(4x^2 - 4x^4)dx = \frac43 - \frac45 = \frac8{15}$. $E(X^2) = \int_0^1(4x^3 - 4x^5)dx = 1 - \frac23 = \frac13$ ⇒ $V = \frac13 - \frac{64}{225} = \frac{11}{225}$.
 
 </details>
 
-**Respuesta:** a) 4 b) F = 2x² − x⁴ c) E = 8/15, V = 11/225
+**Respuesta:**
+
+- a) 4
+- b) F = 2x² − x⁴
+- c) E = 8/15, V = 11/225
 
 </details>
 
@@ -446,7 +587,16 @@ c) $E(X) = \int_0^1(4x^2 - 4x^4)dx = \frac43 - \frac45 = \frac8{15}$. $E(X^2) = 
 
 ### 16) Densidad con parámetro m ⭐
 
-$f(x) = \frac1{72}(x + 1)^2$ en [−1, m]. a) Hallar m. b) F(x). c) P(−1 ≤ X < 3) y P(−1 < X < 3). d) Percentil 75. e) Densidad de Y = 2X + 1 y su mediana. f) E(X) y V(Y).
+Sea
+
+$$f(x) = \begin{cases} \dfrac{1}{72}(x+1)^2 & -1 \le x \le m \\ 0 & \text{en otro caso} \end{cases}$$
+
+- a) Hallar el número real m > 0 para que f(x) sea la función de densidad de una variable aleatoria X.
+- b) Hallar la función de distribución acumulada de X.
+- c) Utilizando la función calculada, hallar P(−1 ≤ X < 3) y P(−1 < X < 3).
+- d) Calcular el percentil 75 (tercer cuartil) de la variable.
+- e) Calcular la función de densidad de la variable aleatoria Y = 2X + 1 y su valor mediano.
+- f) Hallar el valor esperado de X y la varianza de Y.
 
 <details>
 <summary><b>Solución</b></summary>
@@ -455,15 +605,27 @@ $f(x) = \frac1{72}(x + 1)^2$ en [−1, m]. a) Hallar m. b) F(x). c) P(−1 ≤ X
 <summary>Solución paso a paso</summary>
 
 a) $\int_{-1}^m \frac{(x+1)^2}{72}dx = \frac{(m+1)^3}{216} = 1 \Rightarrow m + 1 = 6 \Rightarrow m = 5$.
+
 b) $F(x) = \frac{(x+1)^3}{216}$ en [−1, 5].
+
 c) Ambas valen F(3) = 64/216 = 8/27 (en una VAC no importan los bordes).
+
 d) $\frac{(x+1)^3}{216} = 0{,}75 \Rightarrow x = \sqrt[3]{162} - 1 \approx 4{,}45$.
+
 e) $X = \frac{Y-1}{2}$ ⇒ $f_Y(y) = \frac12 f_X\left(\frac{y-1}{2}\right) = \frac{(y+1)^2}{576}$ en [−1, 11]. Mediana: $F_Y(y) = \frac{(y+1)^3}{1728} = \frac12 \Rightarrow y = \sqrt[3]{864} - 1 \approx 8{,}52$.
+
 f) Con u = x + 1: $E(X) = \frac1{72}\int_0^6(u - 1)u^2du = \frac{324 - 72}{72} = 3{,}5$. $E(X^2) = 13{,}6$ ⇒ $V(X) = 1{,}35$ ⇒ $V(Y) = 4\cdot1{,}35 = 5{,}4$.
 
 </details>
 
-**Respuesta:** a) 5 b) (x+1)³/216 c) 8/27 d) ∛162 − 1 ≈ 4,45 e) (y+1)²/576 en [−1, 11], mediana ≈ 8,52 f) E(X) = 3,5, V(Y) = 5,4
+**Respuesta:**
+
+- a) 5
+- b) (x+1)³/216
+- c) 8/27
+- d) ∛162 − 1 ≈ 4,45
+- e) (y+1)²/576 en [−1, 11], mediana ≈ 8,52
+- f) E(X) = 3,5, V(Y) = 5,4
 
 </details>
 
@@ -471,7 +633,12 @@ f) Con u = x + 1: $E(X) = \frac1{72}\int_0^6(u - 1)u^2du = \frac{324 - 72}{72} =
 
 ### 17) Densidad |x|
 
-$f(x) = |x|$ en [−5c, 5c]. a) Hallar c. b) ¿Son independientes A = {X > −½} y B = {X < ½}?
+Sea X una variable aleatoria con densidad:
+
+$$f_X(x) = \begin{cases} |x| & -5c \le x \le 5c \\ 0 & \text{en otro caso} \end{cases}$$
+
+- a) Hallar el valor de la constante c de modo tal que resulte una función de densidad de probabilidad.
+- b) Considerar los eventos A = {x / x > −1/2} y B = {x / x < 1/2} e indicar si se trata de eventos independientes.
 
 <details>
 <summary><b>Solución</b></summary>
@@ -480,12 +647,17 @@ $f(x) = |x|$ en [−5c, 5c]. a) Hallar c. b) ¿Son independientes A = {X > −½
 <summary>Solución paso a paso</summary>
 
 a) Por simetría, $2\int_0^{5c}x\,dx = 25c^2 = 1 \Rightarrow c = \frac15$ (X ∈ [−1, 1]).
+
 b) $P(X \le -\frac12) = \int_{-1}^{-1/2}(-x)dx = \frac38$ ⇒ $P(A) = \frac58$; por simetría $P(B) = \frac58$.
+
 $P(A\cap B) = P(-\frac12 < X < \frac12) = 2\int_0^{1/2}x\,dx = \frac14$. Como $\frac{25}{64} \neq \frac14$, no son independientes.
 
 </details>
 
-**Respuesta:** a) c = 1/5 b) No.
+**Respuesta:**
+
+- a) c = 1/5
+- b) No.
 
 </details>
 
@@ -493,7 +665,13 @@ $P(A\cap B) = P(-\frac12 < X < \frac12) = 2\int_0^{1/2}x\,dx = \frac14$. Como $\
 
 ### 18) Componentes eléctricos ⭐
 
-$f(t) = 1$ en [0, ½) y $\frac12e^{-(t - 1/2)}$ para t > ½ (en años). a) F(t). b) % regulares (< 3 meses), buenos (3 meses a 3 años) y muy buenos (> 3 años). c) Cajas de 20: si hay 1 o más regulares, se regala otra caja. P(recibir una caja de regalo).
+Una empresa fabrica componentes eléctricos cuya duración (en años) está dada por una variable aleatoria T, cuya función de densidad es:
+
+$$f_T(t) = \begin{cases} 1 & 0 \le t < \tfrac12 \\ \tfrac12 e^{-(t - \frac12)} & t > \tfrac12 \\ 0 & \text{en otro caso} \end{cases}$$
+
+- a) Hallar la función de distribución acumulada F_T.
+- b) El producto se considera *regular* si dura menos de tres meses, *bueno* si dura entre tres meses y tres años y *muy bueno* si dura más de tres años. Calcular los porcentajes de componentes regulares, buenos y muy buenos de la producción.
+- c) Se empaquetan los componentes en cajas de 20 unidades. Si un comprador encuentra en una caja 1 o más artículos regulares, la fábrica le proporciona una caja nueva en forma gratuita. Cierto usuario adquirió una caja: ¿cuál es la probabilidad de obtener otra de regalo?
 
 <details>
 <summary><b>Solución</b></summary>
@@ -502,6 +680,7 @@ $f(t) = 1$ en [0, ½) y $\frac12e^{-(t - 1/2)}$ para t > ½ (en años). a) F(t).
 <summary>Solución paso a paso</summary>
 
 a) En [0, ½): F = t (y F(½) = ½). Para t ≥ ½: $F = \frac12 + \int_{1/2}^t \frac12e^{-(s-1/2)}ds = 1 - \frac12e^{-(t-1/2)}$.
+
 b) 3 meses = 0,25 año.
 - Regular: F(0,25) = 0,25.
 - Bueno: F(3) − 0,25 = 0,75 − ½e^{−2,5} ≈ 0,709.
@@ -511,7 +690,11 @@ c) Cantidad de regulares ~ Bin(20; 0,25) ⇒ $P(\ge1) = 1 - 0{,}75^{20} \approx 
 
 </details>
 
-**Respuesta:** a) F = t en [0, ½); 1 − ½e^{−(t−½)} para t ≥ ½ b) 25 %; ≈ 70,9 %; ≈ 4,1 % c) ≈ 0,9968
+**Respuesta:**
+
+- a) F = t en [0, ½); 1 − ½e^{−(t−½)} para t ≥ ½
+- b) 25 %; ≈ 70,9 %; ≈ 4,1 %
+- c) ≈ 0,9968
 
 </details>
 
@@ -519,7 +702,11 @@ c) Cantidad de regulares ~ Bin(20; 0,25) ⇒ $P(\ge1) = 1 - 0{,}75^{20} \approx 
 
 ### 19) Densidad triangular
 
-$f(x) = \frac12(3 - x)$ en [1, 3]. a) F(x). b) r tal que P(X < r) = 2P(X > r). c) P(X ≤ 5/2 / 2 ≤ X ≤ 7/2).
+Sea X una variable aleatoria con función de densidad f(x) = ½·(3 − x) para 1 ≤ x ≤ 3, y 0 en caso contrario.
+
+- a) Hallar la función de distribución acumulada y graficarla.
+- b) Determinar r sabiendo que P(X < r) = 2·P(X > r).
+- c) Calcular P(X ≤ 5/2 / 2 ≤ X ≤ 7/2).
 
 <details>
 <summary><b>Solución</b></summary>
@@ -528,12 +715,18 @@ $f(x) = \frac12(3 - x)$ en [1, 3]. a) F(x). b) r tal que P(X < r) = 2P(X > r). c
 <summary>Solución paso a paso</summary>
 
 a) $F(x) = \int_1^x\frac{3-t}{2}dt = \frac32x - \frac14x^2 - \frac54$ en [1, 3].
+
 b) $F(r) = 2(1 - F(r)) \Rightarrow F(r) = \frac23$ ⇒ $3r^2 - 18r + 23 = 0$ ⇒ $r = 3 - \frac{\sqrt{48}}6 \approx 1{,}845$ (la otra raíz cae fuera de [1, 3]).
+
 c) Como X ≤ 3, la condición equivale a 2 ≤ X ≤ 3: $\frac{F(2{,}5) - F(2)}{1 - F(2)} = \frac{0{,}9375 - 0{,}75}{0{,}25} = \frac34$.
 
 </details>
 
-**Respuesta:** a) ver arriba b) r ≈ 1,845 c) 3/4
+**Respuesta:**
+
+- a) ver arriba
+- b) r ≈ 1,845
+- c) 3/4
 
 </details>
 
@@ -541,7 +734,12 @@ c) Como X ≤ 3, la condición equivale a 2 ≤ X ≤ 3: $\frac{F(2{,}5) - F(2)}
 
 ### 20) Densidad trapezoidal
 
-f = ax en [0,1), a en [1,2), −ax + 3a en [2,3). a) Hallar a. b) F(x).
+Sea X una variable aleatoria con función de densidad definida por:
+
+$$f(x) = \begin{cases} ax & 0 \le x < 1 \\ a & 1 \le x < 2 \\ -ax + 3a & 2 \le x < 3 \\ 0 & \text{en otro caso} \end{cases}$$
+
+- a) Determinar la constante a.
+- b) Hallar la función de distribución acumulada de X y graficarla.
 
 <details>
 <summary><b>Solución</b></summary>
@@ -550,6 +748,7 @@ f = ax en [0,1), a en [1,2), −ax + 3a en [2,3). a) Hallar a. b) F(x).
 <summary>Solución paso a paso</summary>
 
 a) Área: triángulo (a/2) + rectángulo (a) + triángulo (a/2) = 2a = 1 ⇒ a = ½.
+
 b) Integrando por tramos:
 - $\frac{x^2}{4}$ en [0, 1)
 - $\frac14 + \frac12(x - 1)$ en [1, 2)
@@ -558,7 +757,10 @@ b) Integrando por tramos:
 
 </details>
 
-**Respuesta:** a) ½ b) la F de arriba
+**Respuesta:**
+
+- a) ½
+- b) la F de arriba
 
 </details>
 
@@ -566,7 +768,7 @@ b) Integrando por tramos:
 
 ### 21) Transformaciones de una uniforme
 
-X con f = 1 en (0, 1). Densidades de Y = ln X y Z = 3X + 4.
+Sea X una variable aleatoria con función de densidad definida por f(x) = 1 para 0 < x < 1, y 0 en caso contrario. Calcular las funciones de densidad de las variables aleatorias Y = ln(X) y Z = 3X + 4.
 
 <details>
 <summary><b>Solución</b></summary>
@@ -575,6 +777,7 @@ X con f = 1 en (0, 1). Densidades de Y = ln X y Z = 3X + 4.
 <summary>Solución paso a paso</summary>
 
 Y: si X ∈ (0, 1), entonces ln X < 0. $F_Y(y) = P(\ln X \le y) = P(X \le e^y) = e^y$ ⇒ $f_Y(y) = e^y$ para y < 0.
+
 Z: $F_Z(z) = P(X \le \frac{z-4}3) = \frac{z-4}3$ ⇒ $f_Z = \frac13$ en [4, 7] (uniforme).
 
 </details>
@@ -587,7 +790,7 @@ Z: $F_Z(z) = P(X \le \frac{z-4}3) = \frac{z-4}3$ ⇒ $f_Z = \frac13$ en [4, 7] (
 
 ### 22) Probabilidad condicional con parámetro
 
-$f(x) = 3x^2$ en [−1, 0], con −1 < b < 0. Calcular P(X > b / X < b/2).
+Sea X una variable aleatoria con función de densidad dada por f(x) = 3x² para −1 ≤ x ≤ 0, y 0 en caso contrario. Sea b un número real tal que −1 < b < 0. Calcular P(X > b / X < b/2).
 
 <details>
 <summary><b>Solución</b></summary>
@@ -596,6 +799,7 @@ $f(x) = 3x^2$ en [−1, 0], con −1 < b < 0. Calcular P(X > b / X < b/2).
 <summary>Solución paso a paso</summary>
 
 $F(x) = x^3 + 1$. Como b < 0, b < b/2, así que el evento es b < X < b/2:
+
 $\frac{F(b/2) - F(b)}{F(b/2)} = \frac{b^3/8 - b^3}{b^3/8 + 1} = \frac{-7b^3}{b^3 + 8}$.
 
 </details>
@@ -608,7 +812,7 @@ $\frac{F(b/2) - F(b)}{F(b/2)} = \frac{b^3/8 - b^3}{b^3/8 + 1} = \frac{-7b^3}{b^3
 
 ### 23) Costo de un proceso ⭐
 
-El tiempo tiene E = 2 h y V = 0,5 h². El costo es \$3 por hora más \$8 fijos. E(C) y V(C).
+El tiempo que tarda un proceso electrónico es una variable aleatoria con media 2 hs y varianza 0,5 hs². El costo del proceso es de 3 pesos por hora más un costo fijo de 8 pesos. Hallar el costo esperado y su varianza.
 
 <details>
 <summary><b>Solución</b></summary>
@@ -620,7 +824,7 @@ C = 3T + 8 ⇒ E(C) = 3·2 + 8 = 14; V(C) = 3²·0,5 = 4,5.
 
 </details>
 
-**Respuesta:** E(C) = \$14, V(C) = 9/2
+**Respuesta:** E(C) = 14 pesos, V(C) = 9/2
 
 </details>
 
@@ -628,7 +832,12 @@ C = 3T + 8 ⇒ E(C) = 3·2 + 8 = 14; V(C) = 3²·0,5 = 4,5.
 
 ### 24) Demanda de combustible
 
-F(x) = bx² en [0,1); b[2(x − 1) + 1] en [1,3); 1 − b(x − 4)² en [3,4); 1 desde 4. a) Densidad. b) Demanda superada sólo el 20 % de los días.
+La función de distribución de la demanda de combustible X, en miles de litros por día, en cierta boca de expendio es:
+
+$$F(x) = \begin{cases} 0 & x < 0 \\ bx^2 & 0 \le x < 1 \\ b\,[2(x-1)+1] & 1 \le x < 3 \\ 1 - b(x-4)^2 & 3 \le x < 4 \\ 1 & x \ge 4 \end{cases}$$
+
+- a) Hallar la función de densidad de la demanda de combustible.
+- b) Hallar la demanda superada sólo el 20 % de los días.
 
 <details>
 <summary><b>Solución</b></summary>
@@ -637,12 +846,17 @@ F(x) = bx² en [0,1); b[2(x − 1) + 1] en [1,3); 1 − b(x − 4)² en [3,4); 1
 <summary>Solución paso a paso</summary>
 
 F es continua en x = 3: b(4 + 1) = 1 − b ⇒ b = 1/6.
+
 a) Derivando: x/3 en [0,1); 1/3 en [1,3); (4 − x)/3 en [3,4).
+
 b) F(x) = 0,8. F(3) = 5/6 ≈ 0,833 > 0,8, así que x está en [1,3): $\frac16(2x - 1) = 0{,}8 \Rightarrow x = 2{,}9$ miles de litros.
 
 </details>
 
-**Respuesta:** a) f = x/3, 1/3, (4 − x)/3 b) 2,9 miles de litros
+**Respuesta:**
+
+- a) f = x/3, 1/3, (4 − x)/3
+- b) 2,9 miles de litros
 
 </details>
 
@@ -650,7 +864,12 @@ b) F(x) = 0,8. F(3) = 5/6 ≈ 0,833 > 0,8, así que x está en [1,3): $\frac16(2
 
 ### 25) Región circular de muestreo
 
-$f(r) = \frac34[1 - (10 - r)^2]$ en [9, 11]. a) P(el radio difiere de 10 en a lo sumo 30 cm). b) Área esperada.
+Un ecologista desea marcar una región circular de muestreo de 10 m de radio; sin embargo, el radio de la región resultante es una variable aleatoria cuya función de densidad está dada por:
+
+$$f(r) = \begin{cases} \tfrac34\left[1 - (10 - r)^2\right] & 9 \le r < 11 \\ 0 & \text{en otro caso} \end{cases}$$
+
+- a) Hallar la probabilidad de que el radio difiera del deseado por el ecologista en a lo sumo 30 cm.
+- b) ¿Cuál es el área esperada de la región resultante?
 
 <details>
 <summary><b>Solución</b></summary>
@@ -659,12 +878,17 @@ $f(r) = \frac34[1 - (10 - r)^2]$ en [9, 11]. a) P(el radio difiere de 10 en a lo
 <summary>Solución paso a paso</summary>
 
 Con u = r − 10, f = ¾(1 − u²) en [−1, 1].
+
 a) $\int_{-0{,}3}^{0{,}3}\frac34(1 - u^2)du = \frac34(0{,}6 - 0{,}018) = 0{,}4365$.
+
 b) $E(\pi R^2) = \pi E[(10 + u)^2] = \pi(100 + 20E(u) + E(u^2))$, con E(u) = 0 y $E(u^2) = \frac34(\frac23 - \frac25) = \frac15$ ⇒ $100{,}2\pi \approx 314{,}8$ m².
 
 </details>
 
-**Respuesta:** a) 0,4365 b) 100,2π ≈ 314,8 m² (la guía da 100π, porque desprecia el término E(u²) = 0,2).
+**Respuesta:**
+
+- a) 0,4365
+- b) 100,2π ≈ 314,8 m² (la guía da 100π, porque desprecia el término E(u²) = 0,2).
 
 </details>
 
@@ -672,14 +896,19 @@ b) $E(\pi R^2) = \pi E[(10 + u)^2] = \pi(100 + 20E(u) + E(u^2))$, con E(u) = 0 y
 
 ### 26) Pacientes regulares y de urgencia ⭐
 
-| X₁ \ X₂ | 0 | 1 | 2 |
+Cierto laboratorio atiende análisis clínicos regulares y de urgencia. Sea X₁ el número de pacientes que se atienden por un análisis regular en un momento particular del día, y X₂ el número de pacientes que demandan atención de urgencia en ese mismo momento. La función de probabilidad conjunta de X₁ y X₂ está dada por:
+
+| X₁ ↓ \ X₂ → | 0 | 1 | 2 |
 |---|---|---|---|
 | 0 | 0,08 | 0,07 | 0,04 |
 | 1 | 0,06 | 0,15 | 0,09 |
 | 2 | 0,05 | 0,04 | 0,16 |
 | 3 | 0 | 0,14 | 0,12 |
 
-a) P(X₁ = X₂). b) P(X₂ = 2). c) P(X₂ = 2 y X₁ ≥ 1). d) Marginales; ¿son independientes?
+- a) Hallar la probabilidad de que el número de pacientes regulares sea igual al número de pacientes de urgencia.
+- b) Hallar la probabilidad de que haya exactamente dos pacientes de urgencia.
+- c) Hallar la probabilidad de que haya dos pacientes de urgencia y al menos uno regular.
+- d) Hallar las funciones de probabilidad marginales de X₁ y X₂. ¿Son estas variables independientes? Justificar la respuesta.
 
 <details>
 <summary><b>Solución</b></summary>
@@ -688,13 +917,21 @@ a) P(X₁ = X₂). b) P(X₂ = 2). c) P(X₂ = 2 y X₁ ≥ 1). d) Marginales; �
 <summary>Solución paso a paso</summary>
 
 a) Diagonal: 0,08 + 0,15 + 0,16 = 0,39.
+
 b) Columna 2: 0,04 + 0,09 + 0,16 + 0,12 = 0,41.
+
 c) 0,09 + 0,16 + 0,12 = 0,37.
+
 d) X₁: 0,19 / 0,30 / 0,25 / 0,26. X₂: 0,19 / 0,40 / 0,41. P(1,1) = 0,15 ≠ 0,30·0,40 = 0,12 ⇒ no son independientes.
 
 </details>
 
-**Respuesta:** a) 0,39 b) 0,41 c) 0,37 d) no son independientes
+**Respuesta:**
+
+- a) 0,39
+- b) 0,41
+- c) 0,37
+- d) no son independientes
 
 </details>
 
@@ -702,7 +939,15 @@ d) X₁: 0,19 / 0,30 / 0,25 / 0,26. X₂: 0,19 / 0,40 / 0,41. P(1,1) = 0,15 ≠ 
 
 ### 27) Conjunta c(x + y) ⭐
 
-f(x; y) = c(x + y) con x, y ∈ {1, 2, 3}. a) Hallar c. b) P(X = 1 ∧ Y < 4), P(Y = 1), P(X < 2 / Y < 2). c) Cov(X; Y) y ρ.
+Siendo la función de probabilidad conjunta
+
+$$f(x; y) = \begin{cases} c\,(x + y) & x, y \in \{1, 2, 3\} \\ 0 & \text{en otro caso} \end{cases}$$
+
+hallar:
+
+- a) El valor de c para que f(x; y) resulte una función de probabilidad conjunta.
+- b) P(X = 1 ∧ Y < 4), P(Y = 1) y P(X < 2 / Y < 2).
+- c) Cov(X; Y) y ρ(X; Y).
 
 <details>
 <summary><b>Solución</b></summary>
@@ -711,6 +956,7 @@ f(x; y) = c(x + y) con x, y ∈ {1, 2, 3}. a) Hallar c. b) P(X = 1 ∧ Y < 4), P
 <summary>Solución paso a paso</summary>
 
 a) $\sum(x + y) = 3\cdot6 + 3\cdot6 = 36 \Rightarrow c = 1/36$.
+
 b)
 - P(X = 1) = (2 + 3 + 4)/36 = 0,25 (Y < 4 siempre se cumple).
 - P(Y = 1) = 0,25 por simetría.
@@ -720,7 +966,11 @@ c) E(X) = E(Y) = 13/6, E(X²) = 16/3 ⇒ V = 23/36. E(XY) = 14/3 ⇒ Cov = 14/3 
 
 </details>
 
-**Respuesta:** a) 1/36 b) 0,25; 0,25; 2/9 c) Cov = −1/36, ρ = −1/23
+**Respuesta:**
+
+- a) 1/36
+- b) 0,25; 0,25; 2/9
+- c) Cov = −1/36, ρ = −1/23
 
 </details>
 
@@ -728,7 +978,11 @@ c) E(X) = E(Y) = 13/6, E(X²) = 16/3 ⇒ V = 23/36. E(XY) = 14/3 ⇒ Cov = 14/3 
 
 ### 28) Cartuchos de bolígrafo ⭐
 
-3 azules, 2 rojos y 3 verdes; se eligen 2. X = azules, Y = rojos. a) p(x, y). b) P(X + Y ≤ 1). c) P(X = 0 / Y = 1) y P(Y = 1 / X = 0).
+Se seleccionan al azar dos cartuchos de bolígrafo de una caja que contiene tres azules, dos rojos y tres verdes. Si X: "número de cartuchos azules elegidos" e Y: "número de cartuchos rojos seleccionados", calcular:
+
+- a) La función de probabilidad conjunta p(x, y).
+- b) P(A), siendo A = {(x; y) / x + y ≤ 1}.
+- c) P(X = 0 / Y = 1) y P(Y = 1 / X = 0).
 
 <details>
 <summary><b>Solución</b></summary>
@@ -747,11 +1001,15 @@ a) Casos posibles $\binom82 = 28$:
 (por ejemplo, P(1, 0) = 1 azul y 1 verde = 3·3/28).
 
 b) (0,0) + (1,0) + (0,1) = 18/28 = 9/14.
+
 c) $P_Y(1) = 12/28$ y $P_X(0) = 10/28$ ⇒ (6/28)/(12/28) = 0,5 y (6/28)/(10/28) = 0,6.
 
 </details>
 
-**Respuesta:** b) 9/14 c) 0,5 y 0,6
+**Respuesta:**
+
+- b) 9/14
+- c) 0,5 y 0,6
 
 </details>
 
@@ -759,13 +1017,15 @@ c) $P_Y(1) = 12/28$ y $P_X(0) = 10/28$ ⇒ (6/28)/(12/28) = 0,5 y (6/28)/(10/28)
 
 ### 29) Covarianza nula sin independencia
 
-| X \ Y | −1 | 0 | 1 |
+Considerando la función de probabilidad conjunta de (X, Y) dada por la siguiente tabla:
+
+| X ↓ \ Y → | −1 | 0 | 1 |
 |---|---|---|---|
 | −1 | b | c | b |
 | 0 | c | 0 | c |
 | 1 | b | c | b |
 
-con b + c = 0,25. Demostrar que E(XY) = E(X)E(Y). ¿Son independientes? ¿Cuánto vale ρ?
+Sabiendo que b + c = 0,25, demostrar que E(XY) = E(X)·E(Y). ¿Son independientes las variables X e Y? ¿Cuánto vale el coeficiente de correlación lineal?
 
 <details>
 <summary><b>Solución</b></summary>
@@ -774,6 +1034,7 @@ con b + c = 0,25. Demostrar que E(XY) = E(X)E(Y). ¿Son independientes? ¿Cuánt
 <summary>Solución paso a paso</summary>
 
 Por simetría, E(X) = E(Y) = 0. E(XY) = b(1) + b(−1) + b(−1) + b(1) = 0 = E(X)E(Y) ⇒ Cov = 0 ⇒ ρ = 0.
+
 No son independientes: P(0, 0) = 0, pero $P_X(0)P_Y(0) = (2c)^2 > 0$ (si c > 0).
 
 </details>
@@ -786,7 +1047,17 @@ No son independientes: P(0, 0) = 0, pero $P_X(0)P_Y(0) = (2c)^2 > 0$ (si c > 0).
 
 ### 30) Propiedades con dos variables ⭐
 
-E(X₁) = 1, E(X₂) = −2, V(X₁) = 4, V(X₂) = 9, ρ = √6/3. Hallar: a) E(3X₁ − 2X₂) b) V(3X₁) c) Cov(X₁; X₂) d) V(X₁ + X₂) e) V(2X₁ − 3X₂).
+Supongamos que X₁ y X₂ son variables aleatorias de las que se sabe que:
+
+E(X₁) = 1, E(X₂) = −2, V(X₁) = 4, V(X₂) = 9 y ρ(X₁; X₂) = √6 / 3.
+
+Hallar:
+
+- a) E(3X₁ − 2X₂)
+- b) V(3X₁)
+- c) Cov(X₁; X₂)
+- d) V(X₁ + X₂)
+- e) V(2X₁ − 3X₂)
 
 <details>
 <summary><b>Solución</b></summary>
@@ -795,14 +1066,24 @@ E(X₁) = 1, E(X₂) = −2, V(X₁) = 4, V(X₂) = 9, ρ = √6/3. Hallar: a) E
 <summary>Solución paso a paso</summary>
 
 a) 3·1 − 2·(−2) = 7
+
 b) 9·4 = 36
+
 c) $\rho\sigma_1\sigma_2 = \frac{\sqrt6}{3}\cdot2\cdot3 = 2\sqrt6$
+
 d) $4 + 9 + 2\cdot2\sqrt6 = 13 + 4\sqrt6 \approx 22{,}8$
+
 e) $4\cdot4 + 9\cdot9 - 2\cdot2\cdot3\cdot2\sqrt6 = 97 - 24\sqrt6 \approx 38{,}2$
 
 </details>
 
-**Respuesta:** a) 7 b) 36 c) 2√6 d) 13 + 4√6 e) 97 − 24√6
+**Respuesta:**
+
+- a) 7
+- b) 36
+- c) 2√6
+- d) 13 + 4√6
+- e) 97 − 24√6
 
 </details>
 

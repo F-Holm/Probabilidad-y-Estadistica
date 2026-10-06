@@ -12,6 +12,7 @@ Resumen de la teoría y la práctica del material del aula virtual (Prof. Andrea
 - **Suceso o evento**: cualquier subconjunto de S (A, B, C, …). Se representan con diagramas de Venn.
 
 Ejemplo: E = "tirar un dado", S = {1, 2, 3, 4, 5, 6}.
+
 A = {1}, B = "sale par" = {2, 4, 6}, C = "sale menor que 4" = {1, 2, 3}, D = "múltiplo de 10" = ∅.
 - Si sale 2 ocurren S, B y C.
 - A y B no pueden ocurrir juntos: son **incompatibles**.
@@ -55,6 +56,7 @@ Propiedades que se deducen de la definición clásica: $P(A) + P(\bar A) = 1$, $
 ### Definición frecuencial
 
 Si E se repite n veces y A ocurre $n_A$ veces, la **frecuencia relativa** es $fr_A = n_A / n$.
+
 **Principio de estabilidad de las frecuencias relativas**: cuando $n \to \infty$, $fr_A$ se estabiliza alrededor de un número, que se define como $P(A)$: $fr_A \xrightarrow[n\to\infty]{} P(A)$.
 
 ### Definición axiomática
@@ -116,9 +118,11 @@ Para tres sucesos: $P(B_1 \cap B_2 \cap B_3) = P(B_1)\,P(B_2/B_1)\,P(B_3/B_1 \ca
 Sea $\{A_1, \dots, A_n\}$ una **partición** de S: los $A_i$ son no vacíos, mutuamente excluyentes y su unión es S. Para cualquier $B \subseteq S$:
 
 **Teorema de la probabilidad total**
+
 $$P(B) = \sum_{i=1}^{n} P(A_i)\,P(B/A_i)$$
 
 **Teorema de Bayes**
+
 $$P(A_j/B) = \frac{P(A_j)\,P(B/A_j)}{\sum_{i=1}^{n} P(A_i)\,P(B/A_i)}$$
 
 Para aplicar probabilidad total con A, B, C, los sucesos tienen que ser M.E. y su unión tiene que ser S. En un árbol: $P(B)$ es la suma de todas las ramas que terminan en B; Bayes es "rama favorable / suma de ramas que terminan en B". Las $P(A_i)$ son probabilidades **a priori** y las $P(A_j/B)$ son **a posteriori**.
@@ -155,6 +159,7 @@ Que $P(A \cap B) = 0$ no implica que A y B sean complementarios: además deberí
 **Probabilidad total**: planta M (60 %, 10 % fallado) y N (40 %, 5 % fallado) ⇒ $P(F) = 0{,}6\cdot0{,}1 + 0{,}4\cdot0{,}05 = 0{,}08$.
 
 **Bayes (autos)**: Nacionales 40 % (15 % con aire), Europeos 30 % (25 %), Japoneses 30 % (35 %).
+
 $P(A) = 0{,}06 + 0{,}075 + 0{,}105 = 0{,}24$; $P(J/A) = 0{,}105/0{,}24 = 0{,}4375$.
 
 **Urna 3 rojas y 7 negras, extraer 2**:

@@ -26,6 +26,7 @@ Una compañía emplea a 2 ingenieros para estimar costos. Uno de ellos estima el
 **Probabilidad total:** $P(\bar D) = 0{,}7\cdot0{,}98 + 0{,}3\cdot0{,}96 = 0{,}686 + 0{,}288 = 0{,}974$.
 
 **Bayes:**
+
 $$P(B/\bar D) = \frac{P(\bar D/B)P(B)}{P(\bar D)} = \frac{0{,}288}{0{,}974} \approx 0{,}2957$$
 
 </details>
@@ -49,6 +50,7 @@ El tiempo que transcurre entre la llegada de dos personas consecutivas a la cola
 $E(X) = 5$ min ⇒ $\lambda = 0{,}2$ min⁻¹ y $P(X > t) = e^{-0{,}2t}$.
 
 Se pide que llegue después del minuto 6, sabiendo que ya pasaron 4:
+
 $$P(X > 6 / X > 4) = \frac{P(X > 6)}{P(X > 4)} = \frac{e^{-1{,}2}}{e^{-0{,}8}} = e^{-0{,}4} = P(X > 2) \approx 0{,}67032$$
 
 (Falta de memoria: lo que ya se esperó no cuenta.)
@@ -76,6 +78,7 @@ La elongación de una barra de acero se distribuye normalmente con media 1,2 mm.
 **2. Probabilidad de éxito:** $p = P(X > 1) = P(Z > -1) = 0{,}84134$.
 
 **3. Binomial.** W ~ Bin(5; 0,84134):
+
 $P(W \le 2) = \sum_{k=0}^{2}\binom5k0{,}84134^k\,0{,}15866^{5-k} \approx 0{,}03104$
 
 </details>
@@ -101,6 +104,7 @@ En un curso de ingeniería electrónica de 30 estudiantes hay 20 técnicos, y en
 - Y ~ H(N = 25, K = 10, n = 5): $P(Y \ge 3) = 1 - P(Y \le 2) \approx 1 - 0{,}69881 = 0{,}30119$
 
 Por independencia entre los grupos:
+
 $P(X \ge 3 \wedge Y \ge 3) = 0{,}80877\cdot0{,}30119 \approx 0{,}24359$
 
 </details>
@@ -122,6 +126,7 @@ Sea X una v.a. exponencial y $a, b \in \mathbb{R}^+$. Probar que $P(X > a + b / 
 <summary>Solución paso a paso</summary>
 
 Si X ~ Exp(λ), entonces $P(X > t) = e^{-\lambda t}$. Como $\{X > a + b\} \subseteq \{X > b\}$:
+
 $$P(X > a + b / X > b) = \frac{P(X > a + b)}{P(X > b)} = \frac{e^{-\lambda(a+b)}}{e^{-\lambda b}} = e^{-\lambda a} = P(X > a)$$
 
 </details>

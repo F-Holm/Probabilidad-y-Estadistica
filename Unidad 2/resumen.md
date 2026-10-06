@@ -104,10 +104,10 @@ En consecuencia: $E(aX + b) = a\,E(X) + b$.
 
 ### Ejemplo: tiro al blanco
 
-Se paga \$100 por tiro y el premio es 30 × el puntaje. P(0) = 0,20, P(1) = 0,40, P(2) = 0,30, P(5) = 0,10.
+Se paga 100 pesos por tiro y el premio es 30 × el puntaje. P(0) = 0,20, P(1) = 0,40, P(2) = 0,30, P(5) = 0,10.
 - $E(X) = 0\cdot0{,}2 + 1\cdot0{,}4 + 2\cdot0{,}3 + 5\cdot0{,}1 = 1{,}5$ puntos.
 - Ganancia: $Y = 30X - 100$. Y "hereda" la distribución de X (−100, −70, −40 y 50, con las mismas probabilidades).
-- $E(Y) = 30\,E(X) - 100 = 30\cdot1{,}5 - 100 = -55$: el jugador pierde en promedio \$55 por tiro. Da lo mismo que calcular $\sum y_i P(y_i)$, pero las propiedades ahorran cuentas.
+- $E(Y) = 30\,E(X) - 100 = 30\cdot1{,}5 - 100 = -55$: el jugador pierde en promedio 55 pesos por tiro. Da lo mismo que calcular $\sum y_i P(y_i)$, pero las propiedades ahorran cuentas.
 
 ---
 
@@ -125,6 +125,7 @@ Distintas distribuciones de "edad de los chicos de un jardín" tienen la misma m
 $$V(X) = E\left[(X - E(X))^2\right] = \sum_{x_i} (x_i - E(X))^2\,P(x_i)$$
 
 **Fórmula de cálculo** (más práctica):
+
 $$V(X) = E(X^2) - [E(X)]^2, \qquad E(X^2) = \sum x_i^2\,P(x_i)$$
 
 Se deduce desarrollando el cuadrado: $E(X^2 - 2X\,E(X) + E(X)^2) = E(X^2) - 2E(X)^2 + E(X)^2$.
@@ -150,7 +151,7 @@ Si dos variables tienen **distinta media**, no alcanza con comparar los σ: se u
 
 $$CV(X) = \frac{\sigma(X)}{E(X)}\cdot 100\%$$
 
-Ejemplo de salarios: empresa A con E = \$40000 y σ = \$8000 ⇒ CV = 20 %; empresa B con E = \$80000 y σ = \$8500 ⇒ CV = 10,6 %. La distribución de A es más **heterogénea**, aunque su σ sea menor.
+Ejemplo de salarios: empresa A con E = 40000 pesos y σ = 8000 pesos ⇒ CV = 20 %; empresa B con E = 80000 pesos y σ = 8500 pesos ⇒ CV = 10,6 %. La distribución de A es más **heterogénea**, aunque su σ sea menor.
 
 ### Clasificación de medidas
 
@@ -187,12 +188,12 @@ $f(x)$ no es una probabilidad (puede ser mayor que 1); lo que es probabilidad es
 
 ### Ejemplo: facturación de un kiosco
 
-X = facturación por hora, en miles de \$, con $f(x) = 2x$ si $0 \le x \le 1$ (0 en otro caso), así que $R_X = [0; 1]$.
+X = facturación por hora, en miles de pesos, con $f(x) = 2x$ si $0 \le x \le 1$ (0 en otro caso), así que $R_X = [0; 1]$.
 - Es f.d.: $2x \ge 0$ y $\int_0^1 2x\,dx = x^2\big|_0^1 = 1$.
-- $P(X < 0{,}7) = 0{,}7^2 = 0{,}49$ (en el 49 % de las horas factura menos de \$700).
+- $P(X < 0{,}7) = 0{,}7^2 = 0{,}49$ (en el 49 % de las horas factura menos de 700 pesos).
 - $P(X > 0{,}2) = 1 - 0{,}2^2 = 0{,}96$.
 - $P(0{,}5 < X < 0{,}8) = 0{,}64 - 0{,}25 = 0{,}39$.
-- **Mediana**: el valor $a$ tal que $P(X > a) = 0{,}5$ ⇒ $1 - a^2 = 0{,}5$ ⇒ $a = \sqrt{0{,}5} \approx 0{,}7071$. En la mitad de las horas factura más de \$707,1.
+- **Mediana**: el valor $a$ tal que $P(X > a) = 0{,}5$ ⇒ $1 - a^2 = 0{,}5$ ⇒ $a = \sqrt{0{,}5} \approx 0{,}7071$. En la mitad de las horas factura más de 707,1 pesos.
 
 ---
 
@@ -218,6 +219,7 @@ En el gráfico, $F(a)$ es la **ordenada** de F en $a$ y es igual al **área** ba
 $f(x) = a(x - x^3)$ si $0 < x \le 1$.
 - a) Para que $f \ge 0$ hace falta $a \ge 0$, y $\int_0^1 a(x - x^3)\,dx = a\left(\tfrac12 - \tfrac14\right) = \tfrac{a}{4} = 1$ ⇒ **a = 4**.
 - b) Integrando por tramos: $F(x) = c_1$ si $x \le 0$; $2x^2 - x^4 + c_2$ si $0 < x \le 1$; $c_3$ si $x > 1$. Las constantes salen de las propiedades de F: $c_1 = 0$ y $c_3 = 1$ por los límites, y $c_2 = 0$ por continuidad en 0 y en 1. Entonces:
+
 $$F(x) = \begin{cases} 0 & x \le 0 \\ 2x^2 - x^4 & 0 < x \le 1 \\ 1 & x > 1\end{cases}$$
 - $P(X < 0{,}3) = F(0{,}3) = 0{,}1719$
 - $P(X > 0{,}5) = 1 - F(0{,}5) = 1 - 0{,}4375 = 0{,}5625$
@@ -228,13 +230,15 @@ $$F(x) = \begin{cases} 0 & x \le 0 \\ 2x^2 - x^4 & 0 < x \le 1 \\ 1 & x > 1\end{
 ## 7. Valor esperado y varianza de una VAC
 
 $$E(X) = \int_{-\infty}^{+\infty} x\,f(x)\,dx \qquad E(X^2) = \int_{-\infty}^{+\infty} x^2 f(x)\,dx$$
+
 $$V(X) = \int_{-\infty}^{+\infty} (x - E(X))^2 f(x)\,dx = E(X^2) - [E(X)]^2$$
+
 $$E(g(X)) = \int_{-\infty}^{+\infty} g(x)\,f(x)\,dx$$
 
 Valen **las mismas propiedades** que para las VAD (sumas reemplazadas por integrales).
 
 **Kiosco**:
-- $E(X) = \int_0^1 2x^2\,dx = 2/3 \approx 0{,}667$ ⇒ factura en promedio \$667 por hora.
+- $E(X) = \int_0^1 2x^2\,dx = 2/3 \approx 0{,}667$ ⇒ factura en promedio 667 pesos por hora.
 - $E(X^2) = \int_0^1 2x^3\,dx = 1/2$.
 - $V(X) = 1/2 - 4/9 = 1/18$; $\sigma = \sqrt{1/18} \approx 0{,}24$.
 - $CV = 0{,}24/0{,}667 \approx 36\,\%$ ⇒ facturación "poco homogénea".
@@ -252,6 +256,7 @@ $P(x, y) = P(X = x, Y = y)$ es función de probabilidad conjunta si:
 Se arma una **tabla de doble entrada**.
 
 **Distribuciones marginales**: se suman las filas o las columnas.
+
 $$P_X(x) = \sum_y P(x, y) \qquad P_Y(y) = \sum_x P(x, y)$$
 
 ### Ejemplo: bolígrafos
@@ -296,7 +301,9 @@ Mide la naturaleza de la **asociación** entre X e Y:
 Para calcular $E(XY)$ se arma la distribución de $W = XY$ a partir de la tabla conjunta, o se calcula $\sum\sum x\,y\,P(x, y)$.
 
 **Ejemplo de los bolígrafos**: E(X) = 3/4, E(Y) = 1/2. W = XY vale 1 sólo en (1, 1) ⇒ P(W = 1) = 6/28, así que E(XY) = 6/28 = 3/14.
+
 $$\text{Cov}(X, Y) = \frac{3}{14} - \frac34\cdot\frac12 = -\frac{9}{56}$$
+
 (Es negativa: cuantos más azules salen, menos rojos.)
 
 **Propiedades**:
@@ -306,6 +313,7 @@ $$\text{Cov}(X, Y) = \frac{3}{14} - \frac34\cdot\frac12 = -\frac{9}{56}$$
 ### Varianza de la suma
 
 $$V(X + Y) = V(X) + V(Y) + 2\,\text{Cov}(X, Y)$$
+
 $$V(aX + bY) = a^2 V(X) + b^2 V(Y) + 2ab\,\text{Cov}(X, Y)$$
 
 Si X e Y son independientes: $V(X + Y) = V(X) + V(Y)$. Además $V(X - Y) = V(X) + V(Y) - 2\text{Cov}(X, Y)$ (con a = 1 y b = −1).
@@ -319,6 +327,7 @@ $$\rho(X, Y) = \frac{\text{Cov}(X, Y)}{\sigma_X\,\sigma_Y}$$
 2. $\rho(aX, bY) = \dfrac{ab}{|ab|}\,\rho(X, Y)$: no cambia si $ab > 0$ y cambia de signo si $ab < 0$.
 
 **Ejemplo de los bolígrafos**: E(X²) = 27/28 ⇒ V(X) = 45/112 ≈ 0,4018 y σ_X ≈ 0,63; E(Y²) = 16/28 ⇒ V(Y) = 9/28 ≈ 0,3214 y σ_Y ≈ 0,57.
+
 $$\rho = \frac{-9/56}{\sqrt{45/112}\,\sqrt{9/28}} \approx -0{,}45$$
 
 ---

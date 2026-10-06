@@ -133,6 +133,7 @@ $$\boxed{f(x) = \lambda e^{-\lambda x}, \quad x \ge 0 \;(\lambda > 0)}$$
 Es densidad porque $\int_0^\infty \lambda e^{-\lambda x}dx = -e^{-\lambda x}\big|_0^\infty = 1$.
 
 **Función de distribución** (se obtiene integrando y ajustando las constantes por los límites y la continuidad):
+
 $$F(x) = \begin{cases} 0 & x < 0 \\ 1 - e^{-\lambda x} & x \ge 0 \end{cases}$$
 
 - $P(X < a) = F(a) = 1 - e^{-\lambda a}$
