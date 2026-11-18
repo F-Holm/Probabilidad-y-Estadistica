@@ -11,6 +11,9 @@ Resúmenes de teoría y ejercicios resueltos de la materia, armados a partir del
 | 1 | Probabilidades | [Resumen](Unidad%201/resumen.md) | [Ejercicios](Unidad%201/ejercicios.md) | [Aula virtual](Unidad%201/Aula%20Virtual) |
 | 2 | Variables aleatorias | [Resumen](Unidad%202/resumen.md) | [Ejercicios](Unidad%202/ejercicios.md) | [Aula virtual](Unidad%202/Aula%20Virtual) |
 | 3 | Variables aleatorias especiales | [Resumen](Unidad%203/resumen.md) | [Ejercicios](Unidad%203/ejercicios.md) | [Aula virtual](Unidad%203/Aula%20Virtual) |
+| 4 | Estimación | [Resumen](Unidad%204/resumen.md) | [Ejercicios](Unidad%204/ejercicios.md) | [Aula virtual](Unidad%204/Aula%20Virtual) |
+| 5 | Test de hipótesis | [Resumen](Unidad%205/resumen.md) | [Ejercicios](Unidad%205/ejercicios.md) | [Aula virtual](Unidad%205/Aula%20Virtual) |
+| 6 | Regresión y correlación | [Resumen](Unidad%206/resumen.md) | [Ejercicios](Unidad%206/ejercicios.md) | [Aula virtual](Unidad%206/Aula%20Virtual) |
 
 ### Contenido de cada unidad
 
@@ -22,6 +25,15 @@ Variables discretas y continuas, función de probabilidad, densidad y distribuci
 
 **[Unidad 3 — Variables aleatorias especiales](Unidad%203/resumen.md)**
 Bernoulli, Binomial, Hipergeométrica, Poisson, Uniforme, Exponencial y Normal, y la relación entre Exponencial y Poisson.
+
+**[Unidad 4 — Estimación](Unidad%204/resumen.md)**
+Suma de v.a. independientes y Teorema Central del Límite, población y muestra, estimación puntual y sus propiedades, distribuciones t y χ², e intervalos de confianza para la media, la varianza, la proporción y las diferencias de medias y de proporciones.
+
+**[Unidad 5 — Test de hipótesis](Unidad%205/resumen.md)**
+Hipótesis nula y alternativa, errores de tipo I y II, región crítica y valor p, tests para la media, la varianza, la proporción y la diferencia de medias, potencia y tamaño de muestra.
+
+**[Unidad 6 — Regresión y correlación](Unidad%206/resumen.md)**
+Diagrama de dispersión, coeficiente de correlación, recta de regresión por mínimos cuadrados, coeficiente de determinación y validación del modelo.
 
 ## Parciales
 
