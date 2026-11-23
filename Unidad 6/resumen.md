@@ -119,9 +119,9 @@ Con el modelo y sus supuestos (normalidad):
 2. α.
 3. Estadístico: $T = \dfrac{r\sqrt{n-2}}{\sqrt{1 - r^2}} \sim t_{n-2}$ bajo H₀.
 4. Valor observado $t_{obs}$.
-5. RC = {|T| > $t_{n-2;\,1-\alpha/2}$}. Si se rechaza H₀, el modelo lineal es válido (significativo).
+5. RC = {|T| > $`t_{n-2;\,1-\alpha/2}`$}. Si se rechaza H₀, el modelo lineal es válido (significativo).
 
-**Ejemplo (antigüedad vs. llegadas tarde, n = 6):** $\hat y = 0{,}9596x - 1{,}7713$ ($4 \le x \le 7$), $R^2 = 0{,}9335$.
+**Ejemplo (antigüedad vs. llegadas tarde, n = 6):** $\hat y = 0{,}9596x - 1{,}7713$ ($`4 \le x \le 7`$), $R^2 = 0{,}9335$.
 - Como $b_1 > 0$, $r = +\sqrt{0{,}9335} = 0{,}9662$.
 - $t_{obs} = \frac{0{,}9662\sqrt4}{\sqrt{1 - 0{,}9335}} = 7{,}5 > t_{4;\,0{,}975} = 2{,}776$ ⇒ se rechaza H₀: el modelo es válido para explicar las llegadas tarde según la antigüedad.
 - ¿Se puede usar para 20 años de antigüedad? **No**, porque 20 está fuera del rango observado.

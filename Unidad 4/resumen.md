@@ -22,7 +22,7 @@ Casos particulares:
 | Diferencia | $X_1 - X_2$ | $\mu_1 - \mu_2$ | $\sigma_1^2 + \sigma_2^2$ (¡se **suman**!) |
 | Promedio | $\frac1n\sum X_i$ | $\frac1n\sum\mu_i$ | $\frac1{n^2}\sum\sigma_i^2$ |
 
-**Ojo:** el peso de 3 hombres es $H_1 + H_2 + H_3$ (varianza $3\sigma^2$), no $3H$ (varianza $9\sigma^2$).
+**Ojo:** el peso de 3 hombres es $H_1 + H_2 + H_3$ (varianza $`3\sigma^2`$), no $3H$ (varianza $`9\sigma^2`$).
 
 ### Ejemplo: ascensor
 
@@ -106,7 +106,7 @@ $$ECM(\hat\theta) = E\left[(\hat\theta - \theta)^2\right] = V(\hat\theta) + B(\h
 
 ### Métodos para construir estimadores (práctica)
 
-- **Momentos:** se igualan los momentos poblacionales a los muestrales ($E(X) = \bar X$, …) y se despeja el parámetro.
+- **Momentos:** se igualan los momentos poblacionales a los muestrales ($`E(X) = \bar X`$, …) y se despeja el parámetro.
 - **Máxima verosimilitud:** se elige el θ que maximiza $L(\theta) = \prod f(x_i; \theta)$ (en general, se deriva $\ln L$ y se iguala a 0).
 
 Ejemplo: para Poisson ambos métodos dan $\hat\lambda = \bar X$.
@@ -212,7 +212,7 @@ $$IC_{\mu_1 - \mu_2} = [(\bar X_1 - \bar X_2) - d;\ (\bar X_1 - \bar X_2) + d]$$
 | Caso | Semiamplitud d |
 |---|---|
 | $\sigma_1$ y $\sigma_2$ **conocidos** | $d = z_{1-\alpha/2}\sqrt{\dfrac{\sigma_1^2}{n_1} + \dfrac{\sigma_2^2}{n_2}}$ |
-| Desconocidos pero **iguales** ($\sigma_1 = \sigma_2$) | $d = t_{n_1+n_2-2;\,1-\alpha/2}\;S_p\sqrt{\dfrac1{n_1} + \dfrac1{n_2}}$ |
+| Desconocidos pero **iguales** ($`\sigma_1 = \sigma_2`$) | $d = t_{n_1+n_2-2;\,1-\alpha/2}\;S_p\sqrt{\dfrac1{n_1} + \dfrac1{n_2}}$ |
 
 **Varianza ponderada (amalgamada):** promedio ponderado de las varianzas muestrales:
 

@@ -31,16 +31,16 @@ Analizar con un nivel de significación del 10 % la pertinencia del modelo de re
 
 **Cantidades básicas** (📄 H2, $S_{xx} = \sum x^2 - \frac{(\sum x)^2}{n}$, etc.): $\bar x = 1{,}5$, $\bar y = 9{,}0889$, $S_{xx} = 0{,}6$, $S_{yy} = 4{,}2489$, $S_{xy} = 0{,}79$.
 
-**Recta estimada** (📄 H2, $b_1 = S_{xy}/S_{xx}$ y $b_0 = \bar y - b_1\bar x$): $b_1 = 1{,}3167$ y $b_0 = 7{,}1139$, así que $\hat y = 7{,}114 + 1{,}317x$.
+**Recta estimada** (📄 H2, $b_1 = S_{xy}/S_{xx}$ y $`b_0 = \bar y - b_1\bar x`$): $b_1 = 1{,}3167$ y $b_0 = 7{,}1139$, así que $\hat y = 7{,}114 + 1{,}317x$.
 
-💡 **¿El modelo es pertinente? Test de correlación.** El **coeficiente de correlación r** (📄 H2, $r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$) mide qué tan alineados están los puntos (de −1 a 1). El test decide si la correlación de la población, ρ, es distinta de 0, o si el alineamiento pudo ser casualidad.
+💡 **¿El modelo es pertinente? Test de correlación.** El **coeficiente de correlación r** (📄 H2, $`r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}`$) mide qué tan alineados están los puntos (de −1 a 1). El test decide si la correlación de la población, ρ, es distinta de 0, o si el alineamiento pudo ser casualidad.
 
 **Supuestos** (❌): errores normales, independientes y con la misma varianza (homocedásticos).
 
 1. H₀: ρ = 0 vs. H₁: ρ ≠ 0.
 2. α = 0,10.
-3. Estadístico (📄 H2, $\sqrt{n-2}\frac{r}{\sqrt{1-r^2}} = t_{n-2}$): $T \sim t_7$ si H₀ es cierta.
-4. $r = \frac{0{,}79}{\sqrt{0{,}6\cdot4{,}2489}} = 0{,}4948$ ($R^2 = 0{,}245$), así que $t_{obs} = \sqrt7\cdot\frac{0{,}4948}{\sqrt{1 - 0{,}2448}} = 1{,}506$.
+3. Estadístico (📄 H2, $`\sqrt{n-2}\frac{r}{\sqrt{1-r^2}} = t_{n-2}`$): $T \sim t_7$ si H₀ es cierta.
+4. $r = \frac{0{,}79}{\sqrt{0{,}6\cdot4{,}2489}} = 0{,}4948$ ($`R^2 = 0{,}245`$), así que $t_{obs} = \sqrt7\cdot\frac{0{,}4948}{\sqrt{1 - 0{,}2448}} = 1{,}506$.
 5. Bilateral con α = 0,10: 0,05 en cada cola.
    ```
    X~t(ν)   ν=7   P(X<x)=0.95   → x=1.89458
@@ -80,7 +80,11 @@ Se toma una muestra de consumo de combustible en un cierto modelo de coche, obte
 **Datos.** Calculadora de estadística → **Estadística descriptiva** con los 10 valores: n = 10, $\bar x = 7{,}03$, $s^2 = 0{,}04233$ (s = 0,2058).
 
 💡 **Por qué se usa la χ².** La varianza muestral no es Normal. Si la población es Normal, $\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}$ (📄 H2). De ahí sale el intervalo para la **varianza** (📄 H2):
-$$I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)$$
+
+```math
+I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)
+```
+
 ⚠️ Piden el **desvío**: al final se saca **raíz** a las dos puntas (❌, la hoja solo trae σ²).
 
 Con 1 − α = 0,90, α/2 = 0,05 y 9 grados de libertad:
@@ -88,8 +92,14 @@ Con 1 − α = 0,90, α/2 = 0,05 y 9 grados de libertad:
 X~χ²(ν)   ν=9   P(X<x)=0.95   → x=16.919
 X~χ²(ν)   ν=9   P(X<x)=0.05   → x=3.3251
 ```
-$$I.C._{\sigma^2} = \left(\frac{9\cdot0{,}04233}{16{,}919};\ \frac{9\cdot0{,}04233}{3{,}325}\right) = (0{,}02252;\ 0{,}11458)$$
-$$I.C._\sigma = (\sqrt{0{,}02252};\ \sqrt{0{,}11458}) = (0{,}150;\ 0{,}339) \text{ l/100 km}$$
+
+```math
+I.C._{\sigma^2} = \left(\frac{9\cdot0{,}04233}{16{,}919};\ \frac{9\cdot0{,}04233}{3{,}325}\right) = (0{,}02252;\ 0{,}11458)
+```
+
+```math
+I.C._\sigma = (\sqrt{0{,}02252};\ \sqrt{0{,}11458}) = (0{,}150;\ 0{,}339) \text{ l/100 km}
+```
 
 **b)** IC **para la media** con σ = 0,15 **conocido**. 💡 La fórmula (📄 H2) es "promedio ± margen", $\bar X \mp z_{1-\frac\alpha2}\frac{\sigma}{\sqrt n}$, y el margen es el **error máximo**, $d = z\cdot\frac{\sigma}{\sqrt n}$.
 
@@ -97,7 +107,11 @@ $$I.C._\sigma = (\sqrt{0{,}02252};\ \sqrt{0{,}11458}) = (0{,}150;\ 0{,}339) \tex
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.975   → x=1.95996
 ```
-$$1{,}96\cdot\frac{0{,}15}{\sqrt n} \le 0{,}08 \;\Rightarrow\; n \ge \left(\frac{1{,}96\cdot0{,}15}{0{,}08}\right)^2 = 13{,}5 \;\Rightarrow\; n = 14$$
+
+```math
+1{,}96\cdot\frac{0{,}15}{\sqrt n} \le 0{,}08 \;\Rightarrow\; n \ge \left(\frac{1{,}96\cdot0{,}15}{0{,}08}\right)^2 = 13{,}5 \;\Rightarrow\; n = 14
+```
+
 Siempre se redondea hacia arriba.
 
 </details>
@@ -168,10 +182,18 @@ Se tomó una muestra aleatoria de 10 observaciones de óxidos de azufre (SO₂),
 
 **a)**
 1. **Hipótesis.** "Avalar que está por debajo de 58" va en H₁:
-   $$H_0: \mu \ge 58 \qquad H_1: \mu < 58$$
+
+   ```math
+   H_0: \mu \ge 58 \qquad H_1: \mu < 58
+   ```
+
 2. α = 0,05.
 3. 💡 **Estadístico:** a cuántos errores estándar cayó el promedio de 58. Con S en lugar de σ, es una t (📄 H2, tal cual):
-   $$T = \frac{\bar X - 58}{S/\sqrt n} \sim t_9$$
+
+   ```math
+   T = \frac{\bar X - 58}{S/\sqrt n} \sim t_9
+   ```
+
 4. $t_{obs} = \frac{56{,}84 - 58}{0{,}94/\sqrt{10}} = \frac{-1{,}16}{0{,}2973} = -3{,}902$.
 5. 💡 **Región crítica**, del lado de H₁ (izquierda), con área α:
    ```
@@ -221,7 +243,11 @@ En el boletín de la Asociación Americana del Corazón, *Hypertension*, investi
 1. $$H_0: \mu \le 8 \qquad H_1: \mu > 8$$
 2. α = 0,01.
 3. 💡 **Estadístico:** a cuántos desvíos de 8 cayó el promedio, estandarizando (📄 H1):
-   $$Z = \frac{\bar X - 8}{0{,}4} \sim N(0;1)$$
+
+   ```math
+   Z = \frac{\bar X - 8}{0{,}4} \sim N(0;1)
+   ```
+
 4. $z_{obs} = \frac{9{,}2 - 8}{0{,}4} = 3$.
 5. 💡 **Región crítica**, del lado de H₁ (derecha), con área α = 0,01:
    ```

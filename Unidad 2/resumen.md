@@ -83,7 +83,7 @@ En las VAD importa si la desigualdad es estricta o no: P(X < 2) ≠ P(X ≤ 2).
 
 X = salario semanal en la empresa B, con P(6000) = 0,6, P(8000) = 0,3 y P(10000) = 0,1.
 - Promedio simple: (6000 + 8000 + 10000)/3 = 8000. Es incorrecto, porque ignora cuántos empleados hay en cada categoría.
-- Promedio **ponderado**: 6000·0,6 + 8000·0,3 + 10000·0,1 = **7000**. El peso de cada valor lo da su probabilidad ($P(x_i) = N_i/N$).
+- Promedio **ponderado**: 6000·0,6 + 8000·0,3 + 10000·0,1 = **7000**. El peso de cada valor lo da su probabilidad ($`P(x_i) = N_i/N`$).
 - Los dos coinciden sólo si la distribución es simétrica (empresa A: 0,3 / 0,4 / 0,3 ⇒ ambos dan 8000).
 
 ### Definición
@@ -220,7 +220,10 @@ $f(x) = a(x - x^3)$ si $0 < x \le 1$.
 - a) Para que $f \ge 0$ hace falta $a \ge 0$, y $\int_0^1 a(x - x^3)\,dx = a\left(\tfrac12 - \tfrac14\right) = \tfrac{a}{4} = 1$ ⇒ **a = 4**.
 - b) Integrando por tramos: $F(x) = c_1$ si $x \le 0$; $2x^2 - x^4 + c_2$ si $0 < x \le 1$; $c_3$ si $x > 1$. Las constantes salen de las propiedades de F: $c_1 = 0$ y $c_3 = 1$ por los límites, y $c_2 = 0$ por continuidad en 0 y en 1. Entonces:
 
-$$F(x) = \begin{cases} 0 & x \le 0 \\ 2x^2 - x^4 & 0 < x \le 1 \\ 1 & x > 1\end{cases}$$
+```math
+F(x) = \begin{cases} 0 & x \le 0 \\ 2x^2 - x^4 & 0 < x \le 1 \\ 1 & x > 1\end{cases}
+```
+
 - $P(X < 0{,}3) = F(0{,}3) = 0{,}1719$
 - $P(X > 0{,}5) = 1 - F(0{,}5) = 1 - 0{,}4375 = 0{,}5625$
 - Condicional: $P(X > 0{,}5 \,/\, X < 0{,}8) = \dfrac{F(0{,}8) - F(0{,}5)}{F(0{,}8)} = 1 - \dfrac{0{,}4375}{0{,}8704} = 0{,}4974$

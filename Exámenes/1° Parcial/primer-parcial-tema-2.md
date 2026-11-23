@@ -24,7 +24,10 @@ Una compañía emplea a 2 ingenieros para estimar costos. Uno de ellos estima el
 **Sucesos:** A = "la estimó A" (70 %), B = "la estimó B" (30 %, el que menos trabaja), $\bar D$ = "está **bien** estimada".
 
 **Datos.** Las tasas de error son condicionales: P(D/A) = 0,02 y P(D/B) = 0,04. ⚠️ Pero se pregunta por las **bien** estimadas, así que se usan los complementos:
-$$P(\bar D/A) = 1 - 0{,}02 = 0{,}98 \qquad P(\bar D/B) = 1 - 0{,}04 = 0{,}96$$
+
+```math
+P(\bar D/A) = 1 - 0{,}02 = 0{,}98 \qquad P(\bar D/B) = 1 - 0{,}04 = 0{,}96
+```
 
 ```
         ┌─ D̄   0,98  → 0,7·0,98 = 0,686
@@ -36,7 +39,10 @@ $$P(\bar D/A) = 1 - 0{,}02 = 0{,}98 \qquad P(\bar D/B) = 1 - 0{,}04 = 0{,}96$$
 ```
 
 💡 **Probabilidad total:** se suman los caminos que terminan en $\bar D$:
-$$P(\bar D) = 0{,}686 + 0{,}288 = 0{,}974$$
+
+```math
+P(\bar D) = 0{,}686 + 0{,}288 = 0{,}974
+```
 
 💡 **Bayes** (📄 H1): el camino de B dividido el total de bien estimadas.
 
@@ -65,9 +71,12 @@ El tiempo que transcurre entre la llegada de dos personas consecutivas a la cola
 **Traducción.** "Hace 4 minutos que no llega nadie" es la condición X > 4. "Llega **luego** de los próximos 2 minutos" es X > 6. Se pide $P(X > 6 / X > 4)$.
 
 **Con la definición de condicional** (📄 H1). Si X > 6, seguro X > 4, así que la intersección es X > 6:
-$$P(X > 6 / X > 4) = \frac{P(X > 6)}{P(X > 4)} = \frac{e^{-1{,}2}}{e^{-0{,}8}} = e^{-0{,}4} \approx 0{,}67032$$
 
-💡 **Falta de memoria** (📄 H1, $P(X > t_0 + \Delta t / X > t_0) = P(X > \Delta t)$). El resultado es justo P(X > 2): lo ya esperado no cuenta, y es como empezar de cero.
+```math
+P(X > 6 / X > 4) = \frac{P(X > 6)}{P(X > 4)} = \frac{e^{-1{,}2}}{e^{-0{,}8}} = e^{-0{,}4} \approx 0{,}67032
+```
+
+💡 **Falta de memoria** (📄 H1, $`P(X > t_0 + \Delta t / X > t_0) = P(X > \Delta t)`$). El resultado es justo P(X > 2): lo ya esperado no cuenta, y es como empezar de cero.
 ```
 X~Exp(λ)   λ=0.2   P(X>x)   x=2   → 0.67032
 ```
@@ -92,11 +101,14 @@ La elongación de una barra de acero se distribuye normalmente con media 1,2 mm.
 
 Es una cadena: **Normal** (una barra) → **p** → **binomial** (5 barras).
 
-**1. Hallar σ.** 💡 **Estandarizar** (📄 H1, $Z = \frac{X - \mu}{\sigma}$). El dato dice que 1,6 deja 2,28 % a la derecha. El z que deja eso es:
+**1. Hallar σ.** 💡 **Estandarizar** (📄 H1, $`Z = \frac{X - \mu}{\sigma}`$). El dato dice que 1,6 deja 2,28 % a la derecha. El z que deja eso es:
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X>x)=0.0228   → x=2.000
 ```
-$$\frac{1{,}6 - 1{,}2}{\sigma} = 2 \;\Rightarrow\; \sigma = 0{,}2 \text{ mm}$$
+
+```math
+\frac{1{,}6 - 1{,}2}{\sigma} = 2 \;\Rightarrow\; \sigma = 0{,}2 \text{ mm}
+```
 
 **2. Una barra:**
 ```
@@ -104,7 +116,11 @@ X~N(μ;σ)   μ=1.2   σ=0.2   P(X>x)   x=1   → 0.84134
 ```
 
 **3. Cinco barras.** 💡 **Binomial** (📄 H1): cada barra supera 1 mm (éxito) con la misma p, independientemente, y se cuentan cuántas. W ~ Bin(5; 0,84134). "A lo sumo 2" es 0, 1 o 2:
-$$P(W \le 2) = \sum_{k=0}^{2}\binom5k0{,}84134^k\,0{,}15866^{5-k} \approx 0{,}03104$$
+
+```math
+P(W \le 2) = \sum_{k=0}^{2}\binom5k0{,}84134^k\,0{,}15866^{5-k} \approx 0{,}03104
+```
+
 ```
 X~Bin(n,p)   n=5   p=0.84134   P(X≤x)   x=2   → 0.03104
 ```
@@ -127,7 +143,7 @@ En un curso de ingeniería electrónica de 30 estudiantes hay 20 técnicos, y en
 <details>
 <summary>Solución paso a paso</summary>
 
-💡 **Hipergeométrica** (📄 H1, $\frac{\binom Kk\binom{N-K}{n-k}}{\binom Nn}$): se eligen n de un grupo finito de N **sin reposición**, y se cuenta cuántos tienen una característica que tienen K del grupo.
+💡 **Hipergeométrica** (📄 H1, $`\frac{\binom Kk\binom{N-K}{n-k}}{\binom Nn}`$): se eligen n de un grupo finito de N **sin reposición**, y se cuenta cuántos tienen una característica que tienen K del grupo.
 
 - X = técnicos del grupo de electrónica ~ H(N = 30; K = 20; n = 5).
 - Y = técnicos del grupo de civil ~ H(N = 25; K = 10; n = 5).
@@ -163,10 +179,17 @@ Sea X una v.a. exponencial y $a, b \in \mathbb{R}^+$. Probar que $P(X > a + b / 
 **Herramientas** (📄 H1): $F(t) = 1 - e^{-\lambda t}$, así que $P(X > t) = e^{-\lambda t}$; y la condicional $P(A/B) = \frac{P(A\cap B)}{P(B)}$.
 
 1. **Definición de condicional:**
-   $$P(X > a+b / X > b) = \frac{P(\{X > a+b\}\cap\{X > b\})}{P(X > b)}$$
+
+   ```math
+   P(X > a+b / X > b) = \frac{P(\{X > a+b\}\cap\{X > b\})}{P(X > b)}
+   ```
+
 2. **La intersección.** Como a > 0, si X > a + b, seguro X > b: $\{X > a+b\} \subseteq \{X > b\}$. La intersección es $\{X > a + b\}$.
 3. **Reemplazar y simplificar**, con $e^{-\lambda(a+b)} = e^{-\lambda a}e^{-\lambda b}$:
-   $$\frac{e^{-\lambda(a+b)}}{e^{-\lambda b}} = e^{-\lambda a} = P(X > a) \qquad ∎$$
+
+   ```math
+   \frac{e^{-\lambda(a+b)}}{e^{-\lambda b}} = e^{-\lambda a} = P(X > a) \qquad ∎
+   ```
 
 </details>
 
@@ -178,7 +201,7 @@ Sea X una v.a. exponencial y $a, b \in \mathbb{R}^+$. Probar que $P(X > a + b / 
 
 ### VI) Función de distribución con k
 
-Sea $F(x) = \begin{cases}0 & x \le 0\\ kx^2 & 0 < x < 2\\ 1 & x \ge 2\end{cases}$ la función de distribución de X. Hallar $V(3 - X)$ y $P(X > 1{,}2)$.
+Sea $`F(x) = \begin{cases}0 & x \le 0\\ kx^2 & 0 < x < 2\\ 1 & x \ge 2\end{cases}`$ la función de distribución de X. Hallar $V(3 - X)$ y $P(X > 1{,}2)$.
 
 <details>
 <summary><b>Solución</b></summary>
@@ -186,18 +209,27 @@ Sea $F(x) = \begin{cases}0 & x \le 0\\ kx^2 & 0 < x < 2\\ 1 & x \ge 2\end{cases}
 <details>
 <summary>Solución paso a paso</summary>
 
-💡 $F(x) = P(X \le x)$ es la probabilidad acumulada. En una continua no salta, y su derivada es la densidad f (❌, $f = F'$).
+💡 $F(x) = P(X \le x)$ es la probabilidad acumulada. En una continua no salta, y su derivada es la densidad f (❌, $`f = F'`$).
 
 **1. Hallar k.** F no puede saltar en x = 2: $k\cdot2^2 = 1$, así que $k = \frac14$. (Otra forma: $f(x) = 2kx$ y el área total $\int_0^2 2kx\,dx = 4k = 1$.) Entonces $f(x) = \frac12x$ en (0; 2).
 
-**2. Momentos** (📄 H1, $E(g(X)) = \int g(x)f(x)\,dx$):
-$$E(X) = \int_0^2 \frac12x^2\,dx = \frac43 \qquad E(X^2) = \int_0^2 \frac12x^3\,dx = 2$$
+**2. Momentos** (📄 H1, $`E(g(X)) = \int g(x)f(x)\,dx`$):
+
+```math
+E(X) = \int_0^2 \frac12x^2\,dx = \frac43 \qquad E(X^2) = \int_0^2 \frac12x^3\,dx = 2
+```
 
 **3. Varianza.** 💡 $V(aX + b) = a^2V(X)$: la constante 3 no dispersa, y el −1 sale al cuadrado (📄 H1, $V(aX + bY)$ con la otra variable constante). Con 📄 H1, $V(X) = E(X^2) - E(X)^2$:
-$$V(3 - X) = (-1)^2V(X) = 2 - \frac{16}{9} = \frac29$$
 
-**4. Probabilidad** (📄 H1, $P(X > a) = 1 - F(a)$):
-$$P(X > 1{,}2) = 1 - \frac14(1{,}2)^2 = 1 - 0{,}36 = 0{,}64$$
+```math
+V(3 - X) = (-1)^2V(X) = 2 - \frac{16}{9} = \frac29
+```
+
+**4. Probabilidad** (📄 H1, $`P(X > a) = 1 - F(a)`$):
+
+```math
+P(X > 1{,}2) = 1 - \frac14(1{,}2)^2 = 1 - 0{,}36 = 0{,}64
+```
 
 </details>
 

@@ -40,22 +40,29 @@ La siguiente tabla exhibe las antigüedades de los empleados de una cierta fábr
 - $S_{xy} = \sum xy - \frac{\sum x\sum y}{n} = 131{,}8 - \frac{34\cdot22}{6} = 7{,}133$
 
 **Recta** (📄 H2):
-$$b_1 = \frac{S_{xy}}{S_{xx}} = \frac{7{,}133}{7{,}433} = 0{,}9596 \qquad b_0 = \bar y - b_1\bar x = 3{,}667 - 0{,}9596\cdot5{,}667 = -1{,}7713$$
-$$\hat y = -1{,}7713 + 0{,}9596x \quad (\text{válido para } 4 \le x \le 7)$$
+
+```math
+b_1 = \frac{S_{xy}}{S_{xx}} = \frac{7{,}133}{7{,}433} = 0{,}9596 \qquad b_0 = \bar y - b_1\bar x = 3{,}667 - 0{,}9596\cdot5{,}667 = -1{,}7713
+```
+
+```math
+\hat y = -1{,}7713 + 0{,}9596x \quad (\text{válido para } 4 \le x \le 7)
+```
+
 Cada año más de antigüedad suma, en promedio, casi una llegada tarde por mes.
 
 **Con las apps:** Calculadora de estadística → **Regresión lineal** con los 6 pares da $b_0$ y $b_1$. Para $S_{xx}$ sirve la descriptiva: $S_{xx} = (n-1)s_x^2$ (❌).
 
 **b) No.** La recta solo se probó para x entre 4 y 7 años. Usarla en 20 es **extrapolar** (❌): nada asegura que la relación siga siendo una recta tan lejos de los datos. Daría 17 llegadas tarde por mes, un número absurdo.
 
-**c)** 💡 **Coeficiente de correlación r** (📄 H2, $r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$): mide qué tan alineados están los puntos (de −1 a 1). Con pocos puntos, una muestra puede salir alineada por casualidad. El **test** decide si la correlación de la población, ρ, es distinta de 0.
+**c)** 💡 **Coeficiente de correlación r** (📄 H2, $`r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}`$): mide qué tan alineados están los puntos (de −1 a 1). Con pocos puntos, una muestra puede salir alineada por casualidad. El **test** decide si la correlación de la población, ρ, es distinta de 0.
 
 **Supuestos** (❌): errores normales, independientes y con la misma varianza para todo x.
 
 1. H₀: ρ = 0 (no hay relación lineal) vs. H₁: ρ ≠ 0. Lo que se quiere demostrar va en H₁.
 2. α = 0,05.
-3. Estadístico (📄 H2, $\sqrt{n-2}\frac{r}{\sqrt{1-r^2}} = t_{n-2}$): $T \sim t_4$ si H₀ es cierta.
-4. $r = \frac{7{,}133}{\sqrt{7{,}433\cdot7{,}333}} = 0{,}9662$ ($R^2 = 0{,}9335$), así que $t_{obs} = \sqrt4\cdot\frac{0{,}9662}{\sqrt{1 - 0{,}9335}} = 7{,}49$.
+3. Estadístico (📄 H2, $`\sqrt{n-2}\frac{r}{\sqrt{1-r^2}} = t_{n-2}`$): $T \sim t_4$ si H₀ es cierta.
+4. $r = \frac{7{,}133}{\sqrt{7{,}433\cdot7{,}333}} = 0{,}9662$ ($`R^2 = 0{,}9335`$), así que $t_{obs} = \sqrt4\cdot\frac{0{,}9662}{\sqrt{1 - 0{,}9335}} = 7{,}49$.
 5. H₁ es "≠", así que es bilateral, con α/2 = 0,025 en cada cola:
    ```
    X~t(ν)   ν=4   P(X<x)=0.975   → x=2.77645
@@ -63,7 +70,7 @@ Cada año más de antigüedad suma, en promedio, casi una llegada tarde por mes.
    ```
    7,5 > 2,776: **se rechaza H₀**.
 
-**Conclusión:** hay correlación lineal significativa, así que el modelo es **válido** al 5 %. El 93 % de la variabilidad de las llegadas tarde se explica por la antigüedad ($R^2$, 📄 H2).
+**Conclusión:** hay correlación lineal significativa, así que el modelo es **válido** al 5 %. El 93 % de la variabilidad de las llegadas tarde se explica por la antigüedad ($`R^2`$, 📄 H2).
 
 </details>
 
@@ -99,13 +106,25 @@ El fabricante de neumáticos sostiene que en promedio sus productos tienen una d
 
 **a)**
 1. **Hipótesis.** La trampa: "no menor a 50" es **μ ≥ 50**, que **incluye la igualdad**, así que tiene que ir en H₀. Los consumidores sospechan lo contrario, y eso va en H₁:
-   $$H_0: \mu \ge 50 \qquad H_1: \mu < 50$$
+
+   ```math
+   H_0: \mu \ge 50 \qquad H_1: \mu < 50
+   ```
+
    (Si el fabricante dijera "**más de** 50", su afirmación iría en H₁.)
 2. **α = 0,05**, el riesgo aceptado de rechazar H₀ siendo cierta.
 3. 💡 **Estadístico.** Se mide a cuántos desvíos de 50 cayó el promedio de la muestra. Como el desvío de la población no se conoce, se usa el de la muestra (S), y el estadístico es una **t de Student** con n − 1 grados de libertad: una campana con colas más gordas que la normal (📄 H2, tal cual):
-   $$T = \frac{\bar X - 50}{S/\sqrt n} \sim t_{n-1}$$
+
+   ```math
+   T = \frac{\bar X - 50}{S/\sqrt n} \sim t_{n-1}
+   ```
+
 4. Con los datos de b) (n = 30, $\bar x$ = 49, s = 3):
-   $$t_{obs} = \frac{49 - 50}{3/\sqrt{30}} = -1{,}826$$
+
+   ```math
+   t_{obs} = \frac{49 - 50}{3/\sqrt{30}} = -1{,}826
+   ```
+
 5. 💡 **Región crítica:** los valores de T que llevan a rechazar, del lado de H₁ (izquierda), con área α:
    ```
    X~t(ν)   ν=29   P(X<x)=0.05   → x=−1.69913
@@ -146,17 +165,21 @@ Se desea estimar el tiempo medio de espera en una cola de supermercado los días
 <details>
 <summary>Solución paso a paso</summary>
 
-**La situación:** se conoce el promedio de la muestra ($\bar x$ = 20) y se quiere averiguar μ, el tiempo medio de **todos** los domingos.
+**La situación:** se conoce el promedio de la muestra ($`\bar x`$ = 20) y se quiere averiguar μ, el tiempo medio de **todos** los domingos.
 
 **a)** 💡 **Por qué un intervalo.** μ casi seguro no es exactamente 20: con otros 100 clientes habría dado 19,6 o 20,3. En lugar de un número, se da un rango con una confianza: un **intervalo de confianza (IC)**.
 
 💡 **De dónde sale.**
-1. El promedio de una muestra varía alrededor de μ con desvío $\frac{\sigma}{\sqrt n}$ (📄 H2, $\bar X \sim N(\mu;\ \sigma/\sqrt n)$).
+1. El promedio de una muestra varía alrededor de μ con desvío $\frac{\sigma}{\sqrt n}$ (📄 H2, $`\bar X \sim N(\mu;\ \sigma/\sqrt n)`$).
 2. En una normal, el 98 % de los valores está a menos de z desvíos del centro, con z el que deja 1 % en cada cola (0,99 a la izquierda). Entonces el 98 % de las veces, $\bar x$ está a menos de $z\frac{\sigma}{\sqrt n}$ de μ.
 3. Si $\bar x$ está cerca de μ, μ está igual de cerca de $\bar x$. Por eso el IC es "promedio ± margen".
 
 💡 **¿Qué pasa si no se conoce σ?** La "dispersión de 3 minutos" es de **la muestra** (S). La fórmula exacta usa S y la **t de Student** con n − 1 grados de libertad, que es un poco más grande para compensar no conocer σ (📄 H2):
-$$I.C._\mu = \left(\bar X \mp t_{n-1;1-\frac\alpha2}\cdot\frac{S}{\sqrt n}\right)$$
+
+```math
+I.C._\mu = \left(\bar X \mp t_{n-1;1-\frac\alpha2}\cdot\frac{S}{\sqrt n}\right)
+```
+
 Con n ≥ 30 la t es casi igual a la z, y el repo usa z con S (IC "asintótico"). Las dos opciones:
 ```
 X~t(ν)     ν=99         P(X<x)=0.99   → x=2.36461
@@ -197,10 +220,17 @@ Se sabe por experiencias anteriores que el peso de los recién nacidos en cierta
 - Los 16 de ayer son una **muestra**, y su promedio $\bar X$ es una variable aleatoria: otros 16 darían otro promedio.
 
 💡 **Cómo se comporta el promedio.** Al promediar, los bebés pesados y los livianos se compensan, así que el promedio varía **menos** que un bebé solo (📄 H2):
-$$\bar X \sim N\left(\mu;\ \frac{\sigma}{\sqrt n}\right)$$
+
+```math
+\bar X \sim N\left(\mu;\ \frac{\sigma}{\sqrt n}\right)
+```
+
 Misma media, desvío dividido por $\sqrt n$. Es Normal porque la población es Normal; si no lo fuera, con n ≥ 30 lo sería aproximadamente (TCL).
 
-$$\bar X \sim N\left(3;\ \frac{0{,}4}{\sqrt{16}}\right) = N(3;\ 0{,}1)$$
+```math
+\bar X \sim N\left(3;\ \frac{0{,}4}{\sqrt{16}}\right) = N(3;\ 0{,}1)
+```
+
 ```
 X~N(μ;σ)   μ=3   σ=0.1   P(X>x)   x=3.2   → 0.02275
 ```
@@ -259,7 +289,7 @@ Explicar dos métodos de estimación y ejemplificar. ¿Cómo se puede selecciona
 
 💡 **Qué es estimar.** Un **estimador** es una fórmula con los datos de la muestra para "adivinar" un parámetro desconocido de la población. Los métodos de estimación son **recetas para fabricar** esa fórmula. Nada de esto está en la hoja (❌), salvo el ECM.
 
-**1. Método de los momentos** ("lo teórico igual a lo observado"): se igualan los momentos poblacionales (E(X), E(X²), …), que dependen del parámetro, a los momentos muestrales ($\bar X$, $\frac1n\sum X_i^2$, …), y se despeja el parámetro.
+**1. Método de los momentos** ("lo teórico igual a lo observado"): se igualan los momentos poblacionales (E(X), E(X²), …), que dependen del parámetro, a los momentos muestrales ($`\bar X`$, $\frac1n\sum X_i^2$, …), y se despeja el parámetro.
 
 Ejemplo: en una Exp(λ), $E(X) = 1/\lambda = \bar X \Rightarrow \hat\lambda = 1/\bar X$.
 

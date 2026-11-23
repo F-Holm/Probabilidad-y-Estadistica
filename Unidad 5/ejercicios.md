@@ -272,7 +272,11 @@ Este ejercicio muestra que un test **no siempre es con Z o t**: la idea sirve co
 1. **¿Qué valores apoyan a K?** Si la media es más grande, los valores tienden a ser más grandes. Una observación **grande** es evidencia de μ > 2, así que se rechaza H si X > c. 💡 Eso es la **región crítica** (de rechazo).
 2. **¿Con qué μ se calcula α?** H no es un solo valor, sino "μ ≤ 2". $P(X > c) = e^{-c/\mu}$ **crece** con μ, así que el peor caso (la máxima probabilidad de error) es el borde, **μ = 2**. Por eso siempre se calcula con el valor de la igualdad.
 3. ✍️ Se iguala a 0,1:
-   $$e^{-c/2} = 0{,}1 \;\Rightarrow\; -\frac c2 = \ln0{,}1 \;\Rightarrow\; c = -2\ln0{,}1 = 4{,}605$$
+
+   ```math
+   e^{-c/2} = 0{,}1 \;\Rightarrow\; -\frac c2 = \ln0{,}1 \;\Rightarrow\; c = -2\ln0{,}1 = 4{,}605
+   ```
+
    ```
    X~Exp(λ)   λ=0.5   P(X>x)=0.1   → x=4.605
    ```
@@ -281,7 +285,11 @@ Este ejercicio muestra que un test **no siempre es con Z o t**: la idea sirve co
 **Regla:** se rechaza H (se decide K) si la observación supera 4,6.
 
 **b)** Con μ = 2,1 la verdadera es **K**, así que el error posible es **no rechazar H**. 💡 Es el **error tipo II**, y su probabilidad se llama **β**:
-$$\beta = P(X \le 4{,}605) \text{ con media } 2{,}1 \;=\; 1 - e^{-4{,}605/2{,}1} = 1 - e^{-2{,}193} = 0{,}8884$$
+
+```math
+\beta = P(X \le 4{,}605) \text{ con media } 2{,}1 \;=\; 1 - e^{-4{,}605/2{,}1} = 1 - e^{-2{,}193} = 0{,}8884
+```
+
 ```
 X~Exp(λ)   λ=0.47619   P(X<x)   x=4.605   → 0.8884
 ```
@@ -315,16 +323,26 @@ Una empresa estudia introducir un nuevo sistema de producción para mejorar su p
 💡 **Los 5 pasos de un test** (como en un juicio, H₀ es "inocente" hasta que la evidencia diga lo contrario):
 
 **1) Hipótesis.** Lo que se quiere demostrar ("supera 45") va en H₁. H₀ lleva la igualdad:
-$$H_0: \mu \le 45 \qquad H_1: \mu > 45$$
+
+```math
+H_0: \mu \le 45 \qquad H_1: \mu > 45
+```
 
 **2) Nivel de significación:** α = 0,01, el riesgo aceptado de rechazar H₀ siendo cierta.
 
-**3) Estadístico.** 💡 Se mide a cuántos desvíos de 45 cayó el promedio. El promedio varía con desvío $\frac{\sigma}{\sqrt n}$ (📄 H2, $\bar X \sim N(\mu;\ \sigma/\sqrt n)$), y se estandariza (📄 H1, $\frac{X - \mu}{\sigma} = Z$):
-$$Z = \frac{\bar X - 45}{\sigma/\sqrt n} \sim N(0;1) \text{ si } \mu = 45$$
+**3) Estadístico.** 💡 Se mide a cuántos desvíos de 45 cayó el promedio. El promedio varía con desvío $\frac{\sigma}{\sqrt n}$ (📄 H2, $`\bar X \sim N(\mu;\ \sigma/\sqrt n)`$), y se estandariza (📄 H1, $`\frac{X - \mu}{\sigma} = Z`$):
+
+```math
+Z = \frac{\bar X - 45}{\sigma/\sqrt n} \sim N(0;1) \text{ si } \mu = 45
+```
+
 Se usa Z porque σ = 3 es **conocido** (la dispersión "establecida") y n = 35 ≥ 30.
 
 **4) Valor observado:**
-$$\frac{\sigma}{\sqrt n} = \frac{3}{\sqrt{35}} = 0{,}507 \qquad z_{obs} = \frac{46{,}5 - 45}{0{,}507} = 2{,}96$$
+
+```math
+\frac{\sigma}{\sqrt n} = \frac{3}{\sqrt{35}} = 0{,}507 \qquad z_{obs} = \frac{46{,}5 - 45}{0{,}507} = 2{,}96
+```
 
 **5) Decisión.** 💡 La **región crítica** está del lado de H₁ (a la derecha) y deja α = 0,01:
 ```
@@ -338,13 +356,13 @@ X~N(μ;σ)   μ=0   σ=1   P(X>x)   x=2.96   → 0.00155
 ```
 p = 0,0015 < 0,01 ✓.
 
-**En unidades** (la RC en la escala de $\bar X$): $45 + 2{,}326\cdot0{,}507 = 46{,}18$. El promedio 46,5 supera 46,18 ✓.
+**En unidades** (la RC en la escala de $`\bar X`$): $45 + 2{,}326\cdot0{,}507 = 46{,}18$. El promedio 46,5 supera 46,18 ✓.
 
 **Conclusión:** hay evidencia al 1 % de que la productividad supera las 45 unidades. **Conviene hacer el cambio.**
 
 </details>
 
-**Respuesta:** Se rechaza H₀ ($z_{obs}$ = 2,96 > 2,33): hay evidencia al 1 % de que la productividad supera 45 ⇒ conviene implementar el cambio.
+**Respuesta:** Se rechaza H₀ ($`z_{obs}`$ = 2,96 > 2,33): hay evidencia al 1 % de que la productividad supera 45 ⇒ conviene implementar el cambio.
 
 </details>
 
@@ -365,12 +383,19 @@ Se desea calibrar un fotómetro para medir la proporción de monóxido de carbon
 <summary>Solución paso a paso</summary>
 
 **a)** 💡 En un test, H₀ es lo que se da por cierto salvo evidencia, y lleva la igualdad. H₁ es lo que se quiere detectar. El fotómetro está bien si en promedio marca 60, y un error **para cualquier lado** es un problema:
-$$H_0: \mu = 60 \qquad H_1: \mu \ne 60 \quad \text{(bilateral)}$$
 
-**Dato común.** El promedio de 25 mediciones varía con desvío $\frac{\sigma}{\sqrt n} = \frac{0{,}5}{5} = 0{,}1$ (📄 H2, $\bar X \sim N(\mu;\ \sigma/\sqrt n)$).
+```math
+H_0: \mu = 60 \qquad H_1: \mu \ne 60 \quad \text{(bilateral)}
+```
+
+**Dato común.** El promedio de 25 mediciones varía con desvío $\frac{\sigma}{\sqrt n} = \frac{0{,}5}{5} = 0{,}1$ (📄 H2, $`\bar X \sim N(\mu;\ \sigma/\sqrt n)`$).
 
 **b)** "Recalibrar sin ser necesario" es rechazar H₀ cuando es cierta. 💡 Es el **error tipo I**, y su probabilidad es **α** (el nivel de significación). Se calcula **suponiendo μ = 60**: es la probabilidad de caer en la región de rechazo, que son las dos colas.
-$$\alpha = P(\bar X > 60{,}196) + P(\bar X < 59{,}804), \quad \bar X \sim N(60;\ 0{,}1)$$
+
+```math
+\alpha = P(\bar X > 60{,}196) + P(\bar X < 59{,}804), \quad \bar X \sim N(60;\ 0{,}1)
+```
+
 ```
 X~N(μ;σ)   μ=60   σ=0.1   P(X>x)   x=60.196   → 0.025
 X~N(μ;σ)   μ=60   σ=0.1   P(X<x)   x=59.804   → 0.025
@@ -378,7 +403,11 @@ X~N(μ;σ)   μ=60   σ=0.1   P(X<x)   x=59.804   → 0.025
 **α = 0,05.** Las fronteras son 60 ± 1,96·0,1.
 
 **c)** "No recalibrar si el fotómetro mide 60,3" es no rechazar H₀ cuando es falsa. 💡 Es el **error tipo II**, y su probabilidad es **β**. Se calcula **con el valor verdadero**, μ = 60,3: es la probabilidad de caer **dentro** de la zona de no rechazo.
-$$\beta = P(59{,}804 < \bar X < 60{,}196), \quad \bar X \sim N(60{,}3;\ 0{,}1)$$
+
+```math
+\beta = P(59{,}804 < \bar X < 60{,}196), \quad \bar X \sim N(60{,}3;\ 0{,}1)
+```
+
 ```
 X~N(μ;σ)   μ=60.3   σ=0.1   P(X<x)   x=60.196   → 0.14917
 X~N(μ;σ)   μ=60.3   σ=0.1   P(X<x)   x=59.804   → 0.0000004
@@ -414,16 +443,22 @@ Un fabricante sostiene que el modelo de auto A tiene un rendimiento promedio men
 <summary>Solución paso a paso</summary>
 
 **a)** 💡 **Hipótesis.** Lo que se quiere demostrar va en H₁; H₀ lleva la igualdad. El fabricante dice "menor a 13" (desigualdad estricta), así que va en H₁:
-$$H_0: \mu \ge 13 \qquad H_1: \mu < 13$$
+
+```math
+H_0: \mu \ge 13 \qquad H_1: \mu < 13
+```
 
 💡 **Estadístico.** σ = 1,26 es conocido y la población es Normal, así que el promedio es Normal con desvío $\frac{\sigma}{\sqrt n} = \frac{1{,}26}{3} = 0{,}42$ (📄 H2). **Suponiendo H₀ cierta** (μ = 13):
-$$\bar X \sim N(13;\ 0{,}42) \qquad \text{o, estandarizando: } Z = \frac{\bar X - 13}{0{,}42} \sim N(0;1)$$
+
+```math
+\bar X \sim N(13;\ 0{,}42) \qquad \text{o, estandarizando: } Z = \frac{\bar X - 13}{0{,}42} \sim N(0;1)
+```
 
 💡 **Región crítica:** se rechaza con promedios **chicos** (lado de H₁), dejando α = 0,05 a la izquierda. En km/l:
 ```
 X~N(μ;σ)   μ=13   σ=0.42   P(X<x)=0.05   → x=12.309
 ```
-RC = {$\bar X$ < 12,309}. El observado 12,34 **no** es menor que 12,309, así que **no se rechaza H₀**.
+RC = {$`\bar X`$ < 12,309}. El observado 12,34 **no** es menor que 12,309, así que **no se rechaza H₀**.
 
 Con Z: $z_{obs} = \frac{12{,}34 - 13}{0{,}42} = -1{,}571$, que es mayor que −1,645. Valor p:
 ```
@@ -438,7 +473,11 @@ p = 0,058 > 0,05.
 **c)** "No decidir que se cumple lo del fabricante" es **no rechazar H₀**. Si en verdad μ = 12, H₀ es falsa, así que es un 💡 **error tipo II**, de probabilidad **β**.
 
 **Receta** (❌): la frontera es la de la RC (calculada con 13), y la probabilidad se calcula con el μ verdadero (12):
-$$\beta = P(\bar X > 12{,}309) \text{ con } \bar X \sim N(12;\ 0{,}42)$$
+
+```math
+\beta = P(\bar X > 12{,}309) \text{ con } \bar X \sim N(12;\ 0{,}42)
+```
+
 ```
 X~N(μ;σ)   μ=12   σ=0.42   P(X>x)   x=12.309   → 0.2308
 ```
@@ -477,7 +516,10 @@ Aunque el fabricante tenga razón, hay un 23 % de chances de no confirmarlo: con
 La **curva de potencia** grafica eso para cada μ. Sube cuanto más lejos está μ del valor de H₀, hacia el lado de H₁.
 
 **a)** La curva vale α en 10 y crece solo hacia la derecha: el test "detecta" valores **mayores** a 10.
-$$H_0: \mu = 10 \qquad H_1: \mu > 10$$
+
+```math
+H_0: \mu = 10 \qquad H_1: \mu > 10
+```
 
 **Dato común.** El promedio varía con desvío $\frac{\sigma}{\sqrt n} = \frac{2}{5} = 0{,}4$ (📄 H2, $\bar X \sim N(\mu;\ \sigma/\sqrt n)$; σ = √4 = 2). Se rechaza si $\bar X$ > c, con c desconocido.
 
@@ -528,7 +570,11 @@ El coeficiente de compresión del cemento curado sigue una distribución Normal 
 <summary>Solución paso a paso</summary>
 
 **a)** 💡 En un test, H₁ es lo que se quiere detectar, y H₀ lleva la igualdad. El peligro es un coeficiente **menor** al especificado:
-$$H_0: \mu = 50 \qquad H_1: \mu < 50$$
+
+```math
+H_0: \mu = 50 \qquad H_1: \mu < 50
+```
+
 "Rechazar H₀" significa **descartar la partida**. Se rechaza con promedios chicos: $\bar X < x_c$.
 
 **Traducción de los datos a errores:**
@@ -541,20 +587,34 @@ $$H_0: \mu = 50 \qquad H_1: \mu < 50$$
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.01   → x=−2.32635
 ```
-$$x_c = 50 - 2{,}32635\cdot\frac{5}{\sqrt n}$$
+
+```math
+x_c = 50 - 2{,}32635\cdot\frac{5}{\sqrt n}
+```
 
 **Ecuación II (β, con μ = 47):** $P(\bar X < x_c) = 0{,}95$, porque se descarta el 95 % de las veces:
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.95   → x=1.64485
 ```
-$$x_c = 47 + 1{,}64485\cdot\frac{5}{\sqrt n}$$
+
+```math
+x_c = 47 + 1{,}64485\cdot\frac{5}{\sqrt n}
+```
 
 **Igualando:**
-$$50 - 47 = (2{,}32635 + 1{,}64485)\frac{5}{\sqrt n} \;\Rightarrow\; \sqrt n = \frac{3{,}9712\cdot5}{3} = 6{,}619 \;\Rightarrow\; n = 43{,}8 \;\Rightarrow\; n = 44$$
+
+```math
+50 - 47 = (2{,}32635 + 1{,}64485)\frac{5}{\sqrt n} \;\Rightarrow\; \sqrt n = \frac{3{,}9712\cdot5}{3} = 6{,}619 \;\Rightarrow\; n = 43{,}8 \;\Rightarrow\; n = 44
+```
+
 Siempre se redondea hacia arriba.
 
 **Regla de decisión.** Con n = 44, la frontera sale de la ecuación I, para que α quede exacto:
-$$x_c = 50 - 2{,}32635\cdot\frac{5}{\sqrt{44}} = 50 - 1{,}754 = 48{,}25$$
+
+```math
+x_c = 50 - 2{,}32635\cdot\frac{5}{\sqrt{44}} = 50 - 1{,}754 = 48{,}25
+```
+
 Se toman 44 probetas y **se descarta la partida si $\bar x$ < 48,25**. (El repo da 48,24 con z redondeado.)
 
 </details>
@@ -592,10 +652,16 @@ mean of x 185.62
 <summary>Solución paso a paso</summary>
 
 **a)** 💡 En un test, lo que se quiere demostrar va en **H₁**, y **H₀** lleva la igualdad. Se quiere verificar que **supera** 180:
-$$H_0: \mu \le 180 \qquad H_1: \mu > 180$$
+
+```math
+H_0: \mu \le 180 \qquad H_1: \mu > 180
+```
 
 **b)** 💡 **Test t.** No se conoce el desvío de la población: se estima con el de la muestra (S). Por eso el estadístico es una **t de Student** con n − 1 grados de libertad, en lugar de una Z. Con n = 24 hace falta que la población sea Normal, y el enunciado lo dice. 📄 H2:
-$$T = \frac{\bar X - 180}{S/\sqrt n} \sim t_{23}$$
+
+```math
+T = \frac{\bar X - 180}{S/\sqrt n} \sim t_{23}
+```
 
 **Cómo leer la salida de R:**
 - `t = 0.81221`: el estadístico observado;
@@ -609,7 +675,11 @@ $$T = \frac{\bar X - 180}{S/\sqrt n} \sim t_{23}$$
 ```
 → media = 185.616   desvío = 26.415   error estándar = 5.392
 ```
-$$t_{obs} = \frac{185{,}616 - 180}{5{,}392} = 1{,}042$$
+
+```math
+t_{obs} = \frac{185{,}616 - 180}{5{,}392} = 1{,}042
+```
+
 ```
 X~t(ν)   ν=23   P(X<x)=0.95   → x=1.71387   (valor crítico)
 X~t(ν)   ν=23   P(X>x)   x=1.042   → 0.1542  (valor p)
@@ -657,10 +727,16 @@ La calidad de ciertas piezas de un aparato depende de su esfericidad. Para mejor
 💡 **Test de Shapiro-Wilks:** un test cuya H₀ es "los datos vienen de una Normal". Su valor p es 0,2569 > 0,05, así que **no se rechaza la normalidad**: se puede usar la χ².
 
 **b)** 💡 Lo que se quiere demostrar ("más preciso", menor σ) va en H₁:
-$$H_0: \sigma^2 = 0{,}32^2 \qquad H_1: \sigma^2 < 0{,}32^2$$
+
+```math
+H_0: \sigma^2 = 0{,}32^2 \qquad H_1: \sigma^2 < 0{,}32^2
+```
 
 **Estadístico** (📄 H2, con σ² reemplazado por el valor de H₀):
-$$\chi^2 = \frac{(n-1)S^2}{\sigma_0^2} \sim \chi^2_{90} \qquad \chi^2_{obs} = \frac{90\cdot0{,}22^2}{0{,}32^2} = 42{,}54$$
+
+```math
+\chi^2 = \frac{(n-1)S^2}{\sigma_0^2} \sim \chi^2_{90} \qquad \chi^2_{obs} = \frac{90\cdot0{,}22^2}{0{,}32^2} = 42{,}54
+```
 
 **Región crítica.** H₁ es "<", así que se rechaza con valores **chicos** de χ², con área α = 0,05 a la izquierda:
 ```
@@ -697,10 +773,16 @@ El capataz afirma **dos cosas** (media y dispersión), así que se hacen **dos t
 
 ### Test 1: la media
 💡 **Hipótesis.** Lo que se quiere demostrar va en H₁. "Inferior a 25" es estricta, así que va en H₁:
-$$H_0: \mu \ge 25 \qquad H_1: \mu < 25$$
+
+```math
+H_0: \mu \ge 25 \qquad H_1: \mu < 25
+```
 
 💡 **¿Z o t?** El "2 minutos" es lo que **afirma** el capataz, no un dato confiable. Lo que se tiene es S = 3,9 de la muestra, así que σ es desconocido y se usa la **t de Student** con n − 1 = 24 grados de libertad (población aproximadamente Normal). 📄 H2:
-$$T = \frac{\bar X - 25}{S/\sqrt n} \sim t_{24} \qquad t_{obs} = \frac{23 - 25}{3{,}9/5} = \frac{-2}{0{,}78} = -2{,}564$$
+
+```math
+T = \frac{\bar X - 25}{S/\sqrt n} \sim t_{24} \qquad t_{obs} = \frac{23 - 25}{3{,}9/5} = \frac{-2}{0{,}78} = -2{,}564
+```
 
 **Región crítica**, del lado de H₁ (izquierda), con α = 0,05:
 ```
@@ -713,11 +795,18 @@ X~t(ν)   ν=24   P(X<x)   x=−2.564   → 0.0085   (valor p)
 💡 Para una dispersión se usa la **χ²**. Si la población es Normal, $\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}$ (📄 H2). En el test, σ² se reemplaza por el valor de H₀.
 
 **Hipótesis.** El capataz afirma σ = 2, es decir σ² = 4. Es una **igualdad**, y solo puede ir en H₀:
-$$H_0: \sigma^2 = 4 \qquad H_1: \sigma^2 \ne 4$$
+
+```math
+H_0: \sigma^2 = 4 \qquad H_1: \sigma^2 \ne 4
+```
+
 Ojo: ahora lo del capataz queda en H₀. Si no se rechazara, no quedaría demostrado; solo no habría evidencia en contra.
 
 **Estadístico:**
-$$\chi^2_{obs} = \frac{24\cdot3{,}9^2}{4} = \frac{24\cdot15{,}21}{4} = 91{,}26$$
+
+```math
+\chi^2_{obs} = \frac{24\cdot3{,}9^2}{4} = \frac{24\cdot15{,}21}{4} = 91{,}26
+```
 
 **Región crítica.** Bilateral, así que α/2 = 0,025 en cada cola:
 ```
@@ -755,14 +844,20 @@ El fabricante de neumáticos Mirelli sostiene que en promedio sus productos tien
 **a)** 💡 Un **parámetro** es un número que describe a **toda la población** y que no se conoce. Acá es μ = la duración media de **todos** los neumáticos Mirelli. No es el 50 300 de la muestra: ese ya se conoce.
 
 **b)** 💡 En un test, lo que se quiere demostrar va en **H₁**, y **H₀** lleva la igualdad. Lo que se pone a prueba es "duran **más** de 50 000" (desigualdad estricta):
-$$H_0: \mu \le 50\,000 \qquad H_1: \mu > 50\,000$$
+
+```math
+H_0: \mu \le 50\,000 \qquad H_1: \mu > 50\,000
+```
 
 **c)** 💡 Los dos errores posibles al decidir:
 - **Tipo I** (rechazar H₀ siendo cierta): concluir que duran más de 50 000 km **cuando no es así**. Los consumidores le darían la razón al fabricante sin motivo.
 - **Tipo II** (no rechazar H₀ siendo falsa): **no detectar** que duran más de 50 000 cuando sí duran. Se le quitaría la razón al fabricante injustamente.
 
-**d)** 💡 La dispersión de 1000 es **de la muestra** (S), así que el estadístico es una **t** con n − 1 = 49 grados de libertad (📄 H2, $\frac{\bar X - \mu}{S/\sqrt n} = t_{n-1}$):
-$$t_{obs} = \frac{50\,300 - 50\,000}{1000/\sqrt{50}} = \frac{300}{141{,}42} = 2{,}121$$
+**d)** 💡 La dispersión de 1000 es **de la muestra** (S), así que el estadístico es una **t** con n − 1 = 49 grados de libertad (📄 H2, $`\frac{\bar X - \mu}{S/\sqrt n} = t_{n-1}`$):
+
+```math
+t_{obs} = \frac{50\,300 - 50\,000}{1000/\sqrt{50}} = \frac{300}{141{,}42} = 2{,}121
+```
 
 **Región crítica** (derecha, α = 0,01):
 ```
@@ -802,20 +897,31 @@ Dos empresas distintas compiten para brindar servicio de internet en cierta regi
 <summary>Solución paso a paso</summary>
 
 **Test para una proporción.** Se quiere demostrar que la primera empresa tiene **más de la mitad** del mercado. 💡 Lo que se quiere demostrar va en H₁:
-$$H_0: p = 0{,}5 \qquad H_1: p > 0{,}5$$
+
+```math
+H_0: p = 0{,}5 \qquad H_1: p > 0{,}5
+```
 
 **a)** 💡 La **región de rechazo** está del lado de H₁. Si p > 0,5, se esperan **muchos** a favor de la primera, así que se rechaza con valores **grandes** de X: **{X ≥ 32}**.
 - {X ≤ 18} serviría para H₁: p < 0,5.
 - {X ≤ 15 ∨ X ≥ 45} sería bilateral, y además asimétrico.
 
 **b)** Cada encuestado prefiere la primera (éxito) o no, independientemente, con la misma probabilidad p. X cuenta éxitos en 50 ensayos, así que es **binomial** (📄 H1). **Suponiendo H₀ cierta:**
-$$X \sim Bin(50;\ 0{,}5)$$
+
+```math
+X \sim Bin(50;\ 0{,}5)
+```
+
 Con eso se ve el α de la región de a): `X~Bin(n,p) n=50 p=0.5 P(X≥x) x=32 → 0.0325`.
 
 **c)** "12 a favor de la segunda" significa x = 38 a favor de la primera, y $\hat p = 0{,}76$.
 
 💡 **Estadístico Z para proporciones.** Por el TCL, $\hat p \sim N\left(p;\ \sqrt{\frac{p(1-p)}{n}}\right)$ (📄 H2). Se estandariza **suponiendo H₀ cierta**, así que en la raíz va **p₀ = 0,5**, no $\hat p$:
-$$Z = \frac{\hat p - p_0}{\sqrt{p_0(1-p_0)/n}} = \frac{0{,}76 - 0{,}5}{\sqrt{0{,}25/50}} = \frac{0{,}26}{0{,}0707} = 3{,}68$$
+
+```math
+Z = \frac{\hat p - p_0}{\sqrt{p_0(1-p_0)/n}} = \frac{0{,}76 - 0{,}5}{\sqrt{0{,}25/50}} = \frac{0{,}26}{0{,}0707} = 3{,}68
+```
+
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.99   → x=2.32635
 X~N(μ;σ)   μ=0   σ=1   P(X>x)   x=3.68   → 0.00012   (valor p)
@@ -825,7 +931,10 @@ X~N(μ;σ)   μ=0   σ=1   P(X>x)   x=3.68   → 0.00012   (valor p)
 **d)** 💡 **Error tipo II (β):** no rechazar H₀ cuando es falsa. Con la región {X ≥ 32}, no rechazar es X ≤ 31, y se calcula con el p **verdadero**, 0,6.
 
 **Como la guía (aproximación Normal):** $E(X) = np = 30$ y $V(X) = np(1-p) = 12$ (📄 H1), así que X ≈ N(30; 3,46):
-$$\beta \approx \Phi\left(\frac{32 - 30}{3{,}46}\right) = \Phi(0{,}577) = 0{,}718$$
+
+```math
+\beta \approx \Phi\left(\frac{32 - 30}{3{,}46}\right) = \Phi(0{,}577) = 0{,}718
+```
 
 **Exacto, con la binomial de la app:**
 ```
@@ -860,13 +969,21 @@ Una empresa de cosmética afirma que una nueva crema reduce las manchas del cuti
 <summary>Solución paso a paso</summary>
 
 💡 **Planteo del test.** La empresa afirma que la crema elimina **más del 60 %**. Lo que se pone a prueba va en H₁:
-$$H_0: p = 0{,}6 \qquad H_1: p > 0{,}6$$
+
+```math
+H_0: p = 0{,}6 \qquad H_1: p > 0{,}6
+```
+
 X = manchas eliminadas de 120. Cada mancha se elimina o no, independientemente, así que X ~ Bin(120; p) (📄 H1). "Comprar" significa rechazar H₀, y la **región de rechazo** ya está dada: {X > 82}.
 
 **a)** 💡 **Nivel de significación α:** la probabilidad de rechazar H₀ **cuando es cierta** (error tipo I). Se calcula con p = 0,6.
 
-**Aproximación Normal (como la guía).** Con n grande la binomial se parece a una normal con la misma media y varianza (📄 H1, $V = np(1-p)$):
-$$E(X) = 120\cdot0{,}6 = 72 \qquad \sigma = \sqrt{120\cdot0{,}6\cdot0{,}4} = 5{,}367$$
+**Aproximación Normal (como la guía).** Con n grande la binomial se parece a una normal con la misma media y varianza (📄 H1, $`V = np(1-p)`$):
+
+```math
+E(X) = 120\cdot0{,}6 = 72 \qquad \sigma = \sqrt{120\cdot0{,}6\cdot0{,}4} = 5{,}367
+```
+
 ```
 X~N(μ;σ)   μ=72   σ=5.367   P(X>x)   x=82   → 0.0312
 ```
@@ -875,7 +992,11 @@ X~N(μ;σ)   μ=72   σ=5.367   P(X>x)   x=82   → 0.0312
 **Exacto:** `X~Bin(n,p) n=120 p=0.6 P(X>x) x=82 → 0.0239`.
 
 **b)** 💡 **Error tipo II (β):** **no** rechazar (no comprar) cuando H₀ es falsa. Se calcula con el p **verdadero**, 0,75. No rechazar es X ≤ 82:
-$$E(X) = 90 \qquad \sigma = \sqrt{120\cdot0{,}75\cdot0{,}25} = 4{,}743$$
+
+```math
+E(X) = 90 \qquad \sigma = \sqrt{120\cdot0{,}75\cdot0{,}25} = 4{,}743
+```
+
 ```
 X~N(μ;σ)   μ=90   σ=4.743   P(X<x)   x=82   → 0.0458
 ```
@@ -912,10 +1033,17 @@ Se supone que el 10 % de los consumidores de cierta localidad prefiere la marca 
 <summary>Solución paso a paso</summary>
 
 **a)** 💡 **Hipótesis.** Se quiere demostrar que la preferencia **aumentó**, así que va en H₁:
-$$H_0: p = 0{,}1 \qquad H_1: p > 0{,}1$$
 
-💡 **Estadístico para proporciones.** $\hat p$ es aproximadamente Normal (📄 H2, $\hat p \sim N\left(p;\ \sqrt{\frac{p(1-p)}{n}}\right)$). Se estandariza **con p₀**, porque se supone H₀ cierta:
-$$\sqrt{\frac{0{,}1\cdot0{,}9}{100}} = 0{,}03 \qquad z_{obs} = \frac{0{,}13 - 0{,}10}{0{,}03} = 1$$
+```math
+H_0: p = 0{,}1 \qquad H_1: p > 0{,}1
+```
+
+💡 **Estadístico para proporciones.** $\hat p$ es aproximadamente Normal (📄 H2, $`\hat p \sim N\left(p;\ \sqrt{\frac{p(1-p)}{n}}\right)`$). Se estandariza **con p₀**, porque se supone H₀ cierta:
+
+```math
+\sqrt{\frac{0{,}1\cdot0{,}9}{100}} = 0{,}03 \qquad z_{obs} = \frac{0{,}13 - 0{,}10}{0{,}03} = 1
+```
+
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.95   → x=1.64485
 ```
@@ -951,7 +1079,7 @@ La guía da n ≥ 167, con un criterio más conservador que no explica. Con 133 
 
 **Respuesta:**
 
-- a) No se rechaza H₀ ($z_{obs}$ = 1)
+- a) No se rechaza H₀ ($`z_{obs}`$ = 1)
 - b) p-valor = 0,1587
 - c) $\beta_{0{,}2}$ = 0,1038
 - d) n ≥ 167 según la guía (con la fórmula de arriba alcanza n ≥ 133)
@@ -971,7 +1099,11 @@ Las piezas producidas por dos máquinas se encuentran en el depósito de un tall
 <summary>Solución paso a paso</summary>
 
 💡 **Un test con dos hipótesis puntuales.** Hay dos posibilidades concretas:
-$$H_0: \mu = 10{,}2 \text{ (máquina 1)} \qquad H_1: \mu = 10{,}4 \text{ (máquina 2)}$$
+
+```math
+H_0: \mu = 10{,}2 \text{ (máquina 1)} \qquad H_1: \mu = 10{,}4 \text{ (máquina 2)}
+```
+
 Se mide un promedio $\bar X$ de piezas. Como la máquina 2 hace piezas más grandes, se decide "máquina 2" si $\bar X$ > c.
 
 **Los dos errores:**
@@ -979,12 +1111,22 @@ Se mide un promedio $\bar X$ de piezas. Como la máquina 2 hace piezas más gran
 - 💡 **Tipo II (β):** decir "máquina 1" siendo de la 2: $P(\bar X < c)$ con μ = 10,4 y σ = 0,5.
 
 El promedio es Normal con desvío $\sigma/\sqrt n$ (📄 H2). Se pide que los dos errores valgan **lo mismo**:
-$$P\left(Z > \frac{c - 10{,}2}{0{,}45/\sqrt n}\right) = P\left(Z < \frac{c - 10{,}4}{0{,}5/\sqrt n}\right)$$
+
+```math
+P\left(Z > \frac{c - 10{,}2}{0{,}45/\sqrt n}\right) = P\left(Z < \frac{c - 10{,}4}{0{,}5/\sqrt n}\right)
+```
 
 Por la simetría de la normal, P(Z > a) = P(Z < b) exige que b = −a:
-$$\frac{c - 10{,}2}{0{,}45} = \frac{10{,}4 - c}{0{,}5}$$
+
+```math
+\frac{c - 10{,}2}{0{,}45} = \frac{10{,}4 - c}{0{,}5}
+```
+
 (el $\sqrt n$ se cancela). Despejando:
-$$0{,}5(c - 10{,}2) = 0{,}45(10{,}4 - c) \;\Rightarrow\; c = \frac{10{,}2\cdot0{,}5 + 10{,}4\cdot0{,}45}{0{,}95} = 10{,}29 \text{ mm}$$
+
+```math
+0{,}5(c - 10{,}2) = 0{,}45(10{,}4 - c) \;\Rightarrow\; c = \frac{10{,}2\cdot0{,}5 + 10{,}4\cdot0{,}45}{0{,}95} = 10{,}29 \text{ mm}
+```
 
 La frontera queda más cerca de 10,2 porque la máquina 1 tiene menos dispersión. No depende de n, aunque el valor de α = β sí.
 
@@ -1010,12 +1152,23 @@ Un productor está interesado en reducir el tiempo de secado de una pintura impe
 <summary>Solución paso a paso</summary>
 
 **Comparar dos grupos.** Se quiere demostrar que la fórmula B **seca más rápido**: $\mu_B < \mu_A$, es decir $\mu_B - \mu_A < 0$. 💡 Lo que se quiere demostrar va en H₁:
-$$H_0: \mu_B - \mu_A = 0 \qquad H_1: \mu_B - \mu_A < 0$$
+
+```math
+H_0: \mu_B - \mu_A = 0 \qquad H_1: \mu_B - \mu_A < 0
+```
 
 **a)** 💡 **Estadístico para la diferencia de medias con σ's conocidos** (📄 H2, tal cual):
-$$Z = \frac{\bar X_B - \bar X_A - (\mu_B - \mu_A)}{\sqrt{\frac{\sigma_B^2}{n_B} + \frac{\sigma_A^2}{n_A}}} \sim N(0;1)$$
+
+```math
+Z = \frac{\bar X_B - \bar X_A - (\mu_B - \mu_A)}{\sqrt{\frac{\sigma_B^2}{n_B} + \frac{\sigma_A^2}{n_A}}} \sim N(0;1)
+```
+
 Si H₀ es cierta, $\mu_B - \mu_A = 0$. Las varianzas de los dos promedios se suman porque las muestras son independientes.
-$$\sqrt{\frac{64}{10} + \frac{64}{10}} = 3{,}578 \qquad z_{obs} = \frac{112 - 121 - 0}{3{,}578} = -2{,}516$$
+
+```math
+\sqrt{\frac{64}{10} + \frac{64}{10}} = 3{,}578 \qquad z_{obs} = \frac{112 - 121 - 0}{3{,}578} = -2{,}516
+```
+
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.05   → x=−1.64485
 X~N(μ;σ)   μ=0   σ=1   P(X<x)   x=−2.516   → 0.0059   (valor p)
@@ -1031,7 +1184,10 @@ X~N(μ;σ)   μ=0   σ=1   P(X<x)   x=−2.516   → 0.0059   (valor p)
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.90   → x=1.28155
 ```
 Igualando:
-$$10 = (1{,}64485 + 1{,}28155)\cdot8\sqrt{\frac2n} \;\Rightarrow\; n = \frac{2\cdot64\cdot(1{,}645 + 1{,}282)^2}{100} = 10{,}96 \;\Rightarrow\; n = 11 \text{ por grupo}$$
+
+```math
+10 = (1{,}64485 + 1{,}28155)\cdot8\sqrt{\frac2n} \;\Rightarrow\; n = \frac{2\cdot64\cdot(1{,}645 + 1{,}282)^2}{100} = 10{,}96 \;\Rightarrow\; n = 11 \text{ por grupo}
+```
 
 </details>
 
@@ -1058,10 +1214,16 @@ En un estudio sobre el desarrollo psicomotriz de niños que cursan el preescolar
 <summary>Solución paso a paso</summary>
 
 **a)** 💡 **Hipótesis.** "Si las diferencias pueden considerarse significativas", sin decir para qué lado, es un test **bilateral**:
-$$H_0: \mu_V = \mu_M \qquad H_1: \mu_V \neq \mu_M$$
+
+```math
+H_0: \mu_V = \mu_M \qquad H_1: \mu_V \neq \mu_M
+```
 
 💡 **Estadístico para diferencia de medias con σ conocido** (📄 H2): $Z = \frac{\bar X_V - \bar X_M - 0}{\sqrt{\sigma^2/n_V + \sigma^2/n_M}}$. Con σ = 1,5 en las dos:
-$$z_{obs} = \frac{25{,}04 - 26{,}40}{1{,}5\sqrt{\frac1{24} + \frac1{25}}} = \frac{-1{,}36}{0{,}4287} = -3{,}17$$
+
+```math
+z_{obs} = \frac{25{,}04 - 26{,}40}{1{,}5\sqrt{\frac1{24} + \frac1{25}}} = \frac{-1{,}36}{0{,}4287} = -3{,}17
+```
 
 **Región crítica bilateral** (2,5 % en cada cola): |Z| > 1,96.
 ```
@@ -1075,7 +1237,7 @@ X~N(μ;σ)   μ=0   σ=1   P(X<x)   x=−3.17   → 0.00076   → p = 2·0.00076
 
 **Respuesta:**
 
-- a) Sí, las diferencias son significativas al 5 % ($z_{obs}$ = −3,17)
+- a) Sí, las diferencias son significativas al 5 % ($`z_{obs}`$ = −3,17)
 - b) No, la observación de gráficos no constituye evidencia estadística
 
 </details>
@@ -1106,13 +1268,22 @@ B → n = 10   media = 7.5   varianza = 3.1667
 ```
 
 **a)** 💡 **Hipótesis.** "Comparar la efectividad", sin sospecha previa de cuál es mejor, es un test **bilateral**:
-$$H_0: \mu_A = \mu_B \qquad H_1: \mu_A \neq \mu_B$$
+
+```math
+H_0: \mu_A = \mu_B \qquad H_1: \mu_A \neq \mu_B
+```
 
 💡 **Estadístico.** Los σ son desconocidos, pero la consigna dice **varianza común**. Entonces las dos varianzas muestrales se **combinan** en una sola, $S_p$, un promedio ponderado (📄 H2):
-$$S_p = \sqrt{\frac{(n_A-1)S_A^2 + (n_B-1)S_B^2}{n_A + n_B - 2}} = \sqrt{\frac{9\cdot0{,}9 + 9\cdot3{,}1667}{18}} = \sqrt{2{,}033} = 1{,}426$$
+
+```math
+S_p = \sqrt{\frac{(n_A-1)S_A^2 + (n_B-1)S_B^2}{n_A + n_B - 2}} = \sqrt{\frac{9\cdot0{,}9 + 9\cdot3{,}1667}{18}} = \sqrt{2{,}033} = 1{,}426
+```
 
 Con $S_p$ el estadístico es una **t** con $n_A + n_B - 2 = 18$ grados de libertad (📄 H2):
-$$T = \frac{\bar X_A - \bar X_B - 0}{S_p\sqrt{\frac1{n_A} + \frac1{n_B}}} \sim t_{18} \qquad t_{obs} = \frac{6{,}7 - 7{,}5}{1{,}426\cdot\sqrt{0{,}2}} = -1{,}2545$$
+
+```math
+T = \frac{\bar X_A - \bar X_B - 0}{S_p\sqrt{\frac1{n_A} + \frac1{n_B}}} \sim t_{18} \qquad t_{obs} = \frac{6{,}7 - 7{,}5}{1{,}426\cdot\sqrt{0{,}2}} = -1{,}2545
+```
 
 **Región crítica bilateral:**
 ```
@@ -1169,11 +1340,21 @@ Se pide:
 💡 **Shapiro-Wilks** es un test cuya H₀ es "los datos vienen de una Normal". Los valores p (0,966 y 0,368) son mayores que 0,05, así que **no se rechaza la normalidad** en ninguno: se puede usar el test t.
 
 💡 **Hipótesis.** "Si existe diferencia", sin dirección, es bilateral:
-$$H_0: \mu_1 = \mu_2 \qquad H_1: \mu_1 \neq \mu_2$$
+
+```math
+H_0: \mu_1 = \mu_2 \qquad H_1: \mu_1 \neq \mu_2
+```
 
 💡 **Estadístico.** Misma dispersión, así que se **combinan** las varianzas en $S_p$ y se usa t con $n_1 + n_2 - 2 = 13$ grados de libertad (📄 H2). Con la descriptiva: $s_1 = 0{,}11485$ y $s_2 = 0{,}14081$.
-$$S_p = \sqrt{\frac{6\cdot0{,}11485^2 + 7\cdot0{,}14081^2}{13}} = 0{,}1295$$
-$$t_{obs} = \frac{1{,}3829 - 1{,}4363}{0{,}1295\sqrt{\frac17 + \frac18}} = -0{,}797$$
+
+```math
+S_p = \sqrt{\frac{6\cdot0{,}11485^2 + 7\cdot0{,}14081^2}{13}} = 0{,}1295
+```
+
+```math
+t_{obs} = \frac{1{,}3829 - 1{,}4363}{0{,}1295\sqrt{\frac17 + \frac18}} = -0{,}797
+```
+
 ```
 X~t(ν)   ν=13   P(X<x)=0.975   → x=2.16037
 X~t(ν)   ν=13   P(X<x)   x=−0.797   → 0.220   → p = 2·0.220 = 0.44
@@ -1185,7 +1366,7 @@ X~t(ν)   ν=13   P(X<x)   x=−0.797   → 0.220   → p = 2·0.220 = 0.44
 **Respuesta:**
 
 - a) La media del técnico 2 parece superior a la del técnico 1
-- b) No se rechaza H₀ ($t_{obs}$ = −0,80): no hay evidencia de diferencia entre las medias, a pesar de lo que sugiere el gráfico
+- b) No se rechaza H₀ ($`t_{obs}`$ = −0,80): no hay evidencia de diferencia entre las medias, a pesar de lo que sugiere el gráfico
 
 </details>
 
@@ -1260,14 +1441,27 @@ Una muestra aleatoria de 250 automóviles que circulan por la ciudad y que tiene
 **Datos:** $\hat p_1 = \frac{98}{250} = 0{,}392$ (10 años o más) y $\hat p_2 = \frac{79}{300} = 0{,}2633$ (menos de 10 años).
 
 **a)** 💡 **Hipótesis.** Se quiere demostrar que la proporción es **mayor** en los autos viejos, así que va en H₁:
-$$H_0: p_1 - p_2 = 0 \qquad H_1: p_1 - p_2 > 0$$
+
+```math
+H_0: p_1 - p_2 = 0 \qquad H_1: p_1 - p_2 > 0
+```
 
 💡 **Estadístico para diferencia de proporciones** (❌, no está en la hoja). Si H₀ es cierta, $p_1 = p_2$, con un valor común desconocido. Lo mejor es estimarlo **juntando** las dos muestras: la **proporción combinada**.
-$$\hat p = \frac{x_1 + x_2}{n_1 + n_2} = \frac{98 + 79}{550} = 0{,}3218$$
-$$Z = \frac{\hat p_1 - \hat p_2}{\sqrt{\hat p(1-\hat p)\left(\frac1{n_1} + \frac1{n_2}\right)}} \approx N(0;1)$$
+
+```math
+\hat p = \frac{x_1 + x_2}{n_1 + n_2} = \frac{98 + 79}{550} = 0{,}3218
+```
+
+```math
+Z = \frac{\hat p_1 - \hat p_2}{\sqrt{\hat p(1-\hat p)\left(\frac1{n_1} + \frac1{n_2}\right)}} \approx N(0;1)
+```
+
 (La idea es la misma que la del $S_p$ en medias: si son iguales, se combina la información.)
 
-$$z_{obs} = \frac{0{,}392 - 0{,}2633}{\sqrt{0{,}3218\cdot0{,}6782\left(\frac1{250} + \frac1{300}\right)}} = \frac{0{,}1287}{0{,}0400} = 3{,}22$$
+```math
+z_{obs} = \frac{0{,}392 - 0{,}2633}{\sqrt{0{,}3218\cdot0{,}6782\left(\frac1{250} + \frac1{300}\right)}} = \frac{0{,}1287}{0{,}0400} = 3{,}22
+```
+
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.99   → x=2.32635
 ```
@@ -1287,7 +1481,7 @@ La guía informa 0,0012, aproximadamente el doble, como si fuera bilateral.
 
 **Respuesta:**
 
-- a) Sí, hay evidencia al 1 % ($z_{obs}$ ≈ 3,22)
+- a) Sí, hay evidencia al 1 % ($`z_{obs}`$ ≈ 3,22)
 - b) Valor p ≈ 0,001 (la guía da 0,0012)
 - c) Aproximado o asintótico
 

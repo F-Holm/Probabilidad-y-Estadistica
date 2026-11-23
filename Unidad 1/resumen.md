@@ -105,7 +105,7 @@ Para tres sucesos: $P(B_1 \cap B_2 \cap B_3) = P(B_1)\,P(B_2/B_1)\,P(B_3/B_1 \ca
 
 ### Propiedades de la condicional (ejercicios teóricos)
 
-- $P(B/A) + P(\bar B/A) = 1$ si $P(A) > 0$ (también $P(A/B) + P(\bar A/B) = 1$).
+- $P(B/A) + P(\bar B/A) = 1$ si $P(A) > 0$ (también $`P(A/B) + P(\bar A/B) = 1`$).
 - $P(A \cup B / C) = P(A/C) + P(B/C) - P(A \cap B / C)$ si $P(C) > 0$.
 - Si $P(B/A) > P(B)$ entonces $P(\bar B/A) < P(\bar B)$.
 - Si $A \subseteq B$: $P(B/A) = 1$ (siempre que ocurre A ocurre B) y $P(A/B) = P(A)/P(B)$.
@@ -138,7 +138,7 @@ Equivale a $P(A/B) = P(A)$ y $P(B/A) = P(B)$: la ocurrencia de uno no modifica l
 - **Extracciones con reposición** ⇒ independientes. **Sin reposición** ⇒ hay condicionamiento.
 - Si A y B son independientes, también lo son A y $\bar B$, $\bar A$ y B, y $\bar A$ y $\bar B$. (Prueba: $P(A \cap \bar B) = P(A) - P(A)P(B) = P(A)P(\bar B)$.)
 - **Independencia ≠ exclusión mutua**: si $P(A), P(B) > 0$ y A, B son M.E., entonces $P(A \cap B) = 0 \neq P(A)P(B)$, así que **no** son independientes. Recíprocamente, si son independientes no son M.E.
-- **Tres sucesos mutuamente independientes**: además de la independencia de a pares, tiene que cumplirse $P(A \cap B \cap C) = P(A)P(B)P(C)$. La independencia de a pares **no alcanza** (Ej. 16: dos dados, A = "1° par", B = "2° par", C = "suma par": son independientes de a pares, pero $P(A \cap B \cap C) = 1/4 \neq 1/8$).
+- **Tres sucesos mutuamente independientes**: además de la independencia de a pares, tiene que cumplirse $P(A \cap B \cap C) = P(A)P(B)P(C)$. La independencia de a pares **no alcanza** (Ej. 16: dos dados, A = "1° par", B = "2° par", C = "suma par": son independientes de a pares, pero $`P(A \cap B \cap C) = 1/4 \neq 1/8`$).
 - Si A, B, C son mutuamente independientes: $P(A \cup B \cup C) = 1 - P(\bar A)P(\bar B)P(\bar C)$ ("al menos uno" = 1 − "ninguno").
 
 Que $P(A \cap B) = 0$ no implica que A y B sean complementarios: además deberían cumplir $P(A) + P(B) = 1$ (por ejemplo, con 0,5 y 0,3 no lo son).
@@ -164,7 +164,7 @@ $P(A) = 0{,}06 + 0{,}075 + 0{,}105 = 0{,}24$; $P(J/A) = 0{,}105/0{,}24 = 0{,}437
 
 **Urna 3 rojas y 7 negras, extraer 2**:
 - Sin reposición: $P(R_1 \cap N_2) = \frac{3}{10}\cdot\frac{7}{9} = \frac{7}{30}$.
-- Con reposición: $P(R_1 \cap N_2) = \frac{3}{10}\cdot\frac{7}{10} = \frac{21}{100}$ (independientes: $P(N_2/R_1) = P(N_2)$).
+- Con reposición: $P(R_1 \cap N_2) = \frac{3}{10}\cdot\frac{7}{10} = \frac{21}{100}$ (independientes: $`P(N_2/R_1) = P(N_2)`$).
 
 **Urna 4 negras y 3 blancas, 3 extracciones sin reposición**: $P(B_1 \cap B_2 \cap B_3) = \frac{3}{7}\cdot\frac{2}{6}\cdot\frac{1}{5} = \frac{1}{35}$.
 
@@ -182,7 +182,7 @@ $P(A) = 0{,}06 + 0{,}075 + 0{,}105 = 0{,}24$; $P(J/A) = 0{,}105/0{,}24 = 0{,}437
 | 5 | Frascos de mermelada (12 % peso, 8 % tapa, 3 % ambas) | a) Exactamente una falla: 0,12 + 0,08 − 2·0,03 = **0,14**. b) No descartado: 1 − 0,17 = **0,83**. c) P(tapa / peso) = 0,03/0,12 = 0,25. d) P(peso / sin problema de tapa) = 0,09/0,92 ≈ 0,098. e) 0,12·0,08 ≠ 0,03 ⇒ no son independientes. |
 | 6 | Blanco cuadrado de 2,5 m (probabilidad geométrica) | P = área favorable / área total. a) $\pi\cdot1^2/2{,}5^2 = 0{,}16\pi$. b) Corona entre 0,5 y 1 m: $\pi(1 - 0{,}25)/6{,}25 = 0{,}12\pi$. c) Dos disparos en el semiplano superior: 0,5·0,5 = 0,25. d) En distinto cuadrante: 1 − 4·(1/4)² = **0,75**. |
 | 7 | Dado cargado (pares proporcionales a su valor) | 3·(1/6) + 2k + 4k + 6k = 1 ⇒ k = 1/24: P(2) = 1/12, P(4) = 1/6, P(6) = 1/4. Laplace **no** se aplica a los pares porque no son equiprobables. P(A) = 1/2; P(A∪C) = 1/2 + 1/6 = 2/3 (M.E.); $P(A^c \cap B^c) = P(C) = 1/6$; P(B − C) = P(B) = 2/3. |
-| 8 | 6 varones (1/3 con anteojos) y 10 mujeres (1/5) | Tabla: A = 4, M = 10, A∩M = 2, total 16. a) P(A∪M) = (4 + 10 − 2)/16 = **3/4**. b) P(V∩$\bar A$) = 4/16 = **1/4** (es el complemento de a). |
+| 8 | 6 varones (1/3 con anteojos) y 10 mujeres (1/5) | Tabla: A = 4, M = 10, A∩M = 2, total 16. a) P(A∪M) = (4 + 10 − 2)/16 = **3/4**. b) P(V∩$`\bar A`$) = 4/16 = **1/4** (es el complemento de a). |
 | 9 | 3 motores de 10, 4 a inyección | Casos totales $\binom{10}{3} = 120$. a) Ninguno: $\binom{6}{3}/120 = 1/6$. b) A lo sumo uno: (20 + 60)/120 = **2/3**. c) Al menos dos: 1 − 2/3 = 1/3. También sale con el teorema de la multiplicación: 6/10·5/9·4/8 = 1/6. |
 | 10 | Cumpleaños (8 personas) | Complemento: "todos en días distintos" = $\frac{365\cdot364\cdots358}{365^8} \approx 0{,}926$ ⇒ P(al menos 2 coinciden) ≈ **0,074**. Con 23 personas da ≈ 0,507. |
 | 11 | Unión de tres sucesos | Demostración de la propiedad 6 (ver sección 2). |
@@ -220,8 +220,8 @@ $P(A) = 0{,}06 + 0{,}075 + 0{,}105 = 0{,}24$; $P(J/A) = 0{,}105/0{,}24 = 0{,}437
 
 ### Actividades de las introducciones (partes 1 y 2)
 
-- Diagrama de Venn con sólo A = 0,20, A∩B = 0,30, sólo B = 0,10 y ninguno = 0,40: P(A) = 0,5; P(B∩$\bar A$) = 0,1; P(A∪B) = 0,6; P(B/A) = 0,6; P($\bar A$/B) = 0,25.
-- Fallas: el 30 % tiene A, el 20 % tiene B y el 65 % no tiene fallas ⇒ ambas = 0,15; una sola = 0,20; fallado = 0,35; P(B/A) = 0,5; P(A/$\bar B$) = 0,1875.
+- Diagrama de Venn con sólo A = 0,20, A∩B = 0,30, sólo B = 0,10 y ninguno = 0,40: P(A) = 0,5; P(B∩$`\bar A`$) = 0,1; P(A∪B) = 0,6; P(B/A) = 0,6; P($`\bar A`$/B) = 0,25.
+- Fallas: el 30 % tiene A, el 20 % tiene B y el 65 % no tiene fallas ⇒ ambas = 0,15; una sola = 0,20; fallado = 0,35; P(B/A) = 0,5; P(A/$`\bar B`$) = 0,1875.
 - Divisiones A, B, C (25 %, 35 %, 40 %; 20 %, 30 % y 25 % desaprobados): P(D) = 0,255; P(C/D) ≈ 0,392.
 - Fallas sólo A = 10 %, sólo B = 20 % y sin fallas = 55 % ⇒ ambas = 0,15.
 - Pozo potable con P = 0,1: que el primero potable sea el n-ésimo pozo = $0{,}9^{\,n-1}\cdot0{,}1$ (n = 2: 0,09).

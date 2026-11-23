@@ -82,7 +82,7 @@ $$\binom nk = \frac{n!}{(n-k)!\,k!} \quad\text{(nCr en la calculadora)}$$
 
 - En una VAC, $F'(x) = f(x)$ y no importa si las desigualdades son estrictas.
 - Discreta: $P(X = x_i) = F(x_i) - F(x_{i-1})$ y $P(X \ge x_i) = 1 - F(x_{i-1})$.
-- **Percentil / mediana:** el valor $x_q$ tal que $F(x_q) = q$ (la mediana es $q = 0{,}5$).
+- **Percentil / mediana:** el valor $x_q$ tal que $F(x_q) = q$ (la mediana es $`q = 0{,}5`$).
 
 ### Varianza y medidas
 

@@ -34,16 +34,16 @@ Analizar con un nivel de significación del 1 % la pertinencia del modelo de reg
 - $S_{yy} = 747{,}72 - \frac{81{,}8^2}9 = 4{,}2489$
 - $S_{xy} = 123{,}49 - \frac{13{,}5\cdot81{,}8}9 = 0{,}79$
 
-**Recta estimada** (📄 H2, $b_1 = \frac{S_{xy}}{S_{xx}}$ y $b_0 = \bar y - b_1\bar x$): $b_1 = \frac{0{,}79}{0{,}6} = 1{,}3167$ y $b_0 = 9{,}0889 - 1{,}3167\cdot1{,}5 = 7{,}1139$, así que $\hat y = 7{,}114 + 1{,}317x$.
+**Recta estimada** (📄 H2, $b_1 = \frac{S_{xy}}{S_{xx}}$ y $`b_0 = \bar y - b_1\bar x`$): $b_1 = \frac{0{,}79}{0{,}6} = 1{,}3167$ y $b_0 = 9{,}0889 - 1{,}3167\cdot1{,}5 = 7{,}1139$, así que $\hat y = 7{,}114 + 1{,}317x$.
 
-💡 **¿El modelo es pertinente? Test de correlación.** El **coeficiente de correlación r** (📄 H2, $r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$) mide qué tan alineados están los puntos (de −1 a 1). El test decide si la correlación de **toda la población**, ρ, es distinta de 0, o si el alineamiento de la muestra pudo ser casualidad.
+💡 **¿El modelo es pertinente? Test de correlación.** El **coeficiente de correlación r** (📄 H2, $`r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}`$) mide qué tan alineados están los puntos (de −1 a 1). El test decide si la correlación de **toda la población**, ρ, es distinta de 0, o si el alineamiento de la muestra pudo ser casualidad.
 
 **Supuestos** (❌): errores normales, independientes y con la misma varianza (homocedásticos).
 
 1. H₀: ρ = 0 (no hay relación lineal) vs. H₁: ρ ≠ 0. Lo que se quiere mostrar va en H₁.
 2. α = 0,01.
-3. Estadístico (📄 H2, $\sqrt{n-2}\frac{r}{\sqrt{1-r^2}} = t_{n-2}$): $T \sim t_7$ si H₀ es cierta.
-4. $r = \frac{0{,}79}{\sqrt{0{,}6\cdot4{,}2489}} = 0{,}4948$ ($R^2 = 0{,}245$), así que $t_{obs} = \sqrt7\cdot\frac{0{,}4948}{\sqrt{1 - 0{,}2448}} = 1{,}506$.
+3. Estadístico (📄 H2, $`\sqrt{n-2}\frac{r}{\sqrt{1-r^2}} = t_{n-2}`$): $T \sim t_7$ si H₀ es cierta.
+4. $r = \frac{0{,}79}{\sqrt{0{,}6\cdot4{,}2489}} = 0{,}4948$ ($`R^2 = 0{,}245`$), así que $t_{obs} = \sqrt7\cdot\frac{0{,}4948}{\sqrt{1 - 0{,}2448}} = 1{,}506$.
 5. Bilateral, α/2 = 0,005 en cada cola:
    ```
    X~t(ν)   ν=7   P(X<x)=0.995   → x=3.49948
@@ -83,7 +83,11 @@ Se toma una muestra de consumo de combustible en un cierto modelo de coche, obte
 **Datos.** Calculadora de estadística → **Estadística descriptiva** con los 10 valores: n = 10, $\bar x = 7{,}03$, $s^2 = 0{,}04233$ (s = 0,2058). La varianza muestral divide por n − 1.
 
 💡 **Por qué se usa la χ².** La varianza muestral S² no es Normal (nunca es negativa y es asimétrica). Si la población es Normal (por eso la consigna lo supone), $\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}$ (📄 H2). De ahí sale el intervalo (📄 H2):
-$$I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)$$
+
+```math
+I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)
+```
+
 Hacen falta dos valores de χ² (uno por cola), y el **grande** va en la punta izquierda.
 
 Con 1 − α = 0,98, α/2 = 0,01 y 9 grados de libertad:
@@ -91,17 +95,28 @@ Con 1 − α = 0,98, α/2 = 0,01 y 9 grados de libertad:
 X~χ²(ν)   ν=9   P(X<x)=0.99   → x=21.666
 X~χ²(ν)   ν=9   P(X<x)=0.01   → x=2.0879
 ```
-$$I.C._{\sigma^2} = \left(\frac{9\cdot0{,}04233}{21{,}666};\ \frac{9\cdot0{,}04233}{2{,}088}\right) = (0{,}0176;\ 0{,}1825) \text{ (l/100 km)}^2$$
+
+```math
+I.C._{\sigma^2} = \left(\frac{9\cdot0{,}04233}{21{,}666};\ \frac{9\cdot0{,}04233}{2{,}088}\right) = (0{,}0176;\ 0{,}1825) \text{ (l/100 km)}^2
+```
 
 **b)** Ahora el IC es **para la media**, con σ = 0,17 **conocido**. 💡 La fórmula de la hoja (📄 H2) es "promedio ± margen", $\bar X \mp z_{1-\frac\alpha2}\frac{\sigma}{\sqrt n}$. El margen es el **error máximo de estimación**:
-$$d = z_{1-\frac\alpha2}\cdot\frac{\sigma}{\sqrt n}$$
+
+```math
+d = z_{1-\frac\alpha2}\cdot\frac{\sigma}{\sqrt n}
+```
+
 (Sale de que el promedio varía alrededor de μ con desvío $\frac{\sigma}{\sqrt n}$.)
 
 ✍️ Se pide d ≤ 0,05 y se despeja n (❌, despeje):
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.995   → x=2.57583
 ```
-$$2{,}576\cdot\frac{0{,}17}{\sqrt n} \le 0{,}05 \;\Rightarrow\; n \ge \left(\frac{2{,}576\cdot0{,}17}{0{,}05}\right)^2 = 76{,}7 \;\Rightarrow\; n = 77$$
+
+```math
+2{,}576\cdot\frac{0{,}17}{\sqrt n} \le 0{,}05 \;\Rightarrow\; n \ge \left(\frac{2{,}576\cdot0{,}17}{0{,}05}\right)^2 = 76{,}7 \;\Rightarrow\; n = 77
+```
+
 Siempre se redondea hacia arriba: con 76 el error quedaría apenas mayor que 0,05.
 
 </details>
@@ -175,10 +190,18 @@ Se tomó una muestra aleatoria de 10 observaciones de óxidos de azufre (SO₂),
 
 **a)**
 1. **Hipótesis.** "Avalar que está por debajo de 58" es lo que se quiere demostrar, así que va en H₁:
-   $$H_0: \mu \ge 58 \qquad H_1: \mu < 58$$
+
+   ```math
+   H_0: \mu \ge 58 \qquad H_1: \mu < 58
+   ```
+
 2. α = 0,01, el riesgo aceptado de rechazar H₀ siendo cierta.
 3. 💡 **Estadístico:** a cuántos "errores estándar" cayó el promedio de 58. Con S en lugar de σ, es una **t** con n − 1 grados de libertad (📄 H2, tal cual):
-   $$T = \frac{\bar X - 58}{S/\sqrt n} \sim t_9$$
+
+   ```math
+   T = \frac{\bar X - 58}{S/\sqrt n} \sim t_9
+   ```
+
 4. $t_{obs} = \frac{57{,}41 - 58}{0{,}94/\sqrt{10}} = \frac{-0{,}59}{0{,}2973} = -1{,}985$.
 5. 💡 **Región crítica:** los valores que llevan a rechazar, del lado de H₁ (izquierda), con área α:
    ```
@@ -224,14 +247,22 @@ En el boletín de la Asociación Americana del Corazón, *Hypertension*, investi
 
 💡 **Test de hipótesis, como un juicio:** H₀ (lleva la igualdad) se da por cierta salvo evidencia fuerte en contra. H₁ es lo que se quiere demostrar.
 
-💡 **Cuánto varía el promedio.** El promedio de 36 personas varía con desvío $\frac{\sigma}{\sqrt n} = \frac{2{,}4}{6} = 0{,}4$ (📄 H2, $\bar X \sim N(\mu;\ \sigma/\sqrt n)$). σ = 2,4 es conocido ("desvío poblacional").
+💡 **Cuánto varía el promedio.** El promedio de 36 personas varía con desvío $\frac{\sigma}{\sqrt n} = \frac{2{,}4}{6} = 0{,}4$ (📄 H2, $`\bar X \sim N(\mu;\ \sigma/\sqrt n)`$). σ = 2,4 es conocido ("desvío poblacional").
 
 **a)**
 1. Se quiere demostrar "más de 8":
-   $$H_0: \mu \le 8 \qquad H_1: \mu > 8$$
+
+   ```math
+   H_0: \mu \le 8 \qquad H_1: \mu > 8
+   ```
+
 2. α = 0,05, el riesgo aceptado de rechazar H₀ siendo cierta.
 3. 💡 **Estadístico:** a cuántos desvíos de 8 cayó el promedio. Se estandariza (📄 H1):
-   $$Z = \frac{\bar X - 8}{0{,}4} \sim N(0;1) \text{ si } \mu = 8$$
+
+   ```math
+   Z = \frac{\bar X - 8}{0{,}4} \sim N(0;1) \text{ si } \mu = 8
+   ```
+
 4. $z_{obs} = \frac{8{,}8 - 8}{0{,}4} = 2$.
 5. 💡 **Región crítica:** del lado de H₁ (derecha), con área α:
    ```

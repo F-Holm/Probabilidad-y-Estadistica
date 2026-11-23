@@ -38,7 +38,7 @@ $$\boxed{P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}, \quad k = 0, 1, \dots, n}$$
 
 ### Esperanza y varianza
 
-La binomial es la **suma de n Bernoulli independientes**: $X = \sum_{i=1}^n X_i$ con $X_i \sim$ Bernoulli($p$).
+La binomial es la **suma de n Bernoulli independientes**: $X = \sum_{i=1}^n X_i$ con $X_i \sim$ Bernoulli($`p`$).
 - $E(X) = \sum E(X_i) = np$
 - $V(X) = \sum V(X_i) = np(1-p)$ (la varianza de la suma es la suma de las varianzas porque las $X_i$ son independientes)
 
@@ -231,13 +231,13 @@ Video: https://youtu.be/191SI7D2Ahg
 
 | Distribución | Qué modela | $P(X = k)$ o $f(x)$ | $E(X)$ | $V(X)$ |
 |---|---|---|---|---|
-| Bernoulli($p$) | éxito/fracaso en una prueba | $P(1) = p$, $P(0) = 1 - p$ | $p$ | $p(1-p)$ |
-| Binomial($n; p$) | n.º de éxitos en n pruebas independientes | $\binom{n}{k}p^k(1-p)^{n-k}$ | $np$ | $np(1-p)$ |
-| Hipergeométrica($N; K; n$) | n.º de éxitos al extraer n sin reposición | $\dfrac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}$ | $n\dfrac{K}{N}$ * | $n\dfrac{K}{N}\left(1-\dfrac{K}{N}\right)\dfrac{N-n}{N-1}$ * |
-| Poisson($\lambda = \alpha t$) | n.º de ocurrencias en un continuo | $\dfrac{\lambda^k}{k!}e^{-\lambda}$ | $\lambda$ | $\lambda$ |
-| Uniforme($a; b$) | valor "al azar" en un intervalo | $\dfrac{1}{b-a}$ en $[a; b]$ | $\dfrac{a+b}{2}$ | $\dfrac{(b-a)^2}{12}$ |
-| Exponencial($\lambda$) | tiempo de espera o duración (sin memoria) | $\lambda e^{-\lambda x}$, $x \ge 0$ | $\dfrac1\lambda$ | $\dfrac1{\lambda^2}$ |
-| Normal($\mu; \sigma$) | mediciones simétricas alrededor de μ | $\dfrac{1}{\sigma\sqrt{2\pi}}e^{-\frac12\left(\frac{x-\mu}{\sigma}\right)^2}$ | $\mu$ | $\sigma^2$ |
+| Bernoulli($`p`$) | éxito/fracaso en una prueba | $P(1) = p$, $P(0) = 1 - p$ | $p$ | $p(1-p)$ |
+| Binomial($`n; p`$) | n.º de éxitos en n pruebas independientes | $\binom{n}{k}p^k(1-p)^{n-k}$ | $np$ | $np(1-p)$ |
+| Hipergeométrica($`N; K; n`$) | n.º de éxitos al extraer n sin reposición | $\dfrac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}$ | $n\dfrac{K}{N}$ * | $n\dfrac{K}{N}\left(1-\dfrac{K}{N}\right)\dfrac{N-n}{N-1}$ * |
+| Poisson($`\lambda = \alpha t`$) | n.º de ocurrencias en un continuo | $\dfrac{\lambda^k}{k!}e^{-\lambda}$ | $\lambda$ | $\lambda$ |
+| Uniforme($`a; b`$) | valor "al azar" en un intervalo | $\dfrac{1}{b-a}$ en $[a; b]$ | $\dfrac{a+b}{2}$ | $\dfrac{(b-a)^2}{12}$ |
+| Exponencial($`\lambda`$) | tiempo de espera o duración (sin memoria) | $\lambda e^{-\lambda x}$, $x \ge 0$ | $\dfrac1\lambda$ | $\dfrac1{\lambda^2}$ |
+| Normal($`\mu; \sigma`$) | mediciones simétricas alrededor de μ | $\dfrac{1}{\sigma\sqrt{2\pi}}e^{-\frac12\left(\frac{x-\mu}{\sigma}\right)^2}$ | $\mu$ | $\sigma^2$ |
 
 \* La esperanza y la varianza de la hipergeométrica no aparecen en las diapositivas del aula virtual; se agregan como referencia.
 

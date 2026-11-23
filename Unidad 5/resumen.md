@@ -19,7 +19,7 @@ Su valor de verdad **no se puede conocer**: se decide a partir de una muestra. U
 
 Lo que se quiere demostrar (la "sospecha", la afirmación del fabricante, …) va en **H₁**, porque sólo rechazar H₀ es una conclusión fuerte.
 
-Las hipótesis se plantean sobre **parámetros** (μ, σ², p), nunca sobre estadísticos ($\bar x$, s², $\hat p$).
+Las hipótesis se plantean sobre **parámetros** (μ, σ², p), nunca sobre estadísticos ($`\bar x`$, s², $`\hat p`$).
 
 | Tipo de test | H₀ | H₁ | Región crítica |
 |---|---|---|---|
@@ -80,12 +80,12 @@ El test bilateral de nivel α **no rechaza** H₀: θ = θ₀ exactamente cuando
 | σ desconocido, X normal, n < 30 | $T = \dfrac{\bar X - \mu_0}{S/\sqrt n}$ | $t_{n-1}$ |
 | σ desconocido, n ≥ 30 | $Z = \dfrac{\bar X - \mu_0}{S/\sqrt n}$ | ≈ N(0; 1) |
 
-Regiones críticas (con Z; con T se cambian los z por $t_{n-1}$):
+Regiones críticas (con Z; con T se cambian los z por $`t_{n-1}`$):
 
 | H₁ | RC |
 |---|---|
-| μ < μ₀ | $Z < z_\alpha$ (o $\bar X < \mu_0 + z_\alpha\frac\sigma{\sqrt n}$) |
-| μ > μ₀ | $Z > z_{1-\alpha}$ (o $\bar X > \mu_0 + z_{1-\alpha}\frac\sigma{\sqrt n}$) |
+| μ < μ₀ | $Z < z_\alpha$ (o $`\bar X < \mu_0 + z_\alpha\frac\sigma{\sqrt n}`$) |
+| μ > μ₀ | $Z > z_{1-\alpha}$ (o $`\bar X > \mu_0 + z_{1-\alpha}\frac\sigma{\sqrt n}`$) |
 | μ ≠ μ₀ | $\lvert Z\rvert > z_{1-\alpha/2}$ |
 
 El test es de **nivel exacto** si la distribución del estadístico es exacta (población normal) y **aproximado (asintótico)** si se usa el TCL.
@@ -154,9 +154,9 @@ $$1 - \beta(\mu_1) = P(\text{rechazar } H_0 \mid \mu = \mu_1) = P(\bar X \in RC 
 La potencia es una **función del valor alternativo μ₁** (curva de potencia). Vale α en μ₀ y tiende a 1 cuanto más lejos de μ₀ está μ₁ (en la dirección de H₁).
 
 **Ejemplo:** X ~ N(μ; 10) cc, n = 12, H₀: μ = 995 vs. H₁: μ < 995, α = 0,05.
-- $\bar X \sim N(995;\ 2{,}9)$ ⇒ RC = {$\bar X$ < 990,2}.
+- $\bar X \sim N(995;\ 2{,}9)$ ⇒ RC = {$`\bar X`$ < 990,2}.
 - Con $\bar x$ = 993 no se rechaza H₀.
-- Potencia si μ₁ = 980: P($\bar X$ < 990,2) con $\bar X$ ~ N(980; 2,9) = 0,99978.
+- Potencia si μ₁ = 980: P($`\bar X`$ < 990,2) con $\bar X$ ~ N(980; 2,9) = 0,99978.
 - Potencia si μ₁ = 994: 0,09504. Es baja: un valor alternativo cercano a μ₀ es difícil de detectar.
 
 ---

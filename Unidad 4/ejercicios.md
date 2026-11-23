@@ -34,16 +34,26 @@ Los siguientes datos corresponden a las temperaturas de unión de los O-rings (�
 → n = 20   media = 63.35   mediana = 63   varianza = 232.55   desvío = 15.25
 ```
 
-**a)** 💡 **Media muestral** $\bar x$: la suma de los datos dividida por cuántos son (📄 H2, $\bar X = \frac{\sum X_i}{n}$):
-$$\bar x = \frac{1267}{20} = 63{,}35$$
+**a)** 💡 **Media muestral** $\bar x$: la suma de los datos dividida por cuántos son (📄 H2, $`\bar X = \frac{\sum X_i}{n}`$):
+
+```math
+\bar x = \frac{1267}{20} = 63{,}35
+```
 
 💡 **Mediana** $\tilde x$ (❌): el valor del medio cuando los datos se ordenan de menor a mayor. Con n = 20 (par) hay dos valores del medio, los lugares 10.º y 11.º, que son 61 y 65. Se promedian:
-$$\tilde x = \frac{61 + 65}{2} = 63$$
+
+```math
+\tilde x = \frac{61 + 65}{2} = 63
+```
 
 **b)** La media usa **el valor** de todos los datos: un dato enorme la "arrastra" hacia arriba. La mediana solo mira **el orden**, y un dato enorme no la mueve. Si la media es mucho mayor que la mediana, hay valores muy grandes (outliers) o la distribución es **asimétrica a derecha** (cola larga hacia los valores altos).
 
 **c)** 💡 **Varianza muestral** $s^2$ (❌, la fórmula no está en la hoja): el promedio de los cuadrados de las distancias a la media, pero dividiendo por **n − 1** en lugar de n. Con n − 1, el estimador da en promedio el valor justo (es insesgado).
-$$s^2 = \frac{\sum (x_i - \bar x)^2}{n-1} = 232{,}55 \qquad s = \sqrt{232{,}55} = 15{,}25$$
+
+```math
+s^2 = \frac{\sum (x_i - \bar x)^2}{n-1} = 232{,}55 \qquad s = \sqrt{232{,}55} = 15{,}25
+```
+
 El **desvío** s vuelve a las unidades originales (°F).
 
 ⚠️ Si la app da 226,6 como varianza, está dividiendo por n. Mantené apretado el botón para ver qué fórmula usa.
@@ -122,12 +132,16 @@ Un circuito funciona con varias resistencias independientes en serie, cada una d
 
 **Traducción.** En serie, las resistencias se **suman**: R = R₁ + R₂ + … Cada una es N(20; σ), con σ = √0,36 = 0,6. ⚠️ El dato es la **varianza**: el desvío es su raíz.
 
-💡 **Suma de normales independientes** (📄 H2, $W = \sum X_i \sim N\left(\sum\mu_i;\ \sqrt{\sum\sigma_i^2}\right)$). La suma de normales independientes **sigue siendo normal**:
+💡 **Suma de normales independientes** (📄 H2, $`W = \sum X_i \sim N\left(\sum\mu_i;\ \sqrt{\sum\sigma_i^2}\right)`$). La suma de normales independientes **sigue siendo normal**:
 - las **medias se suman**;
 - las **varianzas se suman** (no los desvíos). El desvío de la suma es la raíz de la suma de varianzas.
 
 **a)** Con 6 resistencias:
-$$R \sim N\left(6\cdot20;\ \sqrt{6\cdot0{,}36}\right) = N(120;\ 1{,}4697)$$
+
+```math
+R \sim N\left(6\cdot20;\ \sqrt{6\cdot0{,}36}\right) = N(120;\ 1{,}4697)
+```
+
 ```
 X~N(μ;σ)   μ=120   σ=1.4697   P(X>x)   x=118   → 0.91322
 ```
@@ -141,7 +155,10 @@ X~N(μ;σ)   μ=0   σ=1   P(X>x)=0.05   → x=1.64485
 ```
 
 **Paso 2, plantear la ecuación.** Estandarizando 200 (📄 H1), tiene que dar ese z:
-$$\frac{200 - 20n}{0{,}6\sqrt n} = 1{,}645 \;\Rightarrow\; 20n + 0{,}987\sqrt n - 200 = 0$$
+
+```math
+\frac{200 - 20n}{0{,}6\sqrt n} = 1{,}645 \;\Rightarrow\; 20n + 0{,}987\sqrt n - 200 = 0
+```
 
 **Paso 3, resolver.** Con $u = \sqrt n$ queda una cuadrática: $20u^2 + 0{,}987u - 200 = 0$. Con la resolvente, $u = 3{,}138$, así que $n = u^2 \approx 9{,}85$.
 
@@ -183,8 +200,12 @@ Una empresa agroalimentaria tiene tres sucursales en cierta región, cada una de
 <details>
 <summary>Solución paso a paso</summary>
 
-💡 **Población y distribución muestral.** Acá la **población** son los 6 empleados y se conoce entera. X = sueldo de un empleado elegido al azar, con cada uno de los 6 sueldos con probabilidad 1/6 (📄 H1, $E = \sum x\,p$):
-$$E(X) = \frac{122{,}3}{6} = 20{,}38 \qquad V(X) = \frac16\sum(x_i - 20{,}38)^2 = 7{,}978$$
+💡 **Población y distribución muestral.** Acá la **población** son los 6 empleados y se conoce entera. X = sueldo de un empleado elegido al azar, con cada uno de los 6 sueldos con probabilidad 1/6 (📄 H1, $`E = \sum x\,p`$):
+
+```math
+E(X) = \frac{122{,}3}{6} = 20{,}38 \qquad V(X) = \frac16\sum(x_i - 20{,}38)^2 = 7{,}978
+```
+
 (Esta varianza divide por 6 porque es la **verdadera** varianza de la población, no una estimación.)
 
 La **distribución muestral** de $\bar X$ responde: si se toman muestras al azar y se calcula su promedio, ¿qué valores puede dar ese promedio y con qué probabilidad?
@@ -203,7 +224,10 @@ No hace falta la tabla completa para sus momentos. 💡 Para una **muestra aleat
 - (15,6 + 19,5)/2 = 17,55.
 
 **c)**
-$$E(Z) = \frac{21{,}65 + 21{,}95 + 17{,}55}{3} = 20{,}38 = E(X) \qquad V(Z) = \frac13\sum(z_i - 20{,}38)^2 = 4{,}028$$
+
+```math
+E(Z) = \frac{21{,}65 + 21{,}95 + 17{,}55}{3} = 20{,}38 = E(X) \qquad V(Z) = \frac13\sum(z_i - 20{,}38)^2 = 4{,}028
+```
 
 La esperanza coincide, pero la varianza **no** es V(X)/2. ¿Por qué? Los dos empleados de una sucursal **no** son una muestra aleatoria independiente: siempre salen juntos. La regla V/n solo vale con observaciones independientes.
 
@@ -239,7 +263,7 @@ Se supone que el espesor de cierta pintura al aceite (X) en mm tiene distribuci�
 ```
 → n = 16   media = 1.3506   varianza = 0.1107   desvío = 0.3327   mediana = 1.395
 ```
-- 💡 **Media** (📄 H2, $\bar X = \frac{\sum X_i}{n}$): $\bar x = \frac{21{,}61}{16} = 1{,}35$.
+- 💡 **Media** (📄 H2, $`\bar X = \frac{\sum X_i}{n}`$): $\bar x = \frac{21{,}61}{16} = 1{,}35$.
 - 💡 **Varianza muestral** (❌): $s^2 = \frac{\sum(x_i - \bar x)^2}{n-1} = 0{,}1107$. Divide por n − 1. El desvío es $s = \sqrt{s^2} = 0{,}3327$.
 - 💡 **Mediana** (❌): el valor del medio de los datos ordenados. Con 16 datos se promedian el 8.º y el 9.º: $\frac{1{,}31 + 1{,}48}{2} = 1{,}395$.
 
@@ -250,7 +274,7 @@ Se supone que el espesor de cierta pintura al aceite (X) en mm tiene distribuci�
 
 Si la población es Normal, la media y la mediana son las dos insesgadas, pero $\bar X$ varía menos. El mejor estimador es $\hat\mu = \bar x = 1{,}35$. La varianza y el desvío no estiman el centro, sino la dispersión.
 
-**c)** Se elige $\bar X$ por **consistencia**. Su varianza es $V(\bar X) = \frac{\sigma^2}{n}$ (📄 H2, el desvío de $\bar X$ es $\frac{\sigma}{\sqrt n}$), y con n = 1000 es muy chica. Entonces $\bar x$ queda casi seguro muy cerca de μ: es la **Ley de los Grandes Números** (❌).
+**c)** Se elige $\bar X$ por **consistencia**. Su varianza es $V(\bar X) = \frac{\sigma^2}{n}$ (📄 H2, el desvío de $\bar X$ es $`\frac{\sigma}{\sqrt n}`$), y con n = 1000 es muy chica. Entonces $\bar x$ queda casi seguro muy cerca de μ: es la **Ley de los Grandes Números** (❌).
 
 </details>
 
@@ -280,17 +304,27 @@ Si la población es Normal, la media y la mediana son las dos insesgadas, pero $
 "Independientes idénticamente distribuidas" significa dos cosas: no se influyen entre sí, y todas tienen la misma distribución (misma μ, misma σ²). Es lo que pasa con una **muestra aleatoria**.
 
 **a)** 💡 **Linealidad de la esperanza** (❌, no está en la hoja): la esperanza de una suma es la suma de las esperanzas, **siempre**, aunque no sean independientes.
-$$E(X_1 + \dots + X_n) = E(X_1) + \dots + E(X_n) = \underbrace{\mu + \dots + \mu}_{n} = n\mu$$
+
+```math
+E(X_1 + \dots + X_n) = E(X_1) + \dots + E(X_n) = \underbrace{\mu + \dots + \mu}_{n} = n\mu
+```
 
 **b)** Para dos variables, 📄 H1 dice $V(X + Y) = V(X) + V(Y) + 2\,Cov(X;Y)$.
 
 Si son **independientes**, la covarianza es 0 (no hay relación), así que $V(X + Y) = V(X) + V(Y)$. Se aplica de a una: primero $X_1 + X_2$, después se le suma $X_3$, y así. Cada vez se agrega una varianza:
-$$V(X_1 + \dots + X_n) = V(X_1) + \dots + V(X_n) = n\sigma^2$$
+
+```math
+V(X_1 + \dots + X_n) = V(X_1) + \dots + V(X_n) = n\sigma^2
+```
 
 Aquí la independencia **sí** hace falta. Sin ella aparecerían todas las covarianzas.
 
 **Consecuencia importante.** Para el promedio $\bar X = \frac{1}{n}\sum X_i$, las constantes salen de la esperanza tal cual y de la varianza al cuadrado:
-$$E(\bar X) = \mu \qquad V(\bar X) = \frac{n\sigma^2}{n^2} = \frac{\sigma^2}{n}$$
+
+```math
+E(\bar X) = \mu \qquad V(\bar X) = \frac{n\sigma^2}{n^2} = \frac{\sigma^2}{n}
+```
+
 Es el $\frac{\sigma}{\sqrt n}$ de 📄 H2, $\bar X \sim N(\mu;\ \sigma/\sqrt n)$.
 
 </details>
@@ -315,16 +349,23 @@ Una fábrica envasa paquetes de café cuyo peso es una variable aleatoria Normal
 <summary>Solución paso a paso</summary>
 
 **Planteo.** El peso de una caja llena es W = (peso de los 9 paquetes) + (peso del cartón):
-$$W = X_1 + X_2 + \dots + X_9 + C$$
+
+```math
+W = X_1 + X_2 + \dots + X_9 + C
+```
+
 Cada $X_i \sim N(495; 18)$ y $C \sim N(50; 4)$, todos independientes.
 
-💡 **Suma de normales independientes** (📄 H2, $W = \sum X_i \sim N\left(\sum\mu_i;\ \sqrt{\sum\sigma_i^2}\right)$). La suma es normal, con:
+💡 **Suma de normales independientes** (📄 H2, $`W = \sum X_i \sim N\left(\sum\mu_i;\ \sqrt{\sum\sigma_i^2}\right)`$). La suma es normal, con:
 - media = suma de medias: $E(W) = 9\cdot495 + 50 = 4505$ g;
 - varianza = suma de **varianzas** (los desvíos al cuadrado): $V(W) = 9\cdot18^2 + 4^2 = 2916 + 16 = 2932$.
 
 Entonces $\sigma_W = \sqrt{2932} = 54{,}148$ g.
 
-$$W \sim N(4505;\ 54{,}148)$$
+```math
+W \sim N(4505;\ 54{,}148)
+```
+
 ```
 X~N(μ;σ)   μ=4505   σ=54.148   P(X<x)   x=4500   → 0.46321
 ```
@@ -356,21 +397,29 @@ En una población determinada, la estatura de una persona adulta tiene un promed
 
 Las tres preguntas son sobre algo que se calcula **con la muestra**: el promedio, el desvío y la proporción. Cada uno tiene su propia distribución, distinta de la de una persona.
 
-**a)** 💡 **Distribución del promedio** (📄 H2, $\bar X \sim N\left(\mu;\ \frac{\sigma}{\sqrt n}\right)$). Al promediar muchas personas, las altas y las bajas se compensan. El promedio:
+**a)** 💡 **Distribución del promedio** (📄 H2, $`\bar X \sim N\left(\mu;\ \frac{\sigma}{\sqrt n}\right)`$). Al promediar muchas personas, las altas y las bajas se compensan. El promedio:
 - está centrado en la misma μ;
 - varía **mucho menos**: su desvío es $\sigma/\sqrt n$ (se llama **error estándar**).
 
 💡 **Teorema Central del Límite (TCL)** (❌). Acá **no** se dice que la estatura sea normal. Pero con n ≥ 30, el promedio es aproximadamente normal **igual**, sea cual sea la distribución de la población.
-$$\bar h \sim N\left(165;\ \frac{7}{\sqrt{100}}\right) = N(165;\ 0{,}7)$$
+
+```math
+\bar h \sim N\left(165;\ \frac{7}{\sqrt{100}}\right) = N(165;\ 0{,}7)
+```
+
 ```
 X~N(μ;σ)   μ=165   σ=0.7   P(X>x)   x=168   → 0.0000091
 ```
 $z = \frac{168 - 165}{0{,}7} = 4{,}29$: es casi imposible. Para **una** persona, P(h > 168) = 0,33. Para el promedio de 100, casi 0.
 
-**b)** Ahora se pregunta por el **desvío** de la muestra, S. 💡 Si la población es **normal** (por eso el enunciado lo supone), la cantidad $\frac{(n-1)S^2}{\sigma^2}$ tiene una distribución conocida, la **χ² (chi cuadrado)** con n − 1 grados de libertad (📄 H2, si $X \sim N$, $\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}$).
+**b)** Ahora se pregunta por el **desvío** de la muestra, S. 💡 Si la población es **normal** (por eso el enunciado lo supone), la cantidad $\frac{(n-1)S^2}{\sigma^2}$ tiene una distribución conocida, la **χ² (chi cuadrado)** con n − 1 grados de libertad (📄 H2, si $X \sim N$, $`\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}`$).
 
 **Receta:** se pasa la pregunta sobre S a una pregunta sobre esa cantidad. Con n = 36 y σ² = 49:
-$$P(S > 6) = P(S^2 > 36) = P\left(\frac{35\,S^2}{49} > \frac{35\cdot36}{49}\right) = P(\chi^2_{35} > 25{,}714)$$
+
+```math
+P(S > 6) = P(S^2 > 36) = P\left(\frac{35\,S^2}{49} > \frac{35\cdot36}{49}\right) = P(\chi^2_{35} > 25{,}714)
+```
+
 ```
 X~χ²(ν)   ν=35   P(X>x)   x=25.714   → 0.87390
 ```
@@ -384,8 +433,12 @@ X~N(μ;σ)   μ=165   σ=7   P(X>x)   x=170   → 0.23753
 ```
 p ≈ 0,2375. La guía redondea a 0,24.
 
-**Paso 2, la proporción en la muestra** ($\hat p$). 💡 Cada persona supera o no 1,70 m. $\hat p$ es el promedio de esos unos y ceros, así que por TCL (n ≥ 30) es aproximadamente normal (📄 H2, si n ≥ 30, $\hat p \sim N\left(p;\ \sqrt{\frac{p(1-p)}{n}}\right)$). Con p = 0,24:
-$$\hat p \sim N\left(0{,}24;\ \sqrt{\frac{0{,}24\cdot0{,}76}{36}}\right) = N(0{,}24;\ 0{,}0712)$$
+**Paso 2, la proporción en la muestra** ($`\hat p`$). 💡 Cada persona supera o no 1,70 m. $\hat p$ es el promedio de esos unos y ceros, así que por TCL (n ≥ 30) es aproximadamente normal (📄 H2, si n ≥ 30, $`\hat p \sim N\left(p;\ \sqrt{\frac{p(1-p)}{n}}\right)`$). Con p = 0,24:
+
+```math
+\hat p \sim N\left(0{,}24;\ \sqrt{\frac{0{,}24\cdot0{,}76}{36}}\right) = N(0{,}24;\ 0{,}0712)
+```
+
 ```
 X~N(μ;σ)   μ=0.24   σ=0.0712   P(X>x)   x=0.20   → 0.71293
 ```
@@ -419,12 +472,19 @@ Con p = 0,2375 sin redondear da 0,7016. La guía da 0,71341 y el apunte 0,71615;
 **¿Qué se pregunta?** Por la **varianza de una muestra** de 10 tiempos, $S^2$. Varía de muestra en muestra, así que es una variable aleatoria.
 
 💡 **La herramienta** (📄 H2): si la población es normal (el enunciado lo dice), $\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}$. La **χ²** es una distribución que solo toma valores positivos y es asimétrica. Su parámetro son los grados de libertad, n − 1 = 9. Acá σ² = 16, así que:
-$$\frac{9\,S^2}{16} \sim \chi^2_9$$
+
+```math
+\frac{9\,S^2}{16} \sim \chi^2_9
+```
 
 **Receta:** toda pregunta sobre $S^2$ se traduce a una pregunta sobre $\chi^2_9$ multiplicando por 9/16.
 
 **a)**
-$$P(S^2 > 42{,}77) = P\left(\chi^2_9 > \frac{9\cdot42{,}77}{16}\right) = P(\chi^2_9 > 24{,}058)$$
+
+```math
+P(S^2 > 42{,}77) = P\left(\chi^2_9 > \frac{9\cdot42{,}77}{16}\right) = P(\chi^2_9 > 24{,}058)
+```
+
 ```
 X~χ²(ν)   ν=9   P(X>x)   x=24.058   → 0.00421
 ```
@@ -435,7 +495,10 @@ Muy improbable: una muestra con varianza 42,77 sería rarísima si la verdadera 
 X~χ²(ν)   ν=9   P(X>x)=0.20   → x=12.242
 ```
 Después se vuelve a la escala de $S^2$, despejando:
-$$\frac{9c}{16} = 12{,}242 \;\Rightarrow\; c = \frac{16\cdot12{,}242}{9} = 21{,}76 \text{ min}^2$$
+
+```math
+\frac{9c}{16} = 12{,}242 \;\Rightarrow\; c = \frac{16\cdot12{,}242}{9} = 21{,}76 \text{ min}^2
+```
 
 </details>
 
@@ -467,7 +530,10 @@ En un supermercado se decide redondear el cobro de las ventas al entero más cer
 - las varianzas se suman: V(W) = 800/12 = 66,67, y $\sigma_W = 8{,}165$.
 
 💡 **Teorema Central del Límite (TCL)** (❌). Cada $X_i$ es uniforme, no normal. Pero la **suma de muchas** variables independientes (n ≥ 30) es aproximadamente **normal**, sea cual sea la distribución de cada una. Por eso se puede usar la forma de 📄 H2 para sumas:
-$$W \approx N(0;\ 8{,}165)$$
+
+```math
+W \approx N(0;\ 8{,}165)
+```
 
 **"Perder más de 9 pesos"** es W < −9, si W mide ganancia. La campana es simétrica alrededor de 0, así que da lo mismo que W > 9:
 ```
@@ -497,7 +563,10 @@ La primera tarea en un curso introductorio de programación por computadora impl
 <summary>Solución paso a paso</summary>
 
 💡 **Proporción muestral** $\hat p$: la fracción de la muestra que cumple algo (acá, no cometer errores). Varía de grupo en grupo. Cada estudiante es un 1 (cumple) o un 0 (no cumple), y $\hat p$ es el **promedio** de esos unos y ceros. Por el TCL, con n ≥ 30 es aproximadamente normal (📄 H2):
-$$\hat p \sim N\left(p;\ \sqrt{\frac{p(1-p)}{n}}\right)$$
+
+```math
+\hat p \sim N\left(p;\ \sqrt{\frac{p(1-p)}{n}}\right)
+```
 
 Con p = 0,4 y n = 80, el desvío es $\sqrt{\frac{0{,}4\cdot0{,}6}{80}} = 0{,}0548$.
 
@@ -547,23 +616,44 @@ Se examinan 180 piezas recién fabricadas y se registra el número de imperfecci
 **El problema:** se sabe que X es Poisson, pero no se conoce λ. Hay que **estimarlo** con los datos. 💡 Hay dos recetas para fabricar un estimador (❌, ninguna está en la hoja).
 
 **a) Método de los momentos.** "Lo teórico igual a lo observado": se iguala la esperanza teórica (que depende del parámetro) al promedio de la muestra. En una Poisson, E(X) = λ, así que:
-$$\lambda = \bar X \;\Rightarrow\; \hat\lambda_{mom} = \bar X$$
+
+```math
+\lambda = \bar X \;\Rightarrow\; \hat\lambda_{mom} = \bar X
+```
 
 **Máxima verosimilitud.** "Elegir el λ con el cual **lo que salió** es lo más probable".
-1. Se escribe la probabilidad de toda la muestra como función de λ. Las observaciones son independientes, así que es el producto (📄 H1, $P(X = k) = \frac{\lambda^k}{k!}e^{-\lambda}$):
-   $$L(\lambda) = \prod_{i=1}^n \frac{\lambda^{x_i}e^{-\lambda}}{x_i!}$$
+1. Se escribe la probabilidad de toda la muestra como función de λ. Las observaciones son independientes, así que es el producto (📄 H1, $`P(X = k) = \frac{\lambda^k}{k!}e^{-\lambda}`$):
+
+   ```math
+   L(\lambda) = \prod_{i=1}^n \frac{\lambda^{x_i}e^{-\lambda}}{x_i!}
+   ```
+
 2. Para maximizar es más fácil trabajar con el logaritmo, que convierte productos en sumas:
-   $$\ln L = \sum x_i\ln\lambda - n\lambda - \sum\ln(x_i!)$$
+
+   ```math
+   \ln L = \sum x_i\ln\lambda - n\lambda - \sum\ln(x_i!)
+   ```
+
 3. Se deriva respecto de λ y se iguala a 0:
-   $$\frac{\sum x_i}{\lambda} - n = 0 \;\Rightarrow\; \hat\lambda_{MV} = \frac{\sum x_i}{n} = \bar X$$
+
+   ```math
+   \frac{\sum x_i}{\lambda} - n = 0 \;\Rightarrow\; \hat\lambda_{MV} = \frac{\sum x_i}{n} = \bar X
+   ```
 
 Los dos métodos dan el mismo estimador: el promedio.
 
 **Con los datos.** Son datos agrupados: cada valor se multiplica por su frecuencia. En la Calculadora de estadística → **Descriptiva con frecuencia**, se cargan valor y frecuencia:
-$$\bar x = \frac{0\cdot18 + 1\cdot47 + 2\cdot52 + 3\cdot40 + 4\cdot13 + 5\cdot7 + 6\cdot2 + 7\cdot1}{180} = \frac{377}{180} = 2{,}09$$
+
+```math
+\bar x = \frac{0\cdot18 + 1\cdot47 + 2\cdot52 + 3\cdot40 + 4\cdot13 + 5\cdot7 + 6\cdot2 + 7\cdot1}{180} = \frac{377}{180} = 2{,}09
+```
 
 **b)** 💡 **Insesgado:** que en promedio dé justo el parámetro, $E(\hat\lambda) = \lambda$ (❌). El promedio de una muestra tiene la misma esperanza que una observación (📄 H2, $\bar X$ está centrado en μ), y en la Poisson esa esperanza es λ:
-$$E(\bar X) = E(X) = \lambda$$
+
+```math
+E(\bar X) = E(X) = \lambda
+```
+
 Es insesgado.
 
 **c)** Se reemplaza λ por su estimación 2,09 y se calcula con la Poisson. "Menor que 4" es 0, 1, 2 o 3:
@@ -605,7 +695,7 @@ Se pide:
 
 💡 **Estimador:** una fórmula con los datos de la muestra para "adivinar" un parámetro desconocido. Acá hay tres candidatos, y hay que elegir el mejor con criterios objetivos.
 
-**¿Qué estiman?** Los tres son "promedios" de las X, así que estiman la **media** de la exponencial: $\mu = E(X) = \frac1\alpha$. Su varianza es $V(X) = \frac{1}{\alpha^2}$ (📄 H1, $\sigma = 1/\lambda$).
+**¿Qué estiman?** Los tres son "promedios" de las X, así que estiman la **media** de la exponencial: $\mu = E(X) = \frac1\alpha$. Su varianza es $V(X) = \frac{1}{\alpha^2}$ (📄 H1, $`\sigma = 1/\lambda`$).
 
 **Datos que se usan:** cada $X_i$ tiene E = μ y V = 1/α², y son independientes (muestra aleatoria).
 
@@ -617,12 +707,23 @@ Se pide:
 Truco: si los coeficientes suman 1, es insesgado.
 
 **b)** 💡 Entre insesgados se prefiere el que **menos varía**. La varianza de una combinación de independientes lleva los coeficientes **al cuadrado** (📄 H1, $V(aX + bY) = a^2V(X) + b^2V(Y)$, con Cov = 0):
-$$V(T_1) = \left(\frac1{36} + \frac1{36} + \frac19 + \frac19\right)\frac1{\alpha^2} = \frac{10}{36}\cdot\frac{1}{\alpha^2} = \frac{5}{18\alpha^2} \approx \frac{0{,}278}{\alpha^2}$$
-$$V(T_3) = 4\cdot\frac1{16}\cdot\frac1{\alpha^2} = \frac{1}{4\alpha^2} = \frac{0{,}25}{\alpha^2}$$
+
+```math
+V(T_1) = \left(\frac1{36} + \frac1{36} + \frac19 + \frac19\right)\frac1{\alpha^2} = \frac{10}{36}\cdot\frac{1}{\alpha^2} = \frac{5}{18\alpha^2} \approx \frac{0{,}278}{\alpha^2}
+```
+
+```math
+V(T_3) = 4\cdot\frac1{16}\cdot\frac1{\alpha^2} = \frac{1}{4\alpha^2} = \frac{0{,}25}{\alpha^2}
+```
+
 Como 0,25 < 0,278, se elige **T₃**, el promedio muestral.
 
-**c)** 💡 **Error cuadrático medio** (📄 H2, $ECM = V(\hat\theta) + (\text{sesgo})^2$): mide el error total, juntando cuánto varía y cuán corrido está. Para un insesgado, el sesgo es 0 y ECM = V:
-$$ECM(T_3) = \frac{1}{4\alpha^2} < ECM(T_1)$$
+**c)** 💡 **Error cuadrático medio** (📄 H2, $`ECM = V(\hat\theta) + (\text{sesgo})^2`$): mide el error total, juntando cuánto varía y cuán corrido está. Para un insesgado, el sesgo es 0 y ECM = V:
+
+```math
+ECM(T_3) = \frac{1}{4\alpha^2} < ECM(T_1)
+```
+
 Además se sabe (❌) que $\bar X$ es el insesgado de menor varianza posible para la media, así que entre los insesgados su ECM es el mínimo.
 
 (Para comparar, el sesgado: $V(T_2) = \frac{30}{25\alpha^2}$ y sesgo = 2μ − μ = 1/α, así que $ECM(T_2) = \frac{1{,}2}{\alpha^2} + \frac{1}{\alpha^2} = \frac{2{,}2}{\alpha^2}$, muchísimo peor.)
@@ -631,7 +732,7 @@ Además se sabe (❌) que $\bar X$ es el insesgado de menor varianza posible par
 
 **Respuesta:**
 
-- a) $T_1$ y $T_3$ son insesgados ($E = \mu$); $T_2$ es sesgado ($E(T_2) = 2\mu$)
+- a) $T_1$ y $T_3$ son insesgados ($`E = \mu`$); $T_2$ es sesgado ($`E(T_2) = 2\mu`$)
 - b) $V(T_1) = \frac5{18\alpha^2}$, $V(T_3) = \frac1{4\alpha^2}$ ⇒ $T_3$
 - c) $ECM(T_3) = V(T_3)$: sí, es el mínimo
 
@@ -650,7 +751,11 @@ Además se sabe (❌) que $\bar X$ es el insesgado de menor varianza posible par
 <summary>Solución paso a paso</summary>
 
 💡 **Qué es el ECM.** Un estimador $\hat\theta$ intenta adivinar un parámetro θ. El **error cuadrático medio** es el promedio (esperanza) del error al cuadrado:
-$$ECM(\hat\theta) = E[(\hat\theta - \theta)^2]$$
+
+```math
+ECM(\hat\theta) = E[(\hat\theta - \theta)^2]
+```
+
 Mide qué tan lejos cae, en promedio, el estimador del valor verdadero.
 
 💡 **Sesgo** (❌): $B(\hat\theta) = E(\hat\theta) - \theta$, cuánto se corre el centro del estimador respecto del valor real.
@@ -658,10 +763,18 @@ Mide qué tan lejos cae, en promedio, el estimador del valor verdadero.
 **Demostración.** θ es un número fijo y $\hat\theta$ es la variable aleatoria.
 
 1. Se desarrolla el cuadrado y se usa la linealidad de la esperanza (las constantes salen):
-   $$E[(\hat\theta - \theta)^2] = E(\hat\theta^2) - 2\theta E(\hat\theta) + \theta^2$$
+
+   ```math
+   E[(\hat\theta - \theta)^2] = E(\hat\theta^2) - 2\theta E(\hat\theta) + \theta^2
+   ```
+
 2. El truco: se **suma y resta** $[E(\hat\theta)]^2$, que no cambia nada, y se agrupa:
-   $$= \underbrace{E(\hat\theta^2) - [E(\hat\theta)]^2}_{V(\hat\theta)} + \underbrace{[E(\hat\theta)]^2 - 2\theta E(\hat\theta) + \theta^2}_{(E(\hat\theta) - \theta)^2}$$
-   - El primer grupo es la varianza (📄 H1, $V(X) = E(X^2) - (E(X))^2$).
+
+   ```math
+   = \underbrace{E(\hat\theta^2) - [E(\hat\theta)]^2}_{V(\hat\theta)} + \underbrace{[E(\hat\theta)]^2 - 2\theta E(\hat\theta) + \theta^2}_{(E(\hat\theta) - \theta)^2}
+   ```
+
+   - El primer grupo es la varianza (📄 H1, $`V(X) = E(X^2) - (E(X))^2`$).
    - El segundo es un cuadrado de un binomio, $(a - b)^2$ con $a = E(\hat\theta)$ y $b = \theta$: es el **sesgo al cuadrado**.
 
 $$ECM(\hat\theta) = V(\hat\theta) + B(\hat\theta)^2 \qquad ∎$$
@@ -690,10 +803,13 @@ Está en 📄 H2. En palabras: el error total tiene dos fuentes, cuánto varía 
 
 **Herramientas:**
 - 📄 H1: $V(Y) = E(Y^2) - E(Y)^2$, válida para cualquier variable, también para $Y = \bar X$. Despejando: $E(\bar X^2) = V(\bar X) + [E(\bar X)]^2$.
-- El promedio de una muestra aleatoria cumple $E(\bar X) = \mu$ y $V(\bar X) = \frac{\sigma^2}{n}$ (ver el ejercicio 6, o 📄 H2, $\bar X \sim N(\mu;\ \sigma/\sqrt n)$).
+- El promedio de una muestra aleatoria cumple $E(\bar X) = \mu$ y $V(\bar X) = \frac{\sigma^2}{n}$ (ver el ejercicio 6, o 📄 H2, $`\bar X \sim N(\mu;\ \sigma/\sqrt n)`$).
 
 Reemplazando:
-$$E(\bar X^2) = \frac{\sigma^2}{n} + \mu^2 \neq \mu^2$$
+
+```math
+E(\bar X^2) = \frac{\sigma^2}{n} + \mu^2 \neq \mu^2
+```
 
 Es **sesgado**, con sesgo $\frac{\sigma^2}{n}$ siempre positivo: sobreestima μ². Como el sesgo tiende a 0 cuando n crece, se dice que es **asintóticamente insesgado**.
 
@@ -724,15 +840,25 @@ $$f(x) = \begin{cases}(\theta + 1)x^\theta & \text{si } 0 \le x \le 1\\ 0 & \tex
 
 💡 **Método de los momentos** (❌): para estimar un parámetro desconocido, se iguala **lo teórico a lo observado**. La esperanza teórica E(X), que depende de θ, se iguala al promedio de la muestra $\bar X$, y se despeja θ.
 
-**a) Paso 1, la esperanza teórica** (📄 H1, $E(X) = \int x\,f(x)\,dx$):
-$$E(X) = \int_0^1 x\,(\theta + 1)x^\theta\,dx = (\theta + 1)\int_0^1 x^{\theta + 1}\,dx = (\theta + 1)\frac{1}{\theta + 2} = \frac{\theta + 1}{\theta + 2}$$
+**a) Paso 1, la esperanza teórica** (📄 H1, $`E(X) = \int x\,f(x)\,dx`$):
+
+```math
+E(X) = \int_0^1 x\,(\theta + 1)x^\theta\,dx = (\theta + 1)\int_0^1 x^{\theta + 1}\,dx = (\theta + 1)\frac{1}{\theta + 2} = \frac{\theta + 1}{\theta + 2}
+```
 
 **Paso 2, igualar a $\bar X$ y despejar θ:**
-$$\frac{\theta + 1}{\theta + 2} = \bar X \;\Rightarrow\; \theta + 1 = \bar X\theta + 2\bar X \;\Rightarrow\; \theta(1 - \bar X) = 2\bar X - 1 \;\Rightarrow\; \hat\theta = \frac{2\bar X - 1}{1 - \bar X}$$
+
+```math
+\frac{\theta + 1}{\theta + 2} = \bar X \;\Rightarrow\; \theta + 1 = \bar X\theta + 2\bar X \;\Rightarrow\; \theta(1 - \bar X) = 2\bar X - 1 \;\Rightarrow\; \hat\theta = \frac{2\bar X - 1}{1 - \bar X}
+```
+
 Es lo mismo que $\frac{1 - 2\bar X}{\bar X - 1}$ (multiplicando arriba y abajo por −1).
 
 **b)** Con la Calculadora de estadística → Estadística descriptiva, la media de los 12 datos es $\bar x = \frac{9{,}74}{12} = 0{,}8117$. Se reemplaza:
-$$\hat\theta = \frac{2\cdot0{,}8117 - 1}{1 - 0{,}8117} = \frac{0{,}6233}{0{,}1883} = 3{,}309$$
+
+```math
+\hat\theta = \frac{2\cdot0{,}8117 - 1}{1 - 0{,}8117} = \frac{0{,}6233}{0{,}1883} = 3{,}309
+```
 
 </details>
 
@@ -763,12 +889,16 @@ Se quiere estimar el valor medio de las horas de estudio semanales de los alumno
 💡 **Intervalo de confianza (IC):** un rango "estimación ± margen" que contiene al valor verdadero con una confianza dada (90 %, 95 %…).
 
 💡 **De dónde sale.**
-1. El promedio de una muestra varía alrededor de μ con desvío $\frac{\sigma}{\sqrt n}$, llamado **error estándar** (📄 H2, $\bar X \sim N\left(\mu;\ \frac{\sigma}{\sqrt n}\right)$).
+1. El promedio de una muestra varía alrededor de μ con desvío $\frac{\sigma}{\sqrt n}$, llamado **error estándar** (📄 H2, $`\bar X \sim N\left(\mu;\ \frac{\sigma}{\sqrt n}\right)`$).
 2. En una normal, el 95 % de los valores cae a menos de 1,96 desvíos del centro. Entonces el 95 % de las veces, $\bar x$ cae a menos de $1{,}96\cdot\frac{\sigma}{\sqrt n}$ de μ.
 3. Si $\bar x$ está cerca de μ, **μ está igual de cerca de $\bar x$**. Por eso el IC es $\bar x$ ± ese margen.
 
 La fórmula de la hoja, cuando **σ es conocido** (📄 H2):
-$$I.C._\mu = \left(\bar X - z_{1-\frac\alpha2}\cdot\frac{\sigma}{\sqrt n};\ \bar X + z_{1-\frac\alpha2}\cdot\frac{\sigma}{\sqrt n}\right)$$
+
+```math
+I.C._\mu = \left(\bar X - z_{1-\frac\alpha2}\cdot\frac{\sigma}{\sqrt n};\ \bar X + z_{1-\frac\alpha2}\cdot\frac{\sigma}{\sqrt n}\right)
+```
+
 - **1 − α** es la confianza. α es lo que se acepta errar, repartido mitad en cada cola (α/2).
 - **$z_{1-\frac\alpha2}$** es el z que deja $1 - \frac\alpha2$ a la izquierda. Es lo que se carga en la app como P(X<x).
 
@@ -820,15 +950,25 @@ Se quiere estimar la estatura promedio en la población, que se supone tiene una
 <summary>Solución paso a paso</summary>
 
 💡 **Intervalo de confianza para μ con σ conocido** (📄 H2):
-$$I.C._\mu = \left(\bar X - z_{1-\frac\alpha2}\cdot\frac{\sigma}{\sqrt n};\ \bar X + z_{1-\frac\alpha2}\cdot\frac{\sigma}{\sqrt n}\right)$$
-Es "promedio de la muestra ± margen". El margen, $d = z\cdot\frac{\sigma}{\sqrt n}$, se llama **error muestral** o error máximo de estimación. Sale de que el promedio varía alrededor de μ con desvío $\frac{\sigma}{\sqrt n}$ (📄 H2, $\bar X \sim N(\mu;\ \sigma/\sqrt n)$).
+
+```math
+I.C._\mu = \left(\bar X - z_{1-\frac\alpha2}\cdot\frac{\sigma}{\sqrt n};\ \bar X + z_{1-\frac\alpha2}\cdot\frac{\sigma}{\sqrt n}\right)
+```
+
+Es "promedio de la muestra ± margen". El margen, $d = z\cdot\frac{\sigma}{\sqrt n}$, se llama **error muestral** o error máximo de estimación. Sale de que el promedio varía alrededor de μ con desvío $\frac{\sigma}{\sqrt n}$ (📄 H2, $`\bar X \sim N(\mu;\ \sigma/\sqrt n)`$).
 
 **a)** σ = 4 es de la población (conocido), n = 144 y $\bar x = 168$. Con 98 % de confianza, α = 0,02, cada cola tiene 0,01, y el z deja 0,99 a la izquierda:
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.99   → x=2.32635
 ```
-$$d = 2{,}32635\cdot\frac{4}{\sqrt{144}} = 2{,}32635\cdot0{,}3333 = 0{,}7754 \text{ cm}$$
-$$I.C._\mu = (168 - 0{,}7754;\ 168 + 0{,}7754) = (167{,}22;\ 168{,}78) \text{ cm}$$
+
+```math
+d = 2{,}32635\cdot\frac{4}{\sqrt{144}} = 2{,}32635\cdot0{,}3333 = 0{,}7754 \text{ cm}
+```
+
+```math
+I.C._\mu = (168 - 0{,}7754;\ 168 + 0{,}7754) = (167{,}22;\ 168{,}78) \text{ cm}
+```
 
 **b)** Ahora se quiere el **mismo error** d = 0,7754, pero con 95 % de confianza. La incógnita es n.
 
@@ -836,7 +976,10 @@ $$I.C._\mu = (168 - 0{,}7754;\ 168 + 0{,}7754) = (167{,}22;\ 168{,}78) \text{ cm
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.975   → x=1.95996
 ```
-$$1{,}96\cdot\frac{4}{\sqrt n} \le 0{,}7754 \;\Rightarrow\; \sqrt n \ge \frac{1{,}96\cdot4}{0{,}7754} = 10{,}11 \;\Rightarrow\; n \ge 102{,}2$$
+
+```math
+1{,}96\cdot\frac{4}{\sqrt n} \le 0{,}7754 \;\Rightarrow\; \sqrt n \ge \frac{1{,}96\cdot4}{0{,}7754} = 10{,}11 \;\Rightarrow\; n \ge 102{,}2
+```
 
 **Siempre se redondea hacia arriba:** con 102 el error quedaría apenas mayor que 0,7754. Entonces **n = 103**.
 
@@ -879,7 +1022,11 @@ Da menos de 144 porque se pide **menos** confianza (95 % < 98 %): con menos exig
 Una vez tirado, **ese** aro embocó o no embocó: ya no hay probabilidad. El 98 % describe al **método**, no a un intervalo particular.
 
 El intervalo dado salió de la fórmula para varianzas (📄 H2):
-$$I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)$$
+
+```math
+I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)
+```
+
 Lo único aleatorio ahí es $S^2$, la varianza de la muestra.
 
 **a) F.** σ² es fijo y [5,28; 10,2] también, una vez calculado. No queda nada aleatorio. Lo correcto es decir "98 % de **confianza**".
@@ -898,7 +1045,7 @@ Se reduce a ≈ 69 %, no a la mitad. La precisión mejora más o menos como $1/\
 **e) F.** Tiene tres errores:
 1. Usa las puntas de un IC **para σ²** como si fueran desvíos para armar algo sobre **promedios**.
 2. 1,96 corresponde a 95 %, no a 98 %.
-3. Ningún intervalo contiene a "todos" los promedios: por 📄 H2 ($\bar X \sim N(\mu;\ \sigma/\sqrt n)$), solo una proporción.
+3. Ningún intervalo contiene a "todos" los promedios: por 📄 H2 ($`\bar X \sim N(\mu;\ \sigma/\sqrt n)`$), solo una proporción.
 
 </details>
 
@@ -921,25 +1068,40 @@ Un artículo de la revista *American Ceramic Society Bulletin* contiene informac
 <details>
 <summary>Solución paso a paso</summary>
 
-💡 **Intervalo de confianza para μ:** "promedio de la muestra ± margen". El margen sale de que el promedio varía alrededor de μ con desvío $\frac{\sigma}{\sqrt n}$ (📄 H2, $\bar X \sim N(\mu;\ \sigma/\sqrt n)$).
+💡 **Intervalo de confianza para μ:** "promedio de la muestra ± margen". El margen sale de que el promedio varía alrededor de μ con desvío $\frac{\sigma}{\sqrt n}$ (📄 H2, $`\bar X \sim N(\mu;\ \sigma/\sqrt n)`$).
 
 **a) σ conocido** ("se sabe que el desvío poblacional es 3,73"). Fórmula con z (📄 H2):
-$$I.C._\mu = \left(\bar X \mp z_{1-\frac\alpha2}\cdot\frac{\sigma}{\sqrt n}\right)$$
+
+```math
+I.C._\mu = \left(\bar X \mp z_{1-\frac\alpha2}\cdot\frac{\sigma}{\sqrt n}\right)
+```
+
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.975   → x=1.95996
 ```
-$$d = 1{,}96\cdot\frac{3{,}73}{\sqrt{121}} = 1{,}96\cdot0{,}3391 = 0{,}665 \;\Rightarrow\; (89{,}10 - 0{,}665;\ 89{,}10 + 0{,}665) = (88{,}44;\ 89{,}76)$$
+
+```math
+d = 1{,}96\cdot\frac{3{,}73}{\sqrt{121}} = 1{,}96\cdot0{,}3391 = 0{,}665 \;\Rightarrow\; (89{,}10 - 0{,}665;\ 89{,}10 + 0{,}665) = (88{,}44;\ 89{,}76)
+```
 
 **b) σ desconocido.** Ahora solo se tiene **S = 4,2**, el desvío de la muestra.
 
 💡 **La t de Student.** Si se reemplaza σ por S, hay que pagar un precio: S también es una estimación y puede haber salido corrida. Para compensar, en lugar de z se usa la **t de Student**: una campana parecida a la normal, con colas más gordas, que da un número un poco mayor. Su parámetro son los **grados de libertad**, n − 1. Con muchos datos se parece cada vez más a la normal.
 
 La fórmula (📄 H2):
-$$I.C._\mu = \left(\bar X \mp t_{n-1;1-\frac\alpha2}\cdot\frac{S}{\sqrt n}\right)$$
+
+```math
+I.C._\mu = \left(\bar X \mp t_{n-1;1-\frac\alpha2}\cdot\frac{S}{\sqrt n}\right)
+```
+
 ```
 X~t(ν)   ν=120   P(X<x)=0.975   → x=1.97993
 ```
-$$d = 1{,}97993\cdot\frac{4{,}2}{11} = 1{,}97993\cdot0{,}3818 = 0{,}756 \;\Rightarrow\; (88{,}34;\ 89{,}86)$$
+
+```math
+d = 1{,}97993\cdot\frac{4{,}2}{11} = 1{,}97993\cdot0{,}3818 = 0{,}756 \;\Rightarrow\; (88{,}34;\ 89{,}86)
+```
+
 Con n = 121, z daría casi lo mismo (0,748). El repo usa z en el paso intermedio.
 
 **¿Cómo se modificó?** Se ensanchó:
@@ -973,11 +1135,19 @@ Un artículo del *Journal of Sports Science* expone un intervalo de confianza pa
 **La situación es al revés de lo habitual:** el intervalo ya está armado y hay que **desarmarlo**.
 
 💡 **Estructura de un IC para μ:** "promedio ± margen". Con σ desconocido (piden s, así que no se conocía σ), la fórmula es (📄 H2):
-$$I.C._\mu = \left(\bar X - t_{n-1;1-\frac\alpha2}\cdot\frac{S}{\sqrt n};\ \bar X + t_{n-1;1-\frac\alpha2}\cdot\frac{S}{\sqrt n}\right)$$
+
+```math
+I.C._\mu = \left(\bar X - t_{n-1;1-\frac\alpha2}\cdot\frac{S}{\sqrt n};\ \bar X + t_{n-1;1-\frac\alpha2}\cdot\frac{S}{\sqrt n}\right)
+```
+
 La **t de Student** reemplaza a z cuando se usa S en lugar de σ. Es un poco más grande, para compensar la incertidumbre extra. Tiene n − 1 grados de libertad.
 
 **a)** Igualando cada punta se arma un sistema. Llamo d al margen:
-$$\bar x - d = 15{,}01 \qquad \bar x + d = 15{,}59$$
+
+```math
+\bar x - d = 15{,}01 \qquad \bar x + d = 15{,}59
+```
+
 - **Sumando** las dos: $2\bar x = 30{,}60$, así que $\bar x = 15{,}30$. Es el punto medio, porque el intervalo es simétrico.
 - **Restando:** $2d = 0{,}58$, así que d = 0,29.
 
@@ -985,12 +1155,18 @@ Ahora se despeja S del margen, $d = t\cdot\frac{S}{\sqrt n}$, con el t de 19 gra
 ```
 X~t(ν)   ν=19   P(X<x)=0.975   → x=2.09302
 ```
-$$0{,}29 = 2{,}09302\cdot\frac{S}{\sqrt{20}} \;\Rightarrow\; S = \frac{0{,}29\cdot\sqrt{20}}{2{,}09302} = 0{,}62$$
 
-**b)** Si se conociera σ = √0,36 = 0,6, el intervalo se armaría con z (📄 H2, $\bar X \mp z_{1-\frac\alpha2}\frac{\sigma}{\sqrt n}$). Con el **mismo** margen 0,29, la incógnita es z:
-$$0{,}29 = z\cdot\frac{0{,}6}{\sqrt{20}} \;\Rightarrow\; z = \frac{0{,}29\cdot\sqrt{20}}{0{,}6} = 2{,}1615$$
+```math
+0{,}29 = 2{,}09302\cdot\frac{S}{\sqrt{20}} \;\Rightarrow\; S = \frac{0{,}29\cdot\sqrt{20}}{2{,}09302} = 0{,}62
+```
 
-Se busca qué área deja ese z a la izquierda (📄 H1, $P(Z < z) = \Phi(z)$):
+**b)** Si se conociera σ = √0,36 = 0,6, el intervalo se armaría con z (📄 H2, $`\bar X \mp z_{1-\frac\alpha2}\frac{\sigma}{\sqrt n}`$). Con el **mismo** margen 0,29, la incógnita es z:
+
+```math
+0{,}29 = z\cdot\frac{0{,}6}{\sqrt{20}} \;\Rightarrow\; z = \frac{0{,}29\cdot\sqrt{20}}{0{,}6} = 2{,}1615
+```
+
+Se busca qué área deja ese z a la izquierda (📄 H1, $`P(Z < z) = \Phi(z)`$):
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)   x=2.1615   → 0.98467
 ```
@@ -1021,7 +1197,7 @@ La resistencia a la rotura, expresada en kg, de 12 ejemplares de cuerda es de 28
 
 **¿Qué se estima?** μ, la resistencia media de **todas** las cuerdas de ese tipo. Solo hay 12 datos.
 
-💡 **Intervalo de confianza:** "promedio de la muestra ± margen". El margen depende de cuánto varía el promedio, que es $\frac{\sigma}{\sqrt n}$ (📄 H2, $\bar X \sim N(\mu;\ \sigma/\sqrt n)$).
+💡 **Intervalo de confianza:** "promedio de la muestra ± margen". El margen depende de cuánto varía el promedio, que es $\frac{\sigma}{\sqrt n}$ (📄 H2, $`\bar X \sim N(\mu;\ \sigma/\sqrt n)`$).
 
 **Paso 1, sacar $\bar x$ y s de los datos.** Calculadora de estadística → **Estadística descriptiva**:
 ```
@@ -1034,13 +1210,20 @@ El "error estándar" de la app ya es $\frac{s}{\sqrt n} = \frac{12{,}5731}{\sqrt
 Con solo 12 datos, esto **exige que la población sea Normal**: por eso el enunciado lo supone.
 
 📄 H2:
-$$I.C._\mu = \left(\bar X \mp t_{n-1;1-\frac\alpha2}\cdot\frac{S}{\sqrt n}\right)$$
+
+```math
+I.C._\mu = \left(\bar X \mp t_{n-1;1-\frac\alpha2}\cdot\frac{S}{\sqrt n}\right)
+```
+
 ```
 X~t(ν)   ν=11   P(X<x)=0.975   → x=2.20099
 ```
 
 **Paso 3:**
-$$d = 2{,}20099\cdot3{,}6295 = 7{,}99 \;\Rightarrow\; I.C._\mu = (269{,}08 - 7{,}99;\ 269{,}08 + 7{,}99) = (261{,}09;\ 277{,}07) \text{ kg}$$
+
+```math
+d = 2{,}20099\cdot3{,}6295 = 7{,}99 \;\Rightarrow\; I.C._\mu = (269{,}08 - 7{,}99;\ 269{,}08 + 7{,}99) = (261{,}09;\ 277{,}07) \text{ kg}
+```
 
 Con 95 % de confianza, la resistencia media está entre 261 y 277 kg.
 
@@ -1064,10 +1247,14 @@ Se tomó una muestra de n = 36 resistencias eléctricas, resultando la desviaci�
 
 **¿Qué cambia?** Ahora no interesa el promedio, sino **cuánto varían** las resistencias: σ. La muestra dio s = 2,81, pero el σ verdadero puede ser otro.
 
-💡 **Por qué no sirve "estimación ± margen".** Esa receta funciona con el promedio porque es Normal. La varianza muestral **no** es Normal: nunca es negativa y es asimétrica. Si la población es Normal, la cantidad $\frac{(n-1)S^2}{\sigma^2}$ tiene una distribución conocida, la **χ² (chi cuadrado)** con n − 1 grados de libertad (📄 H2, si $X \sim N$, $\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}$).
+💡 **Por qué no sirve "estimación ± margen".** Esa receta funciona con el promedio porque es Normal. La varianza muestral **no** es Normal: nunca es negativa y es asimétrica. Si la población es Normal, la cantidad $\frac{(n-1)S^2}{\sigma^2}$ tiene una distribución conocida, la **χ² (chi cuadrado)** con n − 1 grados de libertad (📄 H2, si $X \sim N$, $`\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}`$).
 
 De ahí sale el intervalo para la **varianza**. Se encierra esa cantidad entre los dos valores de χ² que dejan α/2 en cada cola, y se despeja σ² (📄 H2):
-$$I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)$$
+
+```math
+I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)
+```
+
 - Como la χ² es asimétrica, hacen falta **dos** valores distintos, uno para cada cola.
 - En la punta **izquierda** va el χ² **grande** (el de 1 − α/2): dividir por un número grande da un resultado chico.
 - Para **σ** se saca raíz a las dos puntas (❌): la raíz conserva el orden.
@@ -1077,9 +1264,18 @@ $$I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(
 X~χ²(ν)   ν=35   P(X<x)=0.975   → x=53.2033
 X~χ²(ν)   ν=35   P(X<x)=0.025   → x=20.5694
 ```
-$$(n-1)s^2 = 35\cdot2{,}81^2 = 276{,}36$$
-$$I.C._{\sigma^2} = \left(\frac{276{,}36}{53{,}2033};\ \frac{276{,}36}{20{,}5694}\right) = (5{,}195;\ 13{,}436)$$
-$$I.C._\sigma = (\sqrt{5{,}195};\ \sqrt{13{,}436}) = (2{,}28;\ 3{,}67) \text{ ohm}$$
+
+```math
+(n-1)s^2 = 35\cdot2{,}81^2 = 276{,}36
+```
+
+```math
+I.C._{\sigma^2} = \left(\frac{276{,}36}{53{,}2033};\ \frac{276{,}36}{20{,}5694}\right) = (5{,}195;\ 13{,}436)
+```
+
+```math
+I.C._\sigma = (\sqrt{5{,}195};\ \sqrt{13{,}436}) = (2{,}28;\ 3{,}67) \text{ ohm}
+```
 
 Control: s = 2,81 queda adentro, pero **no** en el centro. Es normal, porque la χ² es asimétrica.
 
@@ -1113,7 +1309,11 @@ Se midió la altura de un río en un punto geográfico dado durante 20 días al 
 2. **observaciones independientes** (muestra aleatoria). Por eso los días son "al azar": si fueran seguidos, una creciente afectaría varios días.
 
 **b)** Fórmula de la hoja (📄 H2):
-$$I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)$$
+
+```math
+I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)
+```
+
 Se piden σ (el desvío): al final se saca **raíz** a las dos puntas (❌).
 
 **Datos.** Calculadora de estadística → **Estadística descriptiva** con los 20 valores:
@@ -1128,9 +1328,18 @@ X~χ²(ν)   ν=19   P(X<x)=0.005   → x=6.84397
 ```
 
 **Reemplazo:**
-$$(n-1)S^2 = 19\cdot26{,}351 = 500{,}67$$
-$$I.C._{\sigma^2} = \left(\frac{500{,}67}{38{,}5823};\ \frac{500{,}67}{6{,}84397}\right) = (12{,}98;\ 73{,}15)$$
-$$I.C._\sigma = (\sqrt{12{,}98};\ \sqrt{73{,}15}) = (3{,}602;\ 8{,}553) \text{ cm}$$
+
+```math
+(n-1)S^2 = 19\cdot26{,}351 = 500{,}67
+```
+
+```math
+I.C._{\sigma^2} = \left(\frac{500{,}67}{38{,}5823};\ \frac{500{,}67}{6{,}84397}\right) = (12{,}98;\ 73{,}15)
+```
+
+```math
+I.C._\sigma = (\sqrt{12{,}98};\ \sqrt{73{,}15}) = (3{,}602;\ 8{,}553) \text{ cm}
+```
 
 Es muy ancho: hay pocos datos, se pide mucha confianza, y estimar una dispersión es más difícil que estimar un promedio.
 
@@ -1157,25 +1366,41 @@ Se quiere estimar la proporción de personas que han visto una cierta obra de te
 
 💡 **Intervalo de confianza para una proporción.** Se quiere estimar p, la fracción de **toda** la población que vio la obra. Se encuesta a n personas y $\hat p$ es la fracción de la muestra que dijo que sí.
 
-Cada persona es un 1 (la vio) o un 0, y $\hat p$ es el promedio de esos unos y ceros. Por el TCL es aproximadamente Normal (📄 H2, $\hat p \sim N\left(p;\ \sqrt{\frac{p(1-p)}{n}}\right)$). De ahí la fórmula, con la misma estructura de siempre, "estimación ± margen" (📄 H2):
-$$I.C._p = \left(\hat p \mp z_{1-\frac\alpha2}\sqrt{\frac{\hat p(1-\hat p)}{n}}\right), \quad n \ge 100$$
+Cada persona es un 1 (la vio) o un 0, y $\hat p$ es el promedio de esos unos y ceros. Por el TCL es aproximadamente Normal (📄 H2, $`\hat p \sim N\left(p;\ \sqrt{\frac{p(1-p)}{n}}\right)`$). De ahí la fórmula, con la misma estructura de siempre, "estimación ± margen" (📄 H2):
+
+```math
+I.C._p = \left(\hat p \mp z_{1-\frac\alpha2}\sqrt{\frac{\hat p(1-\hat p)}{n}}\right), \quad n \ge 100
+```
 
 **Parte 1, tamaño de muestra.** Se quiere que el margen sea a lo sumo 0,02:
-$$z\sqrt{\frac{p(1-p)}{n}} \le 0{,}02$$
+
+```math
+z\sqrt{\frac{p(1-p)}{n}} \le 0{,}02
+```
 
 **Problema:** todavía no se encuestó a nadie, así que no hay $\hat p$. 💡 **Peor caso** (❌): $p(1-p)$ vale como máximo 0,25, cuando p = 0,5. Si se calcula n con 0,25, el margen se cumple **sea cual sea** el p real.
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.995   → x=2.57583
 ```
 ✍️ Despejando n:
-$$n \ge \frac{z^2\cdot0{,}25}{0{,}02^2} = \frac{2{,}57583^2\cdot0{,}25}{0{,}0004} = 4146{,}8 \;\Rightarrow\; n = 4147$$
+
+```math
+n \ge \frac{z^2\cdot0{,}25}{0{,}02^2} = \frac{2{,}57583^2\cdot0{,}25}{0{,}0004} = 4146{,}8 \;\Rightarrow\; n = 4147
+```
+
 Se redondea siempre hacia arriba.
 
 ⚠️ La respuesta usa z = 2,58 redondeado: $\frac{2{,}58^2\cdot0{,}25}{0{,}0004} = 4160{,}25$, así que 4161. Con el z exacto de la app es 4147. Cualquiera de los dos cumple.
 
 **Parte 2, el intervalo** con $\hat p = 0{,}35$ (y n = 4147 ≥ 100 ✓):
-$$d = 2{,}57583\sqrt{\frac{0{,}35\cdot0{,}65}{4147}} = 2{,}57583\cdot0{,}007407 = 0{,}0191$$
-$$I.C._p = (0{,}35 - 0{,}0191;\ 0{,}35 + 0{,}0191) = (0{,}331;\ 0{,}369)$$
+
+```math
+d = 2{,}57583\sqrt{\frac{0{,}35\cdot0{,}65}{4147}} = 2{,}57583\cdot0{,}007407 = 0{,}0191
+```
+
+```math
+I.C._p = (0{,}35 - 0{,}0191;\ 0{,}35 + 0{,}0191) = (0{,}331;\ 0{,}369)
+```
 
 **Parte 3, ¿se logró el error?** Sí: 0,0191 ≤ 0,02. Era esperable, porque se planificó con el peor caso y $0{,}35\cdot0{,}65 = 0{,}2275 < 0{,}25$.
 
@@ -1219,13 +1444,23 @@ X~N(μ;σ)   μ=0   σ=1     P(X<x)=0.975   → x=1.95996
 ```
 
 **a)** 💡 IC para μ con σ desconocido: "promedio ± t·s/√n" (📄 H2). La t reemplaza a z cuando se usa s en lugar de σ.
-$$d = 1{,}99006\cdot\frac{1{,}42}{\sqrt{81}} = 1{,}99006\cdot0{,}1578 = 0{,}314 \;\Rightarrow\; (7{,}856;\ 8{,}484)$$
+
+```math
+d = 1{,}99006\cdot\frac{1{,}42}{\sqrt{81}} = 1{,}99006\cdot0{,}1578 = 0{,}314 \;\Rightarrow\; (7{,}856;\ 8{,}484)
+```
 
 **b)** 💡 IC para la varianza, si la población es Normal (📄 H2): $\left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\alpha/2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\alpha/2}}\right)$. El χ² grande va a la izquierda. Para σ se saca raíz (❌).
-$$(n-1)s^2 = 80\cdot1{,}42^2 = 161{,}31 \;\Rightarrow\; I.C._\sigma = \left(\sqrt{\frac{161{,}31}{106{,}629}};\ \sqrt{\frac{161{,}31}{57{,}1532}}\right) = (1{,}23;\ 1{,}68)$$
+
+```math
+(n-1)s^2 = 80\cdot1{,}42^2 = 161{,}31 \;\Rightarrow\; I.C._\sigma = \left(\sqrt{\frac{161{,}31}{106{,}629}};\ \sqrt{\frac{161{,}31}{57{,}1532}}\right) = (1{,}23;\ 1{,}68)
+```
 
 **c)** 💡 IC para una proporción (📄 H2): $\hat p \mp z\sqrt{\frac{\hat p(1-\hat p)}{n}}$.
-$$d = 1{,}96\sqrt{\frac{\frac13\cdot\frac23}{81}} = 1{,}96\cdot0{,}0524 = 0{,}103 \;\Rightarrow\; (0{,}231;\ 0{,}436)$$
+
+```math
+d = 1{,}96\sqrt{\frac{\frac13\cdot\frac23}{81}} = 1{,}96\cdot0{,}0524 = 0{,}103 \;\Rightarrow\; (0{,}231;\ 0{,}436)
+```
+
 ⚠️ La hoja pide n ≥ 100 para este IC, y acá n = 81. Conviene aclararlo como observación.
 
 </details>
@@ -1267,7 +1502,11 @@ Un artículo sobre "Evaluaciones de neumáticos bajo condición de esfuerzo" rep
 - **Un único defecto:** solo D o solo M: 38 + 32 = **70**.
 
 **Paso 2, los intervalos.** 💡 IC para una **proporción**: se estima p (la fracción en **todos** los neumáticos) con $\hat p$ (la de la muestra). $\hat p$ es un promedio de unos y ceros, así que por TCL es aproximadamente Normal, y el IC tiene la forma "estimación ± margen" (📄 H2):
-$$I.C._p = \left(\hat p \mp z_{1-\frac\alpha2}\sqrt{\frac{\hat p(1-\hat p)}{n}}\right), \quad n \ge 100$$
+
+```math
+I.C._p = \left(\hat p \mp z_{1-\frac\alpha2}\sqrt{\frac{\hat p(1-\hat p)}{n}}\right), \quad n \ge 100
+```
+
 Acá n = 350 ≥ 100 ✓.
 
 ```
@@ -1316,7 +1555,11 @@ Si se supone que los porcentajes de grasa de ambas marcas tienen distribución N
 <summary>Solución paso a paso</summary>
 
 **La idea nueva: comparar dos grupos.** Se quiere saber si una marca tiene más grasa que la otra. Se estima la **diferencia** de medias $\mu_A - \mu_B$ con un intervalo de la forma de siempre:
-$$(\bar x_A - \bar x_B) \pm d$$
+
+```math
+(\bar x_A - \bar x_B) \pm d
+```
+
 📄 H2: $I.C._{\mu_1-\mu_2} = (\bar X_1 - \bar X_2 - d;\ \bar X_1 - \bar X_2 + d)$.
 
 💡 **Cómo se lee al final:**
@@ -1331,15 +1574,26 @@ B (8 valores)  → media = 21.9875   varianza = 16.0755   desvío = 4.0094
 $\bar x_A - \bar x_B = -0{,}0875$: casi iguales.
 
 **a) σ's desconocidos.** 💡 **Varianza combinada $S_p$.** Si las dos marcas tienen **la misma dispersión**, $s_A$ y $s_B$ son dos estimaciones de lo mismo. Se combinan en una sola, más confiable: un promedio ponderado, donde la muestra más grande pesa más (📄 H2):
-$$S_p = \sqrt{\frac{(n_A-1)S_A^2 + (n_B-1)S_B^2}{n_A + n_B - 2}} = \sqrt{\frac{9\cdot17{,}0911 + 7\cdot16{,}0755}{16}} = \sqrt{16{,}647} = 4{,}080$$
+
+```math
+S_p = \sqrt{\frac{(n_A-1)S_A^2 + (n_B-1)S_B^2}{n_A + n_B - 2}} = \sqrt{\frac{9\cdot17{,}0911 + 7\cdot16{,}0755}{16}} = \sqrt{16{,}647} = 4{,}080
+```
+
 Control: queda entre $s_B$ y $s_A$ ✓.
 
 El margen usa t con $n_A + n_B - 2 = 16$ grados de libertad (📄 H2):
-$$d = t_{n_A+n_B-2;1-\frac\alpha2}\,S_p\sqrt{\frac1{n_A} + \frac1{n_B}}$$
+
+```math
+d = t_{n_A+n_B-2;1-\frac\alpha2}\,S_p\sqrt{\frac1{n_A} + \frac1{n_B}}
+```
+
 ```
 X~t(ν)   ν=16   P(X<x)=0.975   → x=2.11991
 ```
-$$d = 2{,}11991\cdot4{,}080\cdot\sqrt{0{,}1 + 0{,}125} = 4{,}103 \;\Rightarrow\; (-0{,}0875 - 4{,}103;\ -0{,}0875 + 4{,}103) = (-4{,}19;\ 4{,}02)$$
+
+```math
+d = 2{,}11991\cdot4{,}080\cdot\sqrt{0{,}1 + 0{,}125} = 4{,}103 \;\Rightarrow\; (-0{,}0875 - 4{,}103;\ -0{,}0875 + 4{,}103) = (-4{,}19;\ 4{,}02)
+```
 
 **El 0 está adentro:** no hay evidencia de que las marcas difieran en grasa.
 
@@ -1348,8 +1602,15 @@ $$d = 2{,}11991\cdot4{,}080\cdot\sqrt{0{,}1 + 0{,}125} = 4{,}103 \;\Rightarrow\;
 - **muestras independientes**: las salchichas de A no tienen relación con las de B.
 
 **c) σ's conocidos.** No hace falta combinar ni suponer que son iguales. Se usa z, y cada σ aporta lo suyo (📄 H2):
-$$d = z_{1-\frac\alpha2}\sqrt{\frac{\sigma_A^2}{n_A} + \frac{\sigma_B^2}{n_B}} = 1{,}96\sqrt{\frac{2{,}8^2}{10} + \frac{2{,}3^2}{8}} = 1{,}96\cdot1{,}2022 = 2{,}356$$
-$$I.C. = (-0{,}0875 - 2{,}356;\ -0{,}0875 + 2{,}356) = (-2{,}44;\ 2{,}27)$$
+
+```math
+d = z_{1-\frac\alpha2}\sqrt{\frac{\sigma_A^2}{n_A} + \frac{\sigma_B^2}{n_B}} = 1{,}96\sqrt{\frac{2{,}8^2}{10} + \frac{2{,}3^2}{8}} = 1{,}96\cdot1{,}2022 = 2{,}356
+```
+
+```math
+I.C. = (-0{,}0875 - 2{,}356;\ -0{,}0875 + 2{,}356) = (-2{,}44;\ 2{,}27)
+```
+
 Es más angosto (σ's más chicos y z < t), pero el 0 sigue adentro: la misma conclusión.
 
 </details>
@@ -1381,16 +1642,27 @@ Se tomaron dos muestras aleatorias de 1000 individuos de Capital Federal y 1500 
 
 **Proporciones muestrales:** $\hat p_1 = \frac{400}{1000} = 0{,}4$ (Capital) y $\hat p_2 = \frac{900}{1500} = 0{,}6$ (Provincia). La diferencia estimada es 0,2.
 
-💡 **IC para una diferencia de proporciones** (❌, no está en la hoja). Cada $\hat p$ es aproximadamente Normal con varianza $\frac{p(1-p)}{n}$ (📄 H2, la de $\hat p$). Las dos muestras son independientes, así que las **varianzas se suman**:
-$$(\hat p_2 - \hat p_1) \pm z_{1-\frac\alpha2}\sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1} + \frac{\hat p_2(1-\hat p_2)}{n_2}}$$
+💡 **IC para una diferencia de proporciones** (❌, no está en la hoja). Cada $\hat p$ es aproximadamente Normal con varianza $\frac{p(1-p)}{n}$ (📄 H2, la de $`\hat p`$). Las dos muestras son independientes, así que las **varianzas se suman**:
+
+```math
+(\hat p_2 - \hat p_1) \pm z_{1-\frac\alpha2}\sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1} + \frac{\hat p_2(1-\hat p_2)}{n_2}}
+```
+
 "Nivel asintótico" significa que vale por la aproximación Normal, con n grande.
 
 **a)**
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.975   → x=1.95996
 ```
-$$d = 1{,}96\sqrt{\frac{0{,}4\cdot0{,}6}{1000} + \frac{0{,}6\cdot0{,}4}{1500}} = 1{,}96\cdot0{,}02 = 0{,}0392$$
-$$I.C.(p_2 - p_1) = (0{,}2 - 0{,}0392;\ 0{,}2 + 0{,}0392) = (0{,}1608;\ 0{,}2392)$$
+
+```math
+d = 1{,}96\sqrt{\frac{0{,}4\cdot0{,}6}{1000} + \frac{0{,}6\cdot0{,}4}{1500}} = 1{,}96\cdot0{,}02 = 0{,}0392
+```
+
+```math
+I.C.(p_2 - p_1) = (0{,}2 - 0{,}0392;\ 0{,}2 + 0{,}0392) = (0{,}1608;\ 0{,}2392)
+```
+
 Longitud: 0,0784. (Si se hace $p_1 - p_2$, da lo mismo con el signo cambiado.)
 
 El 0 queda afuera: hay evidencia de que en la Provincia el acuerdo es mayor.
@@ -1446,19 +1718,36 @@ Se toma 2 − 1 para que dé positivo: $\bar x_2 - \bar x_1 = 2{,}78$.
 💡 **Forma del IC** (📄 H2): $I.C._{\mu_1-\mu_2} = (\bar X_1 - \bar X_2 - d;\ \bar X_1 - \bar X_2 + d)$. Lo que cambia según el caso es cómo se calcula d.
 
 **a) σ = 3 conocido** ("se sabe", "independientemente del instrumental"). Se usa z, y cada σ aporta su parte (📄 H2):
-$$d = z_{1-\frac\alpha2}\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}} = 1{,}96\sqrt{\frac{9}{10} + \frac{9}{10}} = 1{,}96\cdot1{,}3416 = 2{,}63$$
+
+```math
+d = z_{1-\frac\alpha2}\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}} = 1{,}96\sqrt{\frac{9}{10} + \frac{9}{10}} = 1{,}96\cdot1{,}3416 = 2{,}63
+```
+
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.975   → x=1.95996
 ```
-$$I.C.(\mu_2 - \mu_1) = (2{,}78 - 2{,}63;\ 2{,}78 + 2{,}63) = (0{,}15;\ 5{,}41)$$
+
+```math
+I.C.(\mu_2 - \mu_1) = (2{,}78 - 2{,}63;\ 2{,}78 + 2{,}63) = (0{,}15;\ 5{,}41)
+```
 
 **b) σ desconocido pero igual en los dos.** 💡 Como la dispersión es la misma, se **combinan** las dos varianzas muestrales en una sola, $S_p$, y se usa **t** con $n_1 + n_2 - 2$ grados de libertad (📄 H2):
-$$S_p = \sqrt{\frac{(n_1-1)S_1^2 + (n_2-1)S_2^2}{n_1 + n_2 - 2}} = \sqrt{\frac{9\cdot11{,}864 + 9\cdot5{,}3778}{18}} = \sqrt{8{,}621} = 2{,}936$$
-$$d = t_{n_1+n_2-2;1-\frac\alpha2}\,S_p\sqrt{\frac1{n_1} + \frac1{n_2}}$$
+
+```math
+S_p = \sqrt{\frac{(n_1-1)S_1^2 + (n_2-1)S_2^2}{n_1 + n_2 - 2}} = \sqrt{\frac{9\cdot11{,}864 + 9\cdot5{,}3778}{18}} = \sqrt{8{,}621} = 2{,}936
+```
+
+```math
+d = t_{n_1+n_2-2;1-\frac\alpha2}\,S_p\sqrt{\frac1{n_1} + \frac1{n_2}}
+```
+
 ```
 X~t(ν)   ν=18   P(X<x)=0.975   → x=2.10092
 ```
-$$d = 2{,}10092\cdot2{,}936\cdot\sqrt{0{,}2} = 2{,}76 \;\Rightarrow\; (2{,}78 - 2{,}76;\ 2{,}78 + 2{,}76) = (0{,}02;\ 5{,}54)$$
+
+```math
+d = 2{,}10092\cdot2{,}936\cdot\sqrt{0{,}2} = 2{,}76 \;\Rightarrow\; (2{,}78 - 2{,}76;\ 2{,}78 + 2{,}76) = (0{,}02;\ 5{,}54)
+```
 
 **Conclusión:** en los dos casos el intervalo es **todo positivo** (no contiene al 0). Hay evidencia de que **el equipo 2 da concentraciones medias mayores**. En b) queda muy justo: arranca en 0,02.
 
@@ -1486,18 +1775,28 @@ Se desea estimar el porcentaje de vuelos demorados en Aeroparque. Las líneas de
 **La situación:** dan un intervalo ya armado (su punta superior) y hay que **desarmarlo** para saber qué confianza se usó.
 
 💡 **IC para una diferencia de proporciones** (❌, no está en la hoja): "estimación ± z · error estándar", con
-$$\text{EE} = \sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1} + \frac{\hat p_2(1-\hat p_2)}{n_2}}$$
+
+```math
+\text{EE} = \sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1} + \frac{\hat p_2(1-\hat p_2)}{n_2}}
+```
+
 Cada proporción tiene varianza $\frac{p(1-p)}{n}$ (📄 H2), y como las muestras son independientes, las varianzas se suman.
 
 **Paso 1, la estimación.** $\hat p_L = \frac{28}{121} = 0{,}2314$ y $\hat p_G = \frac{20}{100} = 0{,}2$, así que la diferencia LAP − Golazo es 0,0314.
 
 **Paso 2, el error estándar:**
-$$\text{EE} = \sqrt{\frac{0{,}2314\cdot0{,}7686}{121} + \frac{0{,}2\cdot0{,}8}{100}} = 0{,}0554$$
+
+```math
+\text{EE} = \sqrt{\frac{0{,}2314\cdot0{,}7686}{121} + \frac{0{,}2\cdot0{,}8}{100}} = 0{,}0554
+```
 
 **Paso 3, despejar z de la punta superior:**
-$$0{,}0314 + z\cdot0{,}0554 = 0{,}1605 \;\Rightarrow\; z = \frac{0{,}1291}{0{,}0554} = 2{,}33$$
 
-**Paso 4, de z a la confianza.** Se busca qué área deja ese z a la izquierda (📄 H1, $P(Z < z) = \Phi(z)$):
+```math
+0{,}0314 + z\cdot0{,}0554 = 0{,}1605 \;\Rightarrow\; z = \frac{0{,}1291}{0{,}0554} = 2{,}33
+```
+
+**Paso 4, de z a la confianza.** Se busca qué área deja ese z a la izquierda (📄 H1, $`P(Z < z) = \Phi(z)`$):
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)   x=2.33   → 0.9901
 ```
