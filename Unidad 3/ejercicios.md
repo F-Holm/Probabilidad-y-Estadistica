@@ -31,9 +31,7 @@ Diez refrigeradores de cierto tipo han sido devueltos a un distribuidor debido a
 
 Su fórmula está en 📄 **H1**:
 
-```math
-P(X = k) = \frac{\binom Kk\binom{N-K}{n-k}}{\binom Nn}
-```
+$$P(X = k) = \frac{\binom Kk\binom{N-K}{n-k}}{\binom Nn}$$
 
 Se lee: elegir k de los K éxitos **y** el resto de los no-éxitos, sobre todas las formas de elegir n.
 
@@ -41,9 +39,7 @@ Acá N = 10 refrigeradores, K = 4 con compresor defectuoso, n = 5 examinados: **
 
 **b)** "No todos tienen fallas leves" significa que al menos uno tiene el compresor defectuoso, X ≥ 1. Es lo contrario de X = 0, donde los 5 salen de los 6 leves:
 
-```math
-P(X \ge 1) = 1 - \frac{\binom40\binom65}{\binom{10}5} = 1 - \frac{6}{252} = 0{,}9762
-```
+$$P(X \ge 1) = 1 - \frac{\binom40\binom65}{\binom{10}5} = 1 - \frac{6}{252} = 0{,}9762$$
 
 ```
 X~HG(N,K,n)   N=10   K=4   n=5   P(X≥x)   x=1   → 0.97619
@@ -89,17 +85,13 @@ Un grupo de amigos del secundario se reúne en la casa de Laura para comer un as
 
 El enunciado no dice qué estudia Laura. La respuesta de la guía (4/35) supone que **Laura estudia Letras**. Entonces entre las otras 7 quedan 4 de Letras y 3 de Exactas, y las 3 que llegan tienen que salir de esas 4:
 
-```math
-\frac{\binom43}{\binom73} = \frac4{35}
-```
+$$\frac{\binom43}{\binom73} = \frac4{35}$$
 
 (Si Laura estudiara Exactas, quedarían solo 2 de Exactas, y no podrían llegar 3: la probabilidad sería 0.)
 
 **b)** Ahora son 3 cualesquiera de los 14: $\binom{14}{3} = 364$ grupos. "Estudian lo mismo" significa los 3 de Letras **o** los 3 de Exactas. Son casos separados, así que se suman:
 
-```math
-\frac{\binom63 + \binom83}{364} = \frac{20 + 56}{364} \approx 0{,}2088
-```
+$$\frac{\binom63 + \binom83}{364} = \frac{20 + 56}{364} \approx 0{,}2088$$
 
 **c)** Se eligen 2 de 14 sin reposición y X cuenta los de Letras. Es una 💡 **hipergeométrica** (📄 H1) con N = 14, K = 6 (de Letras) y n = 2.
 
@@ -140,9 +132,7 @@ En una partida de truco (mazo de 40 cartas: 4 palos de 10 cartas cada uno), asum
 
 Una mano son 3 cartas de 40, sin importar el orden, y todas las manos son igual de probables (Laplace). Hay que **contar** manos con $\binom nk$ (nCr):
 
-```math
-\text{manos posibles} = \binom{40}{3} = 9880
-```
+$$\text{manos posibles} = \binom{40}{3} = 9880$$
 
 **a) Envido** (exactamente 2 del mismo palo y 1 de otro). Se arma la mano en pasos y se multiplican las opciones de cada paso:
 1. elegir **cuál** es el palo repetido: 4 opciones;
@@ -153,23 +143,17 @@ $$\frac{4\cdot45\cdot30}{9880} = \frac{5400}{9880} = \frac{135}{247} \approx 0{,
 
 **b) Flor** (las 3 del mismo palo): se elige el palo (4) y 3 cartas de él ($`\binom{10}{3} = 120`$):
 
-```math
-\frac{4\cdot120}{9880} = \frac{480}{9880} \approx 0{,}04858
-```
+$$\frac{4\cdot120}{9880} = \frac{480}{9880} \approx 0{,}04858$$
 
 **c) Los dos jugadores con flor.** Regla de la multiplicación: P(el 1.º tiene flor) · P(el 2.º tiene flor / el 1.º tiene flor).
 
 Si el 1.º tuvo flor, quedan 37 cartas: 7 del palo que usó y 10 de cada uno de los otros 3. El 2.º puede tener flor de otro palo ($`3\cdot\binom{10}3 = 360`$) o del mismo palo con las 7 que quedan ($`\binom73 = 35`$):
 
-```math
-P = 0{,}04858\cdot\frac{360 + 35}{\binom{37}{3}} = 0{,}04858\cdot\frac{395}{7770} \approx 0{,}00247
-```
+$$P = 0{,}04858\cdot\frac{360 + 35}{\binom{37}{3}} = 0{,}04858\cdot\frac{395}{7770} \approx 0{,}00247$$
 
 **d) Ni flor ni envido** significa las tres de palos distintos. Una mano solo puede ser de tres tipos (flor, envido o tres palos distintos), que no se pisan y suman 1. Entonces:
 
-```math
-1 - 0{,}5466 - 0{,}0486 = 0{,}40486
-```
+$$1 - 0{,}5466 - 0{,}0486 = 0{,}40486$$
 
 Comprobación directa: se eligen 3 palos de 4 ($`\binom43 = 4`$) y una carta de cada uno ($`10^3`$): $\frac{4000}{9880} = 0{,}40486$ ✓.
 
@@ -203,9 +187,7 @@ La compañía de aviación *GranJet* ha determinado, mediante un estudio estadí
 
 Su fórmula está en 📄 **H1**:
 
-```math
-P(X = k) = \binom nk p^k(1-p)^{n-k}
-```
+$$P(X = k) = \binom nk p^k(1-p)^{n-k}$$
 
 Se lee: elegir **cuáles** k ensayos son éxitos, por la probabilidad de esa combinación.
 
@@ -213,9 +195,7 @@ Se lee: elegir **cuáles** k ensayos son éxitos, por la probabilidad de esa com
 
 **¿Cuándo viajan todos?** Cuando se presentan **a lo sumo 70**, la capacidad del avión. Es más corto restar los dos casos malos (71 o 72):
 
-```math
-P(X \le 70) = 1 - P(71) - P(72) = 1 - \binom{72}{71}0{,}96^{71}\,0{,}04 - 0{,}96^{72} \approx 0{,}78836
-```
+$$P(X \le 70) = 1 - P(71) - P(72) = 1 - \binom{72}{71}0{,}96^{71}\,0{,}04 - 0{,}96^{72} \approx 0{,}78836$$
 
 ```
 X~Bin(n,p)   n=72   p=0.96   P(X≤x)   x=70   → 0.78836
@@ -247,9 +227,7 @@ Se ha probado que el 25 % de los neumáticos de motocicleta sufren pinchaduras e
 
 **a) Al menos 2** (2, 3, …, 6). Es más corto restar lo contrario (0 o 1):
 
-```math
-P(X \ge 2) = 1 - P(0) - P(1) = 1 - 0{,}75^6 - 6\cdot0{,}25\cdot0{,}75^5 \approx 0{,}466
-```
+$$P(X \ge 2) = 1 - P(0) - P(1) = 1 - 0{,}75^6 - 6\cdot0{,}25\cdot0{,}75^5 \approx 0{,}466$$
 
 ```
 X~Bin(n,p)   n=6   p=0.25   P(X≥x)   x=2   → 0.46606
@@ -298,21 +276,15 @@ Al probar motores para cuatriciclos se encontró que el 5 % no superaba la prueb
 
 **a)** Éxito = "no pasa" (p = 0,05), n = 5. "Al menos uno" se hace por complemento: 1 − "ninguno falla" = 1 − "los 5 pasan":
 
-```math
-1 - 0{,}95^5 = 0{,}22622
-```
+$$1 - 0{,}95^5 = 0{,}22622$$
 
 **b)** Éxito = "pasa" (p = 0,95), n = 20. El número esperado de una binomial es E = n·p (❌):
 
-```math
-E = 20\cdot0{,}95 = 19
-```
+$$E = 20\cdot0{,}95 = 19$$
 
 **c)** Éxito = "no pasa" (p = 0,05), n = 7. "La mayoría no pasa" significa más de la mitad de 7, o sea 4 o más. "Pero no todos" saca el 7. Quedan 4, 5 o 6:
 
-```math
-P(4 \le X \le 6) = \sum_{k=4}^6\binom7k0{,}05^k\,0{,}95^{7-k} \approx 0{,}00019
-```
+$$P(4 \le X \le 6) = \sum_{k=4}^6\binom7k0{,}05^k\,0{,}95^{7-k} \approx 0{,}00019$$
 
 ```
 X~Bin(n,p)   n=7   p=0.05   P(X≥x)   x=4   → 0.000194   (P(X=7) ≈ 8·10⁻¹⁰, despreciable)
@@ -353,9 +325,7 @@ En una empresa (con más de 2000 empleados), el 30 % de los empleados está en u
 
 **a)** Éxito = "exactamente un proyecto" (p = 0,6), X ~ Bin(5; 0,6). "Al menos 2" es 1 − P(0) − P(1):
 
-```math
-1 - 0{,}4^5 - 5\cdot0{,}6\cdot0{,}4^4 = 0{,}91296
-```
+$$1 - 0{,}4^5 - 5\cdot0{,}6\cdot0{,}4^4 = 0{,}91296$$
 
 ```
 X~Bin(n,p)   n=5   p=0.6   P(X≥x)   x=2   → 0.91296
@@ -408,15 +378,11 @@ Considerando un valor de n fijo:
 
 **a)** La esperanza de una suma es la suma de las esperanzas (❌, linealidad):
 
-```math
-E(X) = E(X_1) + \dots + E(X_n) = p + \dots + p = np
-```
+$`\displaystyle E(X) = E(X_1) + \dots + E(X_n) = p + \dots + p = np`$
 
 **b)** Para la varianza de una suma, 📄 H1 dice $V(X+Y) = V(X) + V(Y) + 2Cov$. Los ensayos son **independientes**, así que las covarianzas valen 0 y las varianzas simplemente se suman:
 
-```math
-V(X) = \sum V(X_i) = np(1-p)
-```
+$$V(X) = \sum V(X_i) = np(1-p)$$
 
 (📄 H1 trae este resultado, pero acá piden demostrarlo.)
 
@@ -459,9 +425,7 @@ Por partes:
 - **Potencias de (1 − p):** $\frac{(1-p)^{n-k-1}}{(1-p)^{n-k}} = \frac{1}{1-p}$.
 - **Combinatorios:** con $\binom nk = \frac{n!}{k!(n-k)!}$, el n! se cancela y queda
 
-  ```math
-  \frac{k!\,(n-k)!}{(k+1)!\,(n-k-1)!} = \frac{n-k}{k+1}
-  ```
+  $$\frac{k!\,(n-k)!}{(k+1)!\,(n-k-1)!} = \frac{n-k}{k+1}$$
 
   porque $(k+1)! = (k+1)\cdot k!$ y $(n-k)! = (n-k)\cdot(n-k-1)!$.
 
@@ -490,9 +454,7 @@ Los autos que pasan por cierta cabina de peaje siguen un proceso de Poisson con 
 
 💡 **Distribución de Poisson.** Cuenta **cuántos eventos ocurren en un intervalo** (de tiempo, de espacio…) cuando ocurren al azar, de a uno, con un ritmo promedio constante. Su único parámetro λ es el **promedio de eventos en ese intervalo**. 📄 **H1**:
 
-```math
-P(X = k) = \frac{\lambda^k}{k!}e^{-\lambda}
-```
+$$P(X = k) = \frac{\lambda^k}{k!}e^{-\lambda}$$
 
 ⚠️ λ depende del largo del intervalo: si en 1 hora llegan en promedio 20 autos, en 5 minutos llegan en promedio 20·(5/60).
 
@@ -500,9 +462,7 @@ P(X = k) = \frac{\lambda^k}{k!}e^{-\lambda}
 
 En 5 minutos, λ = 20·(5/60) = 5/3 ≈ 1,667:
 
-```math
-P(X \ge 2) = 1 - P(0) - P(1) = 1 - e^{-5/3}\left(1 + \frac53\right) \approx 0{,}4963
-```
+$$P(X \ge 2) = 1 - P(0) - P(1) = 1 - e^{-5/3}\left(1 + \frac53\right) \approx 0{,}4963$$
 
 ```
 X~Po(λ)   λ=1.6667   P(X≥x)   x=2   → 0.49633
@@ -510,9 +470,7 @@ X~Po(λ)   λ=1.6667   P(X≥x)   x=2   → 0.49633
 
 **b)** Si Fabián se va t horas, el promedio de autos es λ = 20t. "Ningún auto" es $P(X = 0) = e^{-20t}$, y se pide que eso valga 1/10:
 
-```math
-e^{-20t} = 0{,}1 \;\Rightarrow\; -20t = \ln0{,}1 \;\Rightarrow\; t = \frac{\ln10}{20} \approx 0{,}115 \text{ h} \approx 6{,}9 \text{ min}
-```
+$$e^{-20t} = 0{,}1 \;\Rightarrow\; -20t = \ln0{,}1 \;\Rightarrow\; t = \frac{\ln10}{20} \approx 0{,}115 \text{ h} \approx 6{,}9 \text{ min}$$
 
 </details>
 
@@ -543,9 +501,7 @@ La cantidad de pacientes que asisten a la sala de emergencias de la localidad de
 
 **a)** Se deriva algún paciente si llegan más de 4, es decir X ≥ 5:
 
-```math
-P(X \ge 5) = 1 - \sum_{k=0}^{4}\frac{3^k}{k!}e^{-3} \approx 0{,}185
-```
+$$P(X \ge 5) = 1 - \sum_{k=0}^{4}\frac{3^k}{k!}e^{-3} \approx 0{,}185$$
 
 ```
 X~Po(λ)   λ=3   P(X≥x)   x=5   → 0.18474
@@ -553,9 +509,7 @@ X~Po(λ)   λ=3   P(X≥x)   x=5   → 0.18474
 
 **b)** Los derivados son Y = X − 4 si X > 4, y 0 si no. Es una **función** de X. 💡 Su esperanza es $E(g(X)) = \sum g(k)P(X = k)$ (📄 H1): cada cantidad de derivados por su probabilidad.
 
-```math
-E(Y) = \sum_{k \ge 5}(k - 4)P(X = k) = 1\cdot0{,}1008 + 2\cdot0{,}0504 + 3\cdot0{,}0216 + 4\cdot0{,}0081 + \dots \approx 0{,}32
-```
+$$E(Y) = \sum_{k \ge 5}(k - 4)P(X = k) = 1\cdot0{,}1008 + 2\cdot0{,}0504 + 3\cdot0{,}0216 + 4\cdot0{,}0081 + \dots \approx 0{,}32$$
 
 Cada P(X = k) sale con `X~Po(λ) λ=3 P(X=x) x=k`.
 
@@ -601,9 +555,7 @@ Las llegadas a la fila de espera de una oficina del ANSES ocurren según un proc
 
 "Más de 6 minutos entre dos arribos":
 
-```math
-P(T > 6) = e^{-0{,}2\cdot6} = e^{-1{,}2} \approx 0{,}3012
-```
+$$P(T > 6) = e^{-0{,}2\cdot6} = e^{-1{,}2} \approx 0{,}3012$$
 
 ```
 X~Exp(λ)   λ=0.2   P(X>x)   x=6   → 0.30119
@@ -635,15 +587,11 @@ $$P(X = k+1) = \frac{\lambda}{k+1}\,P(X = k)$$
 
 Se parte de la fórmula de Poisson (📄 H1, $`P(X = k) = \frac{\lambda^k}{k!}e^{-\lambda}`$) aplicada a k + 1, y se busca "sacar" P(k) de adentro:
 
-```math
-P(X = k+1) = \frac{\lambda^{k+1}}{(k+1)!}e^{-\lambda}
-```
+$$P(X = k+1) = \frac{\lambda^{k+1}}{(k+1)!}e^{-\lambda}$$
 
 Se usa que $\lambda^{k+1} = \lambda\cdot\lambda^k$ y que $(k+1)! = (k+1)\cdot k!$:
 
-```math
-= \frac{\lambda\cdot\lambda^k}{(k+1)\cdot k!}e^{-\lambda} = \frac{\lambda}{k+1}\cdot\underbrace{\frac{\lambda^k}{k!}e^{-\lambda}}_{P(X = k)}
-```
+$$= \frac{\lambda\cdot\lambda^k}{(k+1)\cdot k!}e^{-\lambda} = \frac{\lambda}{k+1}\cdot\underbrace{\frac{\lambda^k}{k!}e^{-\lambda}}_{P(X = k)}$$
 
 ∎ Sirve para calcular P(1), P(2), … a partir de P(0) = $e^{-\lambda}$, multiplicando cada vez por λ/(k+1).
 
@@ -667,9 +615,7 @@ De una variable aleatoria uniforme se sabe que su valor esperado es 15 y que P(1
 
 💡 **Distribución uniforme U(a; b).** La variable cae en cualquier lugar del intervalo [a; b] con la **misma** chance: la densidad es una "meseta" plana de altura $\frac1{b-a}$. Entonces la probabilidad de un tramo es **su largo dividido el largo total** (❌):
 
-```math
-P(c \le X \le d) = \frac{d - c}{b - a} \qquad E(X) = \frac{a+b}{2}\;(❌) \qquad V(X) = \frac{(b-a)^2}{12}\;(📄\text{ H1})
-```
+$$P(c \le X \le d) = \frac{d - c}{b - a} \qquad E(X) = \frac{a+b}{2}\;(❌) \qquad V(X) = \frac{(b-a)^2}{12}\;(📄\text{ H1})$$
 
 **Hallar a y b con los dos datos:**
 - El valor esperado es el **punto medio**: $\frac{a+b}{2} = 15$.
@@ -717,9 +663,7 @@ Sumando las dos ecuaciones: $(b - a) - 4 = 0{,}6L$, o sea $L - 4 = 0{,}6L$. Ento
 
 **b)** Cada bulto pesa entre 5 y 9 (éxito) con p = 0,4, y los 8 son independientes. 💡 Contar éxitos en ensayos independientes es **binomial**: Bin(8; 0,4) (📄 H1). "Ninguno" es P(0):
 
-```math
-0{,}6^8 \approx 0{,}0168
-```
+$$0{,}6^8 \approx 0{,}0168$$
 
 **c)** En una binomial el número esperado es n·p (❌): $8\cdot0{,}4 = 3{,}2$ bultos.
 
@@ -756,9 +700,7 @@ La duración de un amplificador electrónico está modelada como una variable Ex
 
 **a)** Un amplificador al azar puede ser de cualquier tipo. 💡 **Probabilidad total**: se suma P(tipo)·P(falla antes de 60000 / tipo):
 
-```math
-0{,}1\left(1 - e^{-60000/20000}\right) + 0{,}9\left(1 - e^{-60000/50000}\right) = 0{,}1(1 - e^{-3}) + 0{,}9(1 - e^{-1{,}2}) = 0{,}0950 + 0{,}6289 = 0{,}7239
-```
+$$0{,}1\left(1 - e^{-60000/20000}\right) + 0{,}9\left(1 - e^{-60000/50000}\right) = 0{,}1(1 - e^{-3}) + 0{,}9(1 - e^{-1{,}2}) = 0{,}0950 + 0{,}6289 = 0{,}7239$$
 
 ```
 X~Exp(λ)   λ=0.00005   P(X<x)   x=60000   → 0.95021
@@ -767,15 +709,11 @@ X~Exp(λ)   λ=0.00002   P(X<x)   x=60000   → 0.69881
 
 **b)** Condicional (📄 H1). "Supera 40000" está dentro de "supera 20000", así que la intersección es "supera 40000":
 
-```math
-P(X > 40000 / X > 20000) = \frac{P(X > 40000)}{P(X > 20000)}
-```
+$$P(X > 40000 / X > 20000) = \frac{P(X > 40000)}{P(X > 20000)}$$
 
 Cada una se calcula con probabilidad total:
 
-```math
-\frac{0{,}1e^{-2} + 0{,}9e^{-0{,}8}}{0{,}1e^{-1} + 0{,}9e^{-0{,}4}} \approx \frac{0{,}4179}{0{,}6401} \approx 0{,}6529
-```
+$$\frac{0{,}1e^{-2} + 0{,}9e^{-0{,}8}}{0{,}1e^{-1} + 0{,}9e^{-0{,}4}} \approx \frac{0{,}4179}{0{,}6401} \approx 0{,}6529$$
 
 ⚠️ **No** vale la falta de memoria (que diría "P(X > 20000)"). Esa propiedad es de **una** exponencial, y la mezcla de dos exponenciales no es exponencial. Saber que ya duró 20000 h hace más probable que sea del tipo "duradero".
 
@@ -804,23 +742,17 @@ La duración de ciertas lámparas eléctricas se distribuye exponencialmente. Se
 
 **Paso 1, usar el dato.** "El 80 % dura más de 800 h" se escribe $e^{-800\lambda} = 0{,}8$. No hace falta despejar λ: hay un atajo con potencias.
 
-```math
-P(X > 600) = e^{-600\lambda} = \left(e^{-800\lambda}\right)^{600/800} = 0{,}8^{0{,}75} \approx 0{,}8459
-```
+$$P(X > 600) = e^{-600\lambda} = \left(e^{-800\lambda}\right)^{600/800} = 0{,}8^{0{,}75} \approx 0{,}8459$$
 
 (Si se prefiere, $\lambda = -\ln0{,}8/800 = 0{,}000279$, y da lo mismo.)
 
 **Paso 2, n lámparas.** Se quiere que **alguna** dure más de 600 h. Por complemento, es 1 − "todas duran menos". Las lámparas son independientes, y cada una dura menos con probabilidad 1 − 0,8459 = 0,1541:
 
-```math
-1 - 0{,}1541^n \ge 0{,}9 \;\Rightarrow\; 0{,}1541^n \le 0{,}1
-```
+$$1 - 0{,}1541^n \ge 0{,}9 \;\Rightarrow\; 0{,}1541^n \le 0{,}1$$
 
 **Paso 3, despejar n con logaritmos.** ln(0,1541) es negativo, y al dividir por un negativo se da vuelta la desigualdad:
 
-```math
-n\ln0{,}1541 \le \ln0{,}1 \;\Rightarrow\; n \ge \frac{\ln0{,}1}{\ln0{,}1541} \approx 1{,}23
-```
+$$n\ln0{,}1541 \le \ln0{,}1 \;\Rightarrow\; n \ge \frac{\ln0{,}1}{\ln0{,}1541} \approx 1{,}23$$
 
 n tiene que ser entero, así que **n = 2**. Control: con 1 lámpara, 0,846 < 0,9; con 2, 1 − 0,1541² = 0,976 ✓.
 
@@ -848,9 +780,7 @@ El ingreso anual de los jefes de familia de una cierta ciudad se puede modelar c
 
 Con la exponencial, $F(x) = 1 - e^{-\lambda x}$ (📄 H1). Se iguala a q y se despeja:
 
-```math
-1 - e^{-\lambda x_q} = q \;\Rightarrow\; e^{-\lambda x_q} = 1 - q \;\Rightarrow\; x_q = \frac{-\ln(1-q)}{\lambda} = -20000\ln(1-q)
-```
+$`\displaystyle 1 - e^{-\lambda x_q} = q \;\Rightarrow\; e^{-\lambda x_q} = 1 - q \;\Rightarrow\; x_q = \frac{-\ln(1-q)}{\lambda} = -20000\ln(1-q)`$
 
 (1/λ = 1/0,00005 = 20000.)
 
@@ -890,9 +820,7 @@ Sabiendo que X ~ Exp(λ), hallar la distribución de Y = cX.
 
 Se calcula, despejando X adentro:
 
-```math
-P(Y > y) = P(cX > y) = P\left(X > \frac yc\right) = e^{-\lambda\frac yc} = e^{-\left(\frac\lambda c\right)y}
-```
+$$P(Y > y) = P(cX > y) = P\left(X > \frac yc\right) = e^{-\lambda\frac yc} = e^{-\left(\frac\lambda c\right)y}$$
 
 Tiene exactamente la forma de una exponencial, con parámetro λ/c. Entonces **Y ~ Exp(λ/c)**.
 
@@ -922,9 +850,7 @@ La duración de ciertas pilas se distribuye en forma Exponencial. Se sabe, adem�
 
 **Paso 2, una pila.** Con el atajo de potencias, $e^{-500\lambda} = (e^{-400\lambda})^{500/400} = 0{,}8^{1{,}25}$:
 
-```math
-P(X < 500) = 1 - 0{,}8^{1{,}25} \approx 0{,}2434
-```
+$$P(X < 500) = 1 - 0{,}8^{1{,}25} \approx 0{,}2434$$
 
 ```
 X~Exp(λ)   λ=0.000557859   P(X<x)   x=500   → 0.24341
@@ -933,9 +859,7 @@ X~Exp(λ)   λ=0.000557859   P(X<x)   x=500   → 0.24341
 
 **Paso 3, las cinco.** Las pilas son independientes, así que "las 5 duran menos de 500" es el producto (📄 H1):
 
-```math
-0{,}2434^5 \approx 0{,}00085
-```
+$$0{,}2434^5 \approx 0{,}00085$$
 
 </details>
 
@@ -966,9 +890,7 @@ Las baterías de una marca de celulares pueden provenir de dos fábricas diferen
 
 **a)** 💡 **Falta de memoria** (📄 H1, $`P(X > t_0 + \Delta t / X > t_0) = P(X > \Delta t)`$). Una exponencial "no envejece": si ya duró 70, la probabilidad de durar 20 más es la misma que la de una batería nueva de durar 20.
 
-```math
-P(X > 90 / X > 70) = P(X > 20) = e^{-0{,}01\cdot20} = e^{-0{,}2} = 0{,}8187
-```
+$$P(X > 90 / X > 70) = P(X > 20) = e^{-0{,}01\cdot20} = e^{-0{,}2} = 0{,}8187$$
 
 **b)** Una batería del stock puede venir de cualquiera de las dos fábricas. 💡 **Probabilidad total** (U1): se suma P(fábrica)·P(dura ≤ 90 / fábrica).
 - H: $1 - e^{-0{,}01\cdot90} = 1 - e^{-0{,}9} = 0{,}5934$.
@@ -978,9 +900,7 @@ $$P(\le 90) = 0{,}6\cdot0{,}5934 + 0{,}4\cdot0{,}2 = 0{,}3560 + 0{,}08 = 0{,}436
 
 **c)** Pregunta al revés: sabiendo que duró ≤ 90, ¿es de H? 💡 **Bayes** (📄 H1), el camino de H sobre el total:
 
-```math
-P(H / \le 90) = \frac{0{,}3560}{0{,}436} = 0{,}8165
-```
+$$P(H / \le 90) = \frac{0{,}3560}{0{,}436} = 0{,}8165$$
 
 </details>
 
@@ -1023,9 +943,7 @@ X~Exp(λ)   λ=0.13333   P(X>x)   x=20   → 0.06948
 
 **c)** 💡 **Falta de memoria** (📄 H1): si ya pasaron 30 minutos, la probabilidad de que tarde 10 más no depende de lo ya esperado.
 
-```math
-P(T > 40 / T > 30) = P(T > 10) = 0{,}2636
-```
+$$P(T > 40 / T > 30) = P(T > 10) = 0{,}2636$$
 
 **d)** Dan **igual**, justamente por la falta de memoria: la exponencial "no recuerda" cuánto ya se esperó.
 
@@ -1069,21 +987,15 @@ Los mensajes que llegan al nodo A de un sistema de comunicación de datos son pu
 
 **a)** Cada espera es exponencial con media 1/λ = 2 s (📄 H1). Por linealidad, la suma de 6 tiene media 6·2:
 
-```math
-E(T) = \frac\alpha\lambda = 12 \text{ s}
-```
+$$E(T) = \frac\alpha\lambda = 12 \text{ s}$$
 
 **b)** Cada exponencial tiene varianza $1/\lambda^2 = 4$ (📄 H1, $`\sigma = 1/\lambda`$). Son independientes, así que las varianzas se suman:
 
-```math
-V(T) = \frac{\alpha}{\lambda^2} = 6\cdot4 = 24 \text{ s}^2
-```
+$$V(T) = \frac{\alpha}{\lambda^2} = 6\cdot4 = 24 \text{ s}^2$$
 
 **c)** 💡 **Truco Gamma–Poisson:** "el paquete se forma antes de 12 s" es lo mismo que "en 12 s llegaron **al menos 6** mensajes". La cantidad en 12 s es Poisson con λ = 0,5·12 = 6:
 
-```math
-P(T < 12) = P(N \ge 6) = 1 - P(N \le 5) \approx 0{,}5543
-```
+$$P(T < 12) = P(N \ge 6) = 1 - P(N \le 5) \approx 0{,}5543$$
 
 ```
 X~Po(λ)   λ=6   P(X≥x)   x=6   → 0.55432
@@ -1118,15 +1030,11 @@ L = 30Y + 8
 
 **Paso 1, pasar la condición a Y.** L está en cientos de pesos, así que 18 800 pesos son 188:
 
-```math
-L > 188 \;\Leftrightarrow\; 30Y + 8 > 188 \;\Leftrightarrow\; Y > 6 \text{ horas}
-```
+$$L > 188 \;\Leftrightarrow\; 30Y + 8 > 188 \;\Leftrightarrow\; Y > 6 \text{ horas}$$
 
 **Paso 2, P(Y > 6) con una Gamma.** 💡 Una Gamma(α; λ) con α **entero** es el tiempo hasta el α-ésimo evento de un proceso de Poisson con ritmo λ (❌). Entonces "Y > 6" equivale a "en 6 horas ocurrieron **menos de 3** eventos", es decir a lo sumo 2. Esa cantidad es Poisson con λ·6 = 0,5·6 = 3:
 
-```math
-P(Y > 6) = P(N \le 2) = e^{-3}\left(1 + 3 + \frac{3^2}{2}\right) = e^{-3}\cdot8{,}5 \approx 0{,}4232
-```
+$$P(Y > 6) = P(N \le 2) = e^{-3}\left(1 + 3 + \frac{3^2}{2}\right) = e^{-3}\cdot8{,}5 \approx 0{,}4232$$
 
 ```
 X~Po(λ)   λ=3   P(X≤x)   x=2   → 0.42319
@@ -1154,15 +1062,11 @@ El tiempo semanal Y (en horas) durante el cual cierta máquina industrial no fun
 
 💡 **Gamma(α; λ)** (❌): $E(Y) = \frac\alpha\lambda$ y $V(Y) = \frac{\alpha}{\lambda^2}$ (es la suma de α exponenciales).
 
-```math
-E(Y) = \frac{100}{20} = 5 \qquad V(Y) = \frac{100}{400} = 0{,}25
-```
+$$E(Y) = \frac{100}{20} = 5 \qquad V(Y) = \frac{100}{400} = 0{,}25$$
 
 💡 $E(Y^2)$ se despeja de 📄 H1, $V(Y) = E(Y^2) - E(Y)^2$:
 
-```math
-E(Y^2) = V(Y) + E(Y)^2 = 0{,}25 + 25 = 25{,}25
-```
+$$E(Y^2) = V(Y) + E(Y)^2 = 0{,}25 + 25 = 25{,}25$$
 
 $$E(L) = 20\cdot5 - 3\cdot25{,}25 = 100 - 75{,}75 = 24{,}25$$
 
@@ -1195,9 +1099,7 @@ Cada componente dura un tiempo exponencial con α = 1/100: $P(\text{dura más de
 
 Truco: "el sistema dura más de t" significa que **las dos** duran más de t. Como son independientes, se multiplica:
 
-```math
-P(T > t) = e^{-t/100}\cdot e^{-t/100} = e^{-t/50}
-```
+$$P(T > t) = e^{-t/100}\cdot e^{-t/100} = e^{-t/50}$$
 
 Esa es la forma de una exponencial con parámetro 1/50. Entonces T ~ Exp(1/50):
 - $F(t) = 1 - e^{-t/50}$;
@@ -1209,15 +1111,11 @@ Dura la mitad en promedio: 50 h.
 
 Truco: "el sistema ya falló en t" significa que **las dos** fallaron antes de t:
 
-```math
-F(t) = P(T \le t) = \left(1 - e^{-t/100}\right)^2
-```
+$$F(t) = P(T \le t) = \left(1 - e^{-t/100}\right)^2$$
 
 💡 La densidad es la derivada de F (❌), con la regla de la cadena:
 
-```math
-f(t) = 2\left(1 - e^{-t/100}\right)\cdot\frac{1}{100}e^{-t/100} = \frac1{50}e^{-t/100} - \frac1{50}e^{-t/50}
-```
+$$f(t) = 2\left(1 - e^{-t/100}\right)\cdot\frac{1}{100}e^{-t/100} = \frac1{50}e^{-t/100} - \frac1{50}e^{-t/50}$$
 
 Ya **no** es exponencial.
 
@@ -1309,9 +1207,7 @@ Sea X ~ N(μ, σ²).
 
 Por la simetría de la campana, el área entre −z y z es $\Phi(z) - \Phi(-z) = 2\Phi(z) - 1$:
 
-```math
-P(-1{,}24 \le Z \le 1{,}24) = 2\cdot0{,}8925 - 1 = 0{,}785
-```
+$$P(-1{,}24 \le Z \le 1{,}24) = 2\cdot0{,}8925 - 1 = 0{,}785$$
 
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X<x)   x=1.24   → 0.89251
@@ -1322,9 +1218,7 @@ X~N(μ;σ)   μ=0   σ=1   P(X<x)   x=1.24   → 0.89251
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.975   → x=1.95996
 ```
 
-```math
-\frac{c}{\sigma} = 1{,}96 \;\Rightarrow\; c = 1{,}96\,\sigma
-```
+$$\frac{c}{\sigma} = 1{,}96 \;\Rightarrow\; c = 1{,}96\,\sigma$$
 
 Es la regla famosa: el 95 % de una normal está a menos de 1,96 σ de la media.
 
@@ -1360,9 +1254,7 @@ Expresar las respuestas en partes por millón.
 
 **a)** Las especificaciones están en μ − 3σ y μ + 3σ. No cumple el que cae **afuera**: Z < −3 o Z > 3. Las dos colas son iguales:
 
-```math
-2(1 - \Phi(3)) = 2\cdot0{,}00135 = 0{,}0027 \;\Rightarrow\; 2700 \text{ ppm}
-```
+$$2(1 - \Phi(3)) = 2\cdot0{,}00135 = 0{,}0027 \;\Rightarrow\; 2700 \text{ ppm}$$
 
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X>x)   x=3   → 0.00135
@@ -1372,9 +1264,7 @@ X~N(μ;σ)   μ=0   σ=1   P(X>x)   x=3   → 0.00135
 - el límite superior queda a 3 − 1,5 = **1,5σ** por encima;
 - el inferior queda a 3 + 1,5 = **4,5σ** por debajo.
 
-```math
-P(Z > 1{,}5) + P(Z < -4{,}5) = 0{,}0668 + 0{,}0000034 \approx 0{,}0668 \;\Rightarrow\; \approx 66\,810 \text{ ppm}
-```
+$$P(Z > 1{,}5) + P(Z < -4{,}5) = 0{,}0668 + 0{,}0000034 \approx 0{,}0668 \;\Rightarrow\; \approx 66\,810 \text{ ppm}$$
 
 ```
 X~N(μ;σ)   μ=0   σ=1   P(X>x)   x=1.5    → 0.06681
@@ -1412,9 +1302,7 @@ La distribución de los pesos de los alumnos varones de una facultad es aproxima
 
 **a)**
 
-```math
-P(X > 95) = P\left(Z > \frac{95 - 75}{7}\right) = 1 - \Phi(2{,}857) \approx 0{,}0021
-```
+$$P(X > 95) = P\left(Z > \frac{95 - 75}{7}\right) = 1 - \Phi(2{,}857) \approx 0{,}0021$$
 
 ```
 X~N(μ;σ)   μ=75   σ=7   P(X>x)   x=95   → 0.00214
@@ -1422,9 +1310,7 @@ X~N(μ;σ)   μ=75   σ=7   P(X>x)   x=95   → 0.00214
 
 **b)** Primero la proporción entre 80 y 95 (📄 H1, $`P(a < X < b) = F(b) - F(a)`$):
 
-```math
-\Phi(2{,}857) - \Phi(0{,}714) = 0{,}99786 - 0{,}76247 = 0{,}2354
-```
+$$\Phi(2{,}857) - \Phi(0{,}714) = 0{,}99786 - 0{,}76247 = 0{,}2354$$
 
 "Estimar el número" de alumnos es multiplicar esa proporción por el total: 15 000·0,2354 ≈ **3531 alumnos**.
 
@@ -1480,24 +1366,18 @@ La longitud de ciertas piezas fabricadas por una máquina se distribuye normalme
   X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.15   → x=−1.0364
   ```
 
-  ```math
-  \frac{13 - \mu}{\sigma} = -1{,}0364
-  ```
+  $$\frac{13 - \mu}{\sigma} = -1{,}0364$$
 
 - "El 10 % mide más de 14": el z que deja 0,10 a la derecha.
   ```
   X~N(μ;σ)   μ=0   σ=1   P(X>x)=0.10   → x=1.2816
   ```
 
-  ```math
-  \frac{14 - \mu}{\sigma} = 1{,}2816
-  ```
+  $$\frac{14 - \mu}{\sigma} = 1{,}2816$$
 
 **Resolver.** Se resta la primera ecuación de la segunda, y μ desaparece:
 
-```math
-\frac{14 - 13}{\sigma} = 1{,}2816 + 1{,}0364 = 2{,}318 \;\Rightarrow\; \sigma \approx 0{,}4314
-```
+$$\frac{14 - 13}{\sigma} = 1{,}2816 + 1{,}0364 = 2{,}318 \;\Rightarrow\; \sigma \approx 0{,}4314$$
 
 Reemplazando: $\mu = 13 + 1{,}0364\cdot0{,}4314 \approx 13{,}447$.
 
@@ -1507,9 +1387,7 @@ X~N(μ;σ)   μ=13.447   σ=0.4314   P(X<x)   x=12.8   → 0.0668
 X~N(μ;σ)   μ=13.447   σ=0.4314   P(X>x)   x=13.8   → 0.2067
 ```
 
-```math
-P(\text{no apta}) \approx 0{,}0668 + 0{,}2067 = 0{,}2735
-```
+$$P(\text{no apta}) \approx 0{,}0668 + 0{,}2067 = 0{,}2735$$
 
 **b)** Cada pieza de la bolsa es no apta (éxito) con p = 0,2735, independientes. 💡 Contar éxitos es **binomial** (📄 H1), Bin(10; 0,2735). Se acepta si hay a lo sumo una no apta:
 ```
@@ -1547,9 +1425,7 @@ La dureza Rockwell de un metal se determina al presionar con una punta acerada l
 
 **a)** "Entre 46 y 55" es la acumulada hasta 55 menos la acumulada hasta 46:
 
-```math
-\Phi\left(\frac{55 - 50}{3}\right) - \Phi\left(\frac{46 - 50}{3}\right) = \Phi(1{,}667) - \Phi(-1{,}333) = 0{,}9522 - 0{,}0912 = 0{,}861
-```
+$$\Phi\left(\frac{55 - 50}{3}\right) - \Phi\left(\frac{46 - 50}{3}\right) = \Phi(1{,}667) - \Phi(-1{,}333) = 0{,}9522 - 0{,}0912 = 0{,}861$$
 
 ```
 X~N(μ;σ)   μ=50   σ=3   P(X<x)   x=55   → 0.95221
@@ -1558,23 +1434,17 @@ X~N(μ;σ)   μ=50   σ=3   P(X<x)   x=46   → 0.09121
 
 **b)** Un intervalo **simétrico** alrededor de la media que contenga el 95 %: deja 2,5 % en cada cola. El z correspondiente deja 0,975 a la izquierda, z = 1,96:
 
-```math
-c = 1{,}96\cdot\sigma = 1{,}96\cdot3 = 5{,}88
-```
+$$c = 1{,}96\cdot\sigma = 1{,}96\cdot3 = 5{,}88$$
 
 El intervalo es (44,12; 55,88).
 
 **c)** Cada pieza es aceptable con p = 0,861, independientes. 💡 La cantidad de aceptables es **binomial** Bin(8; 0,861), y su esperanza es n·p (❌):
 
-```math
-8\cdot0{,}861 \approx 6{,}9
-```
+$$8\cdot0{,}861 \approx 6{,}9$$
 
 **d)** Truco del máximo: "el máximo de las tres no supera 52" equivale a "**ninguna** supera 52", o sea las tres ≤ 52. Por independencia se multiplica:
 
-```math
-P(X \le 52)^3 = \Phi(2/3)^3 = 0{,}7475^3 \approx 0{,}4177
-```
+$$P(X \le 52)^3 = \Phi(2/3)^3 = 0{,}7475^3 \approx 0{,}4177$$
 
 ```
 X~N(μ;σ)   μ=50   σ=3   P(X<x)   x=52   → 0.74751
@@ -1605,9 +1475,7 @@ X~N(μ;σ)   μ=50   σ=3   P(X<x)   x=52   → 0.74751
 
 💡 **La densidad normal** (❌, la fórmula no está en la hoja) es
 
-```math
-f_X(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac12\left(\frac{x - \mu}{\sigma}\right)^2}
-```
+$$f_X(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac12\left(\frac{x - \mu}{\sigma}\right)^2}$$
 
 Para demostrar que Y es normal, hay que llegar a una densidad **con esta misma forma**, y leer cuáles son su "μ" y su "σ".
 
@@ -1615,21 +1483,15 @@ Para demostrar que Y es normal, hay que llegar a una densidad **con esta misma f
 
 **Caso a > 0.** Se despeja X adentro de la probabilidad. Al dividir por a positivo, la desigualdad no se da vuelta:
 
-```math
-F_Y(y) = P(aX + b \le y) = P\left(X \le \frac{y - b}{a}\right) = F_X\left(\frac{y-b}{a}\right)
-```
+$`\displaystyle F_Y(y) = P(aX + b \le y) = P\left(X \le \frac{y - b}{a}\right) = F_X\left(\frac{y-b}{a}\right)`$
 
 Se deriva con la regla de la cadena, porque la derivada de $F_X$ es $f_X$ y la de $\frac{y - b}{a}$ es $\frac1a$:
 
-```math
-f_Y(y) = \frac1a f_X\left(\frac{y-b}{a}\right) = \frac{1}{a\sigma\sqrt{2\pi}}\exp\left[-\frac12\left(\frac{\frac{y-b}{a} - \mu}{\sigma}\right)^2\right]
-```
+$`\displaystyle f_Y(y) = \frac1a f_X\left(\frac{y-b}{a}\right) = \frac{1}{a\sigma\sqrt{2\pi}}\exp\left[-\frac12\left(\frac{\frac{y-b}{a} - \mu}{\sigma}\right)^2\right]`$
 
 Se acomoda lo de adentro del exponente multiplicando arriba y abajo por a:
 
-```math
-\frac{\frac{y-b}{a} - \mu}{\sigma} = \frac{y - b - a\mu}{a\sigma} = \frac{y - (a\mu + b)}{a\sigma}
-```
+$$\frac{\frac{y-b}{a} - \mu}{\sigma} = \frac{y - b - a\mu}{a\sigma} = \frac{y - (a\mu + b)}{a\sigma}$$
 
 Queda exactamente la forma normal, con "μ" igual a $a\mu + b$ y "σ" igual a $a\sigma$.
 

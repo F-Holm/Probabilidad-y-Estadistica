@@ -25,9 +25,7 @@ Una compañía emplea a 2 ingenieros para estimar costos. Uno de ellos estima el
 
 **Datos.** Las tasas de error son condicionales: P(D/A) = 0,02 y P(D/B) = 0,04. ⚠️ Pero se pregunta por las **bien** estimadas, así que se usan los complementos:
 
-```math
-P(\bar D/A) = 1 - 0{,}02 = 0{,}98 \qquad P(\bar D/B) = 1 - 0{,}04 = 0{,}96
-```
+$$P(\bar D/A) = 1 - 0{,}02 = 0{,}98 \qquad P(\bar D/B) = 1 - 0{,}04 = 0{,}96$$
 
 ```
         ┌─ D̄   0,98  → 0,7·0,98 = 0,686
@@ -40,9 +38,7 @@ P(\bar D/A) = 1 - 0{,}02 = 0{,}98 \qquad P(\bar D/B) = 1 - 0{,}04 = 0{,}96
 
 💡 **Probabilidad total:** se suman los caminos que terminan en $\bar D$:
 
-```math
-P(\bar D) = 0{,}686 + 0{,}288 = 0{,}974
-```
+$$P(\bar D) = 0{,}686 + 0{,}288 = 0{,}974$$
 
 💡 **Bayes** (📄 H1): el camino de B dividido el total de bien estimadas.
 
@@ -72,9 +68,7 @@ El tiempo que transcurre entre la llegada de dos personas consecutivas a la cola
 
 **Con la definición de condicional** (📄 H1). Si X > 6, seguro X > 4, así que la intersección es X > 6:
 
-```math
-P(X > 6 / X > 4) = \frac{P(X > 6)}{P(X > 4)} = \frac{e^{-1{,}2}}{e^{-0{,}8}} = e^{-0{,}4} \approx 0{,}67032
-```
+$$P(X > 6 / X > 4) = \frac{P(X > 6)}{P(X > 4)} = \frac{e^{-1{,}2}}{e^{-0{,}8}} = e^{-0{,}4} \approx 0{,}67032$$
 
 💡 **Falta de memoria** (📄 H1, $`P(X > t_0 + \Delta t / X > t_0) = P(X > \Delta t)`$). El resultado es justo P(X > 2): lo ya esperado no cuenta, y es como empezar de cero.
 ```
@@ -106,9 +100,7 @@ Es una cadena: **Normal** (una barra) → **p** → **binomial** (5 barras).
 X~N(μ;σ)   μ=0   σ=1   P(X>x)=0.0228   → x=2.000
 ```
 
-```math
-\frac{1{,}6 - 1{,}2}{\sigma} = 2 \;\Rightarrow\; \sigma = 0{,}2 \text{ mm}
-```
+$$\frac{1{,}6 - 1{,}2}{\sigma} = 2 \;\Rightarrow\; \sigma = 0{,}2 \text{ mm}$$
 
 **2. Una barra:**
 ```
@@ -117,9 +109,7 @@ X~N(μ;σ)   μ=1.2   σ=0.2   P(X>x)   x=1   → 0.84134
 
 **3. Cinco barras.** 💡 **Binomial** (📄 H1): cada barra supera 1 mm (éxito) con la misma p, independientemente, y se cuentan cuántas. W ~ Bin(5; 0,84134). "A lo sumo 2" es 0, 1 o 2:
 
-```math
-P(W \le 2) = \sum_{k=0}^{2}\binom5k0{,}84134^k\,0{,}15866^{5-k} \approx 0{,}03104
-```
+$$P(W \le 2) = \sum_{k=0}^{2}\binom5k0{,}84134^k\,0{,}15866^{5-k} \approx 0{,}03104$$
 
 ```
 X~Bin(n,p)   n=5   p=0.84134   P(X≤x)   x=2   → 0.03104
@@ -180,16 +170,12 @@ Sea X una v.a. exponencial y $a, b \in \mathbb{R}^+$. Probar que $P(X > a + b / 
 
 1. **Definición de condicional:**
 
-   ```math
-   P(X > a+b / X > b) = \frac{P(\{X > a+b\}\cap\{X > b\})}{P(X > b)}
-   ```
+   $$P(X > a+b / X > b) = \frac{P(\{X > a+b\}\cap\{X > b\})}{P(X > b)}$$
 
 2. **La intersección.** Como a > 0, si X > a + b, seguro X > b: $\{X > a+b\} \subseteq \{X > b\}$. La intersección es $\{X > a + b\}$.
 3. **Reemplazar y simplificar**, con $e^{-\lambda(a+b)} = e^{-\lambda a}e^{-\lambda b}$:
 
-   ```math
-   \frac{e^{-\lambda(a+b)}}{e^{-\lambda b}} = e^{-\lambda a} = P(X > a) \qquad ∎
-   ```
+   $$\frac{e^{-\lambda(a+b)}}{e^{-\lambda b}} = e^{-\lambda a} = P(X > a) \qquad ∎$$
 
 </details>
 
@@ -215,21 +201,15 @@ Sea $`F(x) = \begin{cases}0 & x \le 0\\ kx^2 & 0 < x < 2\\ 1 & x \ge 2\end{cases
 
 **2. Momentos** (📄 H1, $`E(g(X)) = \int g(x)f(x)\,dx`$):
 
-```math
-E(X) = \int_0^2 \frac12x^2\,dx = \frac43 \qquad E(X^2) = \int_0^2 \frac12x^3\,dx = 2
-```
+$`\displaystyle E(X) = \int_0^2 \frac12x^2\,dx = \frac43 \qquad E(X^2) = \int_0^2 \frac12x^3\,dx = 2`$
 
 **3. Varianza.** 💡 $V(aX + b) = a^2V(X)$: la constante 3 no dispersa, y el −1 sale al cuadrado (📄 H1, $V(aX + bY)$ con la otra variable constante). Con 📄 H1, $V(X) = E(X^2) - E(X)^2$:
 
-```math
-V(3 - X) = (-1)^2V(X) = 2 - \frac{16}{9} = \frac29
-```
+$$V(3 - X) = (-1)^2V(X) = 2 - \frac{16}{9} = \frac29$$
 
 **4. Probabilidad** (📄 H1, $`P(X > a) = 1 - F(a)`$):
 
-```math
-P(X > 1{,}2) = 1 - \frac14(1{,}2)^2 = 1 - 0{,}36 = 0{,}64
-```
+$$P(X > 1{,}2) = 1 - \frac14(1{,}2)^2 = 1 - 0{,}36 = 0{,}64$$
 
 </details>
 

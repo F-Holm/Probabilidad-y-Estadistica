@@ -81,9 +81,7 @@ Se toma una muestra de consumo de combustible en un cierto modelo de coche, obte
 
 💡 **Por qué se usa la χ².** La varianza muestral no es Normal. Si la población es Normal, $\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}$ (📄 H2). De ahí sale el intervalo para la **varianza** (📄 H2):
 
-```math
-I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)
-```
+$`\displaystyle I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)`$
 
 ⚠️ Piden el **desvío**: al final se saca **raíz** a las dos puntas (❌, la hoja solo trae σ²).
 
@@ -93,13 +91,9 @@ X~χ²(ν)   ν=9   P(X<x)=0.95   → x=16.919
 X~χ²(ν)   ν=9   P(X<x)=0.05   → x=3.3251
 ```
 
-```math
-I.C._{\sigma^2} = \left(\frac{9\cdot0{,}04233}{16{,}919};\ \frac{9\cdot0{,}04233}{3{,}325}\right) = (0{,}02252;\ 0{,}11458)
-```
+$$I.C._{\sigma^2} = \left(\frac{9\cdot0{,}04233}{16{,}919};\ \frac{9\cdot0{,}04233}{3{,}325}\right) = (0{,}02252;\ 0{,}11458)$$
 
-```math
-I.C._\sigma = (\sqrt{0{,}02252};\ \sqrt{0{,}11458}) = (0{,}150;\ 0{,}339) \text{ l/100 km}
-```
+$$I.C._\sigma = (\sqrt{0{,}02252};\ \sqrt{0{,}11458}) = (0{,}150;\ 0{,}339) \text{ l/100 km}$$
 
 **b)** IC **para la media** con σ = 0,15 **conocido**. 💡 La fórmula (📄 H2) es "promedio ± margen", $\bar X \mp z_{1-\frac\alpha2}\frac{\sigma}{\sqrt n}$, y el margen es el **error máximo**, $d = z\cdot\frac{\sigma}{\sqrt n}$.
 
@@ -108,9 +102,7 @@ I.C._\sigma = (\sqrt{0{,}02252};\ \sqrt{0{,}11458}) = (0{,}150;\ 0{,}339) \text{
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.975   → x=1.95996
 ```
 
-```math
-1{,}96\cdot\frac{0{,}15}{\sqrt n} \le 0{,}08 \;\Rightarrow\; n \ge \left(\frac{1{,}96\cdot0{,}15}{0{,}08}\right)^2 = 13{,}5 \;\Rightarrow\; n = 14
-```
+$$1{,}96\cdot\frac{0{,}15}{\sqrt n} \le 0{,}08 \;\Rightarrow\; n \ge \left(\frac{1{,}96\cdot0{,}15}{0{,}08}\right)^2 = 13{,}5 \;\Rightarrow\; n = 14$$
 
 Siempre se redondea hacia arriba.
 
@@ -183,16 +175,12 @@ Se tomó una muestra aleatoria de 10 observaciones de óxidos de azufre (SO₂),
 **a)**
 1. **Hipótesis.** "Avalar que está por debajo de 58" va en H₁:
 
-   ```math
-   H_0: \mu \ge 58 \qquad H_1: \mu < 58
-   ```
+   $`\displaystyle H_0: \mu \ge 58 \qquad H_1: \mu < 58`$
 
 2. α = 0,05.
 3. 💡 **Estadístico:** a cuántos errores estándar cayó el promedio de 58. Con S en lugar de σ, es una t (📄 H2, tal cual):
 
-   ```math
-   T = \frac{\bar X - 58}{S/\sqrt n} \sim t_9
-   ```
+   $$T = \frac{\bar X - 58}{S/\sqrt n} \sim t_9$$
 
 4. $t_{obs} = \frac{56{,}84 - 58}{0{,}94/\sqrt{10}} = \frac{-1{,}16}{0{,}2973} = -3{,}902$.
 5. 💡 **Región crítica**, del lado de H₁ (izquierda), con área α:
@@ -244,9 +232,7 @@ En el boletín de la Asociación Americana del Corazón, *Hypertension*, investi
 2. α = 0,01.
 3. 💡 **Estadístico:** a cuántos desvíos de 8 cayó el promedio, estandarizando (📄 H1):
 
-   ```math
-   Z = \frac{\bar X - 8}{0{,}4} \sim N(0;1)
-   ```
+   $$Z = \frac{\bar X - 8}{0{,}4} \sim N(0;1)$$
 
 4. $z_{obs} = \frac{9{,}2 - 8}{0{,}4} = 3$.
 5. 💡 **Región crítica**, del lado de H₁ (derecha), con área α = 0,01:

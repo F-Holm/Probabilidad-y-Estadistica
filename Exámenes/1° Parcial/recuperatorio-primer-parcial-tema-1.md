@@ -39,9 +39,7 @@ El 70 % de las aeronaves ligeras que desaparecen en vuelo en cierto país son po
 
 💡 **Probabilidad total:** se suman los caminos que terminan en E:
 
-```math
-P(E) = 0{,}42 + 0{,}03 = 0{,}45
-```
+$$P(E) = 0{,}42 + 0{,}03 = 0{,}45$$
 
 💡 **Bayes** (📄 H1): el camino de $\bar L$ dividido el total con localizador.
 
@@ -69,9 +67,7 @@ Es una cadena: **uniforme** (una tabla) → **p** → **binomial** (4 tablas).
 
 **1. Una tabla.** 💡 **Uniforme U(a; b):** cualquier valor del intervalo es igual de probable, así que la probabilidad de un tramo es **su largo sobre el largo total** (❌). La app no tiene uniforme, así que va a mano:
 
-```math
-p = P(X > 20{,}1) = \frac{20{,}5 - 20{,}1}{20{,}5 - 19{,}5} = \frac{0{,}4}{1} = 0{,}4
-```
+$$p = P(X > 20{,}1) = \frac{20{,}5 - 20{,}1}{20{,}5 - 19{,}5} = \frac{0{,}4}{1} = 0{,}4$$
 
 (Alternativa con la app: `X~Beta(α;β) α=1 β=1 P(X>x) x=0.6 → 0.4`, donde 0,6 = (20,1 − 19,5)/1.)
 
@@ -79,9 +75,7 @@ p = P(X > 20{,}1) = \frac{20{,}5 - 20{,}1}{20{,}5 - 19{,}5} = \frac{0{,}4}{1} = 
 
 "Alguna" significa al menos una, y es más fácil por complemento (1 − "ninguna"):
 
-```math
-P(W \ge 1) = 1 - 0{,}6^4 = 1 - 0{,}1296 = 0{,}8704
-```
+$$P(W \ge 1) = 1 - 0{,}6^4 = 1 - 0{,}1296 = 0{,}8704$$
 
 ```
 X~Bin(n,p)   n=4   p=0.4   P(X≥x)   x=1   → 0.8704
@@ -111,9 +105,7 @@ X = cantidad de mujeres en el grupo ~ **H(N = 50; K = 10; n = 12)**.
 
 **Traducir "más mujeres que varones".** Con 12 personas, varones = 12 − X. La condición es X > 12 − X, es decir X > 6, o sea **X ≥ 7**. Solo hay 10 mujeres, así que X va de 7 a 10:
 
-```math
-P(X \ge 7) = \sum_{k=7}^{10}\frac{\binom{10}{k}\binom{40}{12-k}}{\binom{50}{12}} \approx 0{,}00068
-```
+$$P(X \ge 7) = \sum_{k=7}^{10}\frac{\binom{10}{k}\binom{40}{12-k}}{\binom{50}{12}} \approx 0{,}00068$$
 
 ```
 X~HG(N,K,n)   N=50   K=10   n=12   P(X≥x)   x=7   → 0.000685
@@ -144,15 +136,11 @@ Es una cadena: **exponencial** (una lámpara) → **p** → **binomial** (8 lám
 
 **1. Hallar λ.** "El 35 % no supera 4307,83 h" significa que el 65 % la supera:
 
-```math
-e^{-4307{,}83\lambda} = 0{,}65 \;\Rightarrow\; \lambda = \frac{\ln0{,}65}{-4307{,}83} \approx 0{,}0001 \text{ h}^{-1} \;\Rightarrow\; E(X) = \frac1\lambda = 10\,000 \text{ h}
-```
+$$e^{-4307{,}83\lambda} = 0{,}65 \;\Rightarrow\; \lambda = \frac{\ln0{,}65}{-4307{,}83} \approx 0{,}0001 \text{ h}^{-1} \;\Rightarrow\; E(X) = \frac1\lambda = 10\,000 \text{ h}$$
 
 **2. Una lámpara.** "Supera la vida media en más de 500 h" significa X > 10 000 + 500 = 10 500:
 
-```math
-p = e^{-0{,}0001\cdot10500} = e^{-1{,}05} \approx 0{,}34994
-```
+$$p = e^{-0{,}0001\cdot10500} = e^{-1{,}05} \approx 0{,}34994$$
 
 ```
 X~Exp(λ)   λ=0.0001   P(X>x)   x=10500   → 0.34994
@@ -160,9 +148,7 @@ X~Exp(λ)   λ=0.0001   P(X>x)   x=10500   → 0.34994
 
 **3. Ocho lámparas.** 💡 **Binomial** (📄 H1): cada lámpara cumple (éxito) con p ≈ 0,35, independientemente. W ~ Bin(8; 0,35). "Sólo 3" significa **exactamente** 3:
 
-```math
-P(W = 3) = \binom83 0{,}35^3\,0{,}65^5 \approx 0{,}27859
-```
+$$P(W = 3) = \binom83 0{,}35^3\,0{,}65^5 \approx 0{,}27859$$
 
 ```
 X~Bin(n,p)   n=8   p=0.34994   P(X=x)   x=3   → 0.27857
@@ -198,23 +184,17 @@ $$E(X^2 - 3Y + 4U) \quad\text{y}\quad V(4X - 2Y - U - 5)$$
 
 **Paso 2, hallar b.** 📄 H1: $V(U) = \frac{(b-a)^2}{12}$.
 
-```math
-\frac{(b-2)^2}{12} = 3 \;\Rightarrow\; (b - 2)^2 = 36 \;\Rightarrow\; b = 8
-```
+$$\frac{(b-2)^2}{12} = 3 \;\Rightarrow\; (b - 2)^2 = 36 \;\Rightarrow\; b = 8$$
 
 La esperanza de la uniforme es el punto medio (❌): $E(U) = \frac{2 + 8}{2} = 5$.
 
 **Paso 3, E(X²).** Aparece $X^2$, así que hace falta su esperanza. Se despeja de 📄 H1, $V(X) = E(X^2) - E(X)^2$:
 
-```math
-E(X^2) = V(X) + E(X)^2 = 5 + 25 = 30
-```
+$$E(X^2) = V(X) + E(X)^2 = 5 + 25 = 30$$
 
 **Paso 4, la esperanza.** 💡 Propiedad, **linealidad** (❌): $E(aX + bY + cZ) = aE(X) + bE(Y) + cE(Z)$. Las constantes salen afuera y la esperanza de una suma es la suma de esperanzas.
 
-```math
-E(X^2 - 3Y + 4U) = E(X^2) - 3E(Y) + 4E(U) = 30 - 12 + 20 = 38
-```
+$$E(X^2 - 3Y + 4U) = E(X^2) - 3E(Y) + 4E(U) = 30 - 12 + 20 = 38$$
 
 **Paso 5, la varianza.** Propiedades:
 - 📄 H1: $V(aX + bY) = a^2V(X) + b^2V(Y) + 2ab\,Cov(X;Y)$. Como son **independientes**, Cov = 0, y se extiende a tres variables.
@@ -247,17 +227,13 @@ Demostrar que $f(x) = 4kx + 1$ si 1 < x < 3 es una función de densidad de la v.
 
 **1. Área total igual a 1:**
 
-```math
-\int_1^3(4kx + 1)\,dx = (2kx^2 + x)\Big|_1^3 = (18k + 3) - (2k + 1) = 16k + 2 = 1 \;\Rightarrow\; k = -\frac1{16}
-```
+$`\displaystyle \int_1^3(4kx + 1)\,dx = (2kx^2 + x)\Big|_1^3 = (18k + 3) - (2k + 1) = 16k + 2 = 1 \;\Rightarrow\; k = -\frac1{16}`$
 
 Entonces $f(x) = 1 - \frac x4$. **f ≥ 0:** es decreciente, así que su mínimo está en x = 3, donde vale ¼ > 0 ✓. Es una densidad (que k sea negativo no es problema).
 
 **2. Función de distribución.** 💡 $F(x) = P(X \le x)$, el área acumulada hasta x (📄 H1, $`F(x) = \int_{-\infty}^x f(t)\,dt`$). En 1 < x < 3:
 
-```math
-F(x) = \int_1^x\left(1 - \frac t4\right)dt = \left[t - \frac{t^2}{8}\right]_1^x = -\frac{x^2}{8} + x - \frac78
-```
+$`\displaystyle F(x) = \int_1^x\left(1 - \frac t4\right)dt = \left[t - \frac{t^2}{8}\right]_1^x = -\frac{x^2}{8} + x - \frac78`$
 
 Vale 0 para x ≤ 1 y 1 para x ≥ 3. Control: F(3) = −9/8 + 3 − 7/8 = 1 ✓.
 

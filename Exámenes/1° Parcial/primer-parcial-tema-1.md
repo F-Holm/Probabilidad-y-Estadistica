@@ -38,9 +38,7 @@ Una compañía emplea a 2 ingenieros para estimar costos. Uno de ellos estima el
 
 💡 **Probabilidad total:** se suman los caminos del árbol que terminan en D:
 
-```math
-P(D) = 0{,}7\cdot0{,}02 + 0{,}3\cdot0{,}04 = 0{,}014 + 0{,}012 = 0{,}026
-```
+$$P(D) = 0{,}7\cdot0{,}02 + 0{,}3\cdot0{,}04 = 0{,}014 + 0{,}012 = 0{,}026$$
 
 💡 **Bayes** (📄 H1, $`P(A_j/B) = \frac{P(A_j)P(B/A_j)}{\sum_i P(A_i)P(B/A_i)}`$): el camino que interesa dividido todos los que llegan a D.
 
@@ -70,15 +68,11 @@ El tiempo que transcurre entre la llegada de dos personas consecutivas a la cola
 
 **Camino 1, con la definición de condicional** (📄 H1, $`P(A/B) = \frac{P(A\cap B)}{P(B)}`$). La intersección de X < 6 con X > 4 es 4 < X < 6:
 
-```math
-P(X < 6 / X > 4) = \frac{P(4 < X < 6)}{P(X > 4)} = \frac{F(6) - F(4)}{1 - F(4)} = \frac{e^{-0{,}8} - e^{-1{,}2}}{e^{-0{,}8}} = \frac{0{,}44933 - 0{,}30119}{0{,}44933} \approx 0{,}3297
-```
+$$P(X < 6 / X > 4) = \frac{P(4 < X < 6)}{P(X > 4)} = \frac{F(6) - F(4)}{1 - F(4)} = \frac{e^{-0{,}8} - e^{-1{,}2}}{e^{-0{,}8}} = \frac{0{,}44933 - 0{,}30119}{0{,}44933} \approx 0{,}3297$$
 
 **Camino 2, con la falta de memoria** (📄 H1, $`P(X > t_0 + \Delta t / X > t_0) = P(X > \Delta t)`$). La exponencial "no recuerda" cuánto se esperó: los 4 minutos ya esperados no cuentan. La probabilidad de que llegue en los próximos 2 es la misma que la de que llegue en 2 minutos desde cero:
 
-```math
-P(X < 2) = 1 - e^{-0{,}4} = 0{,}3297
-```
+$$P(X < 2) = 1 - e^{-0{,}4} = 0{,}3297$$
 
 ```
 X~Exp(λ)   λ=0.2   P(X<x)   x=2   → 0.32968
@@ -110,9 +104,7 @@ X~N(μ;σ)   μ=0   σ=1   P(X>x)=0.0228   → x=2.000
 ```
 Ese z tiene que ser $\frac{1{,}6 - 1{,}2}{\sigma}$:
 
-```math
-\frac{0{,}4}{\sigma} = 2 \;\Rightarrow\; \sigma = 0{,}2 \text{ mm}
-```
+$$\frac{0{,}4}{\sigma} = 2 \;\Rightarrow\; \sigma = 0{,}2 \text{ mm}$$
 
 **2. Una barra:** probabilidad de que la elongación supere 1 mm.
 ```
@@ -124,9 +116,7 @@ p = 0,84134. Con tabla: $P(Z > -1) = \Phi(1)$.
 
 "Al menos 2" es 1 − P(0) − P(1):
 
-```math
-P(W \ge 2) = 1 - 0{,}15866^4 - 4\cdot0{,}84134\cdot0{,}15866^3 \approx 0{,}98593
-```
+$$P(W \ge 2) = 1 - 0{,}15866^4 - 4\cdot0{,}84134\cdot0{,}15866^3 \approx 0{,}98593$$
 
 ```
 X~Bin(n,p)   n=4   p=0.84134   P(X≥x)   x=2   → 0.98593
@@ -157,9 +147,7 @@ En un curso de ingeniería electrónica de 30 estudiantes hay 20 técnicos, y en
 
 "A lo sumo 2" es 0, 1 o 2:
 
-```math
-P(X \le 2) = \sum_{k=0}^{2}\frac{\binom{20}{k}\binom{10}{5-k}}{\binom{30}{5}} \approx 0{,}19123 \qquad P(Y \le 2) = \sum_{k=0}^{2}\frac{\binom{10}{k}\binom{15}{5-k}}{\binom{25}{5}} \approx 0{,}69881
-```
+$`\displaystyle P(X \le 2) = \sum_{k=0}^{2}\frac{\binom{20}{k}\binom{10}{5-k}}{\binom{30}{5}} \approx 0{,}19123 \qquad P(Y \le 2) = \sum_{k=0}^{2}\frac{\binom{10}{k}\binom{15}{5-k}}{\binom{25}{5}} \approx 0{,}69881`$
 
 ```
 X~HG(N,K,n)   N=30   K=20   n=5   P(X≤x)   x=2   → 0.19123
@@ -169,9 +157,7 @@ X~HG(N,K,n)   N=25   K=10   n=5   P(X≤x)   x=2   → 0.69881
 
 **"En ambos grupos"** es una intersección. Los grupos se eligen por separado, así que son independientes y se multiplica (📄 H1, $`P(A\cap B) = P(A)P(B)`$):
 
-```math
-P(X \le 2 \wedge Y \le 2) = 0{,}19123\cdot0{,}69881 \approx 0{,}13363
-```
+$$P(X \le 2 \wedge Y \le 2) = 0{,}19123\cdot0{,}69881 \approx 0{,}13363$$
 
 </details>
 
@@ -198,16 +184,12 @@ Sea X una v.a. exponencial y $a, b \in \mathbb{R}^+$. Probar que $P(X > a + b / 
 **Demostración paso a paso:**
 1. Por la definición de condicional:
 
-   ```math
-   P(X > a + b / X > b) = \frac{P(\{X > a+b\}\cap\{X > b\})}{P(X > b)}
-   ```
+   $$P(X > a + b / X > b) = \frac{P(\{X > a+b\}\cap\{X > b\})}{P(X > b)}$$
 
 2. **La intersección.** Como a > 0, si X supera a + b, seguro supera b. El evento $\{X > a+b\}$ está **incluido** en $\{X > b\}$, así que la intersección es solo $\{X > a + b\}$. Este es el paso que más se olvida justificar.
 3. Se reemplaza con la fórmula de la exponencial y se simplifica, usando $e^{-\lambda(a+b)} = e^{-\lambda a}e^{-\lambda b}$:
 
-   ```math
-   \frac{P(X > a+b)}{P(X > b)} = \frac{e^{-\lambda(a+b)}}{e^{-\lambda b}} = e^{-\lambda a} = P(X > a) \qquad ∎
-   ```
+   $$\frac{P(X > a+b)}{P(X > b)} = \frac{e^{-\lambda(a+b)}}{e^{-\lambda b}} = e^{-\lambda a} = P(X > a) \qquad ∎$$
 
 </details>
 
@@ -237,23 +219,17 @@ Con k = ¼, la densidad es $f(x) = \frac12x$ en (0; 2).
 
 **2. Momentos.** 📄 H1: $E(g(X)) = \int g(x)f(x)\,dx$.
 
-```math
-E(X) = \int_0^2 x\cdot\frac12x\,dx = \frac{x^3}{6}\Big|_0^2 = \frac43 \qquad E(X^2) = \int_0^2 x^2\cdot\frac12x\,dx = \frac{x^4}{8}\Big|_0^2 = 2
-```
+$`\displaystyle E(X) = \int_0^2 x\cdot\frac12x\,dx = \frac{x^3}{6}\Big|_0^2 = \frac43 \qquad E(X^2) = \int_0^2 x^2\cdot\frac12x\,dx = \frac{x^4}{8}\Big|_0^2 = 2`$
 
 **3. Varianza de 4 − X.** 💡 Propiedad: $V(aX + b) = a^2V(X)$. Sumar una constante (el 4) corre todos los valores igual y **no** cambia la dispersión. El −1 que multiplica a X sale **al cuadrado**: $(-1)^2 = 1$. Sale de 📄 H1, $V(aX + bY) = a^2V(X) + b^2V(Y) + 2ab\,Cov$, con la segunda variable constante (varianza 0).
 
-```math
-V(4 - X) = V(X) = E(X^2) - E(X)^2 = 2 - \frac{16}{9} = \frac29
-```
+$$V(4 - X) = V(X) = E(X^2) - E(X)^2 = 2 - \frac{16}{9} = \frac29$$
 
 (📄 H1, $V(X) = E(X^2) - (E(X))^2$.)
 
 **4. Probabilidad.** 📄 H1: $P(X > a) = 1 - F(a)$. Se usa F directamente, sin integrar:
 
-```math
-P(X > 1{,}3) = 1 - \frac14(1{,}3)^2 = 1 - 0{,}4225 = 0{,}5775
-```
+$$P(X > 1{,}3) = 1 - \frac14(1{,}3)^2 = 1 - 0{,}4225 = 0{,}5775$$
 
 </details>
 

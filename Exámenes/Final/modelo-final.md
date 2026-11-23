@@ -28,22 +28,16 @@ En una empresa se sabe que el consumo telefónico tiene distribución normal y q
 **a)**
 1. **Hipótesis.** El gerente sospecha que el promedio **bajó**, así que eso va en H₁:
 
-   ```math
-   H_0: \mu \ge 2520 \qquad H_1: \mu < 2520
-   ```
+   $`\displaystyle H_0: \mu \ge 2520 \qquad H_1: \mu < 2520`$
 
 2. α = 0,05, el riesgo aceptado de rechazar H₀ siendo cierta.
 3. 💡 **Estadístico:** a cuántos errores estándar de 2520 cayó el promedio. No se conoce el desvío de la población: se usa el de la muestra (S), y por eso es una **t de Student** con n − 1 grados de libertad. Con n = 12 hace falta que la población sea normal, y el enunciado lo dice. 📄 H2:
 
-   ```math
-   T = \frac{\bar X - 2520}{S/\sqrt n} \sim t_{11}
-   ```
+   $$T = \frac{\bar X - 2520}{S/\sqrt n} \sim t_{11}$$
 
 4. Calculadora de estadística → Estadística descriptiva con los 12 datos: $\bar x = 2464{,}17$ y s = 224,92.
 
-   ```math
-   t_{obs} = \frac{2464{,}17 - 2520}{224{,}92/\sqrt{12}} = -0{,}86
-   ```
+   $$t_{obs} = \frac{2464{,}17 - 2520}{224{,}92/\sqrt{12}} = -0{,}86$$
 
 5. 💡 **Región crítica**, del lado de H₁ (izquierda), con área α:
    ```
@@ -59,9 +53,7 @@ El gerente **no** puede afirmar que el consumo bajó.
 - s casi no cambia: $s = 224{,}92\sqrt{\frac{5\cdot11}{59}} = 217{,}16$;
 - pero n = 60, y el error estándar $s/\sqrt n$ se achica mucho:
 
-  ```math
-  t_{obs} = \frac{-55{,}83}{217{,}16/\sqrt{60}} = -1{,}99
-  ```
+  $$t_{obs} = \frac{-55{,}83}{217{,}16/\sqrt{60}} = -1{,}99$$
 
   ```
   X~t(ν)   ν=59   P(X<x)=0.05   → x=−1.67109
@@ -102,9 +94,7 @@ X = peso de una caja ~ N(32; 10) kg, con las cajas independientes entre sí.
 - las medias se suman: 30·32 = 960;
 - las **varianzas** se suman, no los desvíos: 30·10² = 3000, así que el desvío es $\sqrt{3000} = 10\sqrt{30} = 54{,}77$.
 
-```math
-W \sim N(960;\ 54{,}77)
-```
+$$W \sim N(960;\ 54{,}77)$$
 
 ```
 X~N(μ;σ)   μ=960   σ=54.77   P(X>x)   x=1000   → 0.2326
@@ -113,17 +103,13 @@ X~N(μ;σ)   μ=960   σ=54.77   P(X>x)   x=1000   → 0.2326
 
 **b) Truco del mínimo.** "El mínimo es ≥ 30" equivale a "**las dos** cajas pesan al menos 30". Por independencia se multiplica (📄 H1), y lo pedido es el complemento:
 
-```math
-P(\min < 30) = 1 - P(X_1 \ge 30)\,P(X_2 \ge 30)
-```
+$`\displaystyle P(\min < 30) = 1 - P(X_1 \ge 30)\,P(X_2 \ge 30)`$
 
 ```
 X~N(μ;σ)   μ=32   σ=10   P(X>x)   x=30   → 0.5793
 ```
 
-```math
-P(\min < 30) = 1 - 0{,}5793^2 = 0{,}6645
-```
+$$P(\min < 30) = 1 - 0{,}5793^2 = 0{,}6645$$
 
 </details>
 
@@ -155,15 +141,11 @@ $$f_X(x) = \begin{cases} 2x^{-1} & c \le x \le c + 2\\ 0 & \text{otro caso}\end{
 
 **Constante c.** Área total igual a 1:
 
-```math
-\int_c^{c+2}\frac2x\,dx = 2\ln x\Big|_c^{c+2} = 2\ln\frac{c+2}{c} = 1 \;\Rightarrow\; \frac{c+2}{c} = e^{1/2} \;\Rightarrow\; c = \frac{2}{\sqrt e - 1} = 3{,}083
-```
+$`\displaystyle \int_c^{c+2}\frac2x\,dx = 2\ln x\Big|_c^{c+2} = 2\ln\frac{c+2}{c} = 1 \;\Rightarrow\; \frac{c+2}{c} = e^{1/2} \;\Rightarrow\; c = \frac{2}{\sqrt e - 1} = 3{,}083`$
 
 💡 **Función de distribución** $F(x) = P(X \le x)$, el área acumulada (📄 H1, $`F(x) = \int_{-\infty}^x f`$). Para c ≤ x ≤ c + 2:
 
-```math
-F(x) = \int_c^x \frac2t\,dt = 2\ln\frac xc
-```
+$$F(x) = \int_c^x \frac2t\,dt = 2\ln\frac xc$$
 
 **a)** 💡 Dos eventos son **independientes** si $P(A\cap B) = P(A)P(B)$ (📄 H1). Hay que calcular las tres probabilidades con F. Con A = {X > c + 1} y B = {X < c + 1,5}:
 - $P(A) = 1 - 2\ln\frac{4{,}083}{3{,}083} = 0{,}4381$
@@ -175,15 +157,11 @@ F(x) = \int_c^x \frac2t\,dt = 2\ln\frac xc
 
 **b)** 📄 H1: $E(X) = \int x\,f(x)\,dx$. Acá la x se simplifica con el 1/x:
 
-```math
-E(X) = \int_c^{c+2} x\cdot\frac2x\,dx = \int_c^{c+2} 2\,dx = 2\cdot2 = 4 \text{ mm}
-```
+$`\displaystyle E(X) = \int_c^{c+2} x\cdot\frac2x\,dx = \int_c^{c+2} 2\,dx = 2\cdot2 = 4 \text{ mm}`$
 
 💡 **Linealidad** (❌): $E(aX + b) = aE(X) + b$. No hace falta la distribución de Y:
 
-```math
-E(Y) = 10\cdot4 + 1 = 41 \text{ mm}
-```
+$$E(Y) = 10\cdot4 + 1 = 41 \text{ mm}$$
 
 </details>
 
@@ -226,13 +204,9 @@ X = NaPO₄ (explicativa, la que se conoce), Y = corrosión (la que se quiere ex
 
 **a)** 📄 H2: $b_1 = \frac{S_{xy}}{S_{xx}}$ y $b_0 = \bar y - b_1\bar x$.
 
-```math
-b_1 = \frac{-477{,}75}{3364{,}01} = -0{,}1420 \qquad b_0 = 3{,}333 + 0{,}1420\cdot23{,}957 = 6{,}735
-```
+$`\displaystyle b_1 = \frac{-477{,}75}{3364{,}01} = -0{,}1420 \qquad b_0 = 3{,}333 + 0{,}1420\cdot23{,}957 = 6{,}735`$
 
-```math
-\hat y = 6{,}735 - 0{,}142x \quad (2{,}5 \le x \le 55)
-```
+$$\hat y = 6{,}735 - 0{,}142x \quad (2{,}5 \le x \le 55)$$
 
 La pendiente es negativa: a más NaPO₄, menos corrosión (cada unidad de NaPO₄ baja la corrosión, en promedio, 0,142).
 
@@ -243,9 +217,7 @@ La pendiente es negativa: a más NaPO₄, menos corrosión (cada unidad de NaPO�
 
 **b)** 💡 **Coeficiente de determinación R²** (📄 H2, $`R^2 = \frac{SC_{exp}}{SC_{total}} = r^2`$): la fracción de la variabilidad de Y que explica la recta (de 0 a 1). Se calcula con el **coeficiente de correlación** r (📄 H2, $`r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}`$):
 
-```math
-r = \frac{-477{,}75}{\sqrt{3364{,}01\cdot87{,}586}} = -0{,}880 \;\Rightarrow\; R^2 = r^2 = 0{,}775
-```
+$$r = \frac{-477{,}75}{\sqrt{3364{,}01\cdot87{,}586}} = -0{,}880 \;\Rightarrow\; R^2 = r^2 = 0{,}775$$
 
 **Interpretación:** el 77,5 % de la variabilidad de la corrosión se explica por la concentración de NaPO₄ a través de la recta.
 
@@ -283,21 +255,15 @@ No es lo mismo: si P(A) > 0 y P(B) > 0 y son excluyentes, entonces **no** son in
 1. **De Morgan:** "ni A ni B" es lo contrario de "A o B": $\bar A \cap \bar B = \overline{A \cup B}$.
 2. **Complemento y regla de la unión** (📄 H1, la de 3 sin el tercero):
 
-   ```math
-   P(\bar A \cap \bar B) = 1 - P(A \cup B) = 1 - P(A) - P(B) + P(A\cap B)
-   ```
+   $$P(\bar A \cap \bar B) = 1 - P(A \cup B) = 1 - P(A) - P(B) + P(A\cap B)$$
 
 3. **Independencia:** se reemplaza $P(A\cap B) = P(A)P(B)$:
 
-   ```math
-   = 1 - P(A) - P(B) + P(A)P(B)
-   ```
+   $$= 1 - P(A) - P(B) + P(A)P(B)$$
 
 4. **Factorizando** (se puede verificar distribuyendo):
 
-   ```math
-   = (1 - P(A))(1 - P(B)) = P(\bar A)\,P(\bar B) \qquad ∎
-   ```
+   $$= (1 - P(A))(1 - P(B)) = P(\bar A)\,P(\bar B) \qquad ∎$$
 
 </details>
 
@@ -328,9 +294,7 @@ El soporte es $[0; +\infty)$. Su distribución es $F(x) = 1 - e^{-\lambda x}$. M
 
 **b)** 📄 H1: $E(X) = \int x\,f(x)\,dx$. Se integra **por partes**, con u = x y $dv = \lambda e^{-\lambda x}dx$, así que du = dx y $v = -e^{-\lambda x}$:
 
-```math
-E(X) = \int_0^\infty x\lambda e^{-\lambda x}\,dx = \left[-xe^{-\lambda x}\right]_0^\infty + \int_0^\infty e^{-\lambda x}\,dx = 0 + \frac1\lambda = \frac1\lambda
-```
+$`\displaystyle E(X) = \int_0^\infty x\lambda e^{-\lambda x}\,dx = \left[-xe^{-\lambda x}\right]_0^\infty + \int_0^\infty e^{-\lambda x}\,dx = 0 + \frac1\lambda = \frac1\lambda`$
 
 El primer término vale 0: en 0 por el factor x, y en ∞ porque la exponencial gana.
 

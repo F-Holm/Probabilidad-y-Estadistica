@@ -41,13 +41,9 @@ La siguiente tabla exhibe las antigüedades de los empleados de una cierta fábr
 
 **Recta** (📄 H2):
 
-```math
-b_1 = \frac{S_{xy}}{S_{xx}} = \frac{7{,}133}{7{,}433} = 0{,}9596 \qquad b_0 = \bar y - b_1\bar x = 3{,}667 - 0{,}9596\cdot5{,}667 = -1{,}7713
-```
+$`\displaystyle b_1 = \frac{S_{xy}}{S_{xx}} = \frac{7{,}133}{7{,}433} = 0{,}9596 \qquad b_0 = \bar y - b_1\bar x = 3{,}667 - 0{,}9596\cdot5{,}667 = -1{,}7713`$
 
-```math
-\hat y = -1{,}7713 + 0{,}9596x \quad (\text{válido para } 4 \le x \le 7)
-```
+$$\hat y = -1{,}7713 + 0{,}9596x \quad (\text{válido para } 4 \le x \le 7)$$
 
 Cada año más de antigüedad suma, en promedio, casi una llegada tarde por mes.
 
@@ -107,23 +103,17 @@ El fabricante de neumáticos sostiene que en promedio sus productos tienen una d
 **a)**
 1. **Hipótesis.** La trampa: "no menor a 50" es **μ ≥ 50**, que **incluye la igualdad**, así que tiene que ir en H₀. Los consumidores sospechan lo contrario, y eso va en H₁:
 
-   ```math
-   H_0: \mu \ge 50 \qquad H_1: \mu < 50
-   ```
+   $`\displaystyle H_0: \mu \ge 50 \qquad H_1: \mu < 50`$
 
    (Si el fabricante dijera "**más de** 50", su afirmación iría en H₁.)
 2. **α = 0,05**, el riesgo aceptado de rechazar H₀ siendo cierta.
 3. 💡 **Estadístico.** Se mide a cuántos desvíos de 50 cayó el promedio de la muestra. Como el desvío de la población no se conoce, se usa el de la muestra (S), y el estadístico es una **t de Student** con n − 1 grados de libertad: una campana con colas más gordas que la normal (📄 H2, tal cual):
 
-   ```math
-   T = \frac{\bar X - 50}{S/\sqrt n} \sim t_{n-1}
-   ```
+   $$T = \frac{\bar X - 50}{S/\sqrt n} \sim t_{n-1}$$
 
 4. Con los datos de b) (n = 30, $\bar x$ = 49, s = 3):
 
-   ```math
-   t_{obs} = \frac{49 - 50}{3/\sqrt{30}} = -1{,}826
-   ```
+   $$t_{obs} = \frac{49 - 50}{3/\sqrt{30}} = -1{,}826$$
 
 5. 💡 **Región crítica:** los valores de T que llevan a rechazar, del lado de H₁ (izquierda), con área α:
    ```
@@ -176,9 +166,7 @@ Se desea estimar el tiempo medio de espera en una cola de supermercado los días
 
 💡 **¿Qué pasa si no se conoce σ?** La "dispersión de 3 minutos" es de **la muestra** (S). La fórmula exacta usa S y la **t de Student** con n − 1 grados de libertad, que es un poco más grande para compensar no conocer σ (📄 H2):
 
-```math
-I.C._\mu = \left(\bar X \mp t_{n-1;1-\frac\alpha2}\cdot\frac{S}{\sqrt n}\right)
-```
+$`\displaystyle I.C._\mu = \left(\bar X \mp t_{n-1;1-\frac\alpha2}\cdot\frac{S}{\sqrt n}\right)`$
 
 Con n ≥ 30 la t es casi igual a la z, y el repo usa z con S (IC "asintótico"). Las dos opciones:
 ```
@@ -221,15 +209,11 @@ Se sabe por experiencias anteriores que el peso de los recién nacidos en cierta
 
 💡 **Cómo se comporta el promedio.** Al promediar, los bebés pesados y los livianos se compensan, así que el promedio varía **menos** que un bebé solo (📄 H2):
 
-```math
-\bar X \sim N\left(\mu;\ \frac{\sigma}{\sqrt n}\right)
-```
+$$\bar X \sim N\left(\mu;\ \frac{\sigma}{\sqrt n}\right)$$
 
 Misma media, desvío dividido por $\sqrt n$. Es Normal porque la población es Normal; si no lo fuera, con n ≥ 30 lo sería aproximadamente (TCL).
 
-```math
-\bar X \sim N\left(3;\ \frac{0{,}4}{\sqrt{16}}\right) = N(3;\ 0{,}1)
-```
+$$\bar X \sim N\left(3;\ \frac{0{,}4}{\sqrt{16}}\right) = N(3;\ 0{,}1)$$
 
 ```
 X~N(μ;σ)   μ=3   σ=0.1   P(X>x)   x=3.2   → 0.02275

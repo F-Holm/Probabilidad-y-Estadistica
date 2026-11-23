@@ -139,19 +139,13 @@ Control: 6 + 30 + 20 = 56 ✓. (Es la hipergeométrica de la U3, 📄 H1.)
 
 **b)** 💡 **Esperanza (valor esperado) E(X):** el promedio que daría X si el experimento se repitiera muchísimas veces. Cada valor se multiplica por su probabilidad y se suma (📄 H1, $`E(X) = \sum x_i P(x_i)`$):
 
-```math
-E(X) = 1\cdot\frac{6}{56} + 2\cdot\frac{30}{56} + 3\cdot\frac{20}{56} = \frac{126}{56} = \frac94 = 2{,}25
-```
+$$E(X) = 1\cdot\frac{6}{56} + 2\cdot\frac{30}{56} + 3\cdot\frac{20}{56} = \frac{126}{56} = \frac94 = 2{,}25$$
 
 💡 **Varianza V(X):** mide cuánto se dispersa X alrededor de su esperanza. La forma práctica es $V(X) = E(X^2) - E(X)^2$ (📄 H1), donde $E(X^2)$ se calcula igual que E(X), pero con los valores al cuadrado:
 
-```math
-E(X^2) = 1^2\cdot\frac{6}{56} + 2^2\cdot\frac{30}{56} + 3^2\cdot\frac{20}{56} = \frac{6 + 120 + 180}{56} = \frac{153}{28}
-```
+$$E(X^2) = 1^2\cdot\frac{6}{56} + 2^2\cdot\frac{30}{56} + 3^2\cdot\frac{20}{56} = \frac{6 + 120 + 180}{56} = \frac{153}{28}$$
 
-```math
-V(X) = \frac{153}{28} - \left(\frac94\right)^2 = \frac{153}{28} - \frac{81}{16} = \frac{45}{112} \approx 0{,}402
-```
+$$V(X) = \frac{153}{28} - \left(\frac94\right)^2 = \frac{153}{28} - \frac{81}{16} = \frac{45}{112} \approx 0{,}402$$
 
 **c)** 💡 **Esperanza de una función de X** (📄 H1, $`E(g(X)) = \sum g(x)P(x)`$): se transforma cada **valor** y se multiplica por la **misma** probabilidad de antes.
 - $E(X^2) = \frac{153}{28}$, ya calculada.
@@ -159,9 +153,7 @@ V(X) = \frac{153}{28} - \left(\frac94\right)^2 = \frac{153}{28} - \frac{81}{16} 
 - $E(1/X^2) = \frac{6 + 30/4 + 20/9}{56} \approx 0{,}2808$.
 - **V(X²):** es la varianza de la variable $X^2$. Con la misma fórmula, $V(X^2) = E[(X^2)^2] - [E(X^2)]^2 = E(X^4) - E(X^2)^2$:
 
-  ```math
-  E(X^4) = \frac{1\cdot6 + 16\cdot30 + 81\cdot20}{56} = \frac{2106}{56} \approx 37{,}607 \qquad V(X^2) \approx 37{,}607 - 5{,}464^2 = 37{,}607 - 29{,}858 = 7{,}749
-  ```
+  $$E(X^4) = \frac{1\cdot6 + 16\cdot30 + 81\cdot20}{56} = \frac{2106}{56} \approx 37{,}607 \qquad V(X^2) \approx 37{,}607 - 5{,}464^2 = 37{,}607 - 29{,}858 = 7{,}749$$
 
 ⚠️ $E(1/X) \neq 1/E(X)$: en general **no** se puede "meter la función adentro" de la esperanza.
 
@@ -288,9 +280,7 @@ Entre dos valores, F se queda quieta: por ejemplo, F(1,5) = P(X ≤ 1,5) = P(X �
 
 **d)** Se pide que la suma dé 1. Con $p(x) = k(5 - x)$, los valores son 5k, 4k, 3k, 2k y k:
 
-```math
-k(5 + 4 + 3 + 2 + 1) = 15k = 1 \;\Rightarrow\; k = \frac1{15}
-```
+$$k(5 + 4 + 3 + 2 + 1) = 15k = 1 \;\Rightarrow\; k = \frac1{15}$$
 
 Además todos son positivos ✓.
 
@@ -327,15 +317,11 @@ La siguiente distribución de probabilidad corresponde a la variable aleatoria X
 
 **a)** 💡 Las probabilidades de todos los valores tienen que sumar 1. Se suman las 5 celdas:
 
-```math
-(0{,}3 + k) + 2k + 0{,}2 + (0{,}1 + 5k^2) + 0{,}05 = 1 \;\Rightarrow\; 5k^2 + 3k + 0{,}65 = 1 \;\Rightarrow\; 5k^2 + 3k - 0{,}35 = 0
-```
+$$(0{,}3 + k) + 2k + 0{,}2 + (0{,}1 + 5k^2) + 0{,}05 = 1 \;\Rightarrow\; 5k^2 + 3k + 0{,}65 = 1 \;\Rightarrow\; 5k^2 + 3k - 0{,}35 = 0$$
 
 Es una cuadrática. Con la resolvente:
 
-```math
-k = \frac{-3 \pm \sqrt{9 + 4\cdot5\cdot0{,}35}}{10} = \frac{-3 \pm 4}{10} \;\Rightarrow\; k = 0{,}1 \text{ o } k = -0{,}7
-```
+$$k = \frac{-3 \pm \sqrt{9 + 4\cdot5\cdot0{,}35}}{10} = \frac{-3 \pm 4}{10} \;\Rightarrow\; k = 0{,}1 \text{ o } k = -0{,}7$$
 
 Con k = −0,7, P(X = 1) = 2k sería negativa, y eso es imposible. Entonces **k = 0,1**.
 
@@ -351,9 +337,7 @@ Con k = −0,7, P(X = 1) = 2k sería negativa, y eso es imposible. Entonces **k 
 
 💡 **Valor esperado** (📄 H1, $`E(X) = \sum x\,p(x)`$), el promedio a la larga:
 
-```math
-E(X) = 0\cdot0{,}4 + 1\cdot0{,}2 + 2\cdot0{,}2 + 3\cdot0{,}15 + 4\cdot0{,}05 = 1{,}25
-```
+$$E(X) = 0\cdot0{,}4 + 1\cdot0{,}2 + 2\cdot0{,}2 + 3\cdot0{,}15 + 4\cdot0{,}05 = 1{,}25$$
 
 **No coinciden.** La moda es el valor que más se repite, y la esperanza es un promedio. La esperanza ni siquiera tiene que ser un valor posible: nadie llega tarde 1,25 veces.
 
@@ -412,9 +396,7 @@ En total 48/225. El 15 solo sale con (15, 15): 2·2 = 4.
 
 **b)** Primero, una sola cadena (📄 H1, $E = \sum x\,p(x)$ y $`V = E(X^2) - E(X)^2`$):
 
-```math
-E(L) = \frac{15\cdot2 + 25\cdot3 + 30\cdot4 + 40\cdot6}{15} = 31 \qquad V(L) = \frac{225\cdot2 + 625\cdot3 + 900\cdot4 + 1600\cdot6}{15} - 31^2 = 1035 - 961 = 74
-```
+$$E(L) = \frac{15\cdot2 + 25\cdot3 + 30\cdot4 + 40\cdot6}{15} = 31 \qquad V(L) = \frac{225\cdot2 + 625\cdot3 + 900\cdot4 + 1600\cdot6}{15} - 31^2 = 1035 - 961 = 74$$
 
 **X es el promedio de dos cadenas independientes.** Se podría usar la tabla, pero hay un atajo con propiedades (U2/U4):
 - La esperanza del promedio es la misma: $E(X) = \frac{31 + 31}{2} = 31$.
@@ -422,13 +404,9 @@ E(L) = \frac{15\cdot2 + 25\cdot3 + 30\cdot4 + 40\cdot6}{15} = 31 \qquad V(L) = \
 
 **Y**, con su tabla:
 
-```math
-E(Y) = \frac{15\cdot4 + 25\cdot21 + 30\cdot56 + 40\cdot144}{225} = \frac{8025}{225} \approx 35{,}67
-```
+$$E(Y) = \frac{15\cdot4 + 25\cdot21 + 30\cdot56 + 40\cdot144}{225} = \frac{8025}{225} \approx 35{,}67$$
 
-```math
-E(Y^2) = \frac{225\cdot4 + 625\cdot21 + 900\cdot56 + 1600\cdot144}{225} \approx 1310{,}33 \;\Rightarrow\; V(Y) \approx 1310{,}33 - 35{,}67^2 \approx 38{,}22
-```
+$$E(Y^2) = \frac{225\cdot4 + 625\cdot21 + 900\cdot56 + 1600\cdot144}{225} \approx 1310{,}33 \;\Rightarrow\; V(Y) \approx 1310{,}33 - 35{,}67^2 \approx 38{,}22$$
 
 </details>
 
@@ -460,28 +438,20 @@ Sea X la capacidad (en kg) de un lavarropas comprado por el próximo cliente que
 
 **a)** 💡 **Valor esperado** (📄 H1, $`E(X) = \sum x_i\,p(x_i)`$): cada valor por su probabilidad, sumados. Es la capacidad promedio si se miraran muchísimos clientes.
 
-```math
-E(X) = 5\cdot0{,}25 + 7{,}5\cdot0{,}45 + 10\cdot0{,}30 = 1{,}25 + 3{,}375 + 3 = 7{,}625 \text{ kg}
-```
+$$E(X) = 5\cdot0{,}25 + 7{,}5\cdot0{,}45 + 10\cdot0{,}30 = 1{,}25 + 3{,}375 + 3 = 7{,}625 \text{ kg}$$
 
 💡 **Varianza** (📄 H1, $`V(X) = E(X^2) - E(X)^2`$): mide cuánto se apartan los valores del promedio. Primero $E(X^2)$, con los valores al cuadrado:
 
-```math
-E(X^2) = 25\cdot0{,}25 + 56{,}25\cdot0{,}45 + 100\cdot0{,}30 = 61{,}5625
-```
+$$E(X^2) = 25\cdot0{,}25 + 56{,}25\cdot0{,}45 + 100\cdot0{,}30 = 61{,}5625$$
 
-```math
-V(X) = 61{,}5625 - 7{,}625^2 = 61{,}5625 - 58{,}1406 = 3{,}4219 \text{ kg}^2
-```
+$$V(X) = 61{,}5625 - 7{,}625^2 = 61{,}5625 - 58{,}1406 = 3{,}4219 \text{ kg}^2$$
 
 (Tiene unidades al cuadrado. Para volver a kg está el **desvío estándar**, $\sigma = \sqrt V = 1{,}85$ kg.)
 
 **b)** Y = 20X − 7,5 es una **transformación lineal** de X. No hace falta una tabla nueva, porque hay propiedades:
 - **Esperanza** (❌, linealidad): $E(aX + b) = aE(X) + b$. Si a cada precio se le hace lo mismo, al promedio también.
 
-  ```math
-  E(Y) = 20\cdot7{,}625 - 7{,}5 = 145
-  ```
+  $$E(Y) = 20\cdot7{,}625 - 7{,}5 = 145$$
 
 - **Varianza:** $V(aX + b) = a^2V(X)$. El −7,5 corre todos los valores por igual y **no cambia la dispersión**, y el 20 la estira, al cuadrado. Sale de 📄 H1, $V(aX + bY) = a^2V(X) + \dots$, tomando la segunda variable como constante.
   
@@ -538,9 +508,7 @@ En discretas importa si la desigualdad es ≤ o <: cambia qué valores entran.
 
 **b)** 💡 **Condicional** (📄 H1, $`P(A/B) = \frac{P(A\cap B)}{P(B)}`$). "X < 6 y X ≥ 3" deja solo el 3:
 
-```math
-P(X < 6 / X \ge 3) = \frac{P(3 \le X < 6)}{P(X \ge 3)} = \frac{P(X = 3)}{1 - F(2)} = \frac{0{,}2}{0{,}6} = \frac13
-```
+$$P(X < 6 / X \ge 3) = \frac{P(3 \le X < 6)}{P(X \ge 3)} = \frac{P(X = 3)}{1 - F(2)} = \frac{0{,}2}{0{,}6} = \frac13$$
 
 </details>
 
@@ -580,23 +548,17 @@ F es la acumulada: se va sumando la fila de arriba.
 
 **a)** "Se detiene" significa al menos una vez, X ≥ 1. Es lo contrario de X = 0:
 
-```math
-1 - p(0) = 1 - \frac{16}{31} = \frac{15}{31}
-```
+$$1 - p(0) = 1 - \frac{16}{31} = \frac{15}{31}$$
 
 **b)** Sea M = máx(lunes, martes). Contar directamente qué pares dan máximo 2 es engorroso. Hay un truco:
 
 💡 "El máximo es ≤ k" equivale a "**los dos** son ≤ k". Como los días son independientes, se multiplica:
 
-```math
-P(M \le k) = P(X_L \le k)\cdot P(X_M \le k) = F(k)^2
-```
+$`\displaystyle P(M \le k) = P(X_L \le k)\cdot P(X_M \le k) = F(k)^2`$
 
 Y "el máximo es exactamente 2" es "M ≤ 2 pero no M ≤ 1":
 
-```math
-P(M = 2) = F(2)^2 - F(1)^2 = \left(\frac{28}{31}\right)^2 - \left(\frac{24}{31}\right)^2 = \frac{784 - 576}{961} = \frac{208}{961}
-```
+$$P(M = 2) = F(2)^2 - F(1)^2 = \left(\frac{28}{31}\right)^2 - \left(\frac{24}{31}\right)^2 = \frac{784 - 576}{961} = \frac{208}{961}$$
 
 **c)** Lo mismo para cada k: $P(M = k) = F(k)^2 - F(k-1)^2$, con F(−1) = 0.
 - $P(M=0) = 16^2 = 256$
@@ -773,9 +735,7 @@ Indicar cuál o cuáles de las siguientes son funciones de densidad de probabili
 
 💡 **Qué es una función de densidad.** Para una variable **continua** (que puede valer cualquier número de un intervalo), la probabilidad de un valor exacto es 0. Lo que tiene sentido es la probabilidad de un **intervalo**, y esa probabilidad es el **área bajo la curva f** en ese intervalo:
 
-```math
-P(a < X < b) = \int_a^b f(x)\,dx
-```
+$$P(a < X < b) = \int_a^b f(x)\,dx$$
 
 Para que f sea una densidad tiene que cumplir dos cosas:
 1. **f(x) ≥ 0** en todos lados: un área negativa no tendría sentido;
@@ -785,9 +745,7 @@ Para que f sea una densidad tiene que cumplir dos cosas:
 
 **b)** $3e^{-x/3} > 0$ ✓. Pero el área:
 
-```math
-\int_0^\infty 3e^{-x/3}\,dx = 3\cdot\left[-3e^{-x/3}\right]_0^\infty = 3\cdot(0 + 3) = 9 \neq 1
-```
+$`\displaystyle \int_0^\infty 3e^{-x/3}\,dx = 3\cdot\left[-3e^{-x/3}\right]_0^\infty = 3\cdot(0 + 3) = 9 \neq 1`$
 
 **No** es densidad. Le sobra un 3: con $\frac13 e^{-x/3}$ sí sería.
 
@@ -825,9 +783,7 @@ $$f_X(x) = \begin{cases} a(x - x^3) & 0 < x \le 1 \\ 0 & \text{en otro caso} \en
 
 **a)** Área total = 1:
 
-```math
-\int_0^1 a(x - x^3)\,dx = a\left[\frac{x^2}{2} - \frac{x^4}{4}\right]_0^1 = a\left(\frac12 - \frac14\right) = \frac a4 = 1 \;\Rightarrow\; a = 4
-```
+$`\displaystyle \int_0^1 a(x - x^3)\,dx = a\left[\frac{x^2}{2} - \frac{x^4}{4}\right]_0^1 = a\left(\frac12 - \frac14\right) = \frac a4 = 1 \;\Rightarrow\; a = 4`$
 
 Además $x - x^3 \ge 0$ en (0; 1], así que f ≥ 0 ✓.
 
@@ -840,17 +796,11 @@ Control: F(1) = 2 − 1 = 1 ✓.
 
 **c)** En continuas, las fórmulas de las discretas cambian la suma por una integral (📄 H1, $E(X) = \int x\,f(x)\,dx$ y $`E(g(X)) = \int g(x)f(x)\,dx`$):
 
-```math
-E(X) = \int_0^1 x\cdot4(x - x^3)\,dx = \int_0^1 (4x^2 - 4x^4)\,dx = \frac43 - \frac45 = \frac8{15}
-```
+$`\displaystyle E(X) = \int_0^1 x\cdot4(x - x^3)\,dx = \int_0^1 (4x^2 - 4x^4)\,dx = \frac43 - \frac45 = \frac8{15}`$
 
-```math
-E(X^2) = \int_0^1 x^2\cdot4(x - x^3)\,dx = \int_0^1 (4x^3 - 4x^5)\,dx = 1 - \frac23 = \frac13
-```
+$`\displaystyle E(X^2) = \int_0^1 x^2\cdot4(x - x^3)\,dx = \int_0^1 (4x^3 - 4x^5)\,dx = 1 - \frac23 = \frac13`$
 
-```math
-V(X) = E(X^2) - E(X)^2 = \frac13 - \frac{64}{225} = \frac{11}{225}
-```
+$$V(X) = E(X^2) - E(X)^2 = \frac13 - \frac{64}{225} = \frac{11}{225}$$
 
 (📄 H1, $V(X) = E(X^2) - (E(X))^2$.)
 
@@ -887,9 +837,7 @@ $$f(x) = \begin{cases} \dfrac{1}{72}(x+1)^2 & -1 \le x \le m \\ 0 & \text{en otr
 
 **a)** 💡 En una densidad, el área total bajo f vale 1 (la probabilidad de que X caiga en algún lado). La incógnita es dónde termina el intervalo:
 
-```math
-\int_{-1}^m \frac{(x+1)^2}{72}\,dx = \frac{(x+1)^3}{216}\Big|_{-1}^m = \frac{(m+1)^3}{216} = 1 \;\Rightarrow\; (m+1)^3 = 216 \;\Rightarrow\; m + 1 = 6 \;\Rightarrow\; m = 5
-```
+$`\displaystyle \int_{-1}^m \frac{(x+1)^2}{72}\,dx = \frac{(x+1)^3}{216}\Big|_{-1}^m = \frac{(m+1)^3}{216} = 1 \;\Rightarrow\; (m+1)^3 = 216 \;\Rightarrow\; m + 1 = 6 \;\Rightarrow\; m = 5`$
 
 (Se integró con la sustitución u = x + 1: $\int u^2 = u^3/3$, y $3\cdot72 = 216$.)
 
@@ -904,47 +852,33 @@ $$f(x) = \begin{cases} \dfrac{1}{72}(x+1)^2 & -1 \le x \le m \\ 0 & \text{en otr
 
 **d)** 💡 **Percentil 75** (tercer cuartil): el valor que deja el 75 % del área a su izquierda, $F(x_{75}) = 0{,}75$ (❌, definición):
 
-```math
-\frac{(x+1)^3}{216} = 0{,}75 \;\Rightarrow\; (x+1)^3 = 162 \;\Rightarrow\; x = \sqrt[3]{162} - 1 \approx 4{,}45
-```
+$$\frac{(x+1)^3}{216} = 0{,}75 \;\Rightarrow\; (x+1)^3 = 162 \;\Rightarrow\; x = \sqrt[3]{162} - 1 \approx 4{,}45$$
 
 **e)** 💡 **Densidad de una transformación** (❌, método de la función de distribución): para conseguir $f_Y$ se pasa por $F_Y$, que sí se puede calcular con probabilidades de X.
 
-```math
-F_Y(y) = P(Y \le y) = P(2X + 1 \le y) = P\left(X \le \frac{y-1}{2}\right) = F_X\left(\frac{y-1}{2}\right)
-```
+$`\displaystyle F_Y(y) = P(Y \le y) = P(2X + 1 \le y) = P\left(X \le \frac{y-1}{2}\right) = F_X\left(\frac{y-1}{2}\right)`$
 
 Se deriva con la regla de la cadena (❌, $`f = F'`$):
 
-```math
-f_Y(y) = f_X\left(\frac{y-1}{2}\right)\cdot\frac12 = \frac12\cdot\frac{1}{72}\left(\frac{y-1}{2} + 1\right)^2 = \frac{(y+1)^2}{576}
-```
+$`\displaystyle f_Y(y) = f_X\left(\frac{y-1}{2}\right)\cdot\frac12 = \frac12\cdot\frac{1}{72}\left(\frac{y-1}{2} + 1\right)^2 = \frac{(y+1)^2}{576}`$
 
 El recorrido también se transforma: x ∈ [−1; 5] da y = 2x + 1 ∈ [−1; 11].
 
 **Mediana de Y:** $F_Y(y) = 0{,}5$. Integrando, $F_Y(y) = \frac{(y+1)^3}{1728}$:
 
-```math
-\frac{(y+1)^3}{1728} = \frac12 \;\Rightarrow\; y = \sqrt[3]{864} - 1 \approx 8{,}52
-```
+$$\frac{(y+1)^3}{1728} = \frac12 \;\Rightarrow\; y = \sqrt[3]{864} - 1 \approx 8{,}52$$
 
 Atajo: la mediana de X cumple $(x+1)^3 = 108$, o sea $x = \sqrt[3]{108} - 1 \approx 3{,}76$. Como $y = 2x + 1$ es creciente, la mediana de Y es $2\cdot3{,}76 + 1 = 8{,}52$.
 
 **f)** 📄 H1, $E(X) = \int x\,f(x)\,dx$. Con u = x + 1, u va de 0 a 6 y x = u − 1:
 
-```math
-E(X) = \frac1{72}\int_0^6 (u - 1)u^2\,du = \frac1{72}\left(\frac{6^4}{4} - \frac{6^3}{3}\right) = \frac{324 - 72}{72} = 3{,}5
-```
+$$E(X) = \frac1{72}\int_0^6 (u - 1)u^2\,du = \frac1{72}\left(\frac{6^4}{4} - \frac{6^3}{3}\right) = \frac{324 - 72}{72} = 3{,}5$$
 
-```math
-E(X^2) = \frac1{72}\int_0^6 (u-1)^2u^2\,du = 13{,}6 \;\Rightarrow\; V(X) = 13{,}6 - 3{,}5^2 = 1{,}35
-```
+$$E(X^2) = \frac1{72}\int_0^6 (u-1)^2u^2\,du = 13{,}6 \;\Rightarrow\; V(X) = 13{,}6 - 3{,}5^2 = 1{,}35$$
 
 Para Y = 2X + 1: $V(aX + b) = a^2V(X)$, porque el +1 no dispersa y el 2 sale al cuadrado (📄 H1 con la otra variable constante):
 
-```math
-V(Y) = 4\cdot1{,}35 = 5{,}4
-```
+$$V(Y) = 4\cdot1{,}35 = 5{,}4$$
 
 </details>
 
@@ -980,18 +914,14 @@ $$f_X(x) = \begin{cases} |x| & -5c \le x \le 5c \\ 0 & \text{en otro caso} \end{
 
 La función |x| es **simétrica** (tiene forma de V): el área de la izquierda es igual a la de la derecha. Se calcula la mitad derecha y se multiplica por 2:
 
-```math
-2\int_0^{5c} x\,dx = 2\cdot\frac{(5c)^2}{2} = 25c^2 = 1 \;\Rightarrow\; c = \frac15
-```
+$$2\int_0^{5c} x\,dx = 2\cdot\frac{(5c)^2}{2} = 25c^2 = 1 \;\Rightarrow\; c = \frac15$$
 
 (Se toma c > 0 para que el intervalo tenga sentido.) X vive en [−1; 1].
 
 **b)** 💡 Dos **eventos** son independientes si $P(A\cap B) = P(A)\,P(B)$ (📄 H1). Hay que calcular las tres probabilidades como áreas.
 - **P(A) = P(X > −½).** Es más fácil por complemento. A la izquierda de 0, |x| = −x:
 
-  ```math
-  P(X \le -\tfrac12) = \int_{-1}^{-1/2} (-x)\,dx = \left[-\frac{x^2}{2}\right]_{-1}^{-1/2} = -\frac18 + \frac12 = \frac38 \;\Rightarrow\; P(A) = \frac58
-  ```
+  $`\displaystyle P(X \le -\tfrac12) = \int_{-1}^{-1/2} (-x)\,dx = \left[-\frac{x^2}{2}\right]_{-1}^{-1/2} = -\frac18 + \frac12 = \frac38 \;\Rightarrow\; P(A) = \frac58`$
 
 - **P(B) = P(X < ½)**: por simetría también vale $\frac58$.
 - **A ∩ B** = "−½ < X < ½": $2\int_0^{1/2} x\,dx = 2\cdot\frac18 = \frac14$.
@@ -1030,9 +960,7 @@ $$f_T(t) = \begin{cases} 1 & 0 \le t < \tfrac12 \\ \tfrac12 e^{-(t - \frac12)} &
 - **0 ≤ t < ½:** f vale 1, así que el área es un rectángulo de base t y altura 1: F(t) = t. En t = ½ se acumuló ½.
 - **t ≥ ½:** lo acumulado hasta ½ más lo que se agrega después:
 
-  ```math
-  F(t) = \frac12 + \int_{1/2}^t \frac12 e^{-(s - 1/2)}\,ds = \frac12 + \frac12\left[-e^{-(s-1/2)}\right]_{1/2}^t = \frac12 + \frac12\left(1 - e^{-(t-1/2)}\right) = 1 - \frac12 e^{-(t - 1/2)}
-  ```
+  $`\displaystyle F(t) = \frac12 + \int_{1/2}^t \frac12 e^{-(s - 1/2)}\,ds = \frac12 + \frac12\left[-e^{-(s-1/2)}\right]_{1/2}^t = \frac12 + \frac12\left(1 - e^{-(t-1/2)}\right) = 1 - \frac12 e^{-(t - 1/2)}`$
 
   Cuando t → ∞, F → 1 ✓.
 
@@ -1040,9 +968,7 @@ $$f_T(t) = \begin{cases} 1 & 0 \le t < \tfrac12 \\ \tfrac12 e^{-(t - \frac12)} &
 - **Regular** (menos de 0,25): F(0,25) = 0,25, así que **25 %**.
 - **Muy bueno** (más de 3 años), 📄 H1 $P(T > a) = 1 - F(a)$:
 
-  ```math
-  1 - F(3) = \frac12 e^{-2{,}5} \approx 0{,}041 \;\Rightarrow\; \text{≈ 4,1 \%}
-  ```
+  $$1 - F(3) = \frac12 e^{-2{,}5} \approx 0{,}041 \;\Rightarrow\; \text{≈ 4,1 \%}$$
 
 - **Bueno** (entre los dos): lo que queda, $1 - 0{,}25 - 0{,}041 \approx 0{,}709$, es decir **70,9 %**.
 
@@ -1050,9 +976,7 @@ $$f_T(t) = \begin{cases} 1 & 0 \le t < \tfrac12 \\ \tfrac12 e^{-(t - \frac12)} &
 
 "Al menos uno regular" se hace por complemento:
 
-```math
-1 - P(\text{ninguno}) = 1 - 0{,}75^{20} \approx 0{,}9968
-```
+$$1 - P(\text{ninguno}) = 1 - 0{,}75^{20} \approx 0{,}9968$$
 
 ```
 X~Bin(n,p)   n=20   p=0.25   P(X≥x)   x=1   → 0.99683
@@ -1086,9 +1010,7 @@ Sea X una variable aleatoria con función de densidad f(x) = ½·(3 − x) para 
 
 **a)** 💡 $F(x) = P(X \le x)$, el área bajo f hasta x (📄 H1). En [1; 3]:
 
-```math
-F(x) = \int_1^x \frac{3 - t}{2}\,dt = \left[\frac32t - \frac{t^2}{4}\right]_1^x = \frac32x - \frac14x^2 - \frac54
-```
+$`\displaystyle F(x) = \int_1^x \frac{3 - t}{2}\,dt = \left[\frac32t - \frac{t^2}{4}\right]_1^x = \frac32x - \frac14x^2 - \frac54`$
 
 Vale 0 si x < 1 y 1 si x > 3. Control: $F(3) = 4{,}5 - 2{,}25 - 1{,}25 = 1$ ✓.
 
@@ -1096,23 +1018,17 @@ El gráfico es una curva creciente, cóncava hacia abajo (sube rápido al princi
 
 **b)** Se traducen las dos probabilidades con F: P(X < r) = F(r) y P(X > r) = 1 − F(r) (📄 H1):
 
-```math
-F(r) = 2(1 - F(r)) \;\Rightarrow\; 3F(r) = 2 \;\Rightarrow\; F(r) = \frac23
-```
+$$F(r) = 2(1 - F(r)) \;\Rightarrow\; 3F(r) = 2 \;\Rightarrow\; F(r) = \frac23$$
 
 Se iguala la fórmula de F a 2/3 y se pasa todo a un lado, multiplicando por 12:
 
-```math
-\frac32r - \frac14r^2 - \frac54 = \frac23 \;\Rightarrow\; 3r^2 - 18r + 23 = 0 \;\Rightarrow\; r = \frac{18 \pm \sqrt{324 - 276}}{6} = 3 \pm \frac{\sqrt{48}}{6}
-```
+$$\frac32r - \frac14r^2 - \frac54 = \frac23 \;\Rightarrow\; 3r^2 - 18r + 23 = 0 \;\Rightarrow\; r = \frac{18 \pm \sqrt{324 - 276}}{6} = 3 \pm \frac{\sqrt{48}}{6}$$
 
 La raíz con + da 4,15, fuera de [1; 3]. Queda $r = 3 - \frac{\sqrt{48}}{6} \approx 1{,}845$.
 
 **c)** 💡 Condicional (📄 H1, $`P(A/B) = \frac{P(A\cap B)}{P(B)}`$). X nunca pasa de 3, así que la condición "2 ≤ X ≤ 7/2" es en la práctica "2 ≤ X ≤ 3". La intersección con "X ≤ 5/2" es "2 ≤ X ≤ 2,5":
 
-```math
-\frac{F(2{,}5) - F(2)}{F(3) - F(2)} = \frac{0{,}9375 - 0{,}75}{1 - 0{,}75} = \frac{0{,}1875}{0{,}25} = \frac34
-```
+$$\frac{F(2{,}5) - F(2)}{F(3) - F(2)} = \frac{0{,}9375 - 0{,}75}{1 - 0{,}75} = \frac{0{,}1875}{0{,}25} = \frac34$$
 
 </details>
 
@@ -1148,9 +1064,7 @@ $$f(x) = \begin{cases} ax & 0 \le x < 1 \\ a & 1 \le x < 2 \\ -ax + 3a & 2 \le x
 
 No hace falta integrar: se suman áreas de figuras.
 
-```math
-\underbrace{\frac{1\cdot a}{2}}_{\text{triángulo}} + \underbrace{1\cdot a}_{\text{rectángulo}} + \underbrace{\frac{1\cdot a}{2}}_{\text{triángulo}} = 2a = 1 \;\Rightarrow\; a = \frac12
-```
+$`\displaystyle \underbrace{\frac{1\cdot a}{2}}_{\text{triángulo}} + \underbrace{1\cdot a}_{\text{rectángulo}} + \underbrace{\frac{1\cdot a}{2}}_{\text{triángulo}} = 2a = 1 \;\Rightarrow\; a = \frac12`$
 
 **b)** 💡 $F(x)$ = área acumulada hasta x (📄 H1). Por tramos, **arrastrando** lo acumulado en los tramos anteriores:
 - **[0; 1):** $\int_0^x \frac t2\,dt = \frac{x^2}{4}$. En x = 1 vale ¼.
@@ -1222,23 +1136,17 @@ Sea X una variable aleatoria con función de densidad dada por f(x) = 3x² para 
 
 **Paso 1, la función de distribución.** 💡 $F(x) = P(X \le x)$, el área acumulada (📄 H1). En [−1; 0]:
 
-```math
-F(x) = \int_{-1}^x 3t^2\,dt = t^3\Big|_{-1}^x = x^3 + 1
-```
+$`\displaystyle F(x) = \int_{-1}^x 3t^2\,dt = t^3\Big|_{-1}^x = x^3 + 1`$
 
 **Paso 2, ubicar los números.** b es negativo, y la mitad de un negativo está **más cerca de 0**, así que es más grande. Por ejemplo, con b = −0,6, b/2 = −0,3. Entonces b < b/2.
 
 **Paso 3, la condicional** (📄 H1, $`P(A/B) = \frac{P(A\cap B)}{P(B)}`$). "X > b y X < b/2" es el intervalo (b; b/2):
 
-```math
-P(X > b / X < b/2) = \frac{P(b < X < b/2)}{P(X < b/2)} = \frac{F(b/2) - F(b)}{F(b/2)}
-```
+$$P(X > b / X < b/2) = \frac{P(b < X < b/2)}{P(X < b/2)} = \frac{F(b/2) - F(b)}{F(b/2)}$$
 
 Reemplazando con $F(x) = x^3 + 1$:
 
-```math
-= \frac{\left(\frac{b^3}{8} + 1\right) - (b^3 + 1)}{\frac{b^3}{8} + 1} = \frac{\frac{b^3}{8} - b^3}{\frac{b^3 + 8}{8}} = \frac{-7b^3}{b^3 + 8}
-```
+$$= \frac{\left(\frac{b^3}{8} + 1\right) - (b^3 + 1)}{\frac{b^3}{8} + 1} = \frac{\frac{b^3}{8} - b^3}{\frac{b^3 + 8}{8}} = \frac{-7b^3}{b^3 + 8}$$
 
 Como b < 0, $-7b^3 > 0$, así que el resultado es positivo ✓.
 
@@ -1265,15 +1173,11 @@ El tiempo que tarda un proceso electrónico es una variable aleatoria con media 
 No hace falta conocer la distribución de T: alcanza con su media y su varianza, gracias a dos propiedades.
 - **Esperanza** (❌, linealidad): $E(aT + b) = aE(T) + b$.
 
-  ```math
-  E(C) = 3\cdot2 + 8 = 14 \text{ pesos}
-  ```
+  $$E(C) = 3\cdot2 + 8 = 14 \text{ pesos}$$
 
 - **Varianza:** $V(aT + b) = a^2V(T)$. El costo fijo 8 se suma igual a todos y no dispersa; el 3 multiplica la dispersión, y en la varianza aparece al cuadrado. Sale de 📄 H1, $V(aX + bY) = a^2V(X) + b^2V(Y) + \dots$, con la segunda variable constante.
 
-  ```math
-  V(C) = 3^2\cdot0{,}5 = 4{,}5 \text{ pesos}^2
-  ```
+  $$V(C) = 3^2\cdot0{,}5 = 4{,}5 \text{ pesos}^2$$
 
 </details>
 
@@ -1300,9 +1204,7 @@ $$F(x) = \begin{cases} 0 & x < 0 \\ bx^2 & 0 \le x < 1 \\ b\,[2(x-1)+1] & 1 \le 
 
 **Paso 0, hallar b.** 💡 La función de distribución de una variable continua **no tiene saltos**: cada tramo tiene que empalmar con el siguiente. En x = 3, el tramo del medio y el de la derecha tienen que dar lo mismo:
 
-```math
-\underbrace{b[2(3-1) + 1]}_{\text{tramo medio en }3} = \underbrace{1 - b(3-4)^2}_{\text{tramo derecho en }3} \;\Rightarrow\; 5b = 1 - b \;\Rightarrow\; b = \frac16
-```
+$`\displaystyle \underbrace{b[2(3-1) + 1]}_{\text{tramo medio en }3} = \underbrace{1 - b(3-4)^2}_{\text{tramo derecho en }3} \;\Rightarrow\; 5b = 1 - b \;\Rightarrow\; b = \frac16`$
 
 (En x = 1 empalman solos: $b\cdot1 = b[0 + 1]$.)
 
@@ -1316,9 +1218,7 @@ $$F(x) = \begin{cases} 0 & x < 0 \\ bx^2 & 0 \le x < 1 \\ b\,[2(x-1)+1] & 1 \le 
 
 ¿En qué tramo está? F(1) = 1/6 ≈ 0,17 y F(3) = 5/6 ≈ 0,83. Como 0,8 está entre los dos, x está en el tramo [1; 3):
 
-```math
-\frac16(2x - 1) = 0{,}8 \;\Rightarrow\; 2x - 1 = 4{,}8 \;\Rightarrow\; x = 2{,}9 \text{ miles de litros}
-```
+$$\frac16(2x - 1) = 0{,}8 \;\Rightarrow\; 2x - 1 = 4{,}8 \;\Rightarrow\; x = 2{,}9 \text{ miles de litros}$$
 
 </details>
 
@@ -1350,15 +1250,11 @@ $$f(r) = \begin{cases} \tfrac34\left[1 - (10 - r)^2\right] & 9 \le r < 11 \\ 0 &
 
 **a)** "Difiere en a lo sumo 30 cm" significa $|r - 10| \le 0{,}3$, es decir u entre −0,3 y 0,3. 💡 La probabilidad es el área bajo la densidad:
 
-```math
-\int_{-0{,}3}^{0{,}3} \frac34(1 - u^2)\,du = \frac34\left[u - \frac{u^3}{3}\right]_{-0{,}3}^{0{,}3} = \frac34(0{,}6 - 0{,}018) = 0{,}4365
-```
+$`\displaystyle \int_{-0{,}3}^{0{,}3} \frac34(1 - u^2)\,du = \frac34\left[u - \frac{u^3}{3}\right]_{-0{,}3}^{0{,}3} = \frac34(0{,}6 - 0{,}018) = 0{,}4365`$
 
 **b)** El área del círculo es $A = \pi R^2$, una **función** de R. 💡 Su esperanza se calcula con 📄 H1, $E(g(X)) = \int g(x)f(x)\,dx$. Hay un atajo: se desarrolla el cuadrado y se usa la linealidad (❌):
 
-```math
-E(\pi R^2) = \pi E[(10 + u)^2] = \pi\left(100 + 20E(u) + E(u^2)\right)
-```
+$$E(\pi R^2) = \pi E[(10 + u)^2] = \pi\left(100 + 20E(u) + E(u^2)\right)$$
 
 - $E(u) = 0$, porque la densidad es simétrica alrededor de 0.
 - $E(u^2) = \int_{-1}^1 u^2\cdot\frac34(1 - u^2)\,du = \frac34\left(\frac23 - \frac25\right) = \frac15$.
@@ -1414,9 +1310,7 @@ Cierto laboratorio atiende análisis clínicos regulares y de urgencia. Sea X₁
 
 💡 **Independencia de variables** (📄 H1): X₁ y X₂ son independientes si y solo si $P(x_1, x_2) = P_{X_1}(x_1)\cdot P_{X_2}(x_2)$ para **todas** las celdas. Para probar que **no** lo son, alcanza con una celda que falle:
 
-```math
-P(1, 1) = 0{,}15 \neq P_{X_1}(1)\,P_{X_2}(1) = 0{,}30\cdot0{,}40 = 0{,}12
-```
+$`\displaystyle P(1, 1) = 0{,}15 \neq P_{X_1}(1)\,P_{X_2}(1) = 0{,}30\cdot0{,}40 = 0{,}12`$
 
 **No son independientes.** Otra forma de verlo: P(3, 0) = 0, pero el producto de marginales no es 0.
 
@@ -1467,9 +1361,7 @@ hallar:
 - **P(Y = 1):** la columna 1, también $\frac{9}{36} = 0{,}25$ (la tabla es simétrica).
 - **P(X < 2 / Y < 2):** X < 2 es X = 1, y Y < 2 es Y = 1. 💡 Condicional (📄 H1, $`P(x/y) = \frac{P(x,y)}{P_Y(y)}`$):
 
-  ```math
-  P(X = 1/Y = 1) = \frac{P(1,1)}{P_Y(1)} = \frac{2/36}{9/36} = \frac29
-  ```
+  $$P(X = 1/Y = 1) = \frac{P(1,1)}{P_Y(1)} = \frac{2/36}{9/36} = \frac29$$
 
 **c)** 💡 **Covarianza** (📄 H1, $`Cov(X,Y) = E(XY) - E(X)E(Y)`$): mide si X e Y tienden a moverse juntas. Es positiva si cuando una es grande la otra también, y negativa si van al revés.
 - Con la marginal de X: $E(X) = \frac{1\cdot9 + 2\cdot12 + 3\cdot15}{36} = \frac{78}{36} = \frac{13}{6}$. Igual E(Y).
@@ -1480,9 +1372,7 @@ hallar:
 - $E(X^2) = \frac{1\cdot9 + 4\cdot12 + 9\cdot15}{36} = \frac{192}{36} = \frac{16}{3}$.
 - $V(X) = \frac{16}{3} - \frac{169}{36} = \frac{23}{36}$, igual que V(Y).
 
-```math
-\rho = \frac{-1/36}{\sqrt{23/36}\cdot\sqrt{23/36}} = \frac{-1/36}{23/36} = -\frac1{23} \approx -0{,}043
-```
+$$\rho = \frac{-1/36}{\sqrt{23/36}\cdot\sqrt{23/36}} = \frac{-1/36}{23/36} = -\frac1{23} \approx -0{,}043$$
 
 Es prácticamente 0: casi no hay relación lineal.
 
@@ -1532,17 +1422,13 @@ Control: todas suman 28/28 ✓.
 
 **b)** Se suman las celdas que cumplen x + y ≤ 1, que son (0,0), (1,0) y (0,1):
 
-```math
-\frac{3 + 9 + 6}{28} = \frac{18}{28} = \frac9{14}
-```
+$$\frac{3 + 9 + 6}{28} = \frac{18}{28} = \frac9{14}$$
 
 **c)** 💡 Condicionales con la conjunta (📄 H1, $`P(x/y) = \frac{P(x,y)}{P_Y(y)}`$). Hacen falta las **marginales**, que se obtienen sumando una fila o una columna:
 - $P_Y(1)$ = columna Y = 1: $\frac{6 + 6}{28} = \frac{12}{28}$.
 - $P_X(0)$ = fila X = 0: $\frac{3 + 6 + 1}{28} = \frac{10}{28}$.
 
-```math
-P(X = 0/Y = 1) = \frac{6/28}{12/28} = 0{,}5 \qquad P(Y = 1/X = 0) = \frac{6/28}{10/28} = 0{,}6
-```
+$$P(X = 0/Y = 1) = \frac{6/28}{12/28} = 0{,}5 \qquad P(Y = 1/X = 0) = \frac{6/28}{10/28} = 0{,}6$$
 
 Tienen el mismo numerador, pero distinto universo (el denominador).
 
@@ -1589,9 +1475,7 @@ Entonces $E(XY) = 0 = E(X)E(Y)$ ✓.
 
 **¿Independientes?** 💡 Tendrían que cumplir $P(x,y) = P_X(x)P_Y(y)$ en **todas** las celdas (📄 H1). Pero en el centro:
 
-```math
-P(0, 0) = 0 \neq P_X(0)P_Y(0) = (2c)^2 > 0 \quad(\text{si } c > 0)
-```
+$`\displaystyle P(0, 0) = 0 \neq P_X(0)P_Y(0) = (2c)^2 > 0 \quad(\text{si } c > 0)`$
 
 **No son independientes.**
 
@@ -1629,33 +1513,23 @@ Se resuelve **solo con propiedades**, sin conocer las distribuciones. Los desví
 
 **a)** Linealidad de la esperanza (❌): $E(aX_1 + bX_2) = aE(X_1) + bE(X_2)$.
 
-```math
-E(3X_1 - 2X_2) = 3\cdot1 - 2\cdot(-2) = 7
-```
+$`\displaystyle E(3X_1 - 2X_2) = 3\cdot1 - 2\cdot(-2) = 7`$
 
 **b)** Al multiplicar por una constante, la varianza se multiplica por la constante **al cuadrado** (📄 H1, $V(aX + bY)$ con b = 0):
 
-```math
-V(3X_1) = 3^2\cdot4 = 36
-```
+$$V(3X_1) = 3^2\cdot4 = 36$$
 
 **c)** 💡 Del coeficiente de correlación (📄 H1, $`\rho = \frac{Cov}{\sigma_1\sigma_2}`$) se despeja la covarianza:
 
-```math
-Cov = \rho\,\sigma_1\sigma_2 = \frac{\sqrt6}{3}\cdot2\cdot3 = 2\sqrt6 \approx 4{,}9
-```
+$`\displaystyle Cov = \rho\,\sigma_1\sigma_2 = \frac{\sqrt6}{3}\cdot2\cdot3 = 2\sqrt6 \approx 4{,}9`$
 
 **d)** 💡 Las variables **no** son independientes (ρ ≠ 0), así que la varianza de la suma lleva el término de covarianza (📄 H1, $`V(X+Y) = V(X) + V(Y) + 2Cov`$):
 
-```math
-V(X_1 + X_2) = 4 + 9 + 2\cdot2\sqrt6 = 13 + 4\sqrt6 \approx 22{,}8
-```
+$`\displaystyle V(X_1 + X_2) = 4 + 9 + 2\cdot2\sqrt6 = 13 + 4\sqrt6 \approx 22{,}8`$
 
 **e)** 📄 H1: $V(aX + bY) = a^2V(X) + b^2V(Y) + 2ab\,Cov$, con a = 2 y b = −3. Ojo con el signo: 2ab = 2·2·(−3) = −12.
 
-```math
-V(2X_1 - 3X_2) = 4\cdot4 + 9\cdot9 - 12\cdot2\sqrt6 = 97 - 24\sqrt6 \approx 38{,}2
-```
+$`\displaystyle V(2X_1 - 3X_2) = 4\cdot4 + 9\cdot9 - 12\cdot2\sqrt6 = 97 - 24\sqrt6 \approx 38{,}2`$
 
 </details>
 

@@ -84,9 +84,7 @@ Se toma una muestra de consumo de combustible en un cierto modelo de coche, obte
 
 💡 **Por qué se usa la χ².** La varianza muestral S² no es Normal (nunca es negativa y es asimétrica). Si la población es Normal (por eso la consigna lo supone), $\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}$ (📄 H2). De ahí sale el intervalo (📄 H2):
 
-```math
-I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)
-```
+$`\displaystyle I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)`$
 
 Hacen falta dos valores de χ² (uno por cola), y el **grande** va en la punta izquierda.
 
@@ -96,15 +94,11 @@ X~χ²(ν)   ν=9   P(X<x)=0.99   → x=21.666
 X~χ²(ν)   ν=9   P(X<x)=0.01   → x=2.0879
 ```
 
-```math
-I.C._{\sigma^2} = \left(\frac{9\cdot0{,}04233}{21{,}666};\ \frac{9\cdot0{,}04233}{2{,}088}\right) = (0{,}0176;\ 0{,}1825) \text{ (l/100 km)}^2
-```
+$$I.C._{\sigma^2} = \left(\frac{9\cdot0{,}04233}{21{,}666};\ \frac{9\cdot0{,}04233}{2{,}088}\right) = (0{,}0176;\ 0{,}1825) \text{ (l/100 km)}^2$$
 
 **b)** Ahora el IC es **para la media**, con σ = 0,17 **conocido**. 💡 La fórmula de la hoja (📄 H2) es "promedio ± margen", $\bar X \mp z_{1-\frac\alpha2}\frac{\sigma}{\sqrt n}$. El margen es el **error máximo de estimación**:
 
-```math
-d = z_{1-\frac\alpha2}\cdot\frac{\sigma}{\sqrt n}
-```
+$$d = z_{1-\frac\alpha2}\cdot\frac{\sigma}{\sqrt n}$$
 
 (Sale de que el promedio varía alrededor de μ con desvío $\frac{\sigma}{\sqrt n}$.)
 
@@ -113,9 +107,7 @@ d = z_{1-\frac\alpha2}\cdot\frac{\sigma}{\sqrt n}
 X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.995   → x=2.57583
 ```
 
-```math
-2{,}576\cdot\frac{0{,}17}{\sqrt n} \le 0{,}05 \;\Rightarrow\; n \ge \left(\frac{2{,}576\cdot0{,}17}{0{,}05}\right)^2 = 76{,}7 \;\Rightarrow\; n = 77
-```
+$$2{,}576\cdot\frac{0{,}17}{\sqrt n} \le 0{,}05 \;\Rightarrow\; n \ge \left(\frac{2{,}576\cdot0{,}17}{0{,}05}\right)^2 = 76{,}7 \;\Rightarrow\; n = 77$$
 
 Siempre se redondea hacia arriba: con 76 el error quedaría apenas mayor que 0,05.
 
@@ -191,16 +183,12 @@ Se tomó una muestra aleatoria de 10 observaciones de óxidos de azufre (SO₂),
 **a)**
 1. **Hipótesis.** "Avalar que está por debajo de 58" es lo que se quiere demostrar, así que va en H₁:
 
-   ```math
-   H_0: \mu \ge 58 \qquad H_1: \mu < 58
-   ```
+   $`\displaystyle H_0: \mu \ge 58 \qquad H_1: \mu < 58`$
 
 2. α = 0,01, el riesgo aceptado de rechazar H₀ siendo cierta.
 3. 💡 **Estadístico:** a cuántos "errores estándar" cayó el promedio de 58. Con S en lugar de σ, es una **t** con n − 1 grados de libertad (📄 H2, tal cual):
 
-   ```math
-   T = \frac{\bar X - 58}{S/\sqrt n} \sim t_9
-   ```
+   $$T = \frac{\bar X - 58}{S/\sqrt n} \sim t_9$$
 
 4. $t_{obs} = \frac{57{,}41 - 58}{0{,}94/\sqrt{10}} = \frac{-0{,}59}{0{,}2973} = -1{,}985$.
 5. 💡 **Región crítica:** los valores que llevan a rechazar, del lado de H₁ (izquierda), con área α:
@@ -252,16 +240,12 @@ En el boletín de la Asociación Americana del Corazón, *Hypertension*, investi
 **a)**
 1. Se quiere demostrar "más de 8":
 
-   ```math
-   H_0: \mu \le 8 \qquad H_1: \mu > 8
-   ```
+   $`\displaystyle H_0: \mu \le 8 \qquad H_1: \mu > 8`$
 
 2. α = 0,05, el riesgo aceptado de rechazar H₀ siendo cierta.
 3. 💡 **Estadístico:** a cuántos desvíos de 8 cayó el promedio. Se estandariza (📄 H1):
 
-   ```math
-   Z = \frac{\bar X - 8}{0{,}4} \sim N(0;1) \text{ si } \mu = 8
-   ```
+   $$Z = \frac{\bar X - 8}{0{,}4} \sim N(0;1) \text{ si } \mu = 8$$
 
 4. $z_{obs} = \frac{8{,}8 - 8}{0{,}4} = 2$.
 5. 💡 **Región crítica:** del lado de H₁ (derecha), con área α:

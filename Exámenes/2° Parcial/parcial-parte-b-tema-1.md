@@ -28,16 +28,12 @@ p = fracción de defectuosas de **toda** la producción, desconocida. $\hat p$ =
 **a)**
 1. **Hipótesis.** "El fabricante debe **demostrar** p < 0,04", así que eso va en H₁:
 
-   ```math
-   H_0: p \ge 0{,}04 \qquad H_1: p < 0{,}04
-   ```
+   $`\displaystyle H_0: p \ge 0{,}04 \qquad H_1: p < 0{,}04`$
 
 2. **α = 0,01**, el riesgo aceptado de rechazar H₀ siendo cierta.
 3. 💡 **Estadístico.** Cada pieza es un 1 (defectuosa) o un 0, y $\hat p$ es el promedio, así que por el TCL es aproximadamente Normal (📄 H2, $`\hat p \sim N\left(p;\ \sqrt{\frac{p(1-p)}{n}}\right)`$). Se estandariza **suponiendo H₀ cierta**, así que en la raíz va **p₀ = 0,04**, no $\hat p$:
 
-   ```math
-   Z = \frac{\hat p - 0{,}04}{\sqrt{0{,}04\cdot0{,}96/1000}} \approx N(0;1), \qquad \sigma_0 = 0{,}0062
-   ```
+   $$Z = \frac{\hat p - 0{,}04}{\sqrt{0{,}04\cdot0{,}96/1000}} \approx N(0;1), \qquad \sigma_0 = 0{,}0062$$
 
 4. $z_{obs} = \frac{0{,}009 - 0{,}04}{0{,}0062} = -5{,}0$.
 5. 💡 **Región crítica:** del lado de H₁ (izquierda), con área α:
@@ -52,13 +48,9 @@ p = fracción de defectuosas de **toda** la producción, desconocida. $\hat p$ =
 
 **Receta** (❌): la frontera se arma con p₀ (ya está: 0,0256), y la probabilidad se calcula con el p **verdadero**. ⚠️ El desvío **cambia**, porque depende de p:
 
-```math
-\sigma_1 = \sqrt{\frac{0{,}02\cdot0{,}98}{1000}} = 0{,}00443
-```
+$$\sigma_1 = \sqrt{\frac{0{,}02\cdot0{,}98}{1000}} = 0{,}00443$$
 
-```math
-\beta = P(\hat p \ge 0{,}0256) \text{ con } \hat p \sim N(0{,}02;\ 0{,}00443)
-```
+$$\beta = P(\hat p \ge 0{,}0256) \text{ con } \hat p \sim N(0{,}02;\ 0{,}00443)$$
 
 ```
 X~N(μ;σ)   μ=0.02   σ=0.00443   P(X>x)   x=0.0256   → 0.1035
@@ -123,26 +115,18 @@ Una compañía productora de energía eléctrica está interesada en desarrollar
 
 **b)** 💡 **Qué se estima:** la demanda pico **media** de **todos** los clientes que consumen 1050 kWh, no la de uno solo. La estimación puntual es la recta:
 
-```math
-\hat y(1050) = -0{,}6405 + 0{,}002309\cdot1050 = 1{,}784 \text{ kW}
-```
+$$\hat y(1050) = -0{,}6405 + 0{,}002309\cdot1050 = 1{,}784 \text{ kW}$$
 
 💡 **IC para la media de Y en x₀** (❌, no está en la hoja). Tiene la forma de siempre, estimación ± t · error estándar:
 
-```math
-\hat y_0 \pm t_{n-2;1-\frac\alpha2}\cdot s\sqrt{\frac1n + \frac{(x_0 - \bar x)^2}{S_{xx}}}
-```
+$`\displaystyle \hat y_0 \pm t_{n-2;1-\frac\alpha2}\cdot s\sqrt{\frac1n + \frac{(x_0 - \bar x)^2}{S_{xx}}}`$
 
 - s mide cuánto se apartan los puntos de la recta: $s^2 = \hat\sigma^2 = \frac{SC_{res}}{n-2}$ (📄 H2), con $SC_{res} = S_{yy} - \frac{S_{xy}^2}{S_{xx}}$.
 - El término con $(x_0 - \bar x)^2$ hace el intervalo más ancho cuanto más lejos está x₀ del centro de los datos.
 
-```math
-SC_{res} = 0{,}7218 \;\Rightarrow\; s = \sqrt{0{,}7218/3} = 0{,}4905
-```
+$$SC_{res} = 0{,}7218 \;\Rightarrow\; s = \sqrt{0{,}7218/3} = 0{,}4905$$
 
-```math
-IC = 1{,}784 \pm 5{,}841\cdot0{,}4905\sqrt{0{,}2 + \frac{(1050 - 1688{,}4)^2}{1404335{,}2}} = 1{,}784 \pm 2{,}006
-```
+$$IC = 1{,}784 \pm 5{,}841\cdot0{,}4905\sqrt{0{,}2 + \frac{(1050 - 1688{,}4)^2}{1404335{,}2}} = 1{,}784 \pm 2{,}006$$
 
 Resultado: (−0,22; 3,79) kW.
 
@@ -178,9 +162,7 @@ Sea X una muestra aleatoria de tamaño 12 de una distribución normal. Se determ
 
 De ahí sale el intervalo (📄 H2):
 
-```math
-I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)
-```
+$`\displaystyle I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)`$
 
 En la punta izquierda va el χ² **grande**. Dividir por un número grande da un resultado chico.
 
@@ -192,9 +174,7 @@ X~χ²(ν)   ν=11   P(X<x)=0.99   → x=24.725
 X~χ²(ν)   ν=11   P(X<x)=0.01   → x=3.0535
 ```
 
-```math
-I.C._{\sigma^2} = \left(\frac{11\cdot0{,}11143}{24{,}725};\ \frac{11\cdot0{,}11143}{3{,}053}\right) = (0{,}0496;\ 0{,}4014) \text{ (mg/100 ml)}^2
-```
+$$I.C._{\sigma^2} = \left(\frac{11\cdot0{,}11143}{24{,}725};\ \frac{11\cdot0{,}11143}{3{,}053}\right) = (0{,}0496;\ 0{,}4014) \text{ (mg/100 ml)}^2$$
 
 **Interpretación:** si se repitiera el muestreo muchas veces, el 98 % de los intervalos construidos así contendría a la verdadera varianza σ². σ² es fijo; lo que varía es el intervalo. Con esta muestra, se confía al 98 % en que σ² está entre 0,0496 y 0,4014.
 
@@ -202,9 +182,7 @@ I.C._{\sigma^2} = \left(\frac{11\cdot0{,}11143}{24{,}725};\ \frac{11\cdot0{,}111
 
 Se toma como "valor hallado" el extremo superior, 0,4014. Con σ² = 0,89² = 0,7921:
 
-```math
-P(S^2 > 0{,}4014) = P\left(\frac{11S^2}{0{,}7921} > \frac{11\cdot0{,}4014}{0{,}7921}\right) = P(\chi^2_{11} > 5{,}574)
-```
+$$P(S^2 > 0{,}4014) = P\left(\frac{11S^2}{0{,}7921} > \frac{11\cdot0{,}4014}{0{,}7921}\right) = P(\chi^2_{11} > 5{,}574)$$
 
 ```
 X~χ²(ν)   ν=11   P(X>x)   x=5.574   → 0.9002
@@ -230,7 +208,7 @@ Que la probabilidad sea tan alta indica que σ = 0,89 es poco compatible con la 
 
 Defina sesgo y encuentre el sesgo del estimador propuesto para la varianza poblacional de una población normal, a partir de una muestra de tamaño 4, si:
 
-$$\hat\theta = \frac{\sum_{i=1}^4 (X_i - \bar X)^2}3 + \frac{\sum_{i=1}^4 X_i^2}4$$
+$`\displaystyle \hat\theta = \frac{\sum_{i=1}^4 (X_i - \bar X)^2}3 + \frac{\sum_{i=1}^4 X_i^2}4`$
 
 <details>
 <summary><b>Solución</b></summary>
@@ -295,7 +273,7 @@ $\beta = P(\bar X > x_c \mid \mu_1) \Rightarrow \frac{x_c - \mu_1}{\sigma/\sqrt 
 
 $\mu_0 + z_\alpha\frac\sigma{\sqrt n} = \mu_1 + z_{1-\beta}\frac\sigma{\sqrt n} \Rightarrow \sqrt n = \frac{\sigma(z_\alpha - z_{1-\beta})}{\mu_1 - \mu_0}$.
 
-$$n = \left(\frac{\sigma(z_{1-\alpha} + z_{1-\beta})}{\mu_0 - \mu_1}\right)^2$$
+$`\displaystyle n = \left(\frac{\sigma(z_{1-\alpha} + z_{1-\beta})}{\mu_0 - \mu_1}\right)^2`$
 
 Se redondea hacia arriba. En el bilateral se usa $z_{1-\alpha/2}$.
 

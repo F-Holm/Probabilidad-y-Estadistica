@@ -220,9 +220,7 @@ $f(x) = a(x - x^3)$ si $0 < x \le 1$.
 - a) Para que $f \ge 0$ hace falta $a \ge 0$, y $\int_0^1 a(x - x^3)\,dx = a\left(\tfrac12 - \tfrac14\right) = \tfrac{a}{4} = 1$ ⇒ **a = 4**.
 - b) Integrando por tramos: $F(x) = c_1$ si $x \le 0$; $2x^2 - x^4 + c_2$ si $0 < x \le 1$; $c_3$ si $x > 1$. Las constantes salen de las propiedades de F: $c_1 = 0$ y $c_3 = 1$ por los límites, y $c_2 = 0$ por continuidad en 0 y en 1. Entonces:
 
-```math
-F(x) = \begin{cases} 0 & x \le 0 \\ 2x^2 - x^4 & 0 < x \le 1 \\ 1 & x > 1\end{cases}
-```
+$`\displaystyle F(x) = \begin{cases} 0 & x \le 0 \\ 2x^2 - x^4 & 0 < x \le 1 \\ 1 & x > 1\end{cases}`$
 
 - $P(X < 0{,}3) = F(0{,}3) = 0{,}1719$
 - $P(X > 0{,}5) = 1 - F(0{,}5) = 1 - 0{,}4375 = 0{,}5625$
