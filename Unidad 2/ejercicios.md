@@ -135,7 +135,7 @@ De una caja con 6 bolillas azules y 2 rojas se extraen 3 sin reposición. Sea X:
 - $P(X=2) = \frac{\binom62\binom21}{56} = \frac{30}{56} = \frac{15}{28}$
 - $P(X=3) = \frac{\binom63\binom20}{56} = \frac{20}{56} = \frac5{14}$
 
-Control: 6 + 30 + 20 = 56 ✓. (Es la hipergeométrica de la U3, 📄 H1.)
+Control: 6 + 30 + 20 = 56 ✓. (Es la hipergeométrica de la U3, 📄 H1. Con la app sale cada valor sin contar: `X~HG(N,K,n) N=8 K=6 n=3 P(X=x) x=2 → 0.53571`, y lo mismo con x = 1 y x = 3.)
 
 **b)** 💡 **Esperanza (valor esperado) E(X):** el promedio que daría X si el experimento se repitiera muchísimas veces. Cada valor se multiplica por su probabilidad y se suma (📄 H1, $`E(X) = \sum x_i P(x_i)`$):
 
@@ -602,7 +602,7 @@ Un fabricante de automóviles tiene un programa de control de calidad que incluy
 - **W = 1** (una de las 2 D y una de las 3 B): $\binom21\binom31 = 6$, así que P = 0,6.
 - **W = 2** (las 2 D): $\binom22 = 1$, así que P = 0,1.
 
-(Es la hipergeométrica de la U3, 📄 H1.)
+(Es la hipergeométrica de la U3, 📄 H1. Con la app: `X~HG(N,K,n) N=5 K=2 n=2 P(X=x)` con x = 0, 1, 2 → 0.3, 0.6, 0.1.)
 
 💡 **Función de distribución** $F(w) = P(W \le w)$, acumulando: F(0) = 0,3; F(1) = 0,9; F(2) = 1. Es 0 para w < 0, se mantiene en cada escalón, y vale 1 desde w = 2.
 
@@ -974,9 +974,7 @@ $$f_T(t) = \begin{cases} 1 & 0 \le t < \tfrac12 \\ \tfrac12 e^{-(t - \frac12)} &
 
 **c)** Cada componente de la caja es "regular" (éxito) con p = 0,25, y los 20 son independientes. Entonces la cantidad de regulares es una **binomial** Bin(20; 0,25) (U3, 📄 H1).
 
-"Al menos uno regular" se hace por complemento:
-
-$$1 - P(\text{ninguno}) = 1 - 0{,}75^{20} \approx 0{,}9968$$
+"Al menos uno regular" es P(X ≥ 1):
 
 ```
 X~Bin(n,p)   n=20   p=0.25   P(X≥x)   x=1   → 0.99683

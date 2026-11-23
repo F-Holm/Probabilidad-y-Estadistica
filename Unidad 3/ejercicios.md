@@ -37,9 +37,7 @@ Se lee: elegir k de los K éxitos **y** el resto de los no-éxitos, sobre todas 
 
 Acá N = 10 refrigeradores, K = 4 con compresor defectuoso, n = 5 examinados: **X ~ H(N = 10; K = 4; n = 5)**.
 
-**b)** "No todos tienen fallas leves" significa que al menos uno tiene el compresor defectuoso, X ≥ 1. Es lo contrario de X = 0, donde los 5 salen de los 6 leves:
-
-$$P(X \ge 1) = 1 - \frac{\binom40\binom65}{\binom{10}5} = 1 - \frac{6}{252} = 0{,}9762$$
+**b)** "No todos tienen fallas leves" significa que al menos uno tiene el compresor defectuoso, X ≥ 1. Con la app se carga directo P(X ≥ 1):
 
 ```
 X~HG(N,K,n)   N=10   K=4   n=5   P(X≥x)   x=1   → 0.97619
@@ -193,9 +191,7 @@ Se lee: elegir **cuáles** k ensayos son éxitos, por la probabilidad de esa com
 
 **Planteo.** Cada uno de los 72 pasajes es un ensayo. Éxito = "el pasajero se presenta", con p = 1 − 0,04 = 0,96. Se supone que cada pasajero decide independientemente. Entonces X = pasajeros que se presentan ~ **Bin(72; 0,96)**.
 
-**¿Cuándo viajan todos?** Cuando se presentan **a lo sumo 70**, la capacidad del avión. Es más corto restar los dos casos malos (71 o 72):
-
-$$P(X \le 70) = 1 - P(71) - P(72) = 1 - \binom{72}{71}0{,}96^{71}\,0{,}04 - 0{,}96^{72} \approx 0{,}78836$$
+**¿Cuándo viajan todos?** Cuando se presentan **a lo sumo 70**, la capacidad del avión. Se pide P(X ≤ 70), que la app da directo (a mano habría que sumar 71 términos, o restar P(71) y P(72)):
 
 ```
 X~Bin(n,p)   n=72   p=0.96   P(X≤x)   x=70   → 0.78836
@@ -225,9 +221,7 @@ Se ha probado que el 25 % de los neumáticos de motocicleta sufren pinchaduras e
 
 💡 **¿Por qué binomial?** Son 6 neumáticos (n = 6) que se prueban por separado (independientes). Cada uno "se pincha" (éxito) con la misma probabilidad p = 0,25, y se cuenta cuántos se pinchan. Entonces X = pinchados ~ **Bin(6; 0,25)**, con $P(X = k) = \binom6k0{,}25^k0{,}75^{6-k}$ (📄 H1).
 
-**a) Al menos 2** (2, 3, …, 6). Es más corto restar lo contrario (0 o 1):
-
-$$P(X \ge 2) = 1 - P(0) - P(1) = 1 - 0{,}75^6 - 6\cdot0{,}25\cdot0{,}75^5 \approx 0{,}466$$
+**a) Al menos 2** (2, 3, …, 6) es P(X ≥ 2):
 
 ```
 X~Bin(n,p)   n=6   p=0.25   P(X≥x)   x=2   → 0.46606
@@ -274,20 +268,21 @@ Al probar motores para cuatriciclos se encontró que el 5 % no superaba la prueb
 
 💡 Cada motor pasa o no pasa, independientemente de los otros, siempre con la misma probabilidad. Contar cuántos fallan (o pasan) es una **binomial** (📄 H1, $`\binom nk p^k(1-p)^{n-k}`$). En cada inciso hay que decidir **qué cuenta como éxito**.
 
-**a)** Éxito = "no pasa" (p = 0,05), n = 5. "Al menos uno" se hace por complemento: 1 − "ninguno falla" = 1 − "los 5 pasan":
+**a)** Éxito = "no pasa" (p = 0,05), n = 5. "Al menos uno" es P(X ≥ 1):
 
-$$1 - 0{,}95^5 = 0{,}22622$$
+```
+X~Bin(n,p)   n=5   p=0.05   P(X≥x)   x=1   → 0.22622
+```
 
 **b)** Éxito = "pasa" (p = 0,95), n = 20. El número esperado de una binomial es E = n·p (❌):
 
 $$E = 20\cdot0{,}95 = 19$$
 
-**c)** Éxito = "no pasa" (p = 0,05), n = 7. "La mayoría no pasa" significa más de la mitad de 7, o sea 4 o más. "Pero no todos" saca el 7. Quedan 4, 5 o 6:
-
-$$P(4 \le X \le 6) = \sum_{k=4}^6\binom7k0{,}05^k\,0{,}95^{7-k} \approx 0{,}00019$$
+**c)** Éxito = "no pasa" (p = 0,05), n = 7. "La mayoría no pasa" significa más de la mitad de 7, o sea 4 o más. "Pero no todos" saca el 7. Quedan 4, 5 o 6, es decir P(4 ≤ X ≤ 6) = P(X ≥ 4) − P(X = 7):
 
 ```
-X~Bin(n,p)   n=7   p=0.05   P(X≥x)   x=4   → 0.000194   (P(X=7) ≈ 8·10⁻¹⁰, despreciable)
+X~Bin(n,p)   n=7   p=0.05   P(X≥x)   x=4   → 0.000194
+X~Bin(n,p)   n=7   p=0.05   P(X=x)   x=7   → 0.0000000008   (despreciable)
 ```
 
 </details>
@@ -323,15 +318,13 @@ En una empresa (con más de 2000 empleados), el 30 % de los empleados está en u
 
 **Paso 2, ¿por qué binomial?** Se eligen 5 sin reposición, que en rigor sería hipergeométrica. Pero la empresa es **muy grande** (más de 2000), así que sacar 5 casi no cambia las proporciones. Se pueden tratar como 5 ensayos independientes con p constante: binomial (📄 H1).
 
-**a)** Éxito = "exactamente un proyecto" (p = 0,6), X ~ Bin(5; 0,6). "Al menos 2" es 1 − P(0) − P(1):
-
-$$1 - 0{,}4^5 - 5\cdot0{,}6\cdot0{,}4^4 = 0{,}91296$$
+**a)** Éxito = "exactamente un proyecto" (p = 0,6), X ~ Bin(5; 0,6). "Al menos 2" es P(X ≥ 2):
 
 ```
 X~Bin(n,p)   n=5   p=0.6   P(X≥x)   x=2   → 0.91296
 ```
 
-**b)** Éxito = "ambos proyectos" (p = 0,1), Y ~ Bin(5; 0,1). "A lo sumo 3" es 1 − P(4) − P(5):
+**b)** Éxito = "ambos proyectos" (p = 0,1), Y ~ Bin(5; 0,1). "A lo sumo 3" es P(Y ≤ 3):
 ```
 X~Bin(n,p)   n=5   p=0.1   P(X≤x)   x=3   → 0.99954
 ```
@@ -460,17 +453,19 @@ $$P(X = k) = \frac{\lambda^k}{k!}e^{-\lambda}$$
 
 **a) ¿Cuándo hay problema?** Cada auto paga 45 con un billete de 50 y necesita 5 de vuelto. Fabián tiene un solo billete de 5: le puede dar vuelto al **primer** auto y a ninguno más (los billetes de 50 que recibe no sirven para dar 5). Alguien se queda sin vuelto si llegan **2 o más** autos.
 
-En 5 minutos, λ = 20·(5/60) = 5/3 ≈ 1,667:
-
-$$P(X \ge 2) = 1 - P(0) - P(1) = 1 - e^{-5/3}\left(1 + \frac53\right) \approx 0{,}4963$$
+En 5 minutos, λ = 20·(5/60) = 5/3 ≈ 1,667, y se pide P(X ≥ 2):
 
 ```
 X~Po(λ)   λ=1.6667   P(X≥x)   x=2   → 0.49633
 ```
 
-**b)** Si Fabián se va t horas, el promedio de autos es λ = 20t. "Ningún auto" es $P(X = 0) = e^{-20t}$, y se pide que eso valga 1/10:
+**b)** 💡 **Relación Poisson–exponencial** (❌): si los autos llegan según un Poisson con ritmo 20 por hora, el **tiempo hasta el primer auto** es T ~ Exp(λ = 20). "No aparece ningún auto mientras Fabián no está" es "el primer auto llega después de que vuelve": se busca el t con P(T > t) = 0,1. Es un cuantil, así que lo da la app:
 
-$$e^{-20t} = 0{,}1 \;\Rightarrow\; -20t = \ln0{,}1 \;\Rightarrow\; t = \frac{\ln10}{20} \approx 0{,}115 \text{ h} \approx 6{,}9 \text{ min}$$
+```
+X~Exp(λ)   λ=20   P(X>x)=0.1   → x=0.11513
+```
+
+t ≈ 0,115 h ≈ **6,9 min**. (A mano: P(ningún auto en t horas) = e^(−20t) = 0,1, y se despeja con ln.)
 
 </details>
 
@@ -500,8 +495,6 @@ La cantidad de pacientes que asisten a la sala de emergencias de la localidad de
 💡 **Poisson:** cuenta eventos (pacientes) en un intervalo (una semana) con un promedio fijo λ = 3. X ~ Po(3), con $P(X = k) = \frac{3^k}{k!}e^{-3}$ (📄 H1).
 
 **a)** Se deriva algún paciente si llegan más de 4, es decir X ≥ 5:
-
-$$P(X \ge 5) = 1 - \sum_{k=0}^{4}\frac{3^k}{k!}e^{-3} \approx 0{,}185$$
 
 ```
 X~Po(λ)   λ=3   P(X≥x)   x=5   → 0.18474
@@ -554,8 +547,6 @@ Las llegadas a la fila de espera de una oficina del ANSES ocurren según un proc
 **b)** 💡 **Relación Poisson–exponencial:** si las llegadas son Poisson con ritmo α, el **tiempo entre dos llegadas** es **exponencial** con parámetro α (❌). La exponencial (📄 H1) tiene $F(t) = 1 - e^{-\alpha t}$, así que $P(T > t) = e^{-\alpha t}$.
 
 "Más de 6 minutos entre dos arribos":
-
-$$P(T > 6) = e^{-0{,}2\cdot6} = e^{-1{,}2} \approx 0{,}3012$$
 
 ```
 X~Exp(λ)   λ=0.2   P(X>x)   x=6   → 0.30119
@@ -661,9 +652,11 @@ Sumando las dos ecuaciones: $(b - a) - 4 = 0{,}6L$, o sea $L - 4 = 0{,}6L$. Ento
 
 **a)** El tramo [5; 9] mide 4: $\frac{9 - 5}{10} = 0{,}4$.
 
-**b)** Cada bulto pesa entre 5 y 9 (éxito) con p = 0,4, y los 8 son independientes. 💡 Contar éxitos en ensayos independientes es **binomial**: Bin(8; 0,4) (📄 H1). "Ninguno" es P(0):
+**b)** Cada bulto pesa entre 5 y 9 (éxito) con p = 0,4, y los 8 son independientes. 💡 Contar éxitos en ensayos independientes es **binomial**: Bin(8; 0,4) (📄 H1). "Ninguno" es P(X = 0):
 
-$$0{,}6^8 \approx 0{,}0168$$
+```
+X~Bin(n,p)   n=8   p=0.4   P(X=x)   x=0   → 0.01680
+```
 
 **c)** En una binomial el número esperado es n·p (❌): $8\cdot0{,}4 = 3{,}2$ bultos.
 
@@ -700,20 +693,27 @@ La duración de un amplificador electrónico está modelada como una variable Ex
 
 **a)** Un amplificador al azar puede ser de cualquier tipo. 💡 **Probabilidad total**: se suma P(tipo)·P(falla antes de 60000 / tipo):
 
-$$0{,}1\left(1 - e^{-60000/20000}\right) + 0{,}9\left(1 - e^{-60000/50000}\right) = 0{,}1(1 - e^{-3}) + 0{,}9(1 - e^{-1{,}2}) = 0{,}0950 + 0{,}6289 = 0{,}7239$$
+```
+tipo 1:  X~Exp(λ)   λ=0.00005   P(X<x)   x=60000   → 0.95021
+tipo 2:  X~Exp(λ)   λ=0.00002   P(X<x)   x=60000   → 0.69881
+```
 
-```
-X~Exp(λ)   λ=0.00005   P(X<x)   x=60000   → 0.95021
-X~Exp(λ)   λ=0.00002   P(X<x)   x=60000   → 0.69881
-```
+$$0{,}1\cdot0{,}95021 + 0{,}9\cdot0{,}69881 = 0{,}0950 + 0{,}6289 = 0{,}7239$$
 
 **b)** Condicional (📄 H1). "Supera 40000" está dentro de "supera 20000", así que la intersección es "supera 40000":
 
 $$P(X > 40000 / X > 20000) = \frac{P(X > 40000)}{P(X > 20000)}$$
 
-Cada una se calcula con probabilidad total:
+Cada una se calcula con probabilidad total, sacando de la app la probabilidad de cada tipo:
 
-$$\frac{0{,}1e^{-2} + 0{,}9e^{-0{,}8}}{0{,}1e^{-1} + 0{,}9e^{-0{,}4}} \approx \frac{0{,}4179}{0{,}6401} \approx 0{,}6529$$
+```
+tipo 1:  X~Exp(λ)   λ=0.00005   P(X>x)   x=40000   → 0.13534
+tipo 2:  X~Exp(λ)   λ=0.00002   P(X>x)   x=40000   → 0.44933
+tipo 1:  X~Exp(λ)   λ=0.00005   P(X>x)   x=20000   → 0.36788
+tipo 2:  X~Exp(λ)   λ=0.00002   P(X>x)   x=20000   → 0.67032
+```
+
+$$\frac{0{,}1\cdot0{,}13534 + 0{,}9\cdot0{,}44933}{0{,}1\cdot0{,}36788 + 0{,}9\cdot0{,}67032} = \frac{0{,}4179}{0{,}6401} \approx 0{,}6529$$
 
 ⚠️ **No** vale la falta de memoria (que diría "P(X > 20000)"). Esa propiedad es de **una** exponencial, y la mezcla de dos exponenciales no es exponencial. Saber que ya duró 20000 h hace más probable que sea del tipo "duradero".
 
@@ -750,11 +750,11 @@ $$P(X > 600) = e^{-600\lambda} = \left(e^{-800\lambda}\right)^{600/800} = 0{,}8^
 
 $$1 - 0{,}1541^n \ge 0{,}9 \;\Rightarrow\; 0{,}1541^n \le 0{,}1$$
 
-**Paso 3, despejar n con logaritmos.** ln(0,1541) es negativo, y al dividir por un negativo se da vuelta la desigualdad:
+**Paso 3, probar valores de n.** Es más rápido que despejar con logaritmos:
+- n = 1: 1 − 0,1541 = 0,846 < 0,9 ✗
+- n = 2: 1 − 0,1541² = 0,976 ≥ 0,9 ✓
 
-$$n\ln0{,}1541 \le \ln0{,}1 \;\Rightarrow\; n \ge \frac{\ln0{,}1}{\ln0{,}1541} \approx 1{,}23$$
-
-n tiene que ser entero, así que **n = 2**. Control: con 1 lámpara, 0,846 < 0,9; con 2, 1 − 0,1541² = 0,976 ✓.
+Entonces **n = 2**.
 
 </details>
 
@@ -778,21 +778,15 @@ El ingreso anual de los jefes de familia de una cierta ciudad se puede modelar c
 
 💡 **Cuantil q:** el valor $x_q$ que deja una proporción q de la población **por debajo**, es decir $F(x_q) = q$. Por ejemplo, el salario que separa la clase baja de la media-baja deja al 20 % por debajo: es el cuantil 0,20.
 
-Con la exponencial, $F(x) = 1 - e^{-\lambda x}$ (📄 H1). Se iguala a q y se despeja:
-
-$`\displaystyle 1 - e^{-\lambda x_q} = q \;\Rightarrow\; e^{-\lambda x_q} = 1 - q \;\Rightarrow\; x_q = \frac{-\ln(1-q)}{\lambda} = -20000\ln(1-q)`$
-
-(1/λ = 1/0,00005 = 20000.)
-
-| q | 0,20 | 0,40 | 0,60 | 0,80 |
-|---|---|---|---|---|
-| $x_q$ | 4462,87 | 10216,51 | 18325,81 | 32188,75 |
-
-Con la app se busca el x que deja esa área a la izquierda:
+Un cuantil es una búsqueda "al revés" (se da el área y se pide el x), y la app la hace directo. Se carga el área a la izquierda:
 ```
 X~Exp(λ)   λ=0.00005   P(X<x)=0.2   → x=4462.87
-X~Exp(λ)   λ=0.00005   P(X<x)=0.4   → x=10216.51   (y así con 0.6 y 0.8)
+X~Exp(λ)   λ=0.00005   P(X<x)=0.4   → x=10216.51
+X~Exp(λ)   λ=0.00005   P(X<x)=0.6   → x=18325.81
+X~Exp(λ)   λ=0.00005   P(X<x)=0.8   → x=32188.75
 ```
+
+(A mano: con F(x) = 1 − e^(−λx) de 📄 H1, se iguala a q y se despeja con ln: x_q = −ln(1 − q)/λ.)
 
 Las clases **no** son tramos de igual ancho. La exponencial tiene mucha gente con ingresos bajos y una cola larga de ingresos altos, así que los cortes se van separando cada vez más.
 
@@ -890,10 +884,14 @@ Las baterías de una marca de celulares pueden provenir de dos fábricas diferen
 
 **a)** 💡 **Falta de memoria** (📄 H1, $`P(X > t_0 + \Delta t / X > t_0) = P(X > \Delta t)`$). Una exponencial "no envejece": si ya duró 70, la probabilidad de durar 20 más es la misma que la de una batería nueva de durar 20.
 
-$$P(X > 90 / X > 70) = P(X > 20) = e^{-0{,}01\cdot20} = e^{-0{,}2} = 0{,}8187$$
+$$P(X > 90 / X > 70) = P(X > 20)$$
+
+```
+X~Exp(λ)   λ=0.01   P(X>x)   x=20   → 0.81873
+```
 
 **b)** Una batería del stock puede venir de cualquiera de las dos fábricas. 💡 **Probabilidad total** (U1): se suma P(fábrica)·P(dura ≤ 90 / fábrica).
-- H: $1 - e^{-0{,}01\cdot90} = 1 - e^{-0{,}9} = 0{,}5934$.
+- H: `X~Exp(λ) λ=0.01 P(X<x) x=90 → 0.59343`.
 - M: uniforme, largo del tramo sobre largo total: $\frac{90 - 80}{130 - 80} = 0{,}2$.
 
 $$P(\le 90) = 0{,}6\cdot0{,}5934 + 0{,}4\cdot0{,}2 = 0{,}3560 + 0{,}08 = 0{,}436$$
@@ -934,12 +932,15 @@ El número de clientes que atiende un cajero de banco sigue una distribución de
 
 Acá el ritmo es 2 clientes cada 15 min, α = 2/15 por minuto. El tiempo de atención es T ~ Exp(2/15), con $P(T > t) = e^{-\alpha t}$ (📄 H1).
 
-**a)** $P(T > 20) = e^{-20\cdot2/15} = e^{-8/3} \approx 0{,}0695$
+**a)** P(T > 20):
 ```
 X~Exp(λ)   λ=0.13333   P(X>x)   x=20   → 0.06948
 ```
 
-**b)** $P(T > 10) = e^{-10\cdot2/15} = e^{-4/3} \approx 0{,}2636$
+**b)** P(T > 10):
+```
+X~Exp(λ)   λ=0.13333   P(X>x)   x=10   → 0.26360
+```
 
 **c)** 💡 **Falta de memoria** (📄 H1): si ya pasaron 30 minutos, la probabilidad de que tarde 10 más no depende de lo ya esperado.
 
@@ -995,7 +996,7 @@ $$V(T) = \frac{\alpha}{\lambda^2} = 6\cdot4 = 24 \text{ s}^2$$
 
 **c)** 💡 **Truco Gamma–Poisson:** "el paquete se forma antes de 12 s" es lo mismo que "en 12 s llegaron **al menos 6** mensajes". La cantidad en 12 s es Poisson con λ = 0,5·12 = 6:
 
-$$P(T < 12) = P(N \ge 6) = 1 - P(N \le 5) \approx 0{,}5543$$
+$$P(T < 12) = P(N \ge 6)$$
 
 ```
 X~Po(λ)   λ=6   P(X≥x)   x=6   → 0.55432
@@ -1034,7 +1035,7 @@ $$L > 188 \;\Leftrightarrow\; 30Y + 8 > 188 \;\Leftrightarrow\; Y > 6 \text{ hor
 
 **Paso 2, P(Y > 6) con una Gamma.** 💡 Una Gamma(α; λ) con α **entero** es el tiempo hasta el α-ésimo evento de un proceso de Poisson con ritmo λ (❌). Entonces "Y > 6" equivale a "en 6 horas ocurrieron **menos de 3** eventos", es decir a lo sumo 2. Esa cantidad es Poisson con λ·6 = 0,5·6 = 3:
 
-$$P(Y > 6) = P(N \le 2) = e^{-3}\left(1 + 3 + \frac{3^2}{2}\right) = e^{-3}\cdot8{,}5 \approx 0{,}4232$$
+$$P(Y > 6) = P(N \le 2)$$
 
 ```
 X~Po(λ)   λ=3   P(X≤x)   x=2   → 0.42319
@@ -1160,8 +1161,16 @@ P(X≥15):  X~N(μ;σ)   μ=5   σ=10   P(X>x)   x=15   → 0.15866
 Con tabla: P(X < 0) = Φ((0 − 5)/10) = Φ(−0,5); P(X > 10) = 1 − Φ(0,5), que da lo mismo por simetría; P(X ≥ 15) = 1 − Φ(1). En una continua, > y ≥ dan igual.
 
 **b)** "Entre" es la acumulada hasta el borde derecho menos la acumulada hasta el izquierdo (📄 H1, $`P(a < X < b) = F(b) - F(a)`$):
-- P(−20 < X < 15) = Φ(1) − Φ(−2,5) = 0,8413 − 0,0062 = 0,8351.
-- P(−5 ≤ X ≤ 30) = Φ(2,5) − Φ(−1) = 0,8351. Da igual por simetría.
+```
+X~N(μ;σ)   μ=5   σ=10   P(X<x)   x=15    → 0.84134
+X~N(μ;σ)   μ=5   σ=10   P(X<x)   x=−20   → 0.00621
+X~N(μ;σ)   μ=5   σ=10   P(X<x)   x=30    → 0.99379
+X~N(μ;σ)   μ=5   σ=10   P(X<x)   x=−5    → 0.15866
+```
+- P(−20 < X < 15) = 0,84134 − 0,00621 = 0,8351.
+- P(−5 ≤ X ≤ 30) = 0,99379 − 0,15866 = 0,8351. Da igual por simetría.
+
+Con tabla: Φ(1) − Φ(−2,5) y Φ(2,5) − Φ(−1).
 
 **c)** Ahora se busca el **valor** x que deja 5 % a la derecha (búsqueda "al revés"):
 ```
@@ -1301,16 +1310,17 @@ La distribución de los pesos de los alumnos varones de una facultad es aproxima
 💡 **Normal N(μ; σ)**: la campana centrada en μ = 75 con desvío σ = 7. Para calcular, o se carga en la app con μ y σ, o se **estandariza** (📄 H1, $`Z = \frac{X - \mu}{\sigma}`$) y se usa Φ.
 
 **a)**
-
-$$P(X > 95) = P\left(Z > \frac{95 - 75}{7}\right) = 1 - \Phi(2{,}857) \approx 0{,}0021$$
-
 ```
 X~N(μ;σ)   μ=75   σ=7   P(X>x)   x=95   → 0.00214
 ```
+Con tabla: P(Z > (95 − 75)/7) = 1 − Φ(2,857).
 
 **b)** Primero la proporción entre 80 y 95 (📄 H1, $`P(a < X < b) = F(b) - F(a)`$):
-
-$$\Phi(2{,}857) - \Phi(0{,}714) = 0{,}99786 - 0{,}76247 = 0{,}2354$$
+```
+X~N(μ;σ)   μ=75   σ=7   P(X<x)   x=95   → 0.99786
+X~N(μ;σ)   μ=75   σ=7   P(X<x)   x=80   → 0.76247
+```
+0,99786 − 0,76247 = 0,2354.
 
 "Estimar el número" de alumnos es multiplicar esa proporción por el total: 15 000·0,2354 ≈ **3531 alumnos**.
 
@@ -1424,19 +1434,17 @@ La dureza Rockwell de un metal se determina al presionar con una punta acerada l
 💡 **Normal** N(50; 3). Se calcula con la app (μ = 50, σ = 3) o estandarizando (📄 H1, $`Z = \frac{X - 50}{3}`$).
 
 **a)** "Entre 46 y 55" es la acumulada hasta 55 menos la acumulada hasta 46:
-
-$$\Phi\left(\frac{55 - 50}{3}\right) - \Phi\left(\frac{46 - 50}{3}\right) = \Phi(1{,}667) - \Phi(-1{,}333) = 0{,}9522 - 0{,}0912 = 0{,}861$$
-
 ```
 X~N(μ;σ)   μ=50   σ=3   P(X<x)   x=55   → 0.95221
 X~N(μ;σ)   μ=50   σ=3   P(X<x)   x=46   → 0.09121
 ```
+0,95221 − 0,09121 = 0,861.
 
-**b)** Un intervalo **simétrico** alrededor de la media que contenga el 95 %: deja 2,5 % en cada cola. El z correspondiente deja 0,975 a la izquierda, z = 1,96:
-
-$$c = 1{,}96\cdot\sigma = 1{,}96\cdot3 = 5{,}88$$
-
-El intervalo es (44,12; 55,88).
+**b)** Un intervalo **simétrico** alrededor de la media que contenga el 95 %: deja 2,5 % en cada cola, así que su borde derecho deja 0,975 a la izquierda. La app lo da directo:
+```
+X~N(μ;σ)   μ=50   σ=3   P(X<x)=0.975   → x=55.88
+```
+c = 55,88 − 50 = 5,88, y el intervalo es (44,12; 55,88).
 
 **c)** Cada pieza es aceptable con p = 0,861, independientes. 💡 La cantidad de aceptables es **binomial** Bin(8; 0,861), y su esperanza es n·p (❌):
 
@@ -1444,11 +1452,11 @@ $$8\cdot0{,}861 \approx 6{,}9$$
 
 **d)** Truco del máximo: "el máximo de las tres no supera 52" equivale a "**ninguna** supera 52", o sea las tres ≤ 52. Por independencia se multiplica:
 
-$$P(X \le 52)^3 = \Phi(2/3)^3 = 0{,}7475^3 \approx 0{,}4177$$
-
 ```
 X~N(μ;σ)   μ=50   σ=3   P(X<x)   x=52   → 0.74751
 ```
+
+$$P(X \le 52)^3 = 0{,}74751^3 \approx 0{,}4177$$
 
 </details>
 

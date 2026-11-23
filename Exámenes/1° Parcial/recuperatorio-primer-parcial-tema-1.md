@@ -73,9 +73,7 @@ $$p = P(X > 20{,}1) = \frac{20{,}5 - 20{,}1}{20{,}5 - 19{,}5} = \frac{0{,}4}{1} 
 
 **2. Cuatro tablas.** 💡 **Binomial** (📄 H1, $`\binom nk p^k(1-p)^{n-k}`$): cada tabla supera 20,1 (éxito) con p = 0,4, independientemente. W ~ Bin(4; 0,4).
 
-"Alguna" significa al menos una, y es más fácil por complemento (1 − "ninguna"):
-
-$$P(W \ge 1) = 1 - 0{,}6^4 = 1 - 0{,}1296 = 0{,}8704$$
+"Alguna" significa al menos una, P(W ≥ 1):
 
 ```
 X~Bin(n,p)   n=4   p=0.4   P(X≥x)   x=1   → 0.8704
@@ -103,9 +101,7 @@ En un curso de PyE hay 10 mujeres y 40 varones. Se elige al azar un grupo de 12 
 
 X = cantidad de mujeres en el grupo ~ **H(N = 50; K = 10; n = 12)**.
 
-**Traducir "más mujeres que varones".** Con 12 personas, varones = 12 − X. La condición es X > 12 − X, es decir X > 6, o sea **X ≥ 7**. Solo hay 10 mujeres, así que X va de 7 a 10:
-
-$$P(X \ge 7) = \sum_{k=7}^{10}\frac{\binom{10}{k}\binom{40}{12-k}}{\binom{50}{12}} \approx 0{,}00068$$
+**Traducir "más mujeres que varones".** Con 12 personas, varones = 12 − X. La condición es X > 12 − X, es decir X > 6, o sea **X ≥ 7**. Solo hay 10 mujeres, así que X va de 7 a 10. A mano serían cuatro términos de la fórmula; con la app es P(X ≥ 7) directo:
 
 ```
 X~HG(N,K,n)   N=50   K=10   n=12   P(X≥x)   x=7   → 0.000685
@@ -140,15 +136,11 @@ $$e^{-4307{,}83\lambda} = 0{,}65 \;\Rightarrow\; \lambda = \frac{\ln0{,}65}{-430
 
 **2. Una lámpara.** "Supera la vida media en más de 500 h" significa X > 10 000 + 500 = 10 500:
 
-$$p = e^{-0{,}0001\cdot10500} = e^{-1{,}05} \approx 0{,}34994$$
-
 ```
 X~Exp(λ)   λ=0.0001   P(X>x)   x=10500   → 0.34994
 ```
 
-**3. Ocho lámparas.** 💡 **Binomial** (📄 H1): cada lámpara cumple (éxito) con p ≈ 0,35, independientemente. W ~ Bin(8; 0,35). "Sólo 3" significa **exactamente** 3:
-
-$$P(W = 3) = \binom83 0{,}35^3\,0{,}65^5 \approx 0{,}27859$$
+**3. Ocho lámparas.** 💡 **Binomial** (📄 H1): cada lámpara cumple (éxito) con p ≈ 0,35, independientemente. W ~ Bin(8; 0,35). "Sólo 3" significa **exactamente** 3, P(W = 3):
 
 ```
 X~Bin(n,p)   n=8   p=0.34994   P(X=x)   x=3   → 0.27857

@@ -266,25 +266,22 @@ Este ejercicio muestra que un test **no siempre es con Z o t**: la idea sirve co
 
 **Traducción.** H (μ ≤ 2) hace de **H₀**, y K (μ > 2) de **H₁**. "La probabilidad de equivocarse al rechazar H cuando H es verdadera" es el **error tipo I**, cuya probabilidad es **α = 0,1** (el nivel de significación).
 
-**Lo que se usa de la exponencial** (📄 H1): $E(X) = \frac1\lambda$, así que con media μ, λ = 1/μ. Y $F(x) = 1 - e^{-\lambda x}$, así que $P(X > c) = e^{-c/\mu}$.
+**Lo que se usa de la exponencial** (📄 H1): $E(X) = \frac1\lambda$, así que con media μ, λ = 1/μ. Es lo único que hace falta, porque las cuentas las hace la app.
 
-**a) Diseñar la regla.**
-1. **¿Qué valores apoyan a K?** Si la media es más grande, los valores tienden a ser más grandes. Una observación **grande** es evidencia de μ > 2, así que se rechaza H si X > c. 💡 Eso es la **región crítica** (de rechazo).
-2. **¿Con qué μ se calcula α?** H no es un solo valor, sino "μ ≤ 2". $P(X > c) = e^{-c/\mu}$ **crece** con μ, así que el peor caso (la máxima probabilidad de error) es el borde, **μ = 2**. Por eso siempre se calcula con el valor de la igualdad.
-3. ✍️ Se iguala a 0,1:
+**a) Diseñar la regla.** Antes de cargar nada en la app hay que tomar dos decisiones:
+1. **¿De qué lado se rechaza?** Si la media es más grande, los valores tienden a ser más grandes. Una observación **grande** es evidencia de μ > 2, así que se rechaza H si X > c. 💡 Eso es la **región crítica** (de rechazo). Por eso en la app se usa el área a la **derecha**, P(X>x).
+2. **¿Con qué μ se calcula?** H no es un solo valor, sino "μ ≤ 2". Se usa el **borde**, μ = 2: es el caso de H que más se parece a K, y por eso el de mayor probabilidad de error. Con μ = 2, λ = 1/2 = 0,5.
 
-   $$e^{-c/2} = 0{,}1 \;\Rightarrow\; -\frac c2 = \ln0{,}1 \;\Rightarrow\; c = -2\ln0{,}1 = 4{,}605$$
+✍️ Se busca el c que deja 0,1 a la derecha. Es un cuantil, y la app lo da directo:
 
-   ```
-   X~Exp(λ)   λ=0.5   P(X>x)=0.1   → x=4.605
-   ```
-   (Si la app pide la media en lugar de la tasa, cargá 2.)
+```
+X~Exp(λ)   λ=0.5   P(X>x)=0.1   → x=4.605
+```
+(Si la app pide la media en lugar de la tasa, cargá 2.)
 
 **Regla:** se rechaza H (se decide K) si la observación supera 4,6.
 
-**b)** Con μ = 2,1 la verdadera es **K**, así que el error posible es **no rechazar H**. 💡 Es el **error tipo II**, y su probabilidad se llama **β**:
-
-$$\beta = P(X \le 4{,}605) \text{ con media } 2{,}1 \;=\; 1 - e^{-4{,}605/2{,}1} = 1 - e^{-2{,}193} = 0{,}8884$$
+**b)** Con μ = 2,1 la verdadera es **K**, así que el error posible es **no rechazar H**. 💡 Es el **error tipo II**, y su probabilidad se llama **β**. No se rechaza H cuando X ≤ 4,605, y ahora esa probabilidad se calcula con la media verdadera, 2,1 (λ = 1/2,1 = 0,47619):
 
 ```
 X~Exp(λ)   λ=0.47619   P(X<x)   x=4.605   → 0.8884

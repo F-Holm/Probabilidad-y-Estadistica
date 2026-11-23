@@ -127,8 +127,6 @@ La distancia media es 1/λ ≈ 720 m.
 
 **2. "Entre 1000 y 1500"** es la acumulada hasta 1500 menos la acumulada hasta 1000 (📄 H1, $`P(a < X < b) = F(b) - F(a)`$):
 
-$$P(1000 < X < 1500) = (1 - e^{-1500\lambda}) - (1 - e^{-1000\lambda}) = e^{-1{,}3895} - e^{-2{,}0842} = 0{,}24923 - 0{,}12443 = 0{,}1248$$
-
 ```
 X~Exp(λ)   λ=0.0013895   P(X<x)   x=1500   → 0.87557
 X~Exp(λ)   λ=0.0013895   P(X<x)   x=1000   → 0.75077     → resta = 0.1248
@@ -163,17 +161,13 @@ De los pernos manufacturados por cierta aplicación, el 90 % satisface la longit
 
 La producción es grande, así que elegir unos pocos pernos no cambia las proporciones: son independientes. En cada inciso hay que definir **qué es éxito**.
 
-**a)** Éxito = "utilizable" (p = 0,9), n = 3. Se piden los 3:
-
-$$P(X = 3) = 0{,}9^3 = 0{,}729$$
+**a)** Éxito = "utilizable" (p = 0,9), n = 3. Se piden los 3, P(X = 3):
 
 ```
 X~Bin(n,p)   n=3   p=0.9   P(X=x)   x=3   → 0.729
 ```
 
-**b)** Éxito = "hay que recortarlo" (p = 0,06), n = 5. "Al menos uno" se hace por complemento: 1 − "ninguno".
-
-$$P(Y \ge 1) = 1 - 0{,}94^5 = 1 - 0{,}7339 = 0{,}2661$$
+**b)** Éxito = "hay que recortarlo" (p = 0,06), n = 5. "Al menos uno" es P(Y ≥ 1):
 
 ```
 X~Bin(n,p)   n=5   p=0.06   P(X≥x)   x=1   → 0.2661

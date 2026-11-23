@@ -68,9 +68,14 @@ El tiempo que transcurre entre la llegada de dos personas consecutivas a la cola
 
 **Con la definición de condicional** (📄 H1). Si X > 6, seguro X > 4, así que la intersección es X > 6:
 
-$$P(X > 6 / X > 4) = \frac{P(X > 6)}{P(X > 4)} = \frac{e^{-1{,}2}}{e^{-0{,}8}} = e^{-0{,}4} \approx 0{,}67032$$
+$$P(X > 6 / X > 4) = \frac{P(X > 6)}{P(X > 4)}$$
 
-💡 **Falta de memoria** (📄 H1, $`P(X > t_0 + \Delta t / X > t_0) = P(X > \Delta t)`$). El resultado es justo P(X > 2): lo ya esperado no cuenta, y es como empezar de cero.
+```
+X~Exp(λ)   λ=0.2   P(X>x)   x=6   → 0.30119
+X~Exp(λ)   λ=0.2   P(X>x)   x=4   → 0.44933     → cociente = 0.67032
+```
+
+💡 **Falta de memoria** (📄 H1, $`P(X > t_0 + \Delta t / X > t_0) = P(X > \Delta t)`$). El resultado es justo P(X > 2): lo ya esperado no cuenta, y es como empezar de cero. Es el camino más corto, una sola línea de la app:
 ```
 X~Exp(λ)   λ=0.2   P(X>x)   x=2   → 0.67032
 ```
@@ -107,9 +112,7 @@ $$\frac{1{,}6 - 1{,}2}{\sigma} = 2 \;\Rightarrow\; \sigma = 0{,}2 \text{ mm}$$
 X~N(μ;σ)   μ=1.2   σ=0.2   P(X>x)   x=1   → 0.84134
 ```
 
-**3. Cinco barras.** 💡 **Binomial** (📄 H1): cada barra supera 1 mm (éxito) con la misma p, independientemente, y se cuentan cuántas. W ~ Bin(5; 0,84134). "A lo sumo 2" es 0, 1 o 2:
-
-$$P(W \le 2) = \sum_{k=0}^{2}\binom5k0{,}84134^k\,0{,}15866^{5-k} \approx 0{,}03104$$
+**3. Cinco barras.** 💡 **Binomial** (📄 H1): cada barra supera 1 mm (éxito) con la misma p, independientemente, y se cuentan cuántas. W ~ Bin(5; 0,84134). "A lo sumo 2" es P(W ≤ 2):
 
 ```
 X~Bin(n,p)   n=5   p=0.84134   P(X≤x)   x=2   → 0.03104

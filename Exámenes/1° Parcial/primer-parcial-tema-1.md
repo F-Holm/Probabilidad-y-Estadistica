@@ -68,11 +68,16 @@ El tiempo que transcurre entre la llegada de dos personas consecutivas a la cola
 
 **Camino 1, con la definición de condicional** (📄 H1, $`P(A/B) = \frac{P(A\cap B)}{P(B)}`$). La intersección de X < 6 con X > 4 es 4 < X < 6:
 
-$$P(X < 6 / X > 4) = \frac{P(4 < X < 6)}{P(X > 4)} = \frac{F(6) - F(4)}{1 - F(4)} = \frac{e^{-0{,}8} - e^{-1{,}2}}{e^{-0{,}8}} = \frac{0{,}44933 - 0{,}30119}{0{,}44933} \approx 0{,}3297$$
+$$P(X < 6 / X > 4) = \frac{P(4 < X < 6)}{P(X > 4)} = \frac{F(6) - F(4)}{1 - F(4)}$$
 
-**Camino 2, con la falta de memoria** (📄 H1, $`P(X > t_0 + \Delta t / X > t_0) = P(X > \Delta t)`$). La exponencial "no recuerda" cuánto se esperó: los 4 minutos ya esperados no cuentan. La probabilidad de que llegue en los próximos 2 es la misma que la de que llegue en 2 minutos desde cero:
+```
+X~Exp(λ)   λ=0.2   P(X<x)   x=6   → 0.69881
+X~Exp(λ)   λ=0.2   P(X<x)   x=4   → 0.55067
+```
 
-$$P(X < 2) = 1 - e^{-0{,}4} = 0{,}3297$$
+$$\frac{0{,}69881 - 0{,}55067}{1 - 0{,}55067} = \frac{0{,}14814}{0{,}44933} \approx 0{,}3297$$
+
+**Camino 2, con la falta de memoria (el más corto)** (📄 H1, $`P(X > t_0 + \Delta t / X > t_0) = P(X > \Delta t)`$). La exponencial "no recuerda" cuánto se esperó: los 4 minutos ya esperados no cuentan. La probabilidad de que llegue en los próximos 2 es la misma que la de que llegue en 2 minutos desde cero:
 
 ```
 X~Exp(λ)   λ=0.2   P(X<x)   x=2   → 0.32968
@@ -114,9 +119,7 @@ p = 0,84134. Con tabla: $P(Z > -1) = \Phi(1)$.
 
 **3. Cuatro barras.** 💡 **Binomial** (📄 H1, $`\binom nk p^k(1-p)^{n-k}`$): cada barra "supera 1 mm" (éxito) con la misma p, independientemente, y se cuenta cuántas lo hacen. W ~ Bin(4; 0,84134).
 
-"Al menos 2" es 1 − P(0) − P(1):
-
-$$P(W \ge 2) = 1 - 0{,}15866^4 - 4\cdot0{,}84134\cdot0{,}15866^3 \approx 0{,}98593$$
+"Al menos 2" es P(W ≥ 2):
 
 ```
 X~Bin(n,p)   n=4   p=0.84134   P(X≥x)   x=2   → 0.98593
@@ -145,9 +148,7 @@ En un curso de ingeniería electrónica de 30 estudiantes hay 20 técnicos, y en
 - X = técnicos en el grupo de electrónica ~ H(N = 30; K = 20; n = 5).
 - Y = técnicos en el grupo de civil ~ H(N = 25; K = 10; n = 5).
 
-"A lo sumo 2" es 0, 1 o 2:
-
-$`\displaystyle P(X \le 2) = \sum_{k=0}^{2}\frac{\binom{20}{k}\binom{10}{5-k}}{\binom{30}{5}} \approx 0{,}19123 \qquad P(Y \le 2) = \sum_{k=0}^{2}\frac{\binom{10}{k}\binom{15}{5-k}}{\binom{25}{5}} \approx 0{,}69881`$
+"A lo sumo 2" es P(X ≤ 2) y P(Y ≤ 2). A mano serían tres términos de la fórmula para cada grupo; con la app es una línea:
 
 ```
 X~HG(N,K,n)   N=30   K=20   n=5   P(X≤x)   x=2   → 0.19123

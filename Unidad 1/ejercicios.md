@@ -435,7 +435,7 @@ $$P(I = 1) = \frac{\binom41\binom62}{120} = \frac{4\cdot15}{120} = \frac{60}{120
 
 **c) Al menos dos** (2 o 3) es lo contrario de "a lo sumo uno": $1 - \frac23 = \frac13$.
 
-(Este tipo de conteo es la distribución **hipergeométrica** de la Unidad 3; la fórmula está en 📄 H1.)
+(Este tipo de conteo es la distribución **hipergeométrica** de la Unidad 3; la fórmula está en 📄 H1. Con la app se verifica b) en un paso: `X~HG(N,K,n) N=10 K=4 n=3 P(X≤x) x=1 → 0.66667`.)
 
 </details>
 
@@ -1987,11 +1987,23 @@ La UTN posee tres cursos de Probabilidad y Estadística en el turno noche. El pr
 
 $$6\left(\frac{11}{13}\right)^2\left(\frac2{13}\right)^2 \approx 0{,}102$$
 
+Es una binomial (U3), así que la app la da directo, con éxito = "no trabaja":
+
+```
+X~Bin(n,p)   n=4   p=0.153846   P(X=x)   x=2   → 0.10168
+```
+
 **Exacto, sin reposición:** no se puede elegir dos veces al mismo alumno. Se cuentan grupos: elegir 2 de los 12 sin trabajo **y** 2 de los 66 con trabajo, sobre todos los grupos de 4 de 78:
 
 $$\frac{\binom{12}{2}\binom{66}{2}}{\binom{78}{4}} \approx 0{,}0992$$
 
-Esa cuenta es la hipergeométrica de la Unidad 3. Las dos dan parecido porque el grupo es grande.
+Esa cuenta es la hipergeométrica de la Unidad 3, y con la app no hace falta hacer los combinatorios (N = 78 alumnos, K = 12 sin trabajo, n = 4 elegidos):
+
+```
+X~HG(N,K,n)   N=78   K=12   n=4   P(X=x)   x=2   → 0.09925
+```
+
+Las dos dan parecido porque el grupo es grande.
 
 </details>
 
