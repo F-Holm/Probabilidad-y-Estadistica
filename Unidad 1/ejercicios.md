@@ -27,17 +27,21 @@ Para cada uno de los siguientes experimentos, se pide definir el espacio muestra
 <details>
 <summary>Solución paso a paso</summary>
 
-El espacio muestral es el conjunto de **todos** los resultados posibles. Conviene pensar cada experimento como una secuencia de etapas.
+💡 **Qué es un experimento aleatorio.** Es algo que se puede repetir y cuyo resultado no se sabe de antemano: tirar una moneda, elegir un artículo, medir un tiempo.
 
-- a) Sólo hay dos resultados: la molécula está o no está.
-- b) Cada artículo es N (normal) o D (defectuoso), y el orden importa porque se seleccionan sucesivamente: hay 2 · 2 = 4 pares.
-- c) Se tira hasta que sale cara: puede salir en la 1.ª tirada, en la 2.ª (antes una cruz X), etc. Es un conjunto infinito numerable.
-- d) **Sin reposición** no se puede repetir el billete y el orden importa: 3 · 2 = 6 pares. **Con reposición** sí se puede repetir: 3 · 3 = 9 pares.
-- e) Se corta al obtener la 2.ª blanca (B) o al llegar a 4 extracciones:
-  - Con 2 extracciones: BB.
-  - Con 3: la 3.ª es la 2.ª blanca → NBB, BNB.
-  - Con 4: o la 4.ª es la 2.ª blanca (NNBB, NBNB, BNNB) o se llega a 4 sin 2 blancas (BNNN, NBNN, NNBN, NNNB, NNNN).
-- f) El tiempo es continuo, entre 0 y 60 minutos.
+💡 **Qué es el espacio muestral (S o Ω).** Es la **lista de todos los resultados posibles** del experimento. Para armarla sin olvidarse ninguno, conviene pensar el experimento como una **secuencia de etapas** y anotar qué puede pasar en cada una. Si el orden de las etapas importa, (N, D) y (D, N) son resultados distintos.
+
+- a) Hay una sola etapa con dos resultados posibles: la molécula **está** o **no está**.
+- b) Hay dos etapas (primer artículo, segundo artículo), y cada una puede dar N (normal) o D (defectuoso). Como se eligen **uno después del otro**, el orden importa: ND (el primero normal y el segundo defectuoso) no es lo mismo que DN. En total hay 2 · 2 = 4 pares.
+- c) Se tira **hasta que sale cara**. Puede salir en la 1.ª tirada (C), en la 2.ª (antes una cruz: XC), en la 3.ª (XXC), y así sin fin. Es un conjunto **infinito**, pero se pueden numerar sus elementos (se dice "infinito numerable").
+- d) Hay dos etapas: primer billete y segundo billete.
+  - **Sin reposición:** el billete sacado no vuelve, así que no se puede repetir. Hay 3 opciones para el primero y 2 para el segundo: 3 · 2 = 6 pares.
+  - **Con reposición:** el billete vuelve a la billetera, así que se puede repetir: 3 · 3 = 9 pares.
+- e) El experimento **se corta** en cuanto aparece la 2.ª blanca (B), o al llegar a 4 extracciones. Se ordena por cantidad de extracciones:
+  - Con 2 extracciones: BB (ya salieron las dos blancas).
+  - Con 3: la 3.ª tiene que ser la 2.ª blanca, así que entre las dos primeras hay exactamente una B: NBB, BNB.
+  - Con 4: o la 4.ª es la 2.ª blanca (NNBB, NBNB, BNNB), o se llega a la 4.ª sin haber juntado 2 blancas (BNNN, NBNN, NNBN, NNNB, NNNN).
+- f) Un tiempo puede tomar **cualquier valor** entre 0 y 60 minutos, incluidos los decimales. Es un intervalo de números reales (espacio muestral **continuo**).
 
 </details>
 
@@ -75,20 +79,29 @@ Indicar el valor de verdad de las siguientes proposiciones:
 <details>
 <summary>Solución paso a paso</summary>
 
-$S = \{NN, ND, DN, DD\}$ (la primera letra es el primer artículo).
-- A (primero D) = {DN, DD}
-- B (al menos un D) = {ND, DN, DD}
-- C (ambos D) = {DD}
+💡 **Qué es un evento (o suceso).** Es un **subconjunto** del espacio muestral: el grupo de resultados que cumplen una condición. "Describir por extensión" significa escribir la lista de esos resultados.
 
-a) Todos los elementos de A están en B → **V**.
+Del ejercicio 1 b), $S = \{NN, ND, DN, DD\}$, donde la primera letra es el primer artículo. Se revisa cada resultado y se ve si cumple la condición:
+- A (el primero es D) = {DN, DD}
+- B (al menos un D, es decir uno o dos) = {ND, DN, DD}
+- C (los dos D) = {DD}
 
-b) DD ∈ A → **V**.
+💡 **Vocabulario que se usa en las proposiciones:**
+- $A \subseteq B$ ("A está incluido en B"): todo resultado de A también está en B. Dicho de otro modo, si ocurre A, seguro ocurre B.
+- $A \cap B$ (intersección, "A y B"): los resultados que están en los dos.
+- $A^c$ o $\bar A$ (complemento, "no A"): los resultados de S que **no** están en A.
+- **Evento imposible** (∅): el que no tiene ningún resultado. **Evento cierto**: S entero, que siempre ocurre.
+- **Incompatibles** (o mutuamente excluyentes, M.E.): no pueden ocurrir a la vez, es decir $A \cap B = \emptyset$.
 
-c) $A \cap C = \{DD\} \neq \emptyset$, así que no es imposible → **F**.
+a) Los dos resultados de A (DN y DD) están en B, así que A ⊆ B: **V**. Tiene sentido: si el primero es defectuoso, seguro hay al menos un defectuoso.
 
-d) $\bar\emptyset = S$, el evento cierto → **V**.
+b) El único resultado de C es DD, y DD está en A: **V**.
 
-e) $B^c = \{NN\}$ y $A \cap B^c = \emptyset$ → son incompatibles → **V**.
+c) $A \cap C = \{DD\}$, que **no** está vacío. Entonces no es imposible: **F**.
+
+d) Al imposible le falta todo S, así que su complemento es S entero, el evento cierto: **V**.
+
+e) $B^c$ = "ningún defectuoso" = {NN}. No tiene nada en común con A = {DN, DD}: $A \cap B^c = \emptyset$, así que son incompatibles: **V**.
 
 </details>
 
@@ -119,13 +132,31 @@ Supongamos que se lanza una moneda equilibrada tres veces y se observan las cara
 <details>
 <summary>Solución paso a paso</summary>
 
-a) Con un árbol de 3 niveles (C/X en cada tirada) se obtienen $2^3 = 8$ ternas.
+a) Se arma un **árbol**: en cada tirada salen dos ramas (C o X). Con 3 tiradas quedan $2\cdot2\cdot2 = 2^3 = 8$ caminos, y cada camino es una terna:
 
-b) La moneda es equilibrada y las tiradas son independientes, así que cada terna tiene probabilidad $\frac12\cdot\frac12\cdot\frac12 = \frac18$. Es equiprobable.
+```
+        ┌ C ─ CCC          ┌ C ─ XCC
+    ┌ C ┤             ┌ C ┤
+    │   └ X ─ CCX     │   └ X ─ XCX
+ C ─┤                X ─┤
+    │   ┌ C ─ CXC     │   ┌ C ─ XXC
+    └ X ┤             └ X ┤
+        └ X ─ CXX         └ X ─ XXX
+```
 
-c) A: una sola C → CXX, XCX, XXC. B: todas menos XXX.
+b) "Equilibrada" significa que cada cara sale con probabilidad ½. Las tiradas no se influyen entre sí (son **independientes**), y en ese caso la probabilidad de un camino del árbol es el **producto** de sus ramas: $\frac12\cdot\frac12\cdot\frac12 = \frac18$.
 
-d) Por Laplace: $P(A) = 3/8$ y $P(B) = 7/8$. Como $A \subseteq B$: $A \cap B = A$ y $A \cup B = B$.
+💡 **Espacio equiprobable:** todos los resultados tienen la misma probabilidad. Acá sí: los 8 valen ⅛.
+
+c) A = "exactamente una cara": CXX, XCX, XXC. B = "al menos una cara" (una, dos o tres): son todas las ternas menos XXX.
+
+d) 💡 **Regla de Laplace:** si el espacio es equiprobable, $P(\text{evento}) = \frac{\text{casos favorables}}{\text{casos posibles}}$. Entonces $P(A) = \frac38$ y $P(B) = \frac78$.
+
+💡 **Unión** $A \cup B$ ("A o B"): los resultados que están en al menos uno de los dos.
+
+Todos los resultados de A están en B ($A \subseteq B$). Por eso:
+- la intersección es A misma: $P(A \cap B) = P(A) = \frac38$;
+- la unión es B misma: $P(A \cup B) = P(B) = \frac78$.
 
 </details>
 
@@ -153,9 +184,15 @@ Una moneda está cargada de modo tal que la probabilidad de que salga cara es el
 <details>
 <summary>Solución paso a paso</summary>
 
-Sea $P(X) = q$. Entonces $P(C) = 3q$.
+La moneda está cargada, así que **no** se puede usar Laplace (cara y cruz no son igual de probables). Se plantea una ecuación.
 
-Como C y X son complementarios: $q + 3q = 1 \Rightarrow q = 1/4$.
+**Incógnita:** se llama $q = P(X)$, la probabilidad de cruz. "Cara es el triple de cruz" se escribe $P(C) = 3q$.
+
+💡 **Las probabilidades de todos los resultados posibles suman 1** (siempre sale algo). C y X son los únicos dos resultados, así que:
+
+$$P(C) + P(X) = 1 \;\Rightarrow\; 3q + q = 1 \;\Rightarrow\; 4q = 1 \;\Rightarrow\; q = \frac14$$
+
+Entonces $P(X) = \frac14$ y $P(C) = 3\cdot\frac14 = \frac34$. Control: suman 1 ✓.
 
 </details>
 
@@ -178,20 +215,41 @@ Los frascos de mermelada tienen por lo general dos tipos de fallas: peso insufic
 <details>
 <summary>Solución paso a paso</summary>
 
-A = peso insuficiente, B = tapa: $P(A) = 0{,}12$, $P(B) = 0{,}08$, $P(A \cap B) = 0{,}03$.
+**Paso 1, ponerle nombre a cada cosa.** A = "peso insuficiente", B = "tapa no hermética". Los datos son $P(A) = 0{,}12$, $P(B) = 0{,}08$ y $P(A \cap B) = 0{,}03$ (las dos fallas a la vez).
 
-a) "Sólo A": $P(A \cap \bar B) = 0{,}12 - 0{,}03 = 0{,}09$. "Sólo B": $P(\bar A \cap B) = 0{,}08 - 0{,}03 = 0{,}05$.
+**Paso 2, un diagrama de Venn.** Ojo: el 12 % de A **incluye** al 3 % que tiene las dos fallas. Se separa en regiones que no se pisan:
 
-Exactamente una falla $= 0{,}09 + 0{,}05 = 0{,}14$ (o bien $P(A) + P(B) - 2P(A\cap B)$).
+```
+   ┌──────────── S ─────────────┐
+   │   ┌─── A ───┐              │
+   │   │  sólo A ┌┼──── B ───┐  │
+   │   │  0,09   │ 0,03 sólo B│  │
+   │   └─────────┼┘     0,05  │  │
+   │             └────────────┘  │
+   │     ninguna falla: 0,83     │
+   └─────────────────────────────┘
+```
+- Sólo A: $P(A \cap \bar B) = 0{,}12 - 0{,}03 = 0{,}09$.
+- Sólo B: $P(\bar A \cap B) = 0{,}08 - 0{,}03 = 0{,}05$.
 
-b) Se descarta si tiene alguna falla: $P(A \cup B) = 0{,}12 + 0{,}08 - 0{,}03 = 0{,}17$.
+**a) Exactamente una falla** es "sólo A" o "sólo B". Son regiones separadas, así que se suman: $0{,}09 + 0{,}05 = 0{,}14$.
 
-No descartado: $P(\bar A \cap \bar B) = 1 - 0{,}17 = 0{,}83$.
+**b) "No descartado"** significa que no tiene ninguna falla. Conviene calcular lo contrario, "tiene alguna falla", que es la **unión** $A \cup B$.
 
-Extra (de la resolución del aula virtual):
-- $P(B/A) = 0{,}03/0{,}12 = 0{,}25$
-- $P(A/\bar B) = 0{,}09/0{,}92 \approx 0{,}098$
-- $0{,}12\cdot0{,}08 = 0{,}0096 \neq 0{,}03$ ⇒ A y B no son independientes.
+💡 **Regla de la unión:** $P(A \cup B) = P(A) + P(B) - P(A \cap B)$. Se resta la intersección porque, al sumar P(A) y P(B), la zona común se contó dos veces. 📄 **H1** trae la versión de tres eventos; con dos se tacha todo lo que tiene C.
+
+$$P(A \cup B) = 0{,}12 + 0{,}08 - 0{,}03 = 0{,}17$$
+
+💡 **Complemento:** $P(\bar E) = 1 - P(E)$. "Ninguna falla" es el complemento de "alguna falla":
+
+$$P(\bar A \cap \bar B) = 1 - 0{,}17 = 0{,}83$$
+
+Control: las cuatro regiones del Venn suman $0{,}09 + 0{,}03 + 0{,}05 + 0{,}83 = 1$ ✓.
+
+Extra (de la resolución del aula virtual; usa conceptos que se explican más adelante, en los ejercicios 12 y 16):
+- Probabilidad condicional, 📄 H1 $P(B/A) = \frac{P(A\cap B)}{P(A)}$: entre los frascos con poco peso, ¿qué fracción tiene además mala la tapa? $0{,}03/0{,}12 = 0{,}25$.
+- $P(A/\bar B) = \frac{P(A \cap \bar B)}{P(\bar B)} = \frac{0{,}09}{0{,}92} \approx 0{,}098$.
+- Independencia, 📄 H1 $P(A\cap B) = P(A)P(B)$: $0{,}12\cdot0{,}08 = 0{,}0096 \neq 0{,}03$, así que A y B **no** son independientes.
 
 </details>
 
@@ -219,15 +277,25 @@ Se dispone de un blanco cuadrado de 2,5 m de lado. Un dispositivo electrónico r
 <details>
 <summary>Solución paso a paso</summary>
 
-Es probabilidad **geométrica**: P = área favorable / área total, con área total $= 2{,}5^2 = 6{,}25$ m².
+💡 **Probabilidad geométrica.** Si el disparo puede caer en **cualquier punto** del cuadrado con la misma chance, no se pueden contar "casos" (hay infinitos puntos). En su lugar se comparan **áreas**: es la misma idea que Laplace, pero midiendo.
 
-a) Círculo de radio 1: $\pi \cdot 1^2 / 6{,}25 = \frac{4}{25}\pi \approx 0{,}503$.
+$$P = \frac{\text{área favorable}}{\text{área total}}, \qquad \text{área total} = 2{,}5^2 = 6{,}25 \text{ m}^2$$
 
-b) Corona entre r = ½ y r = 1: $\pi(1 - \frac14)/6{,}25 = \frac{3}{25}\pi \approx 0{,}377$.
+**a)** "A menos de 1 m del centro" es un círculo de radio 1 alrededor del centro. Entra entero en el cuadrado, porque del centro al borde hay 1,25 m. Área $= \pi r^2 = \pi$:
+$$P = \frac{\pi}{6{,}25} = \frac{4}{25}\pi \approx 0{,}503$$
 
-c) Cada disparo cae en el semiplano superior con P = ½. Por independencia: $\frac12\cdot\frac12 = \frac14$.
+**b)** "Entre ½ m y 1 m del centro" es una **corona** (un anillo): el círculo grande menos el chico.
+$$P = \frac{\pi\cdot1^2 - \pi\cdot(\frac12)^2}{6{,}25} = \frac{\frac34\pi}{6{,}25} = \frac{3}{25}\pi \approx 0{,}377$$
 
-d) Cada cuadrante tiene P = ¼. Mismo cuadrante: $4\cdot\frac14\cdot\frac14 = \frac14$. Distinto cuadrante: $1 - \frac14 = \frac34$.
+**c)** Un disparo cae en la mitad de arriba con probabilidad ½: es la mitad del área.
+
+💡 **Independencia:** los disparos no se influyen entre sí. Cuando dos eventos son independientes, la probabilidad de que ocurran **los dos** es el **producto** (📄 H1, $P(A\cap B) = P(A)P(B)$):
+$$P(\text{ambos arriba}) = \frac12\cdot\frac12 = \frac14$$
+
+**d)** Cada cuadrante es ¼ del área, así que cada disparo cae en un cuadrante dado con probabilidad ¼.
+
+Es más fácil calcular lo contrario, "los dos en el **mismo** cuadrante". Puede ser el cuadrante 1, el 2, el 3 o el 4 (4 casos que no se pisan), y cada uno vale $\frac14\cdot\frac14$:
+$$P(\text{mismo}) = 4\cdot\frac14\cdot\frac14 = \frac14 \;\Rightarrow\; P(\text{distinto}) = 1 - \frac14 = \frac34$$
 
 </details>
 
@@ -255,17 +323,23 @@ Se tiene un dado cargado tal que la probabilidad de cada número par es proporci
 <details>
 <summary>Solución paso a paso</summary>
 
-a) P(1) = P(3) = P(5) = 1/6; P(2) = 2k, P(4) = 4k, P(6) = 6k.
+**a) Traducir el enunciado a ecuaciones.**
+- Impares "como en un dado normal": P(1) = P(3) = P(5) = 1/6.
+- "La probabilidad de cada par es **proporcional** a ese número" significa que es el número multiplicado por una misma constante k: P(2) = 2k, P(4) = 4k, P(6) = 6k.
 
-La suma tiene que dar 1: $3\cdot\frac16 + 12k = 1 \Rightarrow k = \frac1{24}$.
+💡 Las probabilidades de todos los resultados suman 1:
+$$\underbrace{3\cdot\frac16}_{\text{impares}} + \underbrace{2k + 4k + 6k}_{\text{pares}} = 1 \;\Rightarrow\; \frac12 + 12k = 1 \;\Rightarrow\; k = \frac1{24}$$
 
-Entonces P(2) = 1/12, P(4) = 1/6, P(6) = 1/4.
+Entonces P(2) = 2/24 = 1/12, P(4) = 4/24 = 1/6 y P(6) = 6/24 = 1/4.
 
-b) A = {2, 4, 6}, B = {1, 2, 3, 6}, C = {5}. **No** se puede usar Laplace, porque los resultados no son equiprobables.
-- $P(A) = \frac1{12} + \frac16 + \frac14 = \frac12$ (o $1 - P(\text{impar}) = 1 - \frac36$).
-- A y C son M.E. ⇒ $P(A \cup C) = \frac12 + \frac16 = \frac23$.
-- $A^c \cap B^c = \overline{A \cup B} = \{5\}$ ⇒ $\frac16$.
-- $B - C = B \cap C^c = B$ (B no tiene al 5) ⇒ $P(B) = \frac16 + \frac1{12} + \frac16 + \frac14 = \frac23$.
+**b)** Primero se escribe cada evento como lista: A = {2, 4, 6}, B (divisores de 6) = {1, 2, 3, 6}, C (múltiplos de 5) = {5}.
+
+⚠️ **No** se puede usar Laplace (favorables/posibles), porque los resultados no son igual de probables. La probabilidad de un evento es la **suma de las probabilidades de sus resultados**.
+
+- $P(A) = \frac1{12} + \frac16 + \frac14 = \frac12$. También sale como $1 - P(\text{impar}) = 1 - \frac36$.
+- **A ∪ C:** A y C no tienen resultados en común (son mutuamente excluyentes), así que la unión es la suma: $\frac12 + \frac16 = \frac23$.
+- **$A^c \cap B^c$** = "ni par ni divisor de 6". Por **De Morgan** ("ni A ni B" es lo contrario de "A o B"), es $\overline{A \cup B}$. $A \cup B = \{1, 2, 3, 4, 6\}$, y lo que falta es {5}: probabilidad $\frac16$.
+- **B − C** ("B pero no C") $= B \cap C^c$. B no tiene al 5, así que B − C es B entera: $\frac16 + \frac1{12} + \frac16 + \frac14 = \frac23$.
 
 </details>
 
@@ -291,17 +365,25 @@ Una clase consta de seis varones y diez mujeres. La tercera parte del primer gru
 <details>
 <summary>Solución paso a paso</summary>
 
-Tabla de contingencia: varones con anteojos = 6/3 = 2; mujeres con anteojos = 10/5 = 2.
+💡 **Tabla de contingencia.** Cuando cada persona se clasifica según **dos** características (sexo y anteojos), conviene armar una tabla con todas las combinaciones. Después todo se calcula leyendo celdas.
 
-| | A (anteojos) | $\bar A$ | Total |
+- "La tercera parte del primer grupo usa anteojos": varones con anteojos = 6/3 = 2.
+- "La quinta parte del segundo": mujeres con anteojos = 10/5 = 2.
+- El resto de cada fila sale por resta.
+
+| | A (anteojos) | $\bar A$ (sin anteojos) | Total |
 |---|---|---|---|
-| M | 2 | 8 | 10 |
-| V | 2 | 4 | 6 |
+| M (mujer) | 2 | 8 | 10 |
+| V (varón) | 2 | 4 | 6 |
 | Total | 4 | 12 | 16 |
 
-a) $P(A \cup M) = \frac{4}{16} + \frac{10}{16} - \frac{2}{16} = \frac{12}{16} = \frac34$.
+Se elige uno de 16 alumnos, todos con la misma chance, así que vale Laplace: casos favorables / 16.
 
-b) $P(V \cap \bar A) = \frac4{16} = \frac14$ (es justo el complemento de a).
+**a) "Use anteojos o sea mujer"** es una unión. 💡 $P(A \cup M) = P(A) + P(M) - P(A \cap M)$: se resta la intersección porque las 2 mujeres con anteojos se contaron en los dos grupos (📄 H1, versión de 3 eventos).
+$$P(A \cup M) = \frac{4}{16} + \frac{10}{16} - \frac{2}{16} = \frac{12}{16} = \frac34$$
+Contando directo: todas las mujeres (10) más los varones con anteojos (2) son 12.
+
+**b) "Varón y sin anteojos"** es una celda de la tabla: $\frac{4}{16} = \frac14$. Es justo lo que queda afuera de a): $1 - \frac34$.
 
 </details>
 
@@ -328,13 +410,22 @@ Se eligen al azar tres motores de un conjunto de diez, entre los cuales cuatro s
 <details>
 <summary>Solución paso a paso</summary>
 
-Casos posibles: $\binom{10}{3} = 120$. Sea I = cantidad a inyección.
+Se eligen 3 motores **a la vez** de 10, sin importar el orden. Todos los grupos de 3 tienen la misma chance, así que vale Laplace. Hay que **contar** grupos.
 
-a) $P(I = 0) = \binom{6}{3}/120 = 20/120 = 1/6$. (Con el teorema de la multiplicación: $\frac6{10}\cdot\frac59\cdot\frac48 = \frac16$.)
+💡 **Número combinatorio** $\binom{n}{k}$ ("n tomados de a k"): cuántos grupos distintos de k elementos se pueden armar con n, sin importar el orden. $\binom nk = \frac{n!}{k!(n-k)!}$. En la calculadora es la tecla nCr.
 
-b) $P(I = 1) = \binom41\binom62/120 = 60/120$ ⇒ $P(I \le 1) = (20 + 60)/120 = 2/3$.
+**Casos posibles:** $\binom{10}{3} = 120$ grupos. Hay 4 motores a inyección y 6 que no. Sea I = cantidad a inyección en el grupo.
 
-c) $P(I \ge 2) = 1 - P(I \le 1) = 1/3$.
+**a) Ninguno a inyección:** los 3 salen de los 6 comunes, $\binom63 = 20$ grupos.
+$$P(I = 0) = \frac{20}{120} = \frac16$$
+Otra forma, uno por uno (regla de la multiplicación): el 1.º es común con prob. 6/10, el 2.º con 5/9 (queda uno menos), el 3.º con 4/8: $\frac6{10}\cdot\frac59\cdot\frac48 = \frac16$.
+
+**b) A lo sumo uno** significa 0 o 1. Para exactamente 1 se elige **1 de los 4** de inyección **y 2 de los 6** comunes. Las dos elecciones se combinan entre sí, así que se multiplican:
+$$P(I = 1) = \frac{\binom41\binom62}{120} = \frac{4\cdot15}{120} = \frac{60}{120} \;\Rightarrow\; P(I \le 1) = \frac{20 + 60}{120} = \frac23$$
+
+**c) Al menos dos** (2 o 3) es lo contrario de "a lo sumo uno": $1 - \frac23 = \frac13$.
+
+(Este tipo de conteo es la distribución **hipergeométrica** de la Unidad 3; la fórmula está en 📄 H1.)
 
 </details>
 
@@ -358,9 +449,11 @@ Calcular la probabilidad de que en una reunión de ocho personas se encuentren a
 <details>
 <summary>Solución paso a paso</summary>
 
-Conviene el complemento: "todos cumplen en días distintos".
-- Casos posibles (ordenando a las personas): $365^8$.
-- Casos con días distintos: $365\cdot364\cdots358$ (cada persona tiene un día menos disponible).
+💡 **Truco del complemento.** "Al menos dos coinciden" abarca muchísimos casos (dos coinciden, tres coinciden, dos pares distintos…). Lo contrario es uno solo: "**todos** cumplen en días distintos". Se calcula ese y se resta de 1.
+
+Se ordena a las personas (persona 1, persona 2, …) y se usa Laplace:
+- **Casos posibles:** cada persona puede cumplir cualquiera de los 365 días: $365\cdot365\cdots = 365^8$.
+- **Casos con días todos distintos:** la 1.ª tiene 365 días disponibles, la 2.ª 364 (no puede repetir), la 3.ª 363, … la 8.ª 358: $365\cdot364\cdots358$.
 
 $P(\text{distintos}) = \prod_{k=0}^{7}\frac{365-k}{365} \approx 0{,}9257$ ⇒ $P(\text{al menos 2 coinciden}) \approx 0{,}0743$.
 
@@ -386,10 +479,20 @@ $$P(A\cup B\cup C) = P(A)+P(B)+P(C)-P(A\cap B)-P(A\cap C)-P(B\cap C)+P(A\cap B\c
 <details>
 <summary>Solución paso a paso</summary>
 
-1. Se agrupa: $P(A\cup B\cup C) = P[(A\cup B)\cup C] = P(A\cup B) + P(C) - P[(A\cup B)\cap C]$.
-2. Distributiva: $(A\cup B)\cap C = (A\cap C)\cup(B\cap C)$.
-3. Se aplica la propiedad otra vez: $P[(A\cap C)\cup(B\cap C)] = P(A\cap C) + P(B\cap C) - P(A\cap B\cap C)$, porque $(A\cap C)\cap(B\cap C) = A\cap B\cap C$.
-4. Se reemplaza $P(A\cup B) = P(A) + P(B) - P(A\cap B)$ y se ordena.
+**La idea:** solo se sabe hacer la unión de **dos** eventos. El truco es mirar la unión de tres como la unión de dos: el bloque $(A\cup B)$ y C. Después se aplica la regla de dos todas las veces que haga falta.
+
+La regla que se puede usar es $P(E\cup F) = P(E) + P(F) - P(E\cap F)$: se suman los dos y se resta lo que se contó dos veces.
+
+1. **Agrupar**, con $E = A\cup B$ y $F = C$:
+   $$P(A\cup B\cup C) = P(A\cup B) + P(C) - P[(A\cup B)\cap C]$$
+2. **Distributiva** (como en álgebra, "∩ distribuye sobre ∪"). "Estar en A o en B, y además en C" es lo mismo que "estar en A y C, o en B y C":
+   $$(A\cup B)\cap C = (A\cap C)\cup(B\cap C)$$
+3. **Regla de dos otra vez**, ahora con $E = A\cap C$ y $F = B\cap C$. Su intersección es estar en los tres, $A\cap B\cap C$:
+   $$P[(A\cap C)\cup(B\cap C)] = P(A\cap C) + P(B\cap C) - P(A\cap B\cap C)$$
+4. **Reemplazar** en el paso 1, también $P(A\cup B) = P(A) + P(B) - P(A\cap B)$, y ordenar. Ojo con el signo menos del paso 1, que se distribuye sobre los tres términos del paso 3:
+   $$P(A)+P(B)-P(A\cap B)+P(C)-P(A\cap C)-P(B\cap C)+P(A\cap B\cap C)$$
+
+Esta fórmula está en 📄 **H1**, pero acá piden demostrarla.
 
 </details>
 
@@ -428,11 +531,24 @@ Se pide:
 <details>
 <summary>Solución paso a paso</summary>
 
-a) Se leen los márgenes y la celda: P(A) = 0,40, P(B) = 0,33, P(A∩B) = 0,10. Luego $P(A/B) = \frac{0{,}10}{0{,}33} = \frac{10}{33} \approx 0{,}303$.
+**Cómo leer la tabla.** Las celdas de adentro son probabilidades de **dos cosas a la vez** (intersecciones). Los totales de los márgenes son probabilidades de **una sola** cosa.
 
-b) $P(A\cup B) = 0{,}40 + 0{,}33 - 0{,}10 = 0{,}63$ ⇒ $P((A\cup B)^c) = 0{,}37$ (es la celda "menos de 7 y no reincidente").
+**a)**
+- P(A) = "7 años o más" = total de esa fila = **0,40**.
+- P(B) = "reincide" = total de esa columna = **0,33**.
+- P(A ∩ B) = "7 años o más **y** reincide" = la celda donde se cruzan = **0,10**.
 
-c) $P(A)P(B) = 0{,}132 \neq 0{,}10$ ⇒ no son independientes.
+💡 **Probabilidad condicional** $P(A/B)$, que se lee "A dado B": la probabilidad de A **sabiendo que ya ocurrió B**. Saber que ocurrió B achica el universo: ahora solo se mira a los reincidentes, y de ellos qué fracción tiene 7 años o más:
+$$P(A/B) = \frac{P(A\cap B)}{P(B)} = \frac{0{,}10}{0{,}33} = \frac{10}{33} \approx 0{,}303$$
+📄 **H1**.
+
+**b)** Unión, 📄 H1 (versión de 3 sin C): $P(A\cup B) = 0{,}40 + 0{,}33 - 0{,}10 = 0{,}63$.
+
+El complemento es $1 - 0{,}63 = 0{,}37$. Se puede leer en la tabla: es la celda "menos de 7 y no reincidente", la única que no tiene ni A ni B.
+
+**c)** 💡 **Independencia:** A y B son independientes si saber uno **no cambia** la probabilidad del otro, es decir $P(A/B) = P(A)$. Eso equivale a $P(A\cap B) = P(A)\cdot P(B)$ (📄 H1).
+$$P(A)\,P(B) = 0{,}40\cdot0{,}33 = 0{,}132 \neq 0{,}10$$
+**No son independientes.** Lo mismo se ve con la condicional: entre los reincidentes, el 30 % tiene 7 años o más, contra el 40 % en general. El nivel de educación sí está relacionado con reincidir.
 
 </details>
 
@@ -456,11 +572,32 @@ En una oficina Of₁ trabajan 3 mujeres y un varón, y en otra oficina Of₂ tra
 <details>
 <summary>Solución paso a paso</summary>
 
-M₁ = "se transfiere una mujer" (P = 3/4), V₁ = "se transfiere un varón" (P = 1/4). Forman una partición.
-- Si pasó una mujer, Of2 queda con 3M y 2V ⇒ $P(M_2/M_1) = 3/5$.
-- Si pasó un varón, Of2 queda con 2M y 3V ⇒ $P(M_2/V_1) = 2/5$.
+**El problema:** el resultado final (elegir una mujer en Of₂) depende de **qué pasó antes** (a quién se transfirió). Hay que considerar los dos escenarios posibles.
 
-Probabilidad total: $P(M_2) = \frac34\cdot\frac35 + \frac14\cdot\frac25 = \frac{9}{20} + \frac{2}{20} = \frac{11}{20}$.
+**Etapa 1, el traspaso.** Of₁ tiene 3 mujeres y 1 varón:
+- M₁ = "se transfiere una mujer", P = 3/4;
+- V₁ = "se transfiere un varón", P = 1/4.
+
+Uno de los dos pasa seguro, y nunca los dos: se dice que forman una **partición**.
+
+**Etapa 2, la elección en Of₂** (que tenía 2M y 2V), según el escenario:
+- Si pasó una mujer, Of₂ queda con 3M y 2V, y $P(M_2/M_1) = 3/5$.
+- Si pasó un varón, Of₂ queda con 2M y 3V, y $P(M_2/V_1) = 2/5$.
+
+```
+          ┌── M₂  3/5  → 3/4 · 3/5 = 9/20
+ M₁ 3/4 ──┤
+          └── V₂  2/5
+          ┌── M₂  2/5  → 1/4 · 2/5 = 2/20
+ V₁ 1/4 ──┤
+          └── V₂  3/5
+```
+
+💡 **Teorema de la probabilidad total.** Para saber la probabilidad de algo que puede llegar por varios caminos, se suman **todos los caminos que terminan ahí**. Cada camino vale el producto de sus ramas: P(escenario) · P(resultado / escenario).
+
+$$P(M_2) = P(M_1)P(M_2/M_1) + P(V_1)P(M_2/V_1) = \frac34\cdot\frac35 + \frac14\cdot\frac25 = \frac{9}{20} + \frac{2}{20} = \frac{11}{20}$$
+
+En 📄 **H1** esta suma aparece como el denominador de la fórmula de Bayes.
 
 </details>
 
@@ -484,11 +621,25 @@ Probabilidad total: $P(M_2) = \frac34\cdot\frac35 + \frac14\cdot\frac25 = \frac{
 <details>
 <summary>Solución paso a paso</summary>
 
-a) $P(A) > 0$. $P(B/A) + P(B^c/A) = \frac{P(A\cap B) + P(A\cap B^c)}{P(A)} = \frac{P(A)}{P(A)} = 1$, porque $A = (A\cap B)\cup(A\cap B^c)$ con M.E.
+La única herramienta es la **definición de probabilidad condicional** (📄 H1): $P(E/F) = \frac{P(E\cap F)}{P(F)}$, válida si P(F) > 0. Por eso cada inciso pide que el evento de abajo "no sea imposible": no se puede dividir por 0.
 
-b) $P(B/A) > P(B) \Rightarrow 1 - P(B/A) < 1 - P(B)$. Por a), $1 - P(B/A) = P(B^c/A)$, y $1 - P(B) = P(B^c)$ ⇒ $P(B^c/A) < P(B^c)$.
+**a)** Se escribe cada condicional con la definición y se suman (tienen el mismo denominador):
+$$P(B/A) + P(B^c/A) = \frac{P(A\cap B) + P(A\cap B^c)}{P(A)}$$
+Ahora se mira el numerador: los resultados de A se parten en los que están en B y los que no. Esas dos partes no se pisan, así que sus probabilidades suman la de A entera: $P(A\cap B) + P(A\cap B^c) = P(A)$. Entonces:
+$$\frac{P(A)}{P(A)} = 1$$
+En palabras: sabiendo que pasó A, B pasa o no pasa.
 
-c) $P(A\cup B/C) = \frac{P[(A\cap C)\cup(B\cap C)]}{P(C)} = \frac{P(A\cap C) + P(B\cap C) - P(A\cap B\cap C)}{P(C)}$, y se separa en las tres condicionales.
+**b)** Se parte de lo que dice el enunciado y se multiplica por −1, lo que **da vuelta** la desigualdad; después se suma 1:
+$$P(B/A) > P(B) \;\Rightarrow\; 1 - P(B/A) < 1 - P(B)$$
+Por a), $1 - P(B/A) = P(B^c/A)$. Por complemento, $1 - P(B) = P(B^c)$. Reemplazando: $P(B^c/A) < P(B^c)$.
+
+En palabras: si A hace **más** probable a B, hace **menos** probable a "no B".
+
+**c)** Definición, y después distributiva ("A o B, y C" es "A y C, o B y C"):
+$$P(A\cup B/C) = \frac{P[(A\cup B)\cap C]}{P(C)} = \frac{P[(A\cap C)\cup(B\cap C)]}{P(C)}$$
+Regla de la unión en el numerador, sabiendo que la intersección de $A\cap C$ con $B\cap C$ es $A\cap B\cap C$:
+$$= \frac{P(A\cap C) + P(B\cap C) - P(A\cap B\cap C)}{P(C)}$$
+Se separa en tres fracciones, y cada una es una condicional: $P(A/C) + P(B/C) - P(A\cap B/C)$.
 
 </details>
 
@@ -511,15 +662,21 @@ Una caja contiene 7 cubos azules y 3 verdes, y una segunda caja contiene 6 cubos
 <details>
 <summary>Solución paso a paso</summary>
 
-a) $P(a_I) = 7/10$. Después de pasarlo, II tiene 7a y 4v (11 cubos) ⇒ $P(v_{II}/a_I) = 4/11$.
+Es un experimento **en dos etapas**, donde la segunda depende de la primera, porque el cubo que se pasa cambia la caja II. Se piensa como un árbol.
 
-$P = \frac7{10}\cdot\frac4{11} = \frac{28}{110} = \frac{14}{55} \approx 0{,}2545$.
+💡 **Regla de la multiplicación:** $P(E\cap F) = P(E)\cdot P(F/E)$. Es la probabilidad de la 1.ª etapa por la de la 2.ª **sabiendo** lo que pasó en la 1.ª (se despeja de la condicional de 📄 H1).
 
-b) Las cajas quedan igual si vuelve un cubo del mismo color que el que se pasó:
-- azul–azul: $\frac7{10}\cdot\frac7{11} = \frac{49}{110}$ (II tenía 7a de 11)
-- verde–verde: $\frac3{10}\cdot\frac5{11} = \frac{15}{110}$ (II tenía 5v de 11)
+**a) "Azul de la I y verde de la II".**
+- 1.ª etapa: la caja I tiene 7 azules de 10, así que $P(a_I) = \frac7{10}$.
+- 2.ª etapa: se agregó un azul a la II, que queda con 7 azules y 4 verdes (11 cubos). Entonces $P(v_{II}/a_I) = \frac4{11}$.
 
-Total: $\frac{64}{110} = \frac{32}{55} \approx 0{,}582$.
+$$P = \frac7{10}\cdot\frac4{11} = \frac{28}{110} = \frac{14}{55} \approx 0{,}2545$$
+
+**b) ¿Cuándo quedan las cajas como al principio?** Cuando el cubo que vuelve a la I es **del mismo color** que el que salió. Hay dos caminos, que no se pisan, así que se suman:
+- **azul y después azul:** la II quedó con 7 azules de 11: $\frac7{10}\cdot\frac7{11} = \frac{49}{110}$;
+- **verde y después verde:** la II quedó con 6 azules y 5 verdes: $\frac3{10}\cdot\frac5{11} = \frac{15}{110}$.
+
+$$P = \frac{49 + 15}{110} = \frac{64}{110} = \frac{32}{55} \approx 0{,}582$$
 
 </details>
 
@@ -551,11 +708,26 @@ Se pide:
 <details>
 <summary>Solución paso a paso</summary>
 
-36 pares equiprobables. P(A) = P(B) = 18/36 = 1/2. C: la suma es par si los dos son pares o los dos son impares ⇒ 9 + 9 = 18 ⇒ P(C) = 1/2.
+💡 **Dos tipos de independencia para tres eventos.**
+- **De a pares:** cada par por separado cumple $P(\text{par}\cap\text{par}) = P\cdot P$. Es decir, A con B, A con C y B con C.
+- **Mutua (o total):** además, los tres juntos cumplen $P(A\cap B\cap C) = P(A)P(B)P(C)$.
 
-a) A∩B = ambos pares: 9/36 = 1/4 = ½·½. A∩C = 1.° par y suma par ⇒ 2.° par ⇒ es el mismo evento: 1/4. Lo mismo con B∩C. Son independientes de a pares.
+Este ejercicio muestra que la primera **no** garantiza la segunda.
 
-b) A∩B∩C = A∩B (si los dos son pares, la suma es par) ⇒ 1/4 ≠ ⅛ = P(A)P(B)P(C).
+**Probabilidades sueltas.** Dos dados dan 6 · 6 = 36 pares igual de probables (Laplace).
+- P(A) = P(B) = ½: la mitad de los números son pares.
+- C = "suma par". Pasa si los dos son pares (3 · 3 = 9 pares) o los dos son impares (9 pares): $\frac{18}{36} = \frac12$.
+
+**a) De a pares.**
+- A∩B = los dos pares: $\frac{9}{36} = \frac14 = \frac12\cdot\frac12$ ✓.
+- A∩C = "el 1.º par y la suma par". Si el primero es par, para que la suma sea par el segundo **también** tiene que ser par. Entonces A∩C es lo mismo que "los dos pares": $\frac14 = \frac12\cdot\frac12$ ✓.
+- B∩C: igual razonamiento, $\frac14$ ✓.
+
+Son **independientes de a pares**.
+
+**b) Los tres juntos.** Si los dos son pares, la suma es par seguro, así que $A\cap B\cap C = A\cap B$:
+$$P(A\cap B\cap C) = \frac14 \neq \frac12\cdot\frac12\cdot\frac12 = \frac18$$
+**No son mutuamente independientes.** La explicación: conocer A y B juntos determina C por completo.
 
 </details>
 
@@ -580,9 +752,15 @@ $$P(A \cup B \cup C) = 1 - P(A^c)\cdot P(B^c)\cdot P(C^c)$$
 <details>
 <summary>Solución paso a paso</summary>
 
-1. Complemento: $P(A\cup B\cup C) = 1 - P[(A\cup B\cup C)^c]$.
-2. De Morgan: $(A\cup B\cup C)^c = A^c\cap B^c\cap C^c$.
-3. Los complementos de sucesos independientes son independientes ⇒ $P(A^c\cap B^c\cap C^c) = P(A^c)P(B^c)P(C^c)$.
+**La idea en palabras:** "ocurre al menos uno" es lo contrario de "no ocurre ninguno". Y "ninguno", con eventos independientes, se calcula multiplicando.
+
+1. **Complemento:** $P(A\cup B\cup C) = 1 - P[(A\cup B\cup C)^c]$.
+2. **De Morgan:** "no (A o B o C)" es lo mismo que "no A y no B y no C": $(A\cup B\cup C)^c = A^c\cap B^c\cap C^c$.
+3. **Independencia de los complementos:** si A, B y C son mutuamente independientes, sus complementos también lo son (se demuestra en el ejercicio 24 para dos eventos, y con tres es igual). Entonces la probabilidad de la intersección es el producto:
+   $$P(A^c\cap B^c\cap C^c) = P(A^c)P(B^c)P(C^c)$$
+4. Reemplazando en 1: $P(A\cup B\cup C) = 1 - P(A^c)P(B^c)P(C^c)$. ∎
+
+Se usa muchísimo: "probabilidad de que **alguno** funcione = 1 − probabilidad de que fallen **todos**". Ver el ejercicio 21.
 
 </details>
 
@@ -602,9 +780,15 @@ Sean A y B dos eventos con probabilidad P(A) = 1/2, P(B) = 1/3 y P(B − A) = 1/
 <details>
 <summary>Solución paso a paso</summary>
 
-$B - A = B\cap A^c$ y $B = (B\cap A)\cup(B\cap A^c)$ ⇒ $P(A\cap B) = P(B) - P(B - A) = \frac13 - \frac1{12} = \frac14$.
+💡 **B − A** ("B menos A") son los resultados que están en B pero **no** en A: $B - A = B\cap A^c$. En un Venn, es la parte de B que queda afuera de A.
 
-$P(A^c/B) = \frac{P(A^c\cap B)}{P(B)} = \frac{1/12}{1/3} = \frac14$.
+**P(A ∩ B).** B se parte en dos pedazos que no se pisan: la parte que está en A ($B\cap A$) y la que no ($B - A$). Entonces sus probabilidades suman P(B):
+$$P(B) = P(A\cap B) + P(B - A) \;\Rightarrow\; P(A\cap B) = \frac13 - \frac1{12} = \frac{4 - 1}{12} = \frac14$$
+
+**P(Aᶜ / B).** Es la condicional (📄 H1, $P(E/F) = \frac{P(E\cap F)}{P(F)}$): entre los resultados de B, la fracción que **no** está en A. El numerador $A^c\cap B$ es justamente $B - A$:
+$$P(A^c/B) = \frac{P(A^c\cap B)}{P(B)} = \frac{1/12}{1/3} = \frac14$$
+
+(El dato P(A) = ½ no hacía falta.)
 
 </details>
 
@@ -627,9 +811,15 @@ Calcular P(B / A) si:
 <details>
 <summary>Solución paso a paso</summary>
 
-a) $A\subseteq B \Rightarrow A\cap B = A \Rightarrow P(B/A) = \frac{P(A)}{P(A)} = 1$ (siempre que ocurre A, ocurre B).
+Se usa la definición (📄 H1): $P(B/A) = \frac{P(A\cap B)}{P(A)}$, que es la probabilidad de B sabiendo que ocurrió A. Lo que cambia en cada caso es la intersección.
 
-b) $A\cap B = \emptyset \Rightarrow P(B/A) = \frac{0}{P(A)} = 0$.
+**a) A ⊆ B:** todo resultado de A está también en B. Entonces lo que tienen en común es A entera: $A\cap B = A$.
+$$P(B/A) = \frac{P(A)}{P(A)} = 1$$
+En palabras: si ocurrió A, seguro ocurrió B.
+
+**b) A y B incompatibles:** no tienen resultados en común, $A\cap B = \emptyset$, cuya probabilidad es 0.
+$$P(B/A) = \frac{0}{P(A)} = 0$$
+En palabras: si ocurrió A, es imposible que haya ocurrido B.
 
 </details>
 
@@ -655,13 +845,20 @@ Se lanza un dado dos veces. Hallar la probabilidad de que la suma de sus número
 <details>
 <summary>Solución paso a paso</summary>
 
-a) Si el primero es 4, hace falta que el segundo sea ≥ 4: {4, 5, 6} ⇒ 3/6 = 1/2.
+"Si aparece un 4…" significa que **ya se sabe** eso. Es una **probabilidad condicional**: se achica el universo a los casos que cumplen la condición, y ahí adentro se cuentan los favorables.
 
-b) Condición D = "al menos un 4": 6 + 6 − 1 = 11 pares ⇒ P(D) = 11/36.
+**a)** Universo nuevo: el primer dado es 4. El segundo puede ser cualquiera de 6 números, todos igual de probables. Para que la suma sea ≥ 8 hace falta que el segundo sea ≥ 4, es decir {4, 5, 6}:
+$$P = \frac36 = \frac12$$
 
-Favorables (suma ≥ 8 y algún 4): (4,4), (4,5), (4,6), (5,4), (6,4) ⇒ 5/36 (el (4,4) se cuenta una sola vez).
+**b)** Universo nuevo: D = "al menos un 4" entre los 36 pares posibles.
+- Pares con 4 en el primer dado: 6. Con 4 en el segundo: 6.
+- El (4,4) se contó dos veces, así que hay 6 + 6 − 1 = **11** pares: $P(D) = \frac{11}{36}$.
 
-$P = \frac{5/36}{11/36} = \frac5{11}$.
+Favorables (algún 4 **y** suma ≥ 8): (4,4), (4,5), (4,6), (5,4), (6,4). Son **5** pares; el (4,4) va una sola vez.
+
+Con la definición de condicional (📄 H1):
+$$P(\text{suma} \ge 8 / D) = \frac{P(\text{suma} \ge 8 \cap D)}{P(D)} = \frac{5/36}{11/36} = \frac5{11}$$
+Es lo mismo que contar "5 favorables entre los 11 posibles del universo nuevo".
 
 </details>
 
@@ -691,13 +888,19 @@ Hallar la probabilidad de que:
 <details>
 <summary>Solución paso a paso</summary>
 
-Cada camino está abierto con P = 0,9.
+**Cómo pensarlo.** Para ir de A a C hay que pasar por B. Entonces hacen falta **las dos cosas**: poder ir de A a B (por **alguno** de los 3 caminos) **y** poder ir de B a C (por alguno de los 2).
 
-a) Hace falta (algún tramo A–B abierto) **y** (algún tramo B–C abierto). Por independencia, se multiplican, y cada "alguno" es 1 − "ninguno":
+Cada camino está bloqueado con P = 0,1 y abierto con P = 0,9, sin depender de los demás (independientes).
 
-$[1 - 0{,}1^3]\cdot[1 - 0{,}1^2] = 0{,}999\cdot0{,}99 = 0{,}98901$.
+💡 **"Alguno abierto" = 1 − "todos bloqueados".** Que estén todos bloqueados es una intersección de eventos independientes, así que se multiplica (📄 H1, $P(A\cap B) = P(A)P(B)$). Es el resultado del ejercicio 17.
+- Tramo A–B (3 caminos): $P(\text{alguno abierto}) = 1 - 0{,}1^3 = 0{,}999$.
+- Tramo B–C (2 caminos): $1 - 0{,}1^2 = 0{,}99$.
 
-b) A₂ está cerrado, así que quedan A₁ y A₃: $[1 - 0{,}1^2]\cdot[1 - 0{,}1^2] = 0{,}99^2 = 0{,}9801$.
+**a)** Los dos tramos son independientes entre sí, así que "los dos transitables" es el producto:
+$$0{,}999\cdot0{,}99 = 0{,}98901$$
+
+**b)** Ya se sabe que A₂ (el corto) está cerrado, así que de A a B solo quedan A₁ y A₃. Ir de C a A o de A a C es lo mismo (los caminos son los mismos):
+$$\underbrace{(1 - 0{,}1^2)}_{A_1 \text{ o } A_3}\cdot\underbrace{(1 - 0{,}1^2)}_{B_1 \text{ o } B_2} = 0{,}99^2 = 0{,}9801$$
 
 </details>
 
@@ -723,9 +926,21 @@ Una urna tiene siete bolas rojas y tres blancas. Si se sacan tres bolas, una tra
 <details>
 <summary>Solución paso a paso</summary>
 
-a) Regla de la multiplicación: $\frac7{10}\cdot\frac69\cdot\frac38 = \frac{126}{720} = \frac7{40}$.
+"Sin reposición" significa que la bola sacada **no vuelve**: cada extracción cambia lo que queda en la urna.
 
-b) La blanca puede salir en la 1.ª, la 2.ª o la 3.ª extracción (RRB, RBR, BRR). Cada orden tiene la misma probabilidad (7·6·3/720), así que $P = 3\cdot\frac7{40} = \frac{21}{40}$.
+💡 **Regla de la multiplicación para varias etapas:** la probabilidad de una secuencia es el producto de la probabilidad de cada paso, calculada **con lo que queda en la urna** en ese momento. Se deduce de la condicional de 📄 H1: $P(E\cap F) = P(E)P(F/E)$.
+
+**a) Roja, roja, blanca, en ese orden:**
+- 1.ª roja: 7 rojas de 10, $\frac7{10}$.
+- 2.ª roja: quedan 6 rojas de 9, $\frac69$.
+- 3.ª blanca: quedan 3 blancas de 8, $\frac38$.
+
+$$P = \frac7{10}\cdot\frac69\cdot\frac38 = \frac{126}{720} = \frac7{40}$$
+
+**b) Exactamente una blanca,** sin importar dónde. La blanca puede salir 1.ª, 2.ª o 3.ª, así que hay tres órdenes: RRB, RBR, BRR. Son casos que no se pisan y se suman.
+
+Cada orden tiene la misma probabilidad. Por ejemplo, RBR = $\frac7{10}\cdot\frac39\cdot\frac68$: son los mismos números en otro orden, y dan $\frac{7\cdot6\cdot3}{720}$ igual. Entonces:
+$$P = 3\cdot\frac7{40} = \frac{21}{40}$$
 
 </details>
 
@@ -748,17 +963,20 @@ Tenemos dos urnas A y B. En A hay tres bolas rojas y dos blancas, y en B dos roj
 <details>
 <summary>Solución paso a paso</summary>
 
-**Se elige A (½):**
-- Sale R (3/5) → B queda con 3R y 5B ⇒ P(R) = 3/8.
-- Sale B (2/5) → B queda con 2R y 6B ⇒ P(B) = 6/8.
-- Igual color: $\frac35\cdot\frac38 + \frac25\cdot\frac68 = \frac{21}{40}$.
+Hay **tres etapas**: (1) qué urna se elige, (2) qué bola se pasa a la otra urna, (3) qué bola se saca de esa otra urna. Se arma un árbol y se suman los caminos que terminan en "mismo color" (**probabilidad total**). Cada camino vale el producto de sus ramas.
 
-**Se elige B (½):**
-- Sale R (2/7) → A queda con 4R y 2B ⇒ P(R) = 4/6.
-- Sale B (5/7) → A queda con 3R y 3B ⇒ P(B) = 3/6.
-- Igual color: $\frac27\cdot\frac46 + \frac57\cdot\frac36 = \frac{23}{42}$.
+**Rama "se elige A" (probabilidad ½).** A tiene 3R y 2B; B tiene 2R y 5B.
+- Sale R de A (3/5). Pasa a B, que queda con 3R y 5B (8 bolas). Para igual color, de B tiene que salir R: 3/8.
+- Sale B de A (2/5). B queda con 2R y 6B. Tiene que salir B: 6/8.
+- Igual color, dado que se eligió A: $\frac35\cdot\frac38 + \frac25\cdot\frac68 = \frac{9}{40} + \frac{12}{40} = \frac{21}{40}$.
 
-Probabilidad total: $\frac12\left(\frac{21}{40} + \frac{23}{42}\right) = \frac12\cdot\frac{441 + 460}{840} = \frac{901}{1680}$.
+**Rama "se elige B" (probabilidad ½).**
+- Sale R de B (2/7). Pasa a A, que queda con 4R y 2B (6 bolas). Tiene que salir R: 4/6.
+- Sale B de B (5/7). A queda con 3R y 3B. Tiene que salir B: 3/6.
+- Igual color, dado que se eligió B: $\frac27\cdot\frac46 + \frac57\cdot\frac36 = \frac{8}{42} + \frac{15}{42} = \frac{23}{42}$.
+
+**Probabilidad total** (cada urna con peso ½):
+$$P = \frac12\cdot\frac{21}{40} + \frac12\cdot\frac{23}{42} = \frac12\cdot\frac{441 + 460}{840} = \frac{901}{1680} \approx 0{,}536$$
 
 </details>
 
@@ -781,11 +999,20 @@ Probabilidad total: $\frac12\left(\frac{21}{40} + \frac{23}{42}\right) = \frac12
 <details>
 <summary>Solución paso a paso</summary>
 
-a) $P(A\cap B^c) = P(A) - P(A\cap B) = P(A) - P(A)P(B) = P(A)[1 - P(B)] = P(A)P(B^c)$.
+💡 **Definición de independencia** (📄 H1): A y B son independientes ⇔ $P(A\cap B) = P(A)P(B)$. Para demostrar que dos eventos son independientes, hay que llegar a esa igualdad.
 
-Para los dos complementos: $P(A^c\cap B^c) = 1 - P(A\cup B) = 1 - P(A) - P(B) + P(A)P(B) = (1 - P(A))(1 - P(B)) = P(A^c)P(B^c)$.
+**a) A y Bᶜ.** A se parte en "A y B" y "A sin B", así que $P(A\cap B^c) = P(A) - P(A\cap B)$. Como A y B son independientes, se reemplaza $P(A\cap B) = P(A)P(B)$ y se saca factor común:
+$$P(A\cap B^c) = P(A) - P(A)P(B) = P(A)[1 - P(B)] = P(A)\,P(B^c)$$
+Se cumple la definición, así que A y Bᶜ son independientes. Con Aᶜ y B es igual, cambiando los roles.
 
-b) $P(A\cap B) = P(\emptyset) = 0$, pero $P(A)P(B) > 0$ ⇒ no se cumple la definición de independencia.
+**Aᶜ y Bᶜ.** "Ni A ni B" es el complemento de "A o B" (De Morgan). Se usa la unión y la independencia:
+$$P(A^c\cap B^c) = 1 - P(A\cup B) = 1 - P(A) - P(B) + P(A)P(B)$$
+Ese polinomio se factoriza como un producto (se puede verificar distribuyendo):
+$$= (1 - P(A))(1 - P(B)) = P(A^c)\,P(B^c)$$
+
+**b) Excluyentes no es lo mismo que independientes.** Si $A\cap B = \emptyset$, entonces $P(A\cap B) = 0$. Pero el enunciado dice que $P(A)P(B) > 0$. Como $0 \neq P(A)P(B)$, no se cumple la definición: **no son independientes**.
+
+En palabras: si son excluyentes, saber que pasó A dice que B **seguro no pasó**. Eso es información, así que no son independientes.
 
 </details>
 
@@ -813,13 +1040,20 @@ La probabilidad de que un hombre y una mujer vivan 10 años más, a partir de ah
 <details>
 <summary>Solución paso a paso</summary>
 
-a) $\frac13\cdot\frac14 = \frac1{12}$
+H = "el hombre vive 10 años más", con P(H) = 1/3. M = "la mujer vive 10 años más", con P(M) = 1/4.
 
-b) $\frac13 + \frac14 - \frac1{12} = \frac12$
+💡 **Independientes** significa que lo que le pase a uno no cambia la probabilidad del otro. Entonces "los dos" es el **producto** (📄 H1, $P(H\cap M) = P(H)P(M)$), y eso vale también con los complementos (ejercicio 24).
 
-c) $\frac23\cdot\frac34 = \frac12$ (= 1 − b)
+**a) Ambos vivos:** $P(H\cap M) = \frac13\cdot\frac14 = \frac1{12}$.
 
-d) $\frac14\cdot\frac23 = \frac16$
+**b) Al menos uno vivo** es la unión. Regla de la unión: $P(H\cup M) = P(H) + P(M) - P(H\cap M)$:
+$$\frac13 + \frac14 - \frac1{12} = \frac{4 + 3 - 1}{12} = \frac12$$
+
+**c) Ninguno vivo:** hombre muerto (prob. 2/3) **y** mujer muerta (prob. 3/4). Son independientes, así que se multiplica:
+$$\frac23\cdot\frac34 = \frac12$$
+Es justo lo contrario de b): $1 - \frac12$ ✓.
+
+**d) Sólo la mujer:** ella vive **y** él no: $\frac14\cdot\frac23 = \frac16$.
 
 </details>
 
@@ -844,11 +1078,24 @@ Se tienen tres cajoneras idénticas; cada cajonera, a su vez, tiene dos cajones.
 <details>
 <summary>Solución paso a paso</summary>
 
-E₁ (PP), E₂ (PO) y E₃ (OO), cada una con P = 1/3. P(oro/E₁) = 0, P(oro/E₂) = ½, P(oro/E₃) = 1.
+**La trampa:** la intuición dice ½ ("si salió oro, es la cajonera OO o la PO"). Pero esas dos **no** son igual de probables una vez que se sabe que salió oro. Hay que "dar vuelta" la condicional, y para eso está **Bayes**.
 
-Probabilidad total: $P(O) = \frac13(0 + \frac12 + 1) = \frac12$.
+**Escenarios** (cuál cajonera se eligió), cada uno con P = 1/3: E₁ = PP, E₂ = PO, E₃ = OO.
 
-El otro cajón tiene oro sólo si es la cajonera E₃. Por Bayes: $P(E_3/O) = \frac{\frac13\cdot1}{\frac12} = \frac23$.
+**Probabilidad de sacar oro en cada escenario:**
+- P(oro / E₁) = 0;
+- P(oro / E₂) = ½ (uno de sus dos cajones);
+- P(oro / E₃) = 1.
+
+**Probabilidad total de sacar oro** (sumar los caminos que terminan en oro):
+$$P(O) = \frac13\cdot0 + \frac13\cdot\frac12 + \frac13\cdot1 = \frac12$$
+
+**¿Qué se pregunta?** "El otro cajón tiene oro" solo pasa si la cajonera es E₃. Se pide entonces $P(E_3/O)$: la probabilidad del **escenario**, sabiendo el **resultado**.
+
+💡 **Teorema de Bayes** (📄 H1): $P(E_j/O) = \frac{P(E_j)\,P(O/E_j)}{P(O)}$. Es "el camino que interesa" dividido "todos los caminos que llegan al resultado".
+$$P(E_3/O) = \frac{\frac13\cdot1}{\frac12} = \frac23$$
+
+**Intuición:** hay 3 monedas de oro igual de probables de ser la que se sacó. Dos de ellas están en la cajonera OO, así que 2 de cada 3 veces el otro cajón tiene oro.
 
 </details>
 
@@ -872,13 +1119,31 @@ Uno de cada 25 adultos de cierta población está afectado de una enfermedad par
 <details>
 <summary>Solución paso a paso</summary>
 
-E = enfermo: P(E) = 0,04, P(Eᶜ) = 0,96. P(+/E) = 0,98, P(+/Eᶜ) = 0,03.
+**Paso 1, traducir los datos.** "Uno de cada 25" significa $P(E) = \frac1{25} = 0{,}04$, así que $P(E^c) = 0{,}96$.
 
-a) Probabilidad total: $0{,}04\cdot0{,}98 + 0{,}96\cdot0{,}03 = 0{,}0392 + 0{,}0288 = 0{,}068$.
+Los porcentajes de la prueba son **condicionales**: dicen qué pasa **dado** que la persona está enferma o sana.
+- Enfermo da positivo el 98 %: $P(+/E) = 0{,}98$, y entonces $P(-/E) = 0{,}02$.
+- Sano da positivo el 3 %: $P(+/E^c) = 0{,}03$, y entonces $P(-/E^c) = 0{,}97$.
 
-b) Bayes: $\frac{0{,}0392}{0{,}068} = 0{,}5765$ (sube de 4 % a priori a 58 % a posteriori).
+```
+              ┌── +  0,98 → 0,04·0,98 = 0,0392
+ E   0,04 ────┤
+              └── −  0,02 → 0,0008
+              ┌── +  0,03 → 0,96·0,03 = 0,0288
+ Eᶜ  0,96 ────┤
+              └── −  0,97 → 0,96·0,97 = 0,9312
+```
 
-c) $P(-) = 0{,}932$ y $P(E^c\cap -) = 0{,}96\cdot0{,}97 = 0{,}9312$ ⇒ $\frac{0{,}9312}{0{,}932} = 0{,}9991$.
+**a)** 💡 **Probabilidad total:** se suman todos los caminos que terminan en "+".
+$$P(+) = 0{,}0392 + 0{,}0288 = 0{,}068$$
+
+**b)** Se pide al revés: **dado** el positivo, ¿está enfermo? 💡 **Bayes** (📄 H1) es "el camino que interesa / todos los caminos que llegan a +":
+$$P(E/+) = \frac{0{,}0392}{0{,}068} = 0{,}5765$$
+
+**Lectura:** aunque la prueba acierta el 98 % con los enfermos, un positivo solo significa 58 % de chances de estar enfermo. Pasa porque hay muchísimos más sanos, y su 3 % de falsos positivos pesa mucho.
+
+**c)** Ahora la condición es "−". Total de negativos: $P(-) = 1 - 0{,}068 = 0{,}932$. El camino "sano y negativo" es $0{,}96\cdot0{,}97 = 0{,}9312$. Bayes:
+$$P(E^c/-) = \frac{0{,}9312}{0{,}932} = 0{,}9991$$
 
 </details>
 
@@ -906,18 +1171,22 @@ La caja A contiene 8 artículos de los cuales 3 son defectuosos, la caja B conti
 <details>
 <summary>Solución paso a paso</summary>
 
-$P(D_A) = 3/8$, $P(D_B) = 2/5$, $P(D_C) = 4/10$. Las cajas son independientes.
+**Datos:** la probabilidad de sacar un defectuoso de cada caja es $P(D_A) = \frac38$, $P(D_B) = \frac25$ y $P(D_C) = \frac4{10}$. Las de sacar uno bueno son $\frac58$, $\frac35$ y $\frac6{10}$.
 
-a) $\frac38\cdot\frac25\cdot\frac4{10} = \frac{24}{400} = \frac3{50}$.
+Lo que sale de una caja no influye en las otras, así que las tres extracciones son **independientes**: la probabilidad de una combinación es el **producto** (📄 H1).
 
-b) Tres casos M.E.:
-- sólo A: $\frac38\cdot\frac35\cdot\frac6{10} = \frac{54}{400}$
-- sólo B: $\frac58\cdot\frac25\cdot\frac6{10} = \frac{60}{400}$
-- sólo C: $\frac58\cdot\frac35\cdot\frac4{10} = \frac{60}{400}$
+**a) Los tres defectuosos:**
+$$\frac38\cdot\frac25\cdot\frac4{10} = \frac{24}{400} = \frac3{50}$$
 
-Suma: $\frac{174}{400} = \frac{87}{200}$.
+**b) Exactamente uno defectuoso.** Puede ser el de A, el de B o el de C. Son tres casos que no se pisan (mutuamente excluyentes), así que se calcula cada uno y se suman. En cada caso, la caja "elegida" da defectuoso y las otras dos dan bueno:
+- sólo el de A: $\frac38\cdot\frac35\cdot\frac6{10} = \frac{54}{400}$;
+- sólo el de B: $\frac58\cdot\frac25\cdot\frac6{10} = \frac{60}{400}$;
+- sólo el de C: $\frac58\cdot\frac35\cdot\frac4{10} = \frac{60}{400}$.
 
-c) $\frac{54/400}{174/400} = \frac{54}{174} = \frac9{29}$.
+$$P = \frac{54 + 60 + 60}{400} = \frac{174}{400} = \frac{87}{200}$$
+
+**c)** **Sabiendo** que hubo un solo defectuoso, ¿vino de A? Es una condicional (📄 H1, $P(E/F) = \frac{P(E\cap F)}{P(F)}$), y la misma lógica de Bayes: el caso que interesa dividido todos los casos posibles.
+$$P(\text{de A} / \text{uno solo}) = \frac{54/400}{174/400} = \frac{54}{174} = \frac9{29}$$
 
 </details>
 
@@ -941,9 +1210,17 @@ En cierta facultad, el 40 % de los hombres y el 55 % de las mujeres practican de
 <details>
 <summary>Solución paso a paso</summary>
 
-$P(D) = 0{,}7\cdot0{,}55 + 0{,}3\cdot0{,}4 = 0{,}385 + 0{,}12 = 0{,}505$.
+**Cómo reconocer un Bayes:** hay grupos (mujeres y hombres) con distinta probabilidad de algo (hacer deporte), y la pregunta va **al revés**: **sabiendo** que hace deporte, ¿de qué grupo es?
 
-Bayes: $P(M/D) = \frac{0{,}385}{0{,}505} = \frac{77}{101} \approx 0{,}7624$.
+**Datos:**
+- P(M) = 0,7 y P(H) = 0,3.
+- Los porcentajes de deporte son **dentro de cada grupo**, así que son condicionales: P(D/M) = 0,55 y P(D/H) = 0,4.
+
+**Probabilidad total** de hacer deporte (los dos caminos que llevan a D):
+$$P(D) = \underbrace{0{,}7\cdot0{,}55}_{0{,}385} + \underbrace{0{,}3\cdot0{,}4}_{0{,}12} = 0{,}505$$
+
+**Bayes** (📄 H1): el camino "mujer y deporte" dividido el total de deportistas:
+$$P(M/D) = \frac{0{,}385}{0{,}505} = \frac{77}{101} \approx 0{,}7624$$
 
 </details>
 
@@ -966,11 +1243,19 @@ De los pasajeros que viajan en Aerolíneas Cordobesas, el 30 % viaja con familia
 <details>
 <summary>Solución paso a paso</summary>
 
-P(S) = 1 − 0,30 − 0,25 = 0,45.
+**Escenarios** (con quién viaja), que forman una partición porque cada pasajero está en uno solo:
+- F (familia) = 0,30;
+- A (amigos) = 0,25;
+- S (solo) = 1 − 0,30 − 0,25 = 0,45, porque tienen que sumar 1.
 
-a) $P(N) = 0{,}3\cdot0{,}5 + 0{,}25\cdot0{,}7 + 0{,}45\cdot0{,}25 = 0{,}15 + 0{,}175 + 0{,}1125 = 0{,}4375$ ⇒ $P(\bar N) = 0{,}5625$.
+**Datos condicionales** ("de los que viajan con…"): P(N/F) = 0,5, P(N/A) = 0,7 y P(N/S) = 0,25, donde N = vuelo nocturno.
 
-b) $P(A/N) = \frac{0{,}175}{0{,}4375} = 0{,}4$.
+**a)** 💡 **Probabilidad total:** se suman los tres caminos que llevan a "nocturno", cada uno como P(grupo) · P(N / grupo):
+$$P(N) = 0{,}3\cdot0{,}5 + 0{,}25\cdot0{,}7 + 0{,}45\cdot0{,}25 = 0{,}15 + 0{,}175 + 0{,}1125 = 0{,}4375$$
+Lo que se pide es lo contrario: $P(\bar N) = 1 - 0{,}4375 = 0{,}5625$.
+
+**b)** Pregunta al revés: **sabiendo** que es nocturno, ¿viaja con amigos? 💡 **Bayes** (📄 H1), el camino "amigos y nocturno" sobre el total nocturno:
+$$P(A/N) = \frac{0{,}175}{0{,}4375} = 0{,}4$$
 
 </details>
 
@@ -999,17 +1284,26 @@ El Departamento de Ciencias Básicas de la Universidad tiene seis docentes titul
 <details>
 <summary>Solución paso a paso</summary>
 
-Total de comisiones: $\binom63 = 20$. Hay 2 con L (Leibnitz, Laplace) y 2 con E (Euler, Euclides).
+Se eligen 3 personas de 6 al azar, sin importar el orden. Todas las comisiones son igual de probables, así que vale Laplace: favorables / posibles.
 
-a) Ninguna L: $\binom43 = 4$ ⇒ $P = 1 - \frac4{20} = 0{,}8$.
+💡 $\binom nk$ (nCr en la calculadora) cuenta cuántos grupos de k se pueden formar con n elementos, sin importar el orden.
 
-b) "Dos con la misma inicial" sólo puede ser LL o EE (no hay tres con la misma inicial). Comisiones con LL: $\binom22\cdot4 = 4$; con EE: también 4. ⇒ $P = \frac4{8} = \frac12$.
+**Total de comisiones:** $\binom63 = 20$. Iniciales: L tiene 2 (Leibnitz, Laplace), E tiene 2 (Euler, Euclides), C tiene 1 (Cauchy) y G tiene 1 (Gauss).
 
-c) Pares posibles: $\binom62 = 15$.
+**a) "Alguno con L"**: es más fácil por complemento. "Ninguno con L" significa elegir los 3 entre los 4 que no empiezan con L: $\binom43 = 4$ comisiones.
+$$P = 1 - \frac4{20} = 0{,}8$$
 
-1) Suma 27: (12, 15) y (20, 7) ⇒ 2/15.
+**b)** Es una **condicional**: se achica el universo a las comisiones que tienen dos con la misma inicial. Eso solo puede pasar con LL o con EE, porque ninguna inicial se repite tres veces.
+- Comisiones con los dos L: se eligen los 2 L ($\binom22 = 1$ forma) y el tercero entre los otros 4: $1\cdot4 = 4$.
+- Comisiones con los dos E: también 4.
+- No hay ninguna con LL y EE a la vez, porque solo hay 3 lugares.
 
-2) Suma > 30: 12+20, 15+16, 15+20, 16+20 ⇒ 4/15.
+Universo nuevo: 8 comisiones. Favorables (la inicial repetida es L): 4.
+$$P = \frac48 = \frac12$$
+
+**c)** Ahora se eligen **2** personas: $\binom62 = 15$ pares posibles. Antigüedades: 12, 15, 9, 16, 20 y 7. Se listan los pares que cumplen:
+1. **Suma 27:** 12 + 15 y 20 + 7, así que $\frac{2}{15}$.
+2. **Suma mayor a 30:** 12 + 20 = 32, 15 + 16 = 31, 15 + 20 = 35 y 16 + 20 = 36, así que $\frac4{15}$. Control: 9 + 20 = 29 y 16 + 12 = 28 no llegan.
 
 </details>
 
@@ -1040,15 +1334,18 @@ Se tienen 10 bolitas verdes, 4 rojas, 8 azules y 3 blancas. Si se toma una bolit
 <details>
 <summary>Solución paso a paso</summary>
 
-Total 25 (equiprobables, Laplace).
+💡 **Regla de Laplace.** Si todos los resultados son igual de probables (cualquier bolita tiene la misma chance de salir):
+$$P(\text{evento}) = \frac{\text{casos favorables}}{\text{casos posibles}}$$
 
-a) 4/25
+Casos posibles: 10 + 4 + 8 + 3 = **25** bolitas.
 
-b) (10 + 8)/25 = 18/25
+**a)** Favorables: las 4 rojas, así que $\frac4{25} = 0{,}16$.
 
-c) 1 − 3/25 = 22/25
+**b)** "Verde o azul": se cuentan las de los dos colores. Ninguna bolita es de los dos colores a la vez, así que no hay que restar nada: $\frac{10 + 8}{25} = \frac{18}{25}$.
 
-d) verdes o blancas: 13/25
+**c)** 💡 **Complemento:** "no blanca" es lo contrario de "blanca", así que $P = 1 - P(\text{blanca}) = 1 - \frac3{25} = \frac{22}{25}$.
+
+**d)** "Ni roja ni azul" deja las verdes y las blancas: $\frac{10 + 3}{25} = \frac{13}{25}$.
 
 </details>
 
@@ -1081,21 +1378,25 @@ Hay diez cartones rojos numerados del 1 al 10 y quince verdes numerados del 11 a
 <details>
 <summary>Solución paso a paso</summary>
 
-Total 25.
+Hay 25 cartones, todos igual de probables, así que vale Laplace (favorables / posibles). Rojos: del 1 al 10. Verdes: del 11 al 25.
 
-a) 15/25 = 3/5
+**a)** 15 verdes de 25: $\frac{15}{25} = \frac35$.
 
-b) del 1 al 19: 19/25
+**b)** "Menor a 20" son los números del 1 al 19: $\frac{19}{25}$.
 
-c) rojos pares (2, 4, 6, 8, 10): 5/25 = 1/5
+**c)** "Rojo **y** par" (las dos cosas a la vez): 2, 4, 6, 8, 10, así que $\frac5{25} = \frac15$.
 
-d) 10 rojos + verdes pares (12, 14, …, 24 = 7) = 17/25
+**d)** "Rojo **o** par" (al menos una de las dos): todos los rojos (10) más los verdes que son pares (12, 14, …, 24, que son 7). Los rojos pares no se cuentan dos veces: $\frac{17}{25}$.
 
-e) "no verde y no impar" = rojo y par = 1/5
+Con la regla de la unión da lo mismo: $P(R) + P(\text{par}) - P(R \cap \text{par}) = \frac{10 + 12 - 5}{25}$, porque hay 12 pares en total.
 
-f) verdes impares 11, 13, …, 25 = 8 de 15 ⇒ 8/15
+**e)** "Ni verde ni impar" es "rojo y par" (De Morgan), lo mismo que c): $\frac15$.
 
-g) impares: 5 rojos + 8 verdes = 13 ⇒ 8/13
+**f)** 💡 **Condicional:** "se saca entre los verdes" achica el universo a los 15 verdes. De ellos, los impares son 11, 13, …, 25, que son 8: $\frac8{15}$.
+
+**g)** Universo: los impares, 5 rojos (1, 3, 5, 7, 9) más 8 verdes, en total 13. De ellos, los verdes son 8: $\frac8{13}$.
+
+f) y g) **no** dan lo mismo: $P(\text{impar}/V) \neq P(V/\text{impar})$. El orden de la condicional importa.
 
 </details>
 
@@ -1134,19 +1435,39 @@ Una consultora de marketing relevó la preferencia de hombres y mujeres respecto
 <details>
 <summary>Solución paso a paso</summary>
 
-Totales: H = 65, M = 85, A = 60, B = 90, N = 150.
+**Paso 1, completar los totales** de la tabla de contingencia:
 
-a) 65/150 ≈ 0,433
+| | A | B | Total |
+|---|---|---|---|
+| Hombre | 25 | 40 | **65** |
+| Mujer | 35 | 50 | **85** |
+| Total | **60** | **90** | **150** |
 
-b) 90/150 = 0,6
+Se elige un encuestado al azar entre 150, así que vale Laplace.
 
-c) 40/150 ≈ 0,267
+**a)** Hombres: $\frac{65}{150} \approx 0{,}433$.
 
-d) 40/65 ≈ 0,615 (condicional: se reduce el espacio a los 65 hombres)
+**b)** Prefieren B: $\frac{90}{150} = 0{,}6$.
 
-e) **Por fila** (cada fila suma 100 %): H: A 38,5 %, B 61,5 %; M: A 41,2 %, B 58,8 %. La celda (H, B) = 61,5 % es el porcentaje de hombres que prefiere B, o sea P(B/H).
+**c)** "Hombre **y** B" es la celda del cruce: $\frac{40}{150} \approx 0{,}267$.
 
-**Por columna** (cada columna suma 100 %): A: H 41,7 %, M 58,3 %; B: H 44,4 %, M 55,6 %. La celda (H, B) = 44,4 % es el porcentaje de hombres entre quienes prefieren B, o sea P(H/B).
+**d)** 💡 **Condicional:** "resulta ser hombre" significa que **ya se sabe** que es hombre. El universo se achica a los 65 hombres, y de ellos 40 eligieron B:
+$$P(B/H) = \frac{40}{65} \approx 0{,}615$$
+Con la fórmula de 📄 H1 da lo mismo: $\frac{P(B\cap H)}{P(H)} = \frac{40/150}{65/150}$.
+
+**e)** **Tabla por fila:** cada celda se divide por el total de **su fila**.
+- Hombres: A 25/65 = 38,5 %, B 40/65 = **61,5 %**.
+- Mujeres: A 35/85 = 41,2 %, B 50/85 = 58,8 %.
+
+La celda (H, B) = 61,5 % es "de los **hombres**, qué porcentaje prefiere B": $P(B/H)$.
+
+**Tabla por columna:** cada celda se divide por el total de **su columna**.
+- Envase A: H 25/60 = 41,7 %, M 58,3 %.
+- Envase B: H 40/90 = **44,4 %**, M 55,6 %.
+
+La celda (H, B) = 44,4 % es "de los que prefieren **B**, qué porcentaje son hombres": $P(H/B)$.
+
+**Moraleja:** lo que va **después** de la barra "/" es el grupo por el que se divide (el universo).
 
 </details>
 
@@ -1176,11 +1497,16 @@ e) **Por fila** (cada fila suma 100 %): H: A 38,5 %, B 61,5 %; M: A 41,2 %, B 58
 <details>
 <summary>Solución paso a paso</summary>
 
-4) Las cuatro regiones del Venn suman 1: $1 - 0{,}10 - 0{,}20 - 0{,}55 = 0{,}15$.
+**4)** En un diagrama de Venn con dos fallas, cada pieza cae en **una sola** de cuatro regiones: sólo A, sólo B, las dos, ninguna. Como siempre cae en alguna, las cuatro probabilidades suman 1:
+$$P(\text{las dos}) = 1 - 0{,}10 - 0{,}20 - 0{,}55 = 0{,}15$$
 
-5) Teorema de la multiplicación: $0{,}7\cdot0{,}1 = 0{,}07$.
+**5)** "El 10 % **de los de mecánica** desaprueba" es una probabilidad **condicional**: $P(D/M) = 0{,}1$. Se pide "mecánica **y** desaprueba", una intersección.
 
-6) Probabilidad total: $0{,}6\cdot0{,}1 + 0{,}4\cdot0{,}05 = 0{,}08$.
+💡 **Regla de la multiplicación**, que sale de despejar la condicional de 📄 H1: $P(M\cap D) = P(M)\cdot P(D/M) = 0{,}7\cdot0{,}1 = 0{,}07$.
+
+**6)** Un artículo fallado puede venir de M o de N, y hay que sumar los dos caminos (💡 **probabilidad total**). Cada camino es P(planta) · P(fallado / planta):
+$$P(F) = \underbrace{0{,}6\cdot0{,}1}_{\text{de M}} + \underbrace{0{,}4\cdot0{,}05}_{\text{de N}} = 0{,}06 + 0{,}02 = 0{,}08$$
+(N fabrica el resto: 1 − 0,6 = 0,4.)
 
 </details>
 
@@ -1213,15 +1539,19 @@ Calculen:
 <details>
 <summary>Solución paso a paso</summary>
 
-a) 0,20 + 0,30 = 0,5
+Las cuatro regiones del diagrama no se pisan, así que cada evento se calcula **sumando las regiones que lo forman**.
 
-b) sólo B = 0,1
+**a)** A está formado por "sólo A" y "A ∩ B": $0{,}20 + 0{,}30 = 0{,}5$.
 
-c) 0,2 + 0,3 + 0,1 = 0,6
+**b)** $B\cap A^c$ es "B pero no A", la región "sólo B": $0{,}1$.
 
-d) 0,3/0,5 = 0,6
+**c)** $A\cup B$ (al menos uno) son las tres regiones que tocan A o B: $0{,}2 + 0{,}3 + 0{,}1 = 0{,}6$. También es $1 - 0{,}40$, lo que queda afuera.
 
-e) P(B) = 0,4 ⇒ 0,1/0,4 = 0,25
+**d)** 💡 **Condicional** (📄 H1), $P(B/A) = \frac{P(A\cap B)}{P(A)}$: dentro de A, qué parte también es B.
+$$\frac{0{,}3}{0{,}5} = 0{,}6$$
+
+**e)** Primero $P(B) = 0{,}3 + 0{,}1 = 0{,}4$. Después, dentro de B, qué parte **no** es A (la región "sólo B"):
+$$P(A^c/B) = \frac{0{,}1}{0{,}4} = 0{,}25$$
 
 </details>
 
@@ -1253,17 +1583,23 @@ Un artículo puede tener dos tipos de fallas. El 30 % tiene la falla A, el 20 % 
 <details>
 <summary>Solución paso a paso</summary>
 
-$P(A\cup B) = 1 - 0{,}65 = 0{,}35$.
+**Ojo con los datos:** "el 30 % tiene la falla A" **incluye** a los que tienen las dos. No es "sólo A".
 
-a) $0{,}3 + 0{,}2 - 0{,}35 = 0{,}15$
+**Paso 1.** "Fallado" significa tener al menos una falla, $A\cup B$. Es lo contrario de "no tiene fallas":
+$$P(A\cup B) = 1 - 0{,}65 = 0{,}35$$
 
-b) $0{,}35 - 0{,}15 = 0{,}20$
+**a)** De la regla de la unión, $P(A\cup B) = P(A) + P(B) - P(A\cap B)$ (📄 H1, la de 3 sin C), se despeja la intersección:
+$$P(A\cap B) = 0{,}3 + 0{,}2 - 0{,}35 = 0{,}15$$
 
-c) 0,35
+**b)** "Una sola falla" es estar fallado pero sin tener las dos: $0{,}35 - 0{,}15 = 0{,}20$. Por regiones: sólo A = 0,30 − 0,15 = 0,15 y sólo B = 0,20 − 0,15 = 0,05, que suman 0,20 ✓.
 
-d) $0{,}15/0{,}3 = 0{,}5$
+**c)** Fallado = $P(A\cup B) = 0{,}35$.
 
-e) $P(A\cap\bar B) = 0{,}15$ y $P(\bar B) = 0{,}8$ ⇒ 0,1875
+**d)** "Entre los que tienen A" es una **condicional**:
+$$P(B/A) = \frac{P(A\cap B)}{P(A)} = \frac{0{,}15}{0{,}3} = 0{,}5$$
+
+**e)** Universo: los que **no** tienen B, $P(\bar B) = 1 - 0{,}2 = 0{,}8$. De ellos, los que tienen A son "sólo A", $P(A\cap\bar B) = 0{,}3 - 0{,}15 = 0{,}15$:
+$$P(A/\bar B) = \frac{0{,}15}{0{,}8} = 0{,}1875$$
 
 </details>
 
@@ -1292,9 +1628,13 @@ En Probabilidad y Estadística hay 3 divisiones, A, B y C, que tienen el 25 %, 3
 <details>
 <summary>Solución paso a paso</summary>
 
-a) $0{,}25\cdot0{,}2 + 0{,}35\cdot0{,}3 + 0{,}4\cdot0{,}25 = 0{,}05 + 0{,}105 + 0{,}1 = 0{,}255$
+**Escenarios:** la división del estudiante, con P(A) = 0,25, P(B) = 0,35 y P(C) = 0,40. Los porcentajes de desaprobados son **dentro de cada división** (condicionales): P(D/A) = 0,2, P(D/B) = 0,3 y P(D/C) = 0,25.
 
-b) Bayes: $0{,}1/0{,}255 \approx 0{,}392$
+**a)** 💡 **Probabilidad total:** un desaprobado puede venir de A, de B o de C. Se suman los tres caminos, cada uno como P(división) · P(D / división):
+$$P(D) = 0{,}25\cdot0{,}2 + 0{,}35\cdot0{,}3 + 0{,}4\cdot0{,}25 = 0{,}05 + 0{,}105 + 0{,}1 = 0{,}255$$
+
+**b)** Pregunta al revés: **sabiendo** que desaprobó, ¿es de C? 💡 **Bayes** (📄 H1), el camino "C y desaprobado" sobre el total de desaprobados:
+$$P(C/D) = \frac{0{,}1}{0{,}255} \approx 0{,}392$$
 
 </details>
 
@@ -1327,15 +1667,19 @@ $$P(B_1 \cap B_2 \cap B_3) = \frac37\cdot\frac26\cdot\frac15 = \frac1{35}$$
 <details>
 <summary>Solución paso a paso</summary>
 
-**Sin reposición** (los denominadores bajan: 7, 6, 5):
-- a) $\frac37\cdot\frac46\cdot\frac25 = \frac{24}{210} = \frac4{35}$
-- b) $\frac47\cdot\frac36\cdot\frac25 = \frac4{35}$
-- c) NNB, NBN y BNN valen cada una $\frac{36}{210}$ ⇒ $\frac{108}{210} = \frac{18}{35}$
+💡 **Diagrama de árbol.** Cada nivel es una extracción y cada rama es un color posible, con su probabilidad **en ese momento**. La probabilidad de un camino completo es el **producto** de sus ramas (regla de la multiplicación).
 
-**Con reposición** (siempre 4/7 y 3/7):
-- a) $\frac37\cdot\frac47\cdot\frac37 = \frac{36}{343}$
-- b) $(\frac47)^3 = \frac{64}{343}$
-- c) $3\cdot(\frac47)^2\cdot\frac37 = \frac{144}{343}$
+**Sin reposición.** La bolita no vuelve, así que en cada paso hay una menos: los denominadores son 7, 6, 5, y los numeradores bajan según el color que ya salió.
+- **a) B, N, B:** 1.ª blanca, 3 de 7. 2.ª negra, 4 de 6 (quedan todas las negras). 3.ª blanca, 2 de 5 (ya salió una blanca).
+  $$\frac37\cdot\frac46\cdot\frac25 = \frac{24}{210} = \frac4{35}$$
+- **b) N, N, N:** $\frac47\cdot\frac36\cdot\frac25 = \frac{24}{210} = \frac4{35}$.
+- **c) Dos negras**, sin importar el orden. La blanca puede estar 1.ª, 2.ª o 3.ª: NNB, NBN y BNN. Cada camino da $\frac{4\cdot3\cdot3}{210} = \frac{36}{210}$ (los mismos números en otro orden). Son caminos que no se pisan, así que se suman:
+  $$3\cdot\frac{36}{210} = \frac{108}{210} = \frac{18}{35}$$
+
+**Con reposición.** La bolita vuelve, así que la caja siempre tiene 4 negras y 3 blancas: las extracciones son **independientes** y siempre valen $\frac47$ (negra) y $\frac37$ (blanca).
+- **a)** $\frac37\cdot\frac47\cdot\frac37 = \frac{36}{343}$.
+- **b)** $\left(\frac47\right)^3 = \frac{64}{343}$.
+- **c)** Tres órdenes, cada uno de $\left(\frac47\right)^2\cdot\frac37$: $3\cdot\frac{48}{343} = \frac{144}{343}$.
 
 </details>
 
@@ -1362,17 +1706,22 @@ Según los registros de Salud Pública de una ciudad, los porcentajes de los tip
 <details>
 <summary>Solución paso a paso</summary>
 
-a) $0{,}4^2 = 0{,}16$
+💡 **Independencia:** el tipo de sangre de una persona no influye en el de la otra. La probabilidad de que pasen dos cosas (una con cada persona) es el **producto** (📄 H1, $P(A\cap B) = P(A)P(B)$).
 
-b) $0{,}6^2 = 0{,}36$
+**a) Las dos del tipo A:** $0{,}4\cdot0{,}4 = 0{,}16$.
 
-c) dos órdenes: $2\cdot0{,}4\cdot0{,}3 = 0{,}24$
+**b) Ninguna del tipo A:** cada una "no A" con prob. 1 − 0,4 = 0,6, así que $0{,}6^2 = 0{,}36$.
 
-d) $1 - 0{,}9^2 = 0{,}19$
+**c) Una A y la otra O.** Hay **dos órdenes** posibles: la 1.ª A y la 2.ª O, o la 1.ª O y la 2.ª A. Cada uno vale $0{,}4\cdot0{,}3$, y no se pisan, así que se suman:
+$$2\cdot0{,}4\cdot0{,}3 = 0{,}24$$
 
-e) $0{,}16 + 0{,}04 + 0{,}09 + 0{,}01 = 0{,}30$
+**d) "Alguna AB"** (al menos una) se hace por complemento: 1 − "ninguna es AB". Cada una no es AB con prob. 0,9:
+$$1 - 0{,}9^2 = 0{,}19$$
 
-f) 0,70
+**e) Mismo tipo:** las dos A, o las dos B, o las dos O, o las dos AB. Son casos que no se pisan:
+$$0{,}4^2 + 0{,}2^2 + 0{,}3^2 + 0{,}1^2 = 0{,}16 + 0{,}04 + 0{,}09 + 0{,}01 = 0{,}30$$
+
+**f) Distinto tipo** es lo contrario de e): $1 - 0{,}30 = 0{,}70$.
 
 </details>
 
@@ -1403,11 +1752,16 @@ Un equipo de fútbol gana con probabilidad 0,6, pierde con probabilidad 0,3 y em
 <details>
 <summary>Solución paso a paso</summary>
 
-a) $0{,}6\cdot0{,}3\cdot0{,}1 = 0{,}018$
+Se supone que los partidos son **independientes** (el resultado de uno no cambia las chances del otro). Entonces la probabilidad de una secuencia de resultados es el producto.
 
-b) hay $3! = 6$ órdenes ⇒ $0{,}108$
+**a) G, P, E en ese orden:** $0{,}6\cdot0{,}3\cdot0{,}1 = 0{,}018$.
 
-c) exactamente 2 victorias: $\binom32 0{,}6^2\cdot0{,}4 = 0{,}432$
+**b) Uno de cada resultado, en cualquier orden.** Hay que contar los órdenes posibles: G, P y E se pueden ordenar de $3! = 3\cdot2\cdot1 = 6$ maneras (GPE, GEP, PGE, PEG, EGP, EPG). Cada orden vale 0,018 (los mismos factores en otro orden), así que:
+$$6\cdot0{,}018 = 0{,}108$$
+
+**c) Exactamente 2 victorias.** El partido que no gana puede ser el 1.º, el 2.º o el 3.º: hay $\binom32 = 3$ formas de elegir cuáles 2 gana. En cada caso hay 2 victorias ($0{,}6^2$) y un "no gana", que es perder o empatar ($0{,}3 + 0{,}1 = 0{,}4$):
+$$3\cdot0{,}6^2\cdot0{,}4 = 0{,}432$$
+(Esto es la distribución **binomial** de la Unidad 3; 📄 H1 tiene la fórmula $\binom nk p^k(1-p)^{n-k}$.)
 
 </details>
 
@@ -1435,13 +1789,17 @@ En la búsqueda de agua, se encuentra un pozo potable con probabilidad 0,1.
 <details>
 <summary>Solución paso a paso</summary>
 
-Hace falta que los n − 1 anteriores fallen (0,9 cada uno) y que el n-ésimo sea potable:
+**Traducción:** "tener que hacer n pozos" significa que el **primer** potable aparece justo en el pozo número n. Los n − 1 anteriores salieron **no** potables (prob. 0,9 cada uno) y el n-ésimo sí (prob. 0,1).
 
-a) $0{,}9\cdot0{,}1 = 0{,}09$
+Se supone que los pozos son independientes, así que esa secuencia es el producto de sus probabilidades.
 
-b) $0{,}9^9\cdot0{,}1 \approx 0{,}0387$
+**a)** El 1.º falla y el 2.º es potable: $0{,}9\cdot0{,}1 = 0{,}09$.
 
-c) $0{,}9^{n-1}\cdot0{,}1$
+**b)** Los 9 primeros fallan y el 10.º es potable: $0{,}9^9\cdot0{,}1 \approx 0{,}0387$.
+
+**c)** En general: $0{,}9^{n-1}\cdot0{,}1$.
+
+(Es la distribución **geométrica** de la Unidad 3.)
 
 </details>
 
@@ -1470,15 +1828,21 @@ En un supermercado, el 90 % de los clientes compra comestibles, el 70 % compra a
 <details>
 <summary>Solución paso a paso</summary>
 
-El enunciado no da intersecciones, así que hay que **suponer independencia** entre los rubros.
+**Problema:** el enunciado da la probabilidad de cada rubro por separado, pero no dice qué pasa con los que compran varios. Sin eso no se pueden calcular las combinaciones. Hay que **suponer independencia**: comprar un rubro no cambia la probabilidad de comprar otro. Con esa suposición, "esto y aquello" es el producto.
 
-a) $0{,}9\cdot0{,}7\cdot0{,}2 = 0{,}126$
+C = comestibles (0,9), T = tocador y limpieza (0,7), E = electrodomésticos (0,2).
 
-b) $0{,}1\cdot0{,}3\cdot0{,}8 = 0{,}024$
+**a) Los tres:** $0{,}9\cdot0{,}7\cdot0{,}2 = 0{,}126$.
 
-c) $1 - 0{,}024 = 0{,}976$
+**b) Ninguno:** no C (0,1), no T (0,3) y no E (0,8). Los complementos de eventos independientes también son independientes:
+$$0{,}1\cdot0{,}3\cdot0{,}8 = 0{,}024$$
 
-d) $P(CT) + P(CE) + P(TE) - 2P(CTE) = 0{,}63 + 0{,}18 + 0{,}14 - 2\cdot0{,}126 = 0{,}698$
+**c) Alguno** (al menos uno) es lo contrario de "ninguno": $1 - 0{,}024 = 0{,}976$.
+
+**d) Al menos dos** significa exactamente dos o los tres. Se suman las intersecciones de a dos: $P(C\cap T) = 0{,}63$, $P(C\cap E) = 0{,}18$ y $P(T\cap E) = 0{,}14$.
+
+Pero los que compran **los tres** están incluidos en las tres intersecciones, así que se contaron 3 veces. Deben contarse una sola vez, y por eso se restan 2 veces:
+$$0{,}63 + 0{,}18 + 0{,}14 - 2\cdot0{,}126 = 0{,}698$$
 
 </details>
 
@@ -1509,13 +1873,27 @@ La UTN posee tres cursos de Probabilidad y Estadística en el turno noche. El pr
 <details>
 <summary>Solución paso a paso</summary>
 
-Total 78; no trabajan 12; trabajan 66 (32, 20 y 14).
+**Paso 1, una tabla con todo contado.** Se elige un alumno al azar entre todos, así que vale Laplace con estos números:
 
-a) 1) 12/78 2) 3/35 3) 14/66
+| | Curso 1 | Curso 2 | Curso 3 | Total |
+|---|---|---|---|---|
+| Sin trabajo | 3 | 5 | 4 | 12 |
+| Con trabajo | 32 | 20 | 14 | 66 |
+| Total | 35 | 25 | 18 | 78 |
 
-b) Con la aproximación de independencia que usa la resolución del aula: P(T) = 11/13 y P(T̄) = 2/13. Hay $\binom42 = 6$ órdenes ⇒ $6\left(\frac{11}{13}\right)^2\left(\frac2{13}\right)^2 \approx 0{,}102$.
+**a)**
+1. **No tiene trabajo:** $\frac{12}{78} \approx 0{,}154$.
+2. **Sabiendo que es del 1.er curso** (condicional): el universo pasa a ser los 35 del curso 1, y de ellos 3 no trabajan: $\frac3{35}$.
+3. **Sabiendo que tiene trabajo**: el universo son los 66 que trabajan, y de ellos 14 son del curso 3: $\frac{14}{66} \approx 0{,}212$.
 
-(Sin reposición exacta: $\binom{12}{2}\binom{66}{2}/\binom{78}{4} \approx 0{,}0992$.)
+**b)** Se eligen 4. Hay que pensar cuántas formas hay de que 2 no trabajen y 2 sí.
+
+**Como lo resuelve el aula (aproximación):** se trata cada elección como independiente, con P(trabaja) = 66/78 = 11/13 y P(no trabaja) = 2/13. Las posiciones de los 2 que no trabajan se pueden elegir de $\binom42 = 6$ formas:
+$$6\left(\frac{11}{13}\right)^2\left(\frac2{13}\right)^2 \approx 0{,}102$$
+
+**Exacto, sin reposición:** no se puede elegir dos veces al mismo alumno. Se cuentan grupos: elegir 2 de los 12 sin trabajo **y** 2 de los 66 con trabajo, sobre todos los grupos de 4 de 78:
+$$\frac{\binom{12}{2}\binom{66}{2}}{\binom{78}{4}} \approx 0{,}0992$$
+Esa cuenta es la hipergeométrica de la Unidad 3. Las dos dan parecido porque el grupo es grande.
 
 </details>
 
@@ -1562,19 +1940,41 @@ b) Con la aproximación de independencia que usa la resolución del aula: P(T) =
 <details>
 <summary>Solución paso a paso</summary>
 
-2) $\frac12\cdot\frac34 = \frac38$.
+**2)** "Si salió cara, la probabilidad de par es 1/4" es una condicional: $P(\text{par}/C) = \frac14$, así que $P(\text{impar}/C) = 1 - \frac14 = \frac34$.
 
-3) a) $0{,}1\cdot0{,}02 + 0{,}3\cdot0{,}004 + 0{,}6\cdot0{,}002 = 0{,}0044$ b) $0{,}0012/0{,}0044 \approx 0{,}273$.
+Se pide "cara **y** impar". 💡 Regla de la multiplicación, que sale de despejar la condicional de 📄 H1: $P(C\cap\text{impar}) = P(C)\,P(\text{impar}/C) = \frac12\cdot\frac34 = \frac38$.
 
-4) a) 1.er disco = 3 (1/6), último par {0, 2, 4} (1/2) y el del medio cualquiera ⇒ 1/12. b) P(153) = 1/216 ⇒ $\frac1{12} + \frac1{216} - \frac1{12}\cdot\frac1{216} \approx 0{,}0876$.
+**3)** Escenarios: el proveedor (0,1; 0,3; 0,6). Los porcentajes de rechazo son **dentro de cada proveedor** (condicionales): 0,02, 0,004 y 0,002.
+- **a)** 💡 Probabilidad total, sumando los tres caminos que llevan a "rechazado":
+  $$P(R) = 0{,}1\cdot0{,}02 + 0{,}3\cdot0{,}004 + 0{,}6\cdot0{,}002 = 0{,}002 + 0{,}0012 + 0{,}0012 = 0{,}0044$$
+- **b)** 💡 Bayes (📄 H1): sabiendo que fue rechazado, ¿vino del 3.º? Es el camino del 3.º sobre el total:
+  $$\frac{0{,}0012}{0{,}0044} \approx 0{,}273$$
 
-5) Si A ⊆ B: P(A)/P(B). Si son independientes: P(A).
+**4)** Cada disco muestra un dígito del 0 al 5 al azar (6 opciones, prob. 1/6 cada uno), sin depender de los otros.
+- **a)** "Empieza con 3 y es par":
+  - el 1.er disco tiene que ser 3, prob. $\frac16$;
+  - el último tiene que ser par, {0, 2, 4}, prob. $\frac36 = \frac12$;
+  - el del medio puede ser cualquiera, prob. 1.
 
-6) Igual que el Ej. 14 c) de la guía, con B en lugar de C.
+  Por independencia se multiplica: $\frac16\cdot1\cdot\frac12 = \frac1{12}$.
+- **b)** La 2.ª cerradura se abre solo con 153: un número exacto de los $6^3 = 216$ posibles, prob. $\frac1{216}$. La puerta se abre si se abre **al menos una**: es una unión. Como son independientes, la intersección es el producto:
+  $$\frac1{12} + \frac1{216} - \frac1{12}\cdot\frac1{216} \approx 0{,}0876$$
 
-7) Incompatibles: A∩B = ∅. Independientes: P(A∩B) = P(A)P(B). No son complementarios: además deberían sumar 1, y 0,5 + 0,3 = 0,8.
+**5)** Con la definición, $P(A/B) = \frac{P(A\cap B)}{P(B)}$:
+- **a)** Si A ⊆ B, lo común es A misma, $A\cap B = A$, así que $P(A/B) = \frac{P(A)}{P(B)}$.
+- **b)** Si son independientes, $P(A\cap B) = P(A)P(B)$, así que $P(A/B) = \frac{P(A)P(B)}{P(B)} = P(A)$. Saber B **no cambia** la probabilidad de A, que es justamente lo que significa ser independientes.
 
-8) A, B y C deben ser M.E. y su unión debe ser S (una partición). Entonces $P(D) = P(A)P(D/A) + P(B)P(D/B) + P(C)P(D/C)$.
+**6)** Es la misma demostración del Ej. 14 c) de la guía, con B haciendo de condición. Por la definición y la distributiva:
+$$P(A\cup C/B) = \frac{P[(A\cap B)\cup(C\cap B)]}{P(B)} = \frac{P(A\cap B) + P(C\cap B) - P(A\cap C\cap B)}{P(B)}$$
+Separando en tres fracciones: $P(A/B) + P(C/B) - P(A\cap C/B)$.
+
+**7)**
+- **a)** **Incompatibles:** no pueden ocurrir juntos, $A\cap B = \emptyset$. **Independientes:** uno no cambia la probabilidad del otro, $P(A\cap B) = P(A)P(B)$ (📄 H1). Son cosas distintas.
+- **b)** Para ser **complementarios**, además de no tener nada en común, entre los dos tienen que cubrir todo S, es decir sumar 1. Pero 0,5 + 0,3 = 0,8 ≠ 1. Son incompatibles, pero **no** complementarios: queda un 20 % donde no ocurre ninguno de los dos.
+
+**8)** Para usar la **probabilidad total**, A, B y C tienen que ser los "escenarios" posibles: que no se pisen (mutuamente excluyentes) y que siempre ocurra uno de ellos (su unión es S). Eso se llama **partición**. Entonces:
+$$P(D) = P(A)P(D/A) + P(B)P(D/B) + P(C)P(D/C)$$
+Esta suma aparece en 📄 H1 como el denominador de Bayes.
 
 </details>
 
@@ -1607,9 +2007,18 @@ b) Con la aproximación de independencia que usa la resolución del aula: P(T) =
 <details>
 <summary>Solución paso a paso</summary>
 
-2) a) M.E. ⇒ P(A∩B) = 0 ≠ P(A)P(B) > 0. b) Independientes ⇒ P(A∩B) = P(A)P(B) > 0 ⇒ A∩B ≠ ∅.
+**Herramientas:** la definición de independencia, $P(A\cap B) = P(A)P(B)$, y la de condicional, $P(A/B) = \frac{P(A\cap B)}{P(B)}$ (las dos en 📄 H1).
 
-5) $\frac{P(A\cap B) + P(\bar A\cap B)}{P(B)} = \frac{P(B)}{P(B)} = 1$.
+Se supone que A y B tienen probabilidad positiva (que "no son vacíos" se interpreta así).
+
+**2) a)** Mutuamente excluyentes significa $A\cap B = \emptyset$, así que $P(A\cap B) = 0$. Pero $P(A)P(B) > 0$, porque los dos son positivos. Entonces $P(A\cap B) \neq P(A)P(B)$: **no** son independientes.
+
+**2) b)** Es la misma idea dada vuelta. Si son independientes, $P(A\cap B) = P(A)P(B) > 0$. Una probabilidad positiva no puede ser la del vacío, así que $A\cap B \neq \emptyset$: **no** son excluyentes.
+
+**5)** Se suman las dos condicionales, que tienen el mismo denominador:
+$$P(A/B) + P(\bar A/B) = \frac{P(A\cap B) + P(\bar A\cap B)}{P(B)}$$
+Los resultados de B se parten en los que están en A y los que no, sin pisarse, así que el numerador es P(B):
+$$\frac{P(B)}{P(B)} = 1$$
 
 (Los demás ejercicios teóricos del aula son los Ej. 11, 14, 17, 19 y 24 de la guía, resueltos más arriba.)
 

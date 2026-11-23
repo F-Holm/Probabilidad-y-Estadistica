@@ -21,23 +21,26 @@ Dos fábricas de tomates enlatados (A y B) abastecen con su producción el consu
 <details>
 <summary>Solución paso a paso</summary>
 
-**Sucesos:** A = "la lata es de la fábrica A", B = "la lata es de la fábrica B", M = "pesa más de 248 g".
+**Cómo reconocerlo:** hay dos "fuentes" (las fábricas), cada una con su propia distribución de pesos. La pregunta a) junta las dos (**probabilidad total**) y la b) va al revés: sabiendo el resultado, ¿de qué fuente vino? (**Bayes**).
 
-**Datos:**
-- P(A) = 0,4 y $X_A \sim N(250;\ 4)$ (σ = √16).
-- P(B) = 0,6 y $X_B \sim N(247;\ 6)$: en la normal, mediana = media, así que μ_B = 247.
+**Sucesos:** A = "la lata es de la fábrica A", B = "es de la fábrica B", M = "pesa más de 248 g".
 
-**Probabilidades condicionales:**
-- $P(M/A) = P\left(Z > \frac{248 - 250}4\right) = P(Z > -0{,}5) = 0{,}69146$
-- $P(M/B) = P\left(Z > \frac{248 - 247}6\right) = P(Z > 0{,}167) = 0{,}43382$
+**Datos y dos trampas:**
+- P(A) = 0,4 y el peso de A es $N(250;\ 4)$. ⚠️ Dan la **varianza** (16): el desvío es σ = √16 = 4, y la app pide σ.
+- P(B) = 0,6 y el peso de B es $N(247;\ 6)$. ⚠️ Dan la **mediana**. En la Normal, que es simétrica, mediana = media (❌), así que μ_B = 247.
 
-a) **Probabilidad total:**
+💡 **Normal y estandarización** (📄 H1, $\frac{X - \mu}{\sigma} = Z$). La probabilidad de pesar más de 248 **dentro de cada fábrica** (son condicionales):
+```
+P(M/A):  X~N(μ;σ)   μ=250   σ=4   P(X>x)   x=248   → 0.69146
+P(M/B):  X~N(μ;σ)   μ=247   σ=6   P(X>x)   x=248   → 0.43382
+```
+Con tabla: $P(Z > -0{,}5) = 0{,}69146$ y $P(Z > 0{,}167) = 0{,}43382$.
 
-$P(M) = 0{,}4\cdot0{,}69146 + 0{,}6\cdot0{,}43382 = 0{,}27659 + 0{,}26029 = 0{,}53687$.
+**a)** 💡 **Probabilidad total:** una lata pesada puede venir de A o de B. Se suman los dos caminos, cada uno como P(fábrica) · P(M / fábrica). Es el denominador de Bayes en 📄 H1:
+$$P(M) = 0{,}4\cdot0{,}69146 + 0{,}6\cdot0{,}43382 = 0{,}27659 + 0{,}26029 = 0{,}53687$$
 
-b) **Bayes:**
-
-$P(B/M) = \frac{P(M/B)P(B)}{P(M)} = \frac{0{,}26029}{0{,}53687} = 0{,}4848$.
+**b)** 💡 **Bayes** (📄 H1, $P(A_j/B) = \frac{P(A_j)P(B/A_j)}{\sum P(A_i)P(B/A_i)}$): el camino de B dividido el total.
+$$P(B/M) = \frac{0{,}26029}{0{,}53687} = 0{,}4848$$
 
 </details>
 
@@ -65,20 +68,27 @@ $$f_X(x) = \begin{cases} ax & 0 < x \le 2\\ 0 & \text{otro caso}\end{cases}$$
 <details>
 <summary>Solución paso a paso</summary>
 
-**Constante a:** el área total vale 1.
+💡 **Densidad** (variable continua): la probabilidad de un intervalo es el **área bajo f** en ese intervalo. Por eso el área total tiene que dar 1.
 
-$\int_0^2 ax\,dx = a\frac{x^2}2\Big|_0^2 = 2a = 1 \Rightarrow a = \frac12$.
+**Constante a.** Área total igual a 1:
+$$\int_0^2 ax\,dx = a\frac{x^2}{2}\Big|_0^2 = 2a = 1 \;\Rightarrow\; a = \frac12$$
 
-a) Para 0 < x ≤ 2: $F(x) = \int_0^x \frac t2\,dt = \frac{x^2}4$.
+**a)** 💡 **Función de distribución** $F(x) = P(X \le x)$: el área acumulada hasta x (📄 H1, $F(x) = \int_{-\infty}^x f(t)\,dt$). Se arma por tramos:
+- antes de 0 no hay área: F = 0;
+- entre 0 y 2: $F(x) = \int_0^x \frac t2\,dt = \frac{x^2}{4}$;
+- después de 2 ya se acumuló todo: F = 1.
 
 $$F(x) = \begin{cases} 0 & x \le 0\\ \dfrac{x^2}4 & 0 < x \le 2\\ 1 & x > 2\end{cases}$$
 
-b) **Mediana:** $F(x_{me}) = \frac{x_{me}^2}4 = 0{,}5 \Rightarrow x_{me} = \sqrt2 \approx 1{,}414$.
+Control: F(2) = 4/4 = 1 ✓, no hay saltos.
 
-**Varianza:**
-- $E(X) = \int_0^2 x\cdot\frac x2\,dx = \frac{x^3}6\Big|_0^2 = \frac86 = \frac43$
-- $E(X^2) = \int_0^2 x^2\cdot\frac x2\,dx = \frac{x^4}8\Big|_0^2 = 2$
-- $V(X) = E(X^2) - E(X)^2 = 2 - \frac{16}9 = \frac29 \approx 0{,}2222$
+**b)** 💡 **Mediana** (❌): el valor que deja la mitad del área a cada lado, $F(x_{me}) = 0{,}5$.
+$$\frac{x_{me}^2}{4} = 0{,}5 \;\Rightarrow\; x_{me} = \sqrt2 \approx 1{,}414$$
+
+💡 **Varianza** (📄 H1): $V(X) = E(X^2) - E(X)^2$, con $E(g(X)) = \int g(x)f(x)\,dx$. Se multiplica cada valor (o su cuadrado) por la densidad y se integra.
+- $E(X) = \int_0^2 x\cdot\frac x2\,dx = \frac{x^3}{6}\Big|_0^2 = \frac86 = \frac43$
+- $E(X^2) = \int_0^2 x^2\cdot\frac x2\,dx = \frac{x^4}{8}\Big|_0^2 = 2$
+- $V(X) = 2 - \left(\frac43\right)^2 = 2 - \frac{16}{9} = \frac29 \approx 0{,}2222$
 
 </details>
 
@@ -101,15 +111,20 @@ La distancia entre dos fallas de hilado se distribuye exponencialmente, de modo 
 <details>
 <summary>Solución paso a paso</summary>
 
-X = distancia entre fallas (m), X ~ Exp(λ), con $P(X > x) = e^{-\lambda x}$.
+💡 **Distribución exponencial.** Sirve para distancias o tiempos de espera hasta un evento. Tiene un parámetro λ. De 📄 H1, $F(x) = 1 - e^{-\lambda x}$, así que la probabilidad de superar x es $P(X > x) = e^{-\lambda x}$. Su media es 1/λ.
 
-**1. Hallar λ:**
+X = distancia entre fallas (en metros).
 
-$e^{-1800\lambda} = 0{,}082 \Rightarrow \lambda = \frac{-\ln0{,}082}{1800} = 0{,}0013895$ m⁻¹ (distancia media 1/λ ≈ 720 m).
+**1. Hallar λ con el dato.** "Más de 1800 m con probabilidad 0,082":
+$$e^{-1800\lambda} = 0{,}082 \;\Rightarrow\; -1800\lambda = \ln0{,}082 \;\Rightarrow\; \lambda = \frac{-\ln0{,}082}{1800} = 0{,}0013895 \text{ m}^{-1}$$
+La distancia media es 1/λ ≈ 720 m.
 
-**2. Probabilidad pedida:**
-
-$P(1000 < X < 1500) = e^{-1000\lambda} - e^{-1500\lambda} = e^{-1{,}3895} - e^{-2{,}0842} = 0{,}24923 - 0{,}12443 = 0{,}1248$.
+**2. "Entre 1000 y 1500"** es la acumulada hasta 1500 menos la acumulada hasta 1000 (📄 H1, $P(a < X < b) = F(b) - F(a)$):
+$$P(1000 < X < 1500) = (1 - e^{-1500\lambda}) - (1 - e^{-1000\lambda}) = e^{-1{,}3895} - e^{-2{,}0842} = 0{,}24923 - 0{,}12443 = 0{,}1248$$
+```
+X~Exp(λ)   λ=0.0013895   P(X<x)   x=1500   → 0.87557
+X~Exp(λ)   λ=0.0013895   P(X<x)   x=1000   → 0.75077     → resta = 0.1248
+```
 
 </details>
 
@@ -133,17 +148,28 @@ De los pernos manufacturados por cierta aplicación, el 90 % satisface la longit
 <details>
 <summary>Solución paso a paso</summary>
 
-Los pernos se toman independientes (población grande) ⇒ binomiales.
+💡 **Distribución binomial** (📄 H1, $P(X = k) = \binom nk p^k(1-p)^{n-k}$). Se usa cuando:
+- se repite n veces un ensayo con dos resultados (éxito o no);
+- los ensayos son independientes, con la misma probabilidad p;
+- se cuenta cuántos éxitos hay.
 
-a) X = pernos utilizables entre 3, X ~ Bin(3; 0,9) ⇒ $P(X = 3) = 0{,}9^3 = 0{,}729$.
+La producción es grande, así que elegir unos pocos pernos no cambia las proporciones: son independientes. En cada inciso hay que definir **qué es éxito**.
 
-b) Y = pernos a recortar entre 5, Y ~ Bin(5; 0,06):
+**a)** Éxito = "utilizable" (p = 0,9), n = 3. Se piden los 3:
+$$P(X = 3) = 0{,}9^3 = 0{,}729$$
+```
+X~Bin(n,p)   n=3   p=0.9   P(X=x)   x=3   → 0.729
+```
 
-$P(Y \ge 1) = 1 - P(Y = 0) = 1 - 0{,}94^5 = 1 - 0{,}7339 = 0{,}2661$.
+**b)** Éxito = "hay que recortarlo" (p = 0,06), n = 5. "Al menos uno" se hace por complemento: 1 − "ninguno".
+$$P(Y \ge 1) = 1 - 0{,}94^5 = 1 - 0{,}7339 = 0{,}2661$$
+```
+X~Bin(n,p)   n=5   p=0.06   P(X≥x)   x=1   → 0.2661
+```
 
-c) No se desechan: p = 1 − 0,04 = 0,96 ⇒ E = np = 30·0,96 = 28,8.
-
-Se usan inmediatamente: p = 0,9 ⇒ E = 30·0,9 = 27.
+**c)** 💡 **Cantidad esperada** en una binomial: E = n·p (❌, la hoja trae solo la varianza np(1 − p)).
+- "No desechar" tiene p = 1 − 0,04 = 0,96: $E = 30\cdot0{,}96 = 28{,}8$.
+- "Usar inmediatamente" tiene p = 0,9: $E = 30\cdot0{,}9 = 27$.
 
 </details>
 
@@ -168,18 +194,18 @@ Se usan inmediatamente: p = 0,9 ⇒ E = 30·0,9 = 27.
 <details>
 <summary>Solución paso a paso</summary>
 
-a) Propiedades:
-1. **Esperanza de una constante:** E(c) = c.
-2. **Linealidad:** E(aX + b) = aE(X) + b.
+💡 **Esperanza** E(X): el promedio que daría X si el experimento se repitiera muchísimas veces. En el caso discreto es $E(X) = \sum x_iP(x_i)$ (📄 H1): cada valor por su probabilidad.
 
-**Demostración de (2), caso discreto:**
+**a)** Dos propiedades (❌, no están en la hoja):
+1. **Esperanza de una constante:** E(c) = c. Si siempre vale c, el promedio es c.
+2. **Linealidad:** E(aX + b) = aE(X) + b. Si a cada valor se le hace "por a, más b", al promedio le pasa lo mismo.
 
-$E(aX + b) = \sum_i (ax_i + b)P(x_i) = a\sum_i x_iP(x_i) + b\sum_i P(x_i) = aE(X) + b\cdot1$.
+**Demostración de (2), caso discreto.** Se aplica la definición a la variable aX + b. Toma el valor $ax_i + b$ con la misma probabilidad $P(x_i)$:
+$$E(aX + b) = \sum_i (ax_i + b)P(x_i) = a\underbrace{\sum_i x_iP(x_i)}_{E(X)} + b\underbrace{\sum_i P(x_i)}_{=1} = aE(X) + b$$
+Se separó la suma en dos y se sacaron las constantes. Las probabilidades suman 1. En el caso continuo es igual, con integrales y $\int f(x)\,dx = 1$.
 
-En el caso continuo es igual, con integrales y $\int f(x)\,dx = 1$.
-
-b) Se desarrolla y se aplica la linealidad:
-- $E[(2 + 4X)^2] = E(4 + 16X + 16X^2) = 4 + 16\cdot2 + 16\cdot8 = 4 + 32 + 128 = 164$
+**b)** ⚠️ **No** se puede "meter" la esperanza dentro del cuadrado: $E[(2+4X)^2] \neq (2 + 4E(X))^2$. Primero se **desarrolla** y después se aplica la linealidad término a término:
+- $E[(2 + 4X)^2] = E(4 + 16X + 16X^2) = 4 + 16E(X) + 16E(X^2) = 4 + 32 + 128 = 164$
 - $E[X^2 + 2(1 + X)] = E(X^2) + 2 + 2E(X) = 8 + 2 + 4 = 14$
 
 </details>
@@ -206,13 +232,15 @@ Una urna contiene cinco bolillas negras, dos blancas y cuatro rojas. Se extrae a
 <details>
 <summary>Solución paso a paso</summary>
 
-Total: 11 bolillas, con reposición ⇒ extracciones independientes con P(N) = 5/11, P(B) = 2/11 y P(R) = 4/11.
+💡 **Distribución conjunta.** Cuando hay **dos** variables en el mismo experimento, la conjunta da la probabilidad de cada **par**: $P(X = x \text{ y } Y = y)$. Se arma como una tabla con X en las filas e Y en las columnas.
 
-Cada secuencia de 3 tiene probabilidad (producto)/11³ = …/1331. Si no sale ninguna blanca, Y cuenta todas las rojas de la muestra.
+**Planteo.** Hay 11 bolillas y se repone, así que las extracciones son **independientes** y siempre valen P(N) = 5/11, P(B) = 2/11 y P(R) = 4/11. La probabilidad de una secuencia de 3 es el producto (📄 H1, independencia), con denominador 11³ = 1331.
 
-a) Se recorren las 27 secuencias posibles y se agrupan por (x, y). Por ejemplo:
-- (X = 0, Y = 0): la primera es blanca y las otras no son negras: BBB, BBR, BRB, BRR ⇒ (8 + 16 + 16 + 32)/1331 = 72/1331.
-- (X = 1, Y = 2): una negra y dos rojas, sin blanca: NRR, RNR, RRN ⇒ 3·5·4·4/1331 = 240/1331.
+⚠️ **Cuidado con Y:** cuenta las rojas **antes de la primera blanca**. Si no sale ninguna blanca, cuenta todas las rojas.
+
+**a) Método:** se recorren las 27 secuencias posibles (3 colores en 3 extracciones) y se agrupan por el par (x, y) que producen. Por ejemplo:
+- **(X = 0, Y = 0):** ninguna negra y ninguna roja antes de la blanca, así que la 1.ª tiene que ser blanca, y las otras dos no son negras: BBB, BBR, BRB, BRR. Suman (8 + 16 + 16 + 32)/1331 = 72/1331.
+- **(X = 1, Y = 2):** una negra y dos rojas, sin blanca: NRR, RNR, RRN. Cada una vale 5·4·4, así que 3·80/1331 = 240/1331.
 
 Tabla completa (valores × 1/1331):
 
@@ -224,11 +252,13 @@ Tabla completa (valores × 1/1331):
 | 3 | 125 | 0 | 0 | 0 | 125 |
 | **P(Y = y)** | 527 | 468 | 272 | 64 | 1331 |
 
-Control: las marginales de X coinciden con una Bin(3; 5/11): $(6/11)^3 = 216/1331$, etc.
+💡 **Marginales:** la distribución de una sola variable se obtiene sumando la conjunta por filas (para X) o por columnas (para Y) (📄 H1, $P_X(x) = \sum_y P(x;y)$). Son la última columna y la última fila de la tabla.
 
-b) Basta un par que no cumpla $P(x, y) = P(x)\,P(y)$. Por ejemplo, P(X = 3, Y = 1) = 0, pero $P(X = 3)\,P(Y = 1) = \frac{125}{1331}\cdot\frac{468}{1331} \ne 0$.
+**Control:** X sola cuenta negras en 3 extracciones independientes, así que es Bin(3; 5/11). Por ejemplo, $P(X = 0) = (6/11)^3 = 216/1331$ ✓.
 
-Tiene sentido: si salen 3 negras no puede haber rojas.
+**b)** 💡 **Independencia de variables** (📄 H1): X e Y son independientes si y solo si $P(x, y) = P_X(x)\,P_Y(y)$ para **todos** los pares. Para mostrar que **no** lo son, alcanza con **un** par que falle:
+$$P(X = 3, Y = 1) = 0 \qquad\text{pero}\qquad P_X(3)\,P_Y(1) = \frac{125}{1331}\cdot\frac{468}{1331} \neq 0$$
+**Son dependientes.** Tiene sentido: si salen 3 negras, no puede haber rojas.
 
 </details>
 

@@ -30,17 +30,37 @@ Sabiendo que X e Y tienen distribución Normal:
 <details>
 <summary>Solución paso a paso</summary>
 
-Cantidades básicas: n = 14, $\bar x = 12{,}99$, $\bar y = 45{,}25$, $S_{xx} = 423{,}31$, $S_{yy} = 2593{,}38$, $S_{xy} = 957{,}78$.
+💡 **Qué es la regresión lineal.** Hay **dos variables por pieza**: cobre (X) y níquel (Y). Se quiere una **recta** que, dado el cobre, prediga el níquel:
+$$\hat y = b_0 + b_1x$$
+📄 H2.
+- **$b_1$ (pendiente):** cuánto sube Y, en promedio, por cada unidad que sube X.
+- **$b_0$ (ordenada al origen):** el valor de la recta en x = 0.
 
-$b_1 = \frac{957{,}78}{423{,}31} = 2{,}263$ y $b_0 = 45{,}25 - 2{,}263\cdot12{,}99 = 15{,}85$ ⇒ $\hat y = 15{,}85 + 2{,}263x$.
+Los puntos nunca caen todos sobre una recta. Se elige la recta que pasa **lo más cerca posible** de todos: la que hace mínima la suma de las distancias verticales al cuadrado (**mínimos cuadrados**).
 
-a) Por ejemplo, el par observado (14; 49) tiene $\hat y = 15{,}85 + 2{,}263\cdot14 = 47{,}53$. Su residuo es $e = y - \hat y = 49 - 47{,}53 = 1{,}47$: el segmento vertical entre el punto y la recta.
+💡 **Las cuentas base** (📄 H2): tres sumas que miden cuánto varía X, cuánto varía Y y cuánto varían juntas.
+$$S_{xx} = \sum x_i^2 - \frac{(\sum x_i)^2}{n} \qquad S_{yy} = \sum y_i^2 - \frac{(\sum y_i)^2}{n} \qquad S_{xy} = \sum x_iy_i - \frac{\sum x_i\sum y_i}{n}$$
+Con ellas (📄 H2): $b_1 = \frac{S_{xy}}{S_{xx}}$ y $b_0 = \bar y - b_1\bar x$.
 
-b) $\hat y(\bar x) = 15{,}85 + 2{,}263\cdot12{,}99 = 45{,}25 = \bar y$. Siempre se cumple, porque $b_0 = \bar y - b_1\bar x$.
+**Con las apps:** Calculadora de estadística → **Regresión lineal**, cargando los 14 pares, da $b_0$ y $b_1$. Para los S: la **descriptiva** da la varianza de X, y $S_{xx} = (n-1)\cdot s_x^2$ (❌). Lo mismo para Y.
 
-c)
-- $SC_{res} = 426{,}32$ ⇒ $\hat\sigma^2 = s^2 = \frac{426{,}32}{12} = 35{,}53$.
-- $R^2 = \frac{S_{xy}^2}{S_{xx}S_{yy}} = 0{,}8356$: el 84 % de la variabilidad del níquel queda explicada por el cobre a través de la recta.
+**Cuentas** (n = 14): $\bar x = 12{,}99$, $\bar y = 45{,}25$, $S_{xx} = 423{,}31$, $S_{yy} = 2593{,}38$, $S_{xy} = 957{,}78$.
+$$b_1 = \frac{957{,}78}{423{,}31} = 2{,}263 \qquad b_0 = 45{,}25 - 2{,}263\cdot12{,}99 = 15{,}85 \;\Rightarrow\; \hat y = 15{,}85 + 2{,}263x$$
+Cada unidad más de cobre suma, en promedio, 2,26 % de níquel.
+
+**a)** 💡 **Residuo:** la diferencia entre lo observado y lo que predice la recta, $e = y - \hat y$. En el gráfico es el segmento **vertical** entre el punto y la recta.
+
+Por ejemplo, el punto (14; 49): la recta predice $\hat y = 15{,}85 + 2{,}263\cdot14 = 47{,}53$, así que el residuo es $49 - 47{,}53 = 1{,}47$. El punto está 1,47 por encima de la recta.
+
+**b)** Se reemplaza $x = \bar x$ en la recta:
+$$\hat y(\bar x) = 15{,}85 + 2{,}263\cdot12{,}99 = 45{,}25 = \bar y$$
+Siempre pasa: $b_0 = \bar y - b_1\bar x$ se construye justamente para que $\bar y = b_0 + b_1\bar x$. La recta siempre pasa por el "centro de gravedad" de los datos.
+
+**c)** Los parámetros estimados son $\hat\alpha = b_0 = 15{,}85$ y $\hat\beta = b_1 = 2{,}26$.
+- 💡 **Varianza del error** (📄 H2, $\hat\sigma^2 = \frac{SC_{res}}{n-2}$): cuánto se apartan los puntos de la recta. $SC_{res} = S_{yy} - \frac{S_{xy}^2}{S_{xx}} = 426{,}32$, así que $\hat\sigma^2 = \frac{426{,}32}{12} = 35{,}53$.
+- 💡 **Coeficiente de determinación** (📄 H2, $R^2 = \frac{SC_{exp}}{SC_{total}} = r^2$): la fracción de la variabilidad de Y que **explica** la recta.
+  $$R^2 = \frac{S_{xy}^2}{S_{xx}S_{yy}} = 0{,}8356$$
+  El 84 % de la variabilidad del níquel queda explicada por el cobre a través de la recta.
 
 </details>
 
@@ -80,17 +100,27 @@ Se pide:
 <details>
 <summary>Solución paso a paso</summary>
 
-a) Test de correlación lineal:
-- H₀: ρ = 0 vs. H₁: ρ ≠ 0.
-- Estadístico: $T = \frac{r\sqrt{n-2}}{\sqrt{1 - r^2}} \sim t_{n-2}$ bajo H₀.
+💡 **Coeficiente de correlación r** (📄 H2, $r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$): mide qué tan bien se alinean los puntos en una recta. Va de −1 a 1:
+- cerca de 1: recta creciente;
+- cerca de −1: recta decreciente;
+- cerca de 0: no hay relación lineal.
 
-b) Supuestos: Shapiro-Wilks da p = 0,54 y p = 0,40, ambos > 0,10 ⇒ no se rechaza la normalidad. Se puede suponer normal conjunta.
+r se calcula con la **muestra**. ρ es la correlación de **toda la población**.
 
-$S_{xx} = 3309$, $S_{yy} = 18716{,}67$, $S_{xy} = -325$ ⇒ $r = \frac{-325}{\sqrt{3309\cdot18716{,}67}} = -0{,}041$.
+**a)** La sospecha es que vapor y temperatura **están relacionados**. 💡 En un test, lo que se quiere demostrar va en H₁, y H₀ es "no hay relación":
+$$H_0: \rho = 0 \qquad H_1: \rho \neq 0$$
+**Estadístico** (📄 H2, $\sqrt{n-2}\frac{r}{\sqrt{1-r^2}} = t_{n-2}$): si H₀ es cierta, es una t de Student con n − 2 grados de libertad. Se pierden 2 porque se estimaron b₀ y b₁.
 
-$t_{obs} = \frac{-0{,}041\sqrt{10}}{\sqrt{1 - 0{,}0017}} = -0{,}13$.
+**b) Supuestos.** El test pide normalidad. 💡 **Shapiro-Wilks** es un test cuya H₀ es "los datos son normales". Sus valores p (0,54 y 0,40) son mayores que 0,10, así que **no se rechaza** la normalidad: se puede hacer el test.
 
-RC = {|T| > $t_{10;\,0{,}975}$ = 2,228}. Como |−0,13| < 2,228 ⇒ no se rechaza H₀ (p = 0,90).
+**Cuentas** (📄 H2, con las fórmulas de S): $S_{xx} = 3309$, $S_{yy} = 18\,716{,}67$ y $S_{xy} = -325$.
+$$r = \frac{-325}{\sqrt{3309\cdot18\,716{,}67}} = -0{,}041 \qquad t_{obs} = \sqrt{10}\cdot\frac{-0{,}041}{\sqrt{1 - 0{,}0017}} = -0{,}13$$
+
+**Región crítica bilateral** (H₁ es ≠), con α = 0,05:
+```
+X~t(ν)   ν=10   P(X<x)=0.975   → x=2.22814
+```
+|−0,13| < 2,228 (p ≈ 0,90): **no se rechaza H₀**. No hay evidencia de relación lineal entre la temperatura y el uso de vapor: la sospecha no se confirma.
 
 </details>
 
@@ -123,17 +153,25 @@ Si se sabe que ambas variables tienen distribución Normal conjunta:
 <details>
 <summary>Solución paso a paso</summary>
 
-a) Sí: los puntos siguen aproximadamente una recta creciente.
+**a)** 💡 Un **diagrama de dispersión** es el gráfico de los pares (x, y) como puntos. Si los puntos forman aproximadamente una **línea recta**, tiene sentido estudiar una asociación **lineal**. Acá sí: más sal, más tensión, en forma aproximadamente recta y creciente.
 
-b) El test de correlación lineal (test para ρ).
+**b)** 💡 El **test de correlación lineal**: decide si la correlación de la población, ρ, es distinta de 0. Se usa el **coeficiente de correlación r**, que mide qué tan alineados están los puntos (de −1 a 1; 📄 H2, $r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$).
 
-c) H₀: ρ = 0 vs. H₁: ρ ≠ 0.
+**c)** 💡 **Hipótesis.** Lo que se quiere demostrar (que hay asociación) va en H₁:
+$$H_0: \rho = 0 \qquad H_1: \rho \neq 0$$
 
-$S_{xx} = 7{,}713$, $S_{yy} = 331{,}33$, $S_{xy} = 48{,}87$ ⇒ $r = 0{,}9666$ ($R^2 = 0{,}934$).
+**Cuentas** (📄 H2, fórmulas de los S): $S_{xx} = 7{,}713$, $S_{yy} = 331{,}33$ y $S_{xy} = 48{,}87$.
+$$r = \frac{48{,}87}{\sqrt{7{,}713\cdot331{,}33}} = 0{,}9666 \qquad R^2 = r^2 = 0{,}934$$
 
-$t_{obs} = \frac{0{,}9666\sqrt4}{\sqrt{1 - 0{,}934}} = 7{,}54$.
+**Estadístico** (📄 H2): $T = \sqrt{n-2}\frac{r}{\sqrt{1-r^2}} \sim t_{n-2}$ si H₀ es cierta.
+$$t_{obs} = \sqrt4\cdot\frac{0{,}9666}{\sqrt{1 - 0{,}934}} = 7{,}54$$
 
-RC = {|T| > $t_{4;\,0{,}975}$ = 2,776}. Como 7,54 ∈ RC ⇒ se rechaza H₀ (p = 0,0017).
+**Región crítica** (bilateral, 5 %):
+```
+X~t(ν)   ν=4   P(X<x)=0.975   → x=2.77645
+X~t(ν)   ν=4   P(X>x)   x=7.54   → 0.00083   → p = 2·0.00083 ≈ 0.0017
+```
+7,54 > 2,776: **se rechaza H₀**. Hay evidencia de asociación lineal entre el consumo de sal y la tensión arterial.
 
 </details>
 
@@ -174,19 +212,41 @@ Se pide:
 <details>
 <summary>Solución paso a paso</summary>
 
-a) $\bar x = 29{,}725$, $\bar y = 15{,}5875$, $S_{xx} = 222{,}135$, $S_{xy} = 166{,}41$.
+**a)** 💡 **Recta de regresión** $\hat y = b_0 + b_1x$: la recta que pasa más cerca de los puntos (mínimos cuadrados). Se calcula con (📄 H2):
+$$b_1 = \frac{S_{xy}}{S_{xx}} \qquad b_0 = \bar y - b_1\bar x$$
+con $S_{xx} = \sum x^2 - \frac{(\sum x)^2}{n}$ y $S_{xy} = \sum xy - \frac{\sum x\sum y}{n}$ (📄 H2). La Calculadora de estadística → **Regresión lineal** da $b_0$ y $b_1$ directo.
 
-$b_1 = 0{,}749$ y $b_0 = 15{,}5875 - 0{,}749\cdot29{,}725 = -6{,}68$ ⇒ $\hat y = -6{,}68 + 0{,}749x$.
+Con n = 8: $\bar x = 29{,}725$, $\bar y = 15{,}5875$, $S_{xx} = 222{,}135$ y $S_{xy} = 166{,}41$.
+$$b_1 = \frac{166{,}41}{222{,}135} = 0{,}749 \qquad b_0 = 15{,}5875 - 0{,}749\cdot29{,}725 = -6{,}68$$
+$$\hat y = -6{,}68 + 0{,}749x$$
 
-b) Shapiro-Wilks sobre los residuos: p = 0,694 > 0,10 ⇒ no se rechaza la normalidad.
+**Interpretación:**
+- **$b_1 = 0{,}749$:** cada cm más de agua nieve aumenta la afluencia, en promedio, 0,749 pulgadas.
+- **$b_0 = -6{,}68$:** sería la afluencia media con x = 0, pero x = 0 está muy fuera del rango observado (23 a 40), así que no tiene sentido práctico.
 
-c) En el gráfico de residuos vs. x no hay forma de embudo ni residuos muy grandes ⇒ se acepta la homocedasticidad.
+💡 **Supuestos del modelo** (❌). Para hacer tests, los **errores** (lo que la recta no explica) tienen que:
+1. ser Normales;
+2. tener la **misma varianza** para todo x (**homocedasticidad**);
+3. ser independientes.
 
-d) H₀: β₁ = 0 vs. H₁: β₁ ≠ 0.
+Se revisan con los **residuos** $e_i = y_i - \hat y_i$.
 
-$SC_{res} = 4{,}26$ ⇒ $s = \sqrt{4{,}26/6} = 0{,}843$; $s_{b_1} = \frac{s}{\sqrt{S_{xx}}} = 0{,}0565$.
+**b)** 💡 **Shapiro-Wilks** sobre los residuos: su H₀ es "son normales". Su valor p es 0,694 > 0,10, así que **no se rechaza** la normalidad ✓.
 
-$t_{obs} = \frac{0{,}749}{0{,}0565} = 13{,}25 > t_{6;\,0{,}975} = 2{,}447$ ⇒ se rechaza H₀.
+**c)** En el gráfico de residuos contra x se busca algún patrón: un **embudo** (la dispersión crece o decrece con x) o residuos muy grandes. No se ve ninguno, así que se acepta la homocedasticidad ✓.
+
+**d)** 💡 **Test de significación del modelo.** Si la pendiente verdadera β₁ fuera 0, X no serviría para predecir Y. Lo que se quiere demostrar (que sirve) va en H₁:
+$$H_0: \beta_1 = 0 \qquad H_1: \beta_1 \neq 0$$
+
+**Estadístico** (❌, la versión con b₁ no está en la hoja; la equivalente con r sí está): $T = \frac{b_1}{s/\sqrt{S_{xx}}} \sim t_{n-2}$, donde $s = \sqrt{\frac{SC_{res}}{n-2}}$ (📄 H2, $\hat\sigma^2 = \frac{SC_{res}}{n-2}$).
+$$SC_{res} = 4{,}26 \;\Rightarrow\; s = \sqrt{\frac{4{,}26}{6}} = 0{,}843 \qquad \frac{s}{\sqrt{S_{xx}}} = \frac{0{,}843}{14{,}90} = 0{,}0565$$
+$$t_{obs} = \frac{0{,}749}{0{,}0565} = 13{,}25$$
+```
+X~t(ν)   ν=6   P(X<x)=0.975   → x=2.44691
+```
+13,25 > 2,447: **se rechaza H₀**. La regresión es significativa.
+
+(Con la fórmula de la hoja da lo mismo: $r = 0{,}983$ y $\sqrt6\,\frac{r}{\sqrt{1-r^2}} \approx 13{,}2$.)
 
 </details>
 
@@ -221,23 +281,33 @@ Se pide:
 <details>
 <summary>Solución paso a paso</summary>
 
-a) $\bar u = 1149{,}27$, $\bar d = 3{,}838$, $S_{uu} = 4.558.764$, $S_{ud} = 18.717{,}98$.
+**a)** 💡 **Recta de regresión** (📄 H2): $\hat d = b_0 + b_1u$, con $b_1 = \frac{S_{ud}}{S_{uu}}$ y $b_0 = \bar d - b_1\bar u$. Los S salen de las fórmulas de sumas de la hoja, o la Calculadora de estadística → **Regresión lineal** da $b_0$ y $b_1$.
 
-$b_1 = 0{,}00411$ y $b_0 = -0{,}881$ ⇒ $\hat d = -0{,}881 + 0{,}0041u$.
+Con n = 11: $\bar u = 1149{,}27$, $\bar d = 3{,}838$, $S_{uu} = 4\,558\,764$ y $S_{ud} = 18\,717{,}98$.
+$$b_1 = \frac{18\,717{,}98}{4\,558\,764} = 0{,}00411 \qquad b_0 = 3{,}838 - 0{,}00411\cdot1149{,}27 = -0{,}881$$
+$$\hat d = -0{,}881 + 0{,}0041u$$
 
-$SC_{res} = 18{,}79$ ⇒ $s = 1{,}445$; $s_{b_1} = \frac{1{,}445}{\sqrt{4558764}} = 0{,}000677$.
+💡 **¿El ajuste es adecuado? Test de significación.** Si la pendiente verdadera fuera 0, U no serviría para predecir D:
+$$H_0: \beta_1 = 0 \qquad H_1: \beta_1 \neq 0$$
+Estadístico (❌): $T = \frac{b_1}{s/\sqrt{S_{uu}}} \sim t_{n-2}$, con $s = \sqrt{SC_{res}/(n-2)}$ (📄 H2, $\hat\sigma^2$).
+$$SC_{res} = 18{,}79 \;\Rightarrow\; s = \sqrt{18{,}79/9} = 1{,}445 \qquad \frac{s}{\sqrt{S_{uu}}} = 0{,}000677 \qquad t_{obs} = \frac{0{,}00411}{0{,}000677} = 6{,}07$$
+```
+X~t(ν)   ν=9   P(X<x)=0.995   → x=3.24984
+```
+6,07 > 3,25: **se rechaza H₀** al 1 %. La regresión es significativa ($R^2 = 0{,}80$).
 
-Test H₀: β₁ = 0 vs. H₁: β₁ ≠ 0: $t_{obs} = 6{,}07 > t_{9;\,0{,}995} = 3{,}25$ ⇒ la regresión es significativa al 1 % ($R^2 = 0{,}80$).
+**b)** Hay dos intervalos posibles en un punto, y es importante distinguirlos (❌, ninguno está en la hoja):
+- 💡 **IC para la media**, E(D | u₀): el rango para la demanda **promedio** de todos los clientes con u = 900.
+- 💡 **Intervalo de predicción (IP)**: el rango para la demanda de **un** cliente individual con u = 900.
 
-b) $\hat d(900) = 2{,}815$. Con $t_{9;\,0{,}995} = 3{,}25$:
+Un cliente suelto varía mucho más que el promedio, así que el IP lleva un "1 +" extra adentro de la raíz y es **siempre más ancho**:
+$$IP = \hat d_0 \pm t\cdot s\sqrt{1 + \frac1n + \frac{(u_0 - \bar u)^2}{S_{uu}}} \qquad IC = \hat d_0 \pm t\cdot s\sqrt{\frac1n + \frac{(u_0 - \bar u)^2}{S_{uu}}}$$
 
-$IP = \hat d \pm t\,s\sqrt{1 + \frac1n + \frac{(u_0 - \bar u)^2}{S_{uu}}} = 2{,}815 \pm 4{,}93 = [-2{,}12;\ 7{,}75]$.
+Con $\hat d(900) = -0{,}881 + 0{,}00411\cdot900 = 2{,}815$ y $t_{9;0{,}995} = 3{,}25$:
+- $IP = 2{,}815 \pm 4{,}93 = (-2{,}12;\ 7{,}75)$. Con 99 % de confianza, **un** cliente con 900 kWh tendrá una demanda en ese rango (en la práctica, entre 0 y 7,75).
+- $IC = (1{,}30;\ 4{,}33)$: mucho más angosto.
 
-Es el rango donde se espera, con 99 % de confianza, la demanda de **un** cliente con u = 900.
-
-El IC para la **media** usa $\sqrt{\frac1n + \frac{(u_0 - \bar u)^2}{S_{uu}}}$ (sin el "1 +"): da [1,30; 4,33], siempre más angosto.
-
-c) No: u = 156 está fuera del rango observado (292 a 2189). Sería **extrapolar**.
+**c) No.** u = 156 está **fuera** del rango observado (de 292 a 2189). Usar la recta ahí es **extrapolar** (❌): no hay datos que muestren que la relación siga siendo lineal tan lejos.
 
 </details>
 
@@ -270,14 +340,23 @@ $\sum x_i = 642$, $\sum y_i = 34$, $\sum x_i^2 = 53030$, $\sum y_i^2 = 200$, $\s
 <details>
 <summary>Solución paso a paso</summary>
 
-Con las fórmulas de cálculo:
-- $S_{xx} = 53030 - \frac{642^2}8 = 1509{,}5$
-- $S_{yy} = 200 - \frac{34^2}8 = 55{,}5$
-- $S_{xy} = 2983 - \frac{642\cdot34}8 = 254{,}5$
+💡 **Regresión lineal:** se busca la recta $\hat y = b_0 + b_1x$ (📄 H2) que mejor aproxima los puntos (x = ruido, y = aumento de presión). El enunciado ya da las sumas, así que se usan las fórmulas de la hoja directamente. También sirve la Calculadora de estadística → **Regresión con suma**, cargando Σx, Σy, Σxy, Σx² y n.
 
-a) $b_1 = \frac{254{,}5}{1509{,}5} = 0{,}1686$ y $b_0 = 4{,}25 - 0{,}1686\cdot80{,}25 = -9{,}28$.
+**Cuentas base** (📄 H2), con n = 8:
+- $S_{xx} = \sum x^2 - \frac{(\sum x)^2}{n} = 53\,030 - \frac{642^2}{8} = 1509{,}5$
+- $S_{yy} = \sum y^2 - \frac{(\sum y)^2}{n} = 200 - \frac{34^2}{8} = 55{,}5$
+- $S_{xy} = \sum xy - \frac{\sum x\sum y}{n} = 2983 - \frac{642\cdot34}{8} = 254{,}5$
 
-b) $R^2 = \frac{S_{xy}^2}{S_{xx}S_{yy}} = \frac{254{,}5^2}{1509{,}5\cdot55{,}5} = 0{,}7731$.
+Medias: $\bar x = 642/8 = 80{,}25$ y $\bar y = 34/8 = 4{,}25$.
+
+**a)** (📄 H2)
+$$b_1 = \frac{S_{xy}}{S_{xx}} = \frac{254{,}5}{1509{,}5} = 0{,}1686 \qquad b_0 = \bar y - b_1\bar x = 4{,}25 - 0{,}1686\cdot80{,}25 = -9{,}28$$
+$$\hat y = -9{,}28 + 0{,}1686x$$
+Cada dB más de ruido sube la presión, en promedio, 0,17 unidades.
+
+**b)** 💡 **Coeficiente de determinación R²** (📄 H2, $R^2 = \frac{SC_{exp}}{SC_{total}} = r^2$): la proporción de la variabilidad de Y que **explica** la recta. Va de 0 (no explica nada) a 1 (todos los puntos sobre la recta).
+$$R^2 = \frac{S_{xy}^2}{S_{xx}S_{yy}} = \frac{254{,}5^2}{1509{,}5\cdot55{,}5} = 0{,}7731$$
+**Interpretación:** el 77,3 % de la variabilidad del aumento de presión se explica por el nivel de ruido, a través de la recta. El 22,7 % restante se debe a otros factores.
 
 </details>
 
@@ -310,15 +389,19 @@ Se pide:
 <details>
 <summary>Solución paso a paso</summary>
 
-a) Y crece en forma **exponencial** (pasa de cientos a millones), así que la relación con X no es lineal. En cambio ln(Y) vs. X se parece mucho más a una recta.
+💡 **Regresión lineal** ($\hat y = b_0 + b_1x$, 📄 H2) solo tiene sentido si los puntos forman aproximadamente una **recta**. Si no, a veces se puede **transformar** una variable para que sí la formen.
 
-Se ajusta $\ln y = b_0 + b_1x$:
-- $\bar x = 9{,}1$, $\overline{\ln y} = 5{,}391$, $S_{xx} = 354{,}9$, $S_{x,\ln y} = 238{,}09$.
-- $b_1 = 0{,}6709$ y $b_0 = -0{,}714$ ⇒ $\widehat{\ln y} = -0{,}714 + 0{,}671x$ ($R^2 = 0{,}67$).
+**a)** Y pasa de unos pocos a **millones**: crece en forma **exponencial** (multiplica, no suma), así que contra X no forma una recta. Un truco: el **logaritmo** convierte un crecimiento exponencial en uno lineal. Si $y \approx Ce^{kx}$, entonces $\ln y \approx \ln C + kx$, que es una recta. El gráfico de ln(Y) contra X se parece mucho más a una recta, así que se usa ese.
 
-Equivale al modelo $\hat y = e^{-0{,}714}e^{0{,}671x}$.
+Se ajusta la recta con **ln y** en lugar de y (📄 H2, $b_1 = \frac{S_{xy}}{S_{xx}}$ y $b_0 = \bar y - b_1\bar x$, con y → ln y). En la Calculadora de estadística → Regresión lineal se cargan los pares (x; ln y):
+- $\bar x = 9{,}1$, $\overline{\ln y} = 5{,}391$, $S_{xx} = 354{,}9$, $S_{x,\ln y} = 238{,}09$;
+- $b_1 = \frac{238{,}09}{354{,}9} = 0{,}6709$ y $b_0 = 5{,}391 - 0{,}6709\cdot9{,}1 = -0{,}714$.
 
-b) $\widehat{\ln y}(15) = -0{,}714 + 0{,}6709\cdot15 = 9{,}35$ ⇒ $\hat y = e^{9{,}35} \approx 11488$.
+$$\widehat{\ln y} = -0{,}714 + 0{,}671x \qquad (R^2 = 0{,}67)$$
+Volviendo a y (exponencial de los dos lados): $\hat y = e^{-0{,}714}\cdot e^{0{,}671x}$.
+
+**b)** Se predice el logaritmo y después se "deshace" con la exponencial:
+$$\widehat{\ln y}(15) = -0{,}714 + 0{,}6709\cdot15 = 9{,}35 \;\Rightarrow\; \hat y = e^{9{,}35} \approx 11\,488$$
 
 </details>
 
@@ -342,21 +425,27 @@ b) $\widehat{\ln y}(15) = -0{,}714 + 0{,}6709\cdot15 = 9{,}35$ ⇒ $\hat y = e^{
 <details>
 <summary>Solución paso a paso</summary>
 
-a) Se minimiza $g(b_0, b_1) = \sum(y_i - b_0 - b_1x_i)^2$. Derivando e igualando a 0 se obtienen las **ecuaciones normales**:
+💡 **Mínimos cuadrados** (❌, la deducción no está en la hoja). Para cada punto, el **residuo** $y_i - (b_0 + b_1x_i)$ es cuánto se equivoca la recta en ese punto. Se elige la recta que hace **mínima la suma de los residuos al cuadrado**. Se elevan al cuadrado para que los positivos y los negativos no se cancelen, y para castigar más los errores grandes.
+
+Para minimizar una función de dos variables se deriva respecto de cada una y se iguala a 0, como en Análisis.
+
+**a)** Se minimiza $g(b_0, b_1) = \sum(y_i - b_0 - b_1x_i)^2$. Derivando e igualando a 0 se obtienen las **ecuaciones normales**:
 - $\frac{\partial g}{\partial b_0} = -2\sum(y_i - b_0 - b_1x_i) = 0 \Rightarrow \sum y_i = nb_0 + b_1\sum x_i$
 - $\frac{\partial g}{\partial b_1} = -2\sum x_i(y_i - b_0 - b_1x_i) = 0 \Rightarrow \sum x_iy_i = b_0\sum x_i + b_1\sum x_i^2$
 
-De la primera, $b_0 = \bar y - b_1\bar x$. Reemplazando en la segunda:
+**Resolver el sistema.** Se divide la primera ecuación por n: $\bar y = b_0 + b_1\bar x$, así que $b_0 = \bar y - b_1\bar x$. La recta pasa por el punto de las medias.
 
-$b_1 = \frac{n\sum x_iy_i - \sum x_i\sum y_i}{n\sum x_i^2 - (\sum x_i)^2} = \frac{S_{xy}}{S_{xx}}$.
+Se reemplaza en la segunda y se despeja $b_1$:
+$$b_1 = \frac{n\sum x_iy_i - \sum x_i\sum y_i}{n\sum x_i^2 - (\sum x_i)^2} = \frac{S_{xy}}{S_{xx}}$$
+Dividiendo arriba y abajo por n se reconocen $S_{xy}$ y $S_{xx}$ de la hoja. Son exactamente las fórmulas de 📄 H2.
 
-Además, si los errores son normales, el logaritmo de la verosimilitud es $-\frac n2\ln(2\pi) - n\ln\sigma - \frac1{2\sigma^2}\sum(Y_i - a - bx_i)^2$. Maximizarlo equivale a minimizar la suma de cuadrados ⇒ los estimadores de MV y de MC coinciden.
+**Relación con máxima verosimilitud.** 💡 Máxima verosimilitud (❌) elige los parámetros que hacen más probable la muestra observada. Si los errores son normales, el logaritmo de la verosimilitud es
+$$-\frac n2\ln(2\pi) - n\ln\sigma - \frac1{2\sigma^2}\sum(Y_i - a - bx_i)^2$$
+El único término que depende de a y b tiene signo **menos** delante de la suma de cuadrados. Maximizarlo es lo mismo que **minimizar** esa suma. Por eso los estimadores de MV y de MC **coinciden**.
 
-b) Con $g(b_1) = \sum(y_i - b_1x_i)^2$:
-
-$g'(b_1) = -2\sum x_i(y_i - b_1x_i) = 0 \Rightarrow b_1 = \frac{\sum x_iy_i}{\sum x_i^2}$.
-
-Es un mínimo porque $g'' = 2\sum x_i^2 > 0$.
+**b) Recta por el origen.** Ahora la recta es $\hat y = b_1x$ (sin $b_0$), y hay una sola incógnita. Se minimiza $g(b_1) = \sum(y_i - b_1x_i)^2$:
+$$g'(b_1) = -2\sum x_i(y_i - b_1x_i) = 0 \;\Rightarrow\; \sum x_iy_i = b_1\sum x_i^2 \;\Rightarrow\; b_1 = \frac{\sum x_iy_i}{\sum x_i^2}$$
+Es un mínimo, porque la derivada segunda es $g'' = 2\sum x_i^2 > 0$.
 
 </details>
 
@@ -381,15 +470,21 @@ $$\sum_{i=1}^n (Y_i - \bar Y)^2 = \sum_{i=1}^n (Y_i - \hat Y_i)^2 + \sum_{i=1}^n
 <details>
 <summary>Solución paso a paso</summary>
 
-Se suma y resta $\hat Y_i$:
+💡 **Qué dice la fórmula.** La variabilidad total de Y (cuánto se aparta cada $Y_i$ de su promedio) se parte en dos pedazos:
+- **$SC_{res}$**: lo que la recta **no** explica, la distancia de cada punto a la recta;
+- **$SC_{regr}$** (o $SC_{exp}$): lo que la recta **sí** explica, la distancia de la recta al promedio.
 
-$\sum(Y_i - \bar Y)^2 = \sum\left[(Y_i - \hat Y_i) + (\hat Y_i - \bar Y)\right]^2 = \sum(Y_i - \hat Y_i)^2 + \sum(\hat Y_i - \bar Y)^2 + 2\sum e_i(\hat Y_i - \bar Y)$.
+La descomposición está en 📄 H2 ($SC_{total} = SC_{exp} + SC_{res}$), pero acá piden demostrarla. Es la base de $R^2 = SC_{exp}/SC_{total}$.
 
-Falta ver que el doble producto es 0. Como $\hat Y_i = b_0 + b_1x_i$:
+**Demostración.** El truco es sumar y restar $\hat Y_i$ (lo que predice la recta) adentro del paréntesis:
+$$\sum(Y_i - \bar Y)^2 = \sum\left[(Y_i - \hat Y_i) + (\hat Y_i - \bar Y)\right]^2$$
+Se desarrolla el cuadrado de un binomio, $(a+b)^2 = a^2 + b^2 + 2ab$, con $e_i = Y_i - \hat Y_i$:
+$$= \sum(Y_i - \hat Y_i)^2 + \sum(\hat Y_i - \bar Y)^2 + 2\sum e_i(\hat Y_i - \bar Y)$$
 
-$\sum e_i(\hat Y_i - \bar Y) = (b_0 - \bar Y)\sum e_i + b_1\sum e_ix_i$.
+**Falta ver que el último término (el "doble producto") vale 0.** Como $\hat Y_i = b_0 + b_1x_i$:
+$$\sum e_i(\hat Y_i - \bar Y) = \sum e_i(b_0 + b_1x_i - \bar Y) = (b_0 - \bar Y)\sum e_i + b_1\sum e_ix_i$$
 
-Por las ecuaciones normales, $\sum e_i = 0$ y $\sum e_ix_i = 0$ ⇒ el doble producto es 0.
+Las **ecuaciones normales** (ejercicio 8, las que salen de derivar e igualar a 0 en mínimos cuadrados) dicen justamente que $\sum e_i = 0$ y $\sum e_ix_i = 0$. Entonces el doble producto es 0, y queda la igualdad. ∎
 
 </details>
 
@@ -414,10 +509,12 @@ Con respecto a los resultados de un análisis de regresión lineal simple, ¿cu�
 <details>
 <summary>Solución paso a paso</summary>
 
-- $SC_{Total} = SC_{error} + SC_{regres}$ siempre (ejercicio 9) ⇒ falsa.
-- $R^2 = r^2 \in [0; 1]$ ⇒ no puede ser negativo.
-- $s_b$ es un desvío estándar ⇒ siempre ≥ 0.
-- $t_{obs} = b_1/s_b$ tiene el signo de $b_1$: es negativo si la pendiente es negativa ⇒ **puede ser cierta**.
+Se revisa cada cantidad y qué valores puede tomar.
+
+- **$SC_{Total} < SC_{error} + SC_{regres}$:** falsa. La variabilidad total **siempre es igual** a la suma de la no explicada más la explicada (📄 H2, $SC_{total} = SC_{exp} + SC_{res}$; demostrado en el ejercicio 9). No puede ser menor.
+- **$R^2 = -0{,}65$:** falsa. 💡 R² es la **fracción** de la variabilidad explicada por la recta, y además es un cuadrado (📄 H2, $R^2 = r^2$). Siempre está entre 0 y 1.
+- **$s_b = -1{,}25$:** falsa. $s_b$ es el **desvío estándar** (error estándar) de la pendiente estimada, una raíz cuadrada. Nunca es negativo.
+- **$t_{obs} = -2{,}45$:** **puede ser cierta**. El estadístico del test de la pendiente es $t = b_1/s_b$. El denominador es positivo, así que t tiene el **signo de $b_1$**: si la recta es decreciente, t es negativo. Lo mismo con la versión de la hoja, $\sqrt{n-2}\frac{r}{\sqrt{1-r^2}}$, que tiene el signo de r.
 
 </details>
 
@@ -445,21 +542,39 @@ En varios estudios se ha demostrado que los líquenes, organismos compuestos por
 <details>
 <summary>Solución paso a paso</summary>
 
-a) $\bar x = 0{,}4554$, $\bar y = 0{,}8054$, $S_{xx} = 1{,}1155$, $S_{xy} = 1{,}0785$.
+**a)** 💡 **Recta de mínimos cuadrados** (📄 H2): $\hat y = b_0 + b_1x$, con $b_1 = \frac{S_{xy}}{S_{xx}}$ y $b_0 = \bar y - b_1\bar x$. La Calculadora de estadística → **Regresión lineal** da los coeficientes cargando los 13 pares.
 
-$b_1 = 0{,}967$ y $b_0 = 0{,}365$ ⇒ $\hat y = 0{,}37 + 0{,}97x$.
+$\bar x = 0{,}4554$, $\bar y = 0{,}8054$, $S_{xx} = 1{,}1155$ y $S_{xy} = 1{,}0785$.
+$$b_1 = \frac{1{,}0785}{1{,}1155} = 0{,}967 \qquad b_0 = 0{,}8054 - 0{,}967\cdot0{,}4554 = 0{,}365$$
+$$\hat y = 0{,}37 + 0{,}97x$$
 
-b) $SC_{res} = 0{,}4106$ ⇒ $s = \sqrt{0{,}4106/11} = 0{,}193$. Con 11 g.l.:
-- Ordenada: $s_{b_0} = 0{,}099$, $t = 3{,}69$ ⇒ p = 0,0036.
-- Pendiente: $s_{b_1} = 0{,}183$, $t = 5{,}29$ ⇒ p = 0,0003.
+**b)** Una salida de computadora de regresión tiene, para cada coeficiente, su estimación, su error estándar, el **t** y el **valor p** del test "ese coeficiente vale 0".
 
-El p valor de la pendiente es < 0,05 ⇒ el modelo es significativo ($R^2 = 0{,}72$).
+💡 **Valor p:** la probabilidad, si el coeficiente verdadero fuera 0, de obtener un t tan extremo o más. Si es chico (< 0,05), el coeficiente es significativo.
 
-c) $\hat y(0{,}4) = 0{,}752$; $t_{11;\,0{,}975} = 2{,}201$.
+Con $s = \sqrt{\frac{SC_{res}}{n-2}} = \sqrt{\frac{0{,}4106}{11}} = 0{,}193$ (📄 H2) y 11 grados de libertad:
+- **Ordenada:** $s_{b_0} = 0{,}099$, t = 0,365/0,099 = 3,69.
+  ```
+  X~t(ν)   ν=11   P(X>x)   x=3.69   → 0.0018   → p = 2·0.0018 = 0.0036
+  ```
+- **Pendiente:** $s_{b_1} = s/\sqrt{S_{xx}} = 0{,}183$, t = 0,967/0,183 = 5,29.
+  ```
+  X~t(ν)   ν=11   P(X>x)   x=5.29   → 0.00013  → p ≈ 0.0003
+  ```
 
-$IC = 0{,}752 \pm 2{,}201\cdot0{,}193\sqrt{\frac1{13} + \frac{(0{,}4 - 0{,}4554)^2}{1{,}1155}} = 0{,}752 \pm 0{,}120 = [0{,}632;\ 0{,}872]$.
+El p de la **pendiente** es < 0,05: se rechaza β₁ = 0 y el modelo es **significativo** ($R^2 = 0{,}72$).
 
-(La guía informa [0,536; 0,98]. Con los datos de la tabla, la fórmula del IC para la media da el intervalo de arriba.)
+**c)** 💡 **IC para el valor esperado** de Y en x₀ (❌, no está en la hoja): el rango para el nitrógeno **promedio** de todos los líquenes con 0,4 g/cm² de nitrato. Tiene la forma "estimación ± t · error estándar":
+$$\hat y_0 \pm t_{n-2;1-\frac\alpha2}\cdot s\sqrt{\frac1n + \frac{(x_0 - \bar x)^2}{S_{xx}}}$$
+Es más angosto cerca de $\bar x$ y se ensancha al alejarse.
+
+$\hat y(0{,}4) = 0{,}365 + 0{,}967\cdot0{,}4 = 0{,}752$, y:
+```
+X~t(ν)   ν=11   P(X<x)=0.975   → x=2.20099
+```
+$$0{,}752 \pm 2{,}201\cdot0{,}193\sqrt{\frac1{13} + \frac{(0{,}4 - 0{,}4554)^2}{1{,}1155}} = 0{,}752 \pm 0{,}120 = (0{,}632;\ 0{,}872)$$
+
+La guía informa [0,536; 0,98], que no coincide con los datos de la tabla. Con esta fórmula sale el intervalo de arriba.
 
 </details>
 
@@ -492,17 +607,25 @@ En la siguiente tabla se han registrado las superficies y los pesos de ciertas p
 <details>
 <summary>Solución paso a paso</summary>
 
-a) La 6.ª observación (61,4; 68,7) se aleja de la tendencia decreciente del resto: tiene la mayor superficie y el mayor peso. Es un punto atípico e influyente.
+**a)** 💡 En el **diagrama de dispersión** (cada pieza es un punto: x = superficie, y = peso), los puntos bajan en general: a más superficie, menos peso. Pero la 6.ª observación (61,4; 68,7) tiene la **mayor** superficie y el **mayor** peso, contra la tendencia del resto.
 
-b) Con los 9 datos: $b_1 = \frac{-18{,}06}{594{,}52} = -0{,}030$ y $b_0 = 49{,}35$ ⇒ $\hat y = 49{,}35 - 0{,}03x$ ($R^2 \approx 0$).
+Es un punto **atípico**. Además está en un extremo de x, lo que lo hace **influyente**: puede "tirar" de la recta hacia él.
 
-c) Residuos: −0,41; −3,23; −4,74; 8,55; 14,95; **21,22**; −6,27; −13,43; −16,63. El 6.º es el más grande.
+**b)** 💡 **Recta de mínimos cuadrados** (📄 H2): $b_1 = \frac{S_{xy}}{S_{xx}}$ y $b_0 = \bar y - b_1\bar x$. Calculadora de estadística → **Regresión lineal** con los 9 pares:
+$$b_1 = \frac{-18{,}06}{594{,}52} = -0{,}030 \qquad b_0 = 49{,}35 \;\Rightarrow\; \hat y = 49{,}35 - 0{,}03x \quad (R^2 \approx 0)$$
+La recta sale casi **horizontal**: el punto atípico "cancela" la tendencia decreciente.
 
-d) Sin la 6.ª observación: $b_1 = -1{,}146$ y $b_0 = 95{,}90$ ($R^2 = 0{,}55$).
+**c)** 💡 **Residuo** = observado − predicho = $y_i - \hat y_i$:
 
-Residuos: 2,22; −8,88; 6,40; 2,20; 11,86; −5,91; −0,49; −7,40.
+−0,41; −3,23; −4,74; 8,55; 14,95; **21,22**; −6,27; −13,43; −16,63.
 
-Un solo punto cambiaba por completo la pendiente.
+El 6.º es el más grande: la recta no logra acercarse a ese punto.
+
+**d)** Sin la 6.ª observación (8 pares):
+$$b_1 = -1{,}146 \qquad b_0 = 95{,}90 \;\Rightarrow\; \hat y = 95{,}90 - 1{,}146x \quad (R^2 = 0{,}55)$$
+Residuos: 2,22; −8,88; 6,40; 2,20; 11,86; −5,91; −0,49; −7,40. Son mucho más parejos.
+
+**Comparación:** un **solo punto** cambiaba por completo la pendiente, de −1,15 a casi 0, y hacía desaparecer la relación ($R^2$ de 0,55 a 0). Antes de ajustar conviene mirar el gráfico y revisar los puntos raros.
 
 </details>
 

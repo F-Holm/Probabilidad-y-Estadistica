@@ -19,13 +19,28 @@ El 70 % de las aeronaves ligeras que desaparecen en vuelo en cierto país son po
 <details>
 <summary>Solución paso a paso</summary>
 
+**Cómo reconocerlo:** dos grupos (localizadas o no), cada uno con su probabilidad de tener localizador, y la pregunta va **al revés**: sabiendo que tiene localizador, ¿qué probabilidad hay de que no sea localizada? Es **Bayes**.
+
 **Sucesos:** L = "es localizada", E = "tiene localizador de emergencia".
 
-**Datos:** P(L) = 0,7 y $P(\bar L) = 0,3$; P(E/L) = 0,6; $P(\bar E/\bar L) = 0{,}9 \Rightarrow P(E/\bar L) = 0{,}1$.
+**Datos.** "De las localizadas, el 60 %…" es una **condicional**.
+- P(L) = 0,7, así que $P(\bar L) = 0{,}3$.
+- P(E/L) = 0,6.
+- ⚠️ **Trampa:** "el 90 % de las no localizadas **no** tiene localizador" es $P(\bar E/\bar L) = 0{,}9$. La que se usa es su complemento, $P(E/\bar L) = 0{,}1$.
 
-**Probabilidad total:** $P(E) = 0{,}7\cdot0{,}6 + 0{,}3\cdot0{,}1 = 0{,}42 + 0{,}03 = 0{,}45$.
+```
+        ┌─ E   0,6  → 0,7·0,6 = 0,42
+ L 0,7 ─┤
+        └─ Ē   0,4
+        ┌─ E   0,1  → 0,3·0,1 = 0,03
+ L̄ 0,3 ─┤
+        └─ Ē   0,9
+```
 
-**Bayes:**
+💡 **Probabilidad total:** se suman los caminos que terminan en E:
+$$P(E) = 0{,}42 + 0{,}03 = 0{,}45$$
+
+💡 **Bayes** (📄 H1): el camino de $\bar L$ dividido el total con localizador.
 
 $$P(\bar L/E) = \frac{P(E/\bar L)P(\bar L)}{P(E)} = \frac{0{,}03}{0{,}45} = \frac1{15} \approx 0{,}067$$
 
@@ -47,13 +62,19 @@ El espesor de ciertas tablas de madera de álamo se distribuye uniformemente ent
 <details>
 <summary>Solución paso a paso</summary>
 
-**1. Una tabla.** X ~ U(19,5; 20,5):
+Es una cadena: **uniforme** (una tabla) → **p** → **binomial** (4 tablas).
 
-$p = P(X > 20{,}1) = \frac{20{,}5 - 20{,}1}{20{,}5 - 19{,}5} = 0{,}4$
+**1. Una tabla.** 💡 **Uniforme U(a; b):** cualquier valor del intervalo es igual de probable, así que la probabilidad de un tramo es **su largo sobre el largo total** (❌). La app no tiene uniforme, así que va a mano:
+$$p = P(X > 20{,}1) = \frac{20{,}5 - 20{,}1}{20{,}5 - 19{,}5} = \frac{0{,}4}{1} = 0{,}4$$
+(Alternativa con la app: `X~Beta(α;β) α=1 β=1 P(X>x) x=0.6 → 0.4`, donde 0,6 = (20,1 − 19,5)/1.)
 
-**2. Cuatro tablas.** W = tablas que superan 20,1 mm ~ Bin(4; 0,4):
+**2. Cuatro tablas.** 💡 **Binomial** (📄 H1, $\binom nk p^k(1-p)^{n-k}$): cada tabla supera 20,1 (éxito) con p = 0,4, independientemente. W ~ Bin(4; 0,4).
 
-$P(W \ge 1) = 1 - P(W = 0) = 1 - 0{,}6^4 = 1 - 0{,}1296 = 0{,}8704$
+"Alguna" significa al menos una, y es más fácil por complemento (1 − "ninguna"):
+$$P(W \ge 1) = 1 - 0{,}6^4 = 1 - 0{,}1296 = 0{,}8704$$
+```
+X~Bin(n,p)   n=4   p=0.4   P(X≥x)   x=1   → 0.8704
+```
 
 </details>
 
@@ -73,11 +94,17 @@ En un curso de PyE hay 10 mujeres y 40 varones. Se elige al azar un grupo de 12 
 <details>
 <summary>Solución paso a paso</summary>
 
-X = cantidad de mujeres en el grupo ~ **H(N = 50, K = 10, n = 12)** (sin reposición).
+💡 **Hipergeométrica** (📄 H1, $P(X = k) = \frac{\binom Kk\binom{N-K}{n-k}}{\binom Nn}$): se eligen n personas de un grupo **finito** de N **sin reposición**, y se cuenta cuántas tienen una característica que tienen K del grupo.
 
-"Más mujeres que varones" con 12 personas ⇔ X > 6 ⇔ X ≥ 7. Como sólo hay 10 mujeres, X va de 7 a 10:
+X = cantidad de mujeres en el grupo ~ **H(N = 50; K = 10; n = 12)**.
+
+**Traducir "más mujeres que varones".** Con 12 personas, varones = 12 − X. La condición es X > 12 − X, es decir X > 6, o sea **X ≥ 7**. Solo hay 10 mujeres, así que X va de 7 a 10:
 
 $$P(X \ge 7) = \sum_{k=7}^{10}\frac{\binom{10}{k}\binom{40}{12-k}}{\binom{50}{12}} \approx 0{,}00068$$
+```
+X~HG(N,K,n)   N=50   K=10   n=12   P(X≥x)   x=7   → 0.000685
+```
+Es casi imposible: solo el 20 % del curso son mujeres.
 
 </details>
 
@@ -97,17 +124,24 @@ La vida útil de ciertas lámparas es una v.a. con distribución exponencial. Se
 <details>
 <summary>Solución paso a paso</summary>
 
-**1. Hallar λ.** $P(X \le 4307{,}83) = 0{,}35 \Rightarrow P(X > 4307{,}83) = e^{-4307{,}83\lambda} = 0{,}65$
+Es una cadena: **exponencial** (una lámpara) → **p** → **binomial** (8 lámparas).
 
-$\lambda = \frac{\ln0{,}65}{-4307{,}83} \approx 10^{-4}$ h⁻¹ ⇒ $E(X) = 1/\lambda = 10000$ h.
+💡 **Exponencial:** modela tiempos de vida. De 📄 H1, $F(x) = 1 - e^{-\lambda x}$, así que $P(X > x) = e^{-\lambda x}$, y la vida media es $E(X) = \frac1\lambda$.
 
-**2. Una lámpara.** "Supera la vida media en más de 500 h" ⇔ X > 10500:
+**1. Hallar λ.** "El 35 % no supera 4307,83 h" significa que el 65 % la supera:
+$$e^{-4307{,}83\lambda} = 0{,}65 \;\Rightarrow\; \lambda = \frac{\ln0{,}65}{-4307{,}83} \approx 0{,}0001 \text{ h}^{-1} \;\Rightarrow\; E(X) = \frac1\lambda = 10\,000 \text{ h}$$
 
-$p = P(X > 10500) = e^{-1{,}05} \approx 0{,}34994$
+**2. Una lámpara.** "Supera la vida media en más de 500 h" significa X > 10 000 + 500 = 10 500:
+$$p = e^{-0{,}0001\cdot10500} = e^{-1{,}05} \approx 0{,}34994$$
+```
+X~Exp(λ)   λ=0.0001   P(X>x)   x=10500   → 0.34994
+```
 
-**3. Ocho lámparas.** W ~ Bin(8; 0,35):
-
-$P(W = 3) = \binom83 0{,}35^3\,0{,}65^5 \approx 0{,}27859$
+**3. Ocho lámparas.** 💡 **Binomial** (📄 H1): cada lámpara cumple (éxito) con p ≈ 0,35, independientemente. W ~ Bin(8; 0,35). "Sólo 3" significa **exactamente** 3:
+$$P(W = 3) = \binom83 0{,}35^3\,0{,}65^5 \approx 0{,}27859$$
+```
+X~Bin(n,p)   n=8   p=0.34994   P(X=x)   x=3   → 0.27857
+```
 
 </details>
 
@@ -129,18 +163,30 @@ $$E(X^2 - 3Y + 4U) \quad\text{y}\quad V(4X - 2Y - U - 5)$$
 <details>
 <summary>Solución paso a paso</summary>
 
-**Parámetros de cada variable:**
-- X ~ Po(5): E(X) = V(X) = 5 ⇒ $E(X^2) = V(X) + E(X)^2 = 5 + 25 = 30$
-- Y ~ N(4; 2): E(Y) = 4, V(Y) = 4
-- U ~ U(2; b): $V(U) = \frac{(b-2)^2}{12} = \frac{36}{12} = 3 \Rightarrow b - 2 = 6 \Rightarrow b = 8$; E(U) = (2 + 8)/2 = 5
+**Paso 1, los datos de cada variable** (esperanza y varianza):
 
-**Esperanza** (linealidad: $E(aX + bY) = aE(X) + bE(Y)$ y $E(cX) = cE(X)$):
+| Variable | E | V | De dónde |
+|---|---|---|---|
+| X ~ Po(5) | 5 | 5 | ❌ En la Poisson, E = V = λ |
+| Y ~ N(4; 2) | 4 | 4 | Son los parámetros; ⚠️ V = σ² = 2² |
+| U ~ U(2; b) | ? | $\left(\frac{6}{\sqrt{12}}\right)^2 = 3$ | El desvío al cuadrado |
 
-$E(X^2 - 3Y + 4U) = E(X^2) - 3E(Y) + 4E(U) = 30 - 12 + 20 = 38$
+**Paso 2, hallar b.** 📄 H1: $V(U) = \frac{(b-a)^2}{12}$.
+$$\frac{(b-2)^2}{12} = 3 \;\Rightarrow\; (b - 2)^2 = 36 \;\Rightarrow\; b = 8$$
+La esperanza de la uniforme es el punto medio (❌): $E(U) = \frac{2 + 8}{2} = 5$.
 
-**Varianza** (por independencia, $V(aX + bY) = a^2V(X) + b^2V(Y)$; y $V(c) = 0$, así que la constante −5 no aporta):
+**Paso 3, E(X²).** Aparece $X^2$, así que hace falta su esperanza. Se despeja de 📄 H1, $V(X) = E(X^2) - E(X)^2$:
+$$E(X^2) = V(X) + E(X)^2 = 5 + 25 = 30$$
 
-$V(4X - 2Y - U - 5) = 16V(X) + 4V(Y) + V(U) = 16\cdot5 + 4\cdot4 + 3 = 99$
+**Paso 4, la esperanza.** 💡 Propiedad, **linealidad** (❌): $E(aX + bY + cZ) = aE(X) + bE(Y) + cE(Z)$. Las constantes salen afuera y la esperanza de una suma es la suma de esperanzas.
+$$E(X^2 - 3Y + 4U) = E(X^2) - 3E(Y) + 4E(U) = 30 - 12 + 20 = 38$$
+
+**Paso 5, la varianza.** Propiedades:
+- 📄 H1: $V(aX + bY) = a^2V(X) + b^2V(Y) + 2ab\,Cov(X;Y)$. Como son **independientes**, Cov = 0, y se extiende a tres variables.
+- Los coeficientes salen **al cuadrado**, así que un signo menos no resta: las varianzas siempre suman.
+- La varianza de una constante es 0 (no varía), así que el −5 no aporta.
+
+$$V(4X - 2Y - U - 5) = 4^2V(X) + (-2)^2V(Y) + (-1)^2V(U) = 16\cdot5 + 4\cdot4 + 3 = 99$$
 
 </details>
 
@@ -160,17 +206,19 @@ Demostrar que $f(x) = 4kx + 1$ si 1 < x < 3 es una función de densidad de la v.
 <details>
 <summary>Solución paso a paso</summary>
 
+💡 **Qué es una densidad.** Para una variable continua, la probabilidad de un intervalo es el **área bajo f**. Para que f sea densidad tiene que cumplir dos cosas:
+1. **área total = 1**;
+2. **f ≥ 0** en todo el intervalo.
+
 **1. Área total igual a 1:**
+$$\int_1^3(4kx + 1)\,dx = (2kx^2 + x)\Big|_1^3 = (18k + 3) - (2k + 1) = 16k + 2 = 1 \;\Rightarrow\; k = -\frac1{16}$$
+Entonces $f(x) = 1 - \frac x4$. **f ≥ 0:** es decreciente, así que su mínimo está en x = 3, donde vale ¼ > 0 ✓. Es una densidad (que k sea negativo no es problema).
 
-$\int_1^3(4kx + 1)dx = (2kx^2 + x)\Big|_1^3 = (18k + 3) - (2k + 1) = 16k + 2 = 1 \Rightarrow k = -\frac1{16}$
+**2. Función de distribución.** 💡 $F(x) = P(X \le x)$, el área acumulada hasta x (📄 H1, $F(x) = \int_{-\infty}^x f(t)\,dt$). En 1 < x < 3:
+$$F(x) = \int_1^x\left(1 - \frac t4\right)dt = \left[t - \frac{t^2}{8}\right]_1^x = -\frac{x^2}{8} + x - \frac78$$
+Vale 0 para x ≤ 1 y 1 para x ≥ 3. Control: F(3) = −9/8 + 3 − 7/8 = 1 ✓.
 
-Entonces $f(x) = 1 - \frac x4$. Además f ≥ 0 en (1, 3), ya que en x = 3 vale ¼ > 0. Es una densidad.
-
-**2. Función de distribución** (en 1 < x < 3):
-
-$F(x) = \int_1^x\left(1 - \frac t4\right)dt = -\frac{x^2}{8} + x - \frac78$, con F = 0 para x ≤ 1 y F = 1 para x ≥ 3.
-
-**3. Condicional:**
+**3. Condicional.** 💡 📄 H1: $P(A/B) = \frac{P(A\cap B)}{P(B)}$. "X < 2 y X > 1,5" es 1,5 < X < 2. Con las reglas $P(a < X < b) = F(b) - F(a)$ y $P(X > a) = 1 - F(a)$ (📄 H1):
 
 $$P(X < 2 / X > 1{,}5) = \frac{P(1{,}5 < X < 2)}{P(X > 1{,}5)} = \frac{F(2) - F(1{,}5)}{1 - F(1{,}5)}$$
 

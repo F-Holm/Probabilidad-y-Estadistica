@@ -21,20 +21,34 @@ Un fabricante produce piezas de metal que se emplean en construcciones. El clien
 <details>
 <summary>Solución paso a paso</summary>
 
-p = fracción de defectuosos. Lo que hay que demostrar va en H₁.
+💡 **Test de hipótesis, como un juicio.** H₀ es lo que se da por cierto salvo evidencia fuerte en contra, y lleva la igualdad. H₁ es lo que se quiere **demostrar**.
 
-a) Test:
-1. H₀: p ≥ 0,04 vs. H₁: p < 0,04.
-2. α = 0,01.
-3. n = 1000 grande ⇒ $Z = \frac{\hat p - 0{,}04}{\sqrt{0{,}04\cdot0{,}96/1000}} \approx N(0; 1)$, con $\sigma_0 = 0{,}0062$.
-4. $\hat p = 9/1000 = 0{,}009$ ⇒ $z_{obs} = \frac{0{,}009 - 0{,}04}{0{,}0062} = -5{,}0$.
-5. RC = {Z < −2,326}, o sea $\hat p < 0{,}04 - 2{,}326\cdot0{,}0062 = 0{,}0256$. Como −5 ∈ RC ⇒ se rechaza H₀ (p valor ≈ 3·10⁻⁷).
+p = fracción de defectuosas de **toda** la producción, desconocida. $\hat p$ = fracción en la muestra = 9/1000 = 0,009.
 
-b) β = P(no rechazar H₀ | p = 0,02) = P($\hat p$ ≥ 0,0256 | p = 0,02).
+**a)**
+1. **Hipótesis.** "El fabricante debe **demostrar** p < 0,04", así que eso va en H₁:
+   $$H_0: p \ge 0{,}04 \qquad H_1: p < 0{,}04$$
+2. **α = 0,01**, el riesgo aceptado de rechazar H₀ siendo cierta.
+3. 💡 **Estadístico.** Cada pieza es un 1 (defectuosa) o un 0, y $\hat p$ es el promedio, así que por el TCL es aproximadamente Normal (📄 H2, $\hat p \sim N\left(p;\ \sqrt{\frac{p(1-p)}{n}}\right)$). Se estandariza **suponiendo H₀ cierta**, así que en la raíz va **p₀ = 0,04**, no $\hat p$:
+   $$Z = \frac{\hat p - 0{,}04}{\sqrt{0{,}04\cdot0{,}96/1000}} \approx N(0;1), \qquad \sigma_0 = 0{,}0062$$
+4. $z_{obs} = \frac{0{,}009 - 0{,}04}{0{,}0062} = -5{,}0$.
+5. 💡 **Región crítica:** del lado de H₁ (izquierda), con área α:
+   ```
+   X~N(μ;σ)   μ=0   σ=1   P(X<x)=0.01   → x=−2.32635
+   ```
+   RC = {Z < −2,326}. En la escala de $\hat p$: $\hat p < 0{,}04 - 2{,}326\cdot0{,}0062 = 0{,}0256$. Como −5 está en la RC, **se rechaza H₀** (valor p ≈ 3·10⁻⁷).
 
-Con p = 0,02: $\sigma_1 = \sqrt{0{,}02\cdot0{,}98/1000} = 0{,}00443$.
+**Conclusión:** **sí**, el fabricante demuestra al 1 % que la fracción de defectuosas es menor a 0,04.
 
-$\beta = P\left(Z \ge \frac{0{,}0256 - 0{,}02}{0{,}00443}\right) = P(Z \ge 1{,}26) = 0{,}1035$.
+**b)** 💡 **Error tipo II (β):** no rechazar H₀ cuando es falsa. Si en verdad p = 0,02, H₀ es falsa, y el error sería no detectarlo.
+
+**Receta** (❌): la frontera se arma con p₀ (ya está: 0,0256), y la probabilidad se calcula con el p **verdadero**. ⚠️ El desvío **cambia**, porque depende de p:
+$$\sigma_1 = \sqrt{\frac{0{,}02\cdot0{,}98}{1000}} = 0{,}00443$$
+$$\beta = P(\hat p \ge 0{,}0256) \text{ con } \hat p \sim N(0{,}02;\ 0{,}00443)$$
+```
+X~N(μ;σ)   μ=0.02   σ=0.00443   P(X>x)   x=0.0256   → 0.1035
+```
+**β ≈ 0,104.** Si el proceso tiene 2 % de defectuosas, un 10 % de las veces no se lograría demostrarlo.
 
 </details>
 
@@ -64,31 +78,46 @@ Una compañía productora de energía eléctrica está interesada en desarrollar
 <details>
 <summary>Solución paso a paso</summary>
 
+💡 **Regresión lineal:** se busca la recta $\hat y = b_0 + b_1x$ (📄 H2) que pasa más cerca de los puntos (mínimos cuadrados), con $b_1 = \frac{S_{xy}}{S_{xx}}$ y $b_0 = \bar y - b_1\bar x$ (📄 H2). La Calculadora de estadística → **Regresión lineal** da $b_0$ y $b_1$ cargando los pares.
+
 **Sumas** (n = 5): $\sum x = 8442$, $\sum y = 16{,}29$, $\sum x^2 = 15.657.808$, $\sum y^2 = 61{,}2819$, $\sum xy = 30.746{,}66$.
 
-**Cantidades básicas:** $\bar x = 1688{,}4$ y $\bar y = 3{,}258$.
+**Cantidades básicas** (📄 H2, $S_{xx} = \sum x^2 - \frac{(\sum x)^2}{n}$, etc.): $\bar x = 1688{,}4$ y $\bar y = 3{,}258$.
 - $S_{xx} = 1.404.335{,}2$
 - $S_{yy} = 8{,}2091$
 - $S_{xy} = 3242{,}62$
 
 **Recta estimada:** $b_1 = \frac{3242{,}62}{1404335{,}2} = 0{,}002309$ y $b_0 = 3{,}258 - 0{,}002309\cdot1688{,}4 = -0{,}6405$ ⇒ $\hat y = -0{,}6405 + 0{,}00231x$.
 
-a) Test de significación:
-1. H₀: β₁ = 0 (equivalente a ρ = 0) vs. H₁: β₁ ≠ 0.
+**a)** 💡 **Significatividad de la regresión:** ¿la relación es real o pudo salir por casualidad con tan pocos puntos? Se testea si la pendiente verdadera β₁ (o la correlación ρ) es 0. Si lo fuera, X no serviría para predecir Y.
+
+💡 **Coeficiente de correlación r** (📄 H2, $r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$): mide qué tan alineados están los puntos (de −1 a 1).
+
+1. H₀: β₁ = 0 (equivale a ρ = 0) vs. H₁: β₁ ≠ 0. Lo que se quiere demostrar va en H₁.
 2. α = 0,01.
-3. $T = \frac{r\sqrt{n-2}}{\sqrt{1 - r^2}} \sim t_3$.
-4. $r = 0{,}955$ ($R^2 = 0{,}912$) ⇒ $t_{obs} = \frac{0{,}955\sqrt3}{\sqrt{1 - 0{,}912}} = 5{,}58$.
-5. RC = {|T| > $t_{3;\,0{,}995}$ = 5,841}. Como 5,58 < 5,841 ⇒ **no se rechaza** H₀ (p = 0,011).
+3. Estadístico (📄 H2, $\sqrt{n-2}\frac{r}{\sqrt{1-r^2}} = t_{n-2}$): $T \sim t_3$ si H₀ es cierta.
+4. $r = 0{,}955$ ($R^2 = 0{,}912$), así que $t_{obs} = \sqrt3\cdot\frac{0{,}955}{\sqrt{1 - 0{,}912}} = 5{,}58$.
+5. Bilateral, α/2 = 0,005 en cada cola:
+   ```
+   X~t(ν)   ν=3   P(X<x)=0.995   → x=5.84091
+   X~t(ν)   ν=3   P(X>x)   x=5.578   → 0.0057   → p = 0.0114
+   ```
+   5,58 < 5,841: **no se rechaza H₀** (p = 0,011).
 
-Con sólo 5 datos (3 g.l.), aunque R² es alto, no alcanza para la significación al 1 %. Sí sería significativa al 5 % ($t_{3;\,0{,}975}$ = 3,18).
+**La lección:** R² = 0,91 parece altísimo, pero con solo 5 datos (3 grados de libertad) la t es muy exigente: con tan pocos puntos, un buen alineamiento puede ser casualidad. Al 5 % sí sería significativa ($t_{3;\,0{,}975}$ = 3,18).
 
-b) $\hat y(1050) = -0{,}6405 + 0{,}002309\cdot1050 = 1{,}784$ kW.
+**b)** 💡 **Qué se estima:** la demanda pico **media** de **todos** los clientes que consumen 1050 kWh, no la de uno solo. La estimación puntual es la recta:
+$$\hat y(1050) = -0{,}6405 + 0{,}002309\cdot1050 = 1{,}784 \text{ kW}$$
 
-$SC_{res} = 0{,}7218$ ⇒ $s = \sqrt{0{,}7218/3} = 0{,}4905$.
+💡 **IC para la media de Y en x₀** (❌, no está en la hoja). Tiene la forma de siempre, estimación ± t · error estándar:
+$$\hat y_0 \pm t_{n-2;1-\frac\alpha2}\cdot s\sqrt{\frac1n + \frac{(x_0 - \bar x)^2}{S_{xx}}}$$
+- s mide cuánto se apartan los puntos de la recta: $s^2 = \hat\sigma^2 = \frac{SC_{res}}{n-2}$ (📄 H2), con $SC_{res} = S_{yy} - \frac{S_{xy}^2}{S_{xx}}$.
+- El término con $(x_0 - \bar x)^2$ hace el intervalo más ancho cuanto más lejos está x₀ del centro de los datos.
 
-$IC = \hat y_0 \pm t_{3;\,0{,}995}\,s\sqrt{\frac1n + \frac{(x_0 - \bar x)^2}{S_{xx}}} = 1{,}784 \pm 5{,}841\cdot0{,}4905\sqrt{0{,}2 + \frac{(1050 - 1688{,}4)^2}{1404335{,}2}} = 1{,}784 \pm 2{,}006$.
+$$SC_{res} = 0{,}7218 \;\Rightarrow\; s = \sqrt{0{,}7218/3} = 0{,}4905$$
+$$IC = 1{,}784 \pm 5{,}841\cdot0{,}4905\sqrt{0{,}2 + \frac{(1050 - 1688{,}4)^2}{1404335{,}2}} = 1{,}784 \pm 2{,}006$$
 
-Resultado: [−0,22; 3,79] kW.
+Resultado: (−0,22; 3,79) kW.
 
 **Interpretación:** con 99 % de confianza, la demanda pico **media** de los clientes que consumen 1050 kWh al mes está entre −0,22 y 3,79 kW (en la práctica, entre 0 y 3,79). Es muy ancho por el n chico; además, al no ser significativa la regresión al 1 %, la estimación es poco confiable.
 
@@ -118,19 +147,31 @@ Sea X una muestra aleatoria de tamaño 12 de una distribución normal. Se determ
 <details>
 <summary>Solución paso a paso</summary>
 
-a) n = 12, $\bar x = 2{,}756$, $s^2 = 0{,}11143$ (s = 0,334).
+**a)** 💡 **Intervalo de confianza:** un rango que contiene al valor verdadero (acá, la varianza σ² de **toda** la población) con una confianza dada. La varianza muestral S² **no** es Normal (nunca es negativa y es asimétrica). Lo que se sabe es que, si la población es Normal, $\frac{(n-1)S^2}{\sigma^2}$ sigue una **χ² (chi cuadrado)** con n − 1 grados de libertad (📄 H2).
 
-Población normal ⇒ $\frac{11S^2}{\sigma^2} \sim \chi^2_{11}$. Con α/2 = 0,01:
-- $\chi^2_{11;\,0{,}01} = 3{,}053$
-- $\chi^2_{11;\,0{,}99} = 24{,}725$
+De ahí sale el intervalo (📄 H2):
+$$I.C._{\sigma^2} = \left(\frac{(n-1)S^2}{\chi^2_{n-1;1-\frac\alpha2}};\ \frac{(n-1)S^2}{\chi^2_{n-1;\frac\alpha2}}\right)$$
+En la punta izquierda va el χ² **grande**. Dividir por un número grande da un resultado chico.
 
-$IC_{\sigma^2} = \left[\frac{11\cdot0{,}11143}{24{,}725};\ \frac{11\cdot0{,}11143}{3{,}053}\right] = [0{,}0496;\ 0{,}4014]$ (mg/100 ml)².
+**Datos.** Calculadora de estadística → Estadística descriptiva con los 12 valores: n = 12, $\bar x = 2{,}756$, $s^2 = 0{,}11143$ (s = 0,334).
 
-**Interpretación:** si se repitiera el muestreo muchas veces, el 98 % de los intervalos construidos así contendría a la verdadera varianza σ². Con esta muestra, se estima que σ² está entre 0,0496 y 0,4014.
+Con 98 %, α/2 = 0,01:
+```
+X~χ²(ν)   ν=11   P(X<x)=0.99   → x=24.725
+X~χ²(ν)   ν=11   P(X<x)=0.01   → x=3.0535
+```
+$$I.C._{\sigma^2} = \left(\frac{11\cdot0{,}11143}{24{,}725};\ \frac{11\cdot0{,}11143}{3{,}053}\right) = (0{,}0496;\ 0{,}4014) \text{ (mg/100 ml)}^2$$
 
-b) Se toma como "valor hallado" el extremo superior, 0,4014. Con σ² = 0,89² = 0,7921:
+**Interpretación:** si se repitiera el muestreo muchas veces, el 98 % de los intervalos construidos así contendría a la verdadera varianza σ². σ² es fijo; lo que varía es el intervalo. Con esta muestra, se confía al 98 % en que σ² está entre 0,0496 y 0,4014.
 
-$P(S^2 > 0{,}4014) = P\left(\chi^2_{11} > \frac{11\cdot0{,}4014}{0{,}7921}\right) = P(\chi^2_{11} > 5{,}574) = 0{,}900$.
+**b)** **Cambia la pregunta.** Ya no se estima nada: se **conoce** σ = 0,89 y se pregunta por algo que hace la **muestra** (su S²). La herramienta es la misma frase de la hoja, $\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}$: se pasa la pregunta a la escala χ², como cuando se estandariza a Z.
+
+Se toma como "valor hallado" el extremo superior, 0,4014. Con σ² = 0,89² = 0,7921:
+$$P(S^2 > 0{,}4014) = P\left(\frac{11S^2}{0{,}7921} > \frac{11\cdot0{,}4014}{0{,}7921}\right) = P(\chi^2_{11} > 5{,}574)$$
+```
+X~χ²(ν)   ν=11   P(X>x)   x=5.574   → 0.9002
+```
+⚠️ En la app, el x de la χ² no es la varianza: es $(n-1)S^2/\sigma^2$.
 
 Si se tomara $s^2 = 0{,}1114$: $P(\chi^2_{11} > 1{,}547) = 0{,}9996$.
 
@@ -159,11 +200,13 @@ $$\hat\theta = \frac{\sum_{i=1}^4 (X_i - \bar X)^2}3 + \frac{\sum_{i=1}^4 X_i^2}
 <details>
 <summary>Solución paso a paso</summary>
 
-**Definición:** el sesgo de un estimador $\hat\theta$ de un parámetro θ es $B(\hat\theta) = E(\hat\theta) - \theta$. El estimador es insesgado si B = 0. Además, $ECM = V(\hat\theta) + B^2$.
+💡 **Estimador:** una fórmula con los datos de la muestra para "adivinar" un parámetro desconocido (acá, la varianza σ²). Cambia de muestra en muestra, así que es una variable aleatoria, con su propia esperanza.
 
-Aquí θ = σ² y n = 4:
-- El primer término es $S^2$ (divide por n − 1 = 3) ⇒ $E(S^2) = \sigma^2$.
-- El segundo es $\frac14\sum X_i^2$ ⇒ $E = \frac14\cdot4\,E(X^2) = V(X) + E(X)^2 = \sigma^2 + \mu^2$.
+**Definición** (❌): el sesgo de un estimador $\hat\theta$ de un parámetro θ es $B(\hat\theta) = E(\hat\theta) - \theta$, cuánto se corre **en promedio** del valor verdadero. El estimador es insesgado si B = 0. Aparece en el error cuadrático medio, $ECM = V(\hat\theta) + B^2$ (📄 H2).
+
+Aquí θ = σ² y n = 4. Se calcula $E(\hat\theta)$ separando los dos términos:
+- **Primer término:** divide por n − 1 = 3, así que es exactamente $S^2$, la varianza muestral. Se sabe que $E(S^2) = \sigma^2$ (❌; por eso se divide por n − 1).
+- **Segundo término:** $\frac14\sum X_i^2$. Por linealidad (❌), $E = \frac14\cdot4\,E(X^2) = E(X^2)$. De 📄 H1, $V(X) = E(X^2) - E(X)^2$, así que $E(X^2) = \sigma^2 + \mu^2$.
 
 $E(\hat\theta) = \sigma^2 + \sigma^2 + \mu^2 = 2\sigma^2 + \mu^2$.
 
@@ -190,9 +233,17 @@ En un test de hipótesis:
 <details>
 <summary>Solución paso a paso</summary>
 
-a) La **región crítica** (de rechazo) es el conjunto de valores del estadístico de prueba que llevan a rechazar H₀. Se construye en la dirección de H₁ y de modo que, si H₀ es verdadera, la probabilidad de caer en ella sea α: P(E.P. ∈ RC | H₀) = α. Su borde es el valor crítico.
+💡 **Contexto.** En un test, H₀ se da por cierta salvo evidencia en contra, y H₁ es lo que se quiere demostrar. Hay dos errores posibles:
+- **tipo I:** rechazar H₀ siendo cierta, con probabilidad α;
+- **tipo II:** no rechazar H₀ siendo falsa, con probabilidad β.
 
-b) Test unilateral izquierdo: H₀: μ = μ₀ vs. H₁: μ < μ₀, con X ~ N(μ; σ) y σ conocido. RC = {$\bar X < x_c$}, con $\bar X \sim N(\mu;\ \sigma/\sqrt n)$. Se fijan α y β (este último en un valor alternativo μ₁ < μ₀).
+Nada de esto está en la hoja (❌).
+
+**a)** La **región crítica** (de rechazo) es el conjunto de valores del estadístico de prueba que llevan a rechazar H₀. Se construye en la dirección de H₁ y de modo que, si H₀ es verdadera, la probabilidad de caer en ella sea α: P(E.P. ∈ RC | H₀) = α. Su borde es el valor crítico.
+
+**b) La idea:** se quieren fijar α **y** β a la vez. Hay dos incógnitas, la frontera $x_c$ y el tamaño n. Cada error da una ecuación para $x_c$, y se igualan.
+
+**Planteo:** test unilateral izquierdo, H₀: μ = μ₀ vs. H₁: μ < μ₀, con X ~ N(μ; σ) y σ conocido. Se rechaza si $\bar X < x_c$, con $\bar X \sim N(\mu;\ \sigma/\sqrt n)$ (📄 H2). Se fijan α y β (este último en un valor alternativo μ₁ < μ₀). Se estandariza con 📄 H1.
 
 **Ecuación I** (α):
 
