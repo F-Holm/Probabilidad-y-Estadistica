@@ -18,6 +18,12 @@ Se realiza un estudio para establecer una ecuación mediante la cual se pueda ut
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | **Y** | 30 | 25 | 31,5 | 27,5 | 39,5 | 38 | 43 | 49 | 55 | 48,5 | 51 | 64,5 | 63 | 68 |
 
+<p align="center"><img src="img/ej1-dispersion.png" width="480" alt="Diagrama de dispersión de níquel contra cobre"></p>
+
+Salida de computadora:
+
+<p align="center"><img src="img/ej1-salida.png" width="480" alt="Salida: R² = 0,84; const 15,85 (E.E. 4,09); X 2,26 (E.E. 0,29); SC error 426,32 con 12 gl; SC total 2593,38"></p>
+
 Sabiendo que X e Y tienen distribución Normal:
 
 - a) Graficar sobre el diagrama de dispersión la recta de regresión y señalar un par ordenado observado y un residuo.
@@ -154,6 +160,8 @@ Se quiere estudiar la asociación lineal entre el consumo diario de sal y la ten
 |---|---|---|---|---|---|---|
 | **Tensión arterial (mm de Hg)** | 100 | 98 | 110 | 110 | 112 | 120 |
 
+<p align="center"><img src="img/ej3-dispersion.png" width="460" alt="Diagrama de dispersión de tensión arterial contra consumo de sal"></p>
+
 Si se sabe que ambas variables tienen distribución Normal conjunta:
 
 - a) De la observación del diagrama de dispersión, ¿le parece razonable testear la hipótesis de asociación lineal? Justificar.
@@ -214,6 +222,8 @@ Shapiro-Wilks (modificado):
 | Variable | n | Media | D.E. | W\* | p-valor |
 |---|---|---|---|---|---|
 | RESIDUO | 8 | 0,00 | 0,78 | 0,94 | 0,6941 |
+
+<p align="center"><img src="img/ej4-residuos.png" width="400" alt="Residuos estudentizados contra predichos, todos entre −2 y 2"></p>
 
 Se pide:
 
@@ -414,6 +424,8 @@ Una empresa de servicios informáticos está preocupada por la proliferación de
 | $y_i$ | 254 | 1,5 | 2,105 | 5,05 | 16,2 | 45,32 | 58,57 | 375,8 | 1525640 | 2577000 |
 | $\ln(y_i)$ | 5,54 | 0,41 | 0,74 | 1,62 | 2,79 | 3,81 | 4,07 | 5,93 | 14,24 | 14,76 |
 
+<p align="center"><img src="img/ej7-dispersion.png" width="640" alt="Diagramas de dispersión de Y contra X y de ln(Y) contra X"></p>
+
 Se pide:
 
 - a) A partir de los dos diagramas de dispersión presentados (Y vs. X y ln(Y) vs. X), decidir cuál es la regresión lineal más adecuada y estimar los coeficientes correspondientes.
@@ -579,6 +591,10 @@ En varios estudios se ha demostrado que los líquenes, organismos compuestos por
 | X | 0,05 | 0,1 | 0,11 | 0,12 | 0,31 | 0,37 | 0,42 | 0,58 | 0,68 | 0,68 | 0,73 | 0,85 | 0,92 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | **Y** | 0,48 | 0,55 | 0,48 | 0,5 | 0,58 | 0,52 | 1,02 | 0,86 | 0,86 | 1 | 0,88 | 1,04 | 1,7 |
+
+Salida de computadora:
+
+<p align="center"><img src="img/ej11-salida.png" width="520" alt="Salida: R² = 0,72; const 0,37 (E.E. 0,10, T 3,69); X 0,97 (E.E. 0,18, T 5,29)"></p>
 
 - a) Indicar el modelo estimado para estos datos por mínimos cuadrados.
 - b) Completar los p valores de las salidas e indicar la significación del modelo.

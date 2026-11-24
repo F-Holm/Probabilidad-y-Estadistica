@@ -919,7 +919,9 @@ Es lo mismo que contar "5 favorables entre los 11 posibles del universo nuevo".
 
 Existen tres caminos de A hasta B y dos caminos de B hasta C, como se muestra en la figura. Cada uno de estos caminos está bloqueado con probabilidad 0,1 independientemente de los otros.
 
-*(Figura: de A a B hay tres caminos, A₁ arriba, A₂ recto en el medio, que es el más corto, y A₃ abajo. De B a C hay dos caminos, B₁ arriba y B₂ abajo.)*
+<p align="center"><img src="img/ej21-caminos.png" width="420" alt="Tres caminos de A a B y dos de B a C"></p>
+
+*(De A a B hay tres caminos, A₁ arriba, A₂ recto en el medio, que es el más corto, y A₃ abajo. De B a C hay dos caminos, B₁ arriba y B₂ abajo.)*
 
 Hallar la probabilidad de que:
 

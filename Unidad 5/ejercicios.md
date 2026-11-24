@@ -472,7 +472,9 @@ Aunque el fabricante tenga razón, hay un 23 % de chances de no confirmarlo: con
 
 ### 9) Curva de potencia (\*)
 
-(\*) La gráfica de la guía corresponde a la curva de potencia de una prueba para la media de una población normal, conocida la varianza σ² = 4, basada en una muestra de tamaño n = 25 (la potencia vale α en μ = 10 y crece hacia 1 para μ > 10).
+(\*) La siguiente gráfica corresponde a la curva de potencia de una prueba para la media de una población normal, conocida la varianza σ² = 4, basada en una muestra de tamaño n = 25 (la potencia vale α en μ = 10 y crece hacia 1 para μ > 10).
+
+<p align="center"><img src="img/ej9-curva-potencia.png" width="520" alt="Curva de potencia: vale casi 0 en μ = 10 y llega a 1 cerca de μ = 12"></p>
 
 - a) Indicar qué hipótesis se están testeando.
 - b) Sabiendo que $\beta_{\mu=11}$ = 0,2946, ¿cuál es el nivel de significación de la prueba?
@@ -1109,7 +1111,9 @@ $$10 = (1{,}64485 + 1{,}28155)\cdot8\sqrt{\frac2n} \;\Rightarrow\; n = \frac{2\c
 
 ### 20) Desarrollo psicomotriz *(opcional)*
 
-En un estudio sobre el desarrollo psicomotriz de niños que cursan el preescolar se seleccionaron dos muestras aleatorias de 24 niños y 25 niñas de 5 años de edad. Entre otras pruebas se realizó un test que evalúa habilidades psicomotoras. Los investigadores estaban interesados en comparar las medias de los puntajes en las poblaciones de varones y mujeres de 5 años. En la guía se muestran los histogramas y boxplots de ambas muestras. Se sabe que la dispersión de los puntajes de este test en cualquier población es de 1,5 puntos y se pueden considerar normales.
+En un estudio sobre el desarrollo psicomotriz de niños que cursan el preescolar se seleccionaron dos muestras aleatorias de 24 niños y 25 niñas de 5 años de edad. Entre otras pruebas se realizó un test que evalúa habilidades psicomotoras. Los investigadores estaban interesados en comparar las medias de los puntajes en las poblaciones de varones y mujeres de 5 años. En el siguiente gráfico se aprecian los histogramas y boxplots de ambas muestras. Se sabe que la dispersión de los puntajes de este test en cualquier población es de 1,5 puntos y se pueden considerar normales.
+
+<p align="center"><img src="img/ej20-histogramas-boxplots.png" width="520" alt="Histogramas y boxplots de los puntajes de varones y mujeres"></p>
 
 - a) La media de los varones resultó 25,04 y la de las mujeres 26,40. Indicar si las diferencias de rendimiento pueden considerarse significativas al 5 %.
 - b) ¿Se podría haber inferido lo mismo de la observación de los gráficos?
@@ -1218,6 +1222,8 @@ Dos técnicos de control de calidad miden el acabado de la superficie de una pie
 |---|---|---|---|
 | Técnico 1 | 1,383 | 0,115 | 7 |
 | Técnico 2 | 1,436 | 0,141 | 8 |
+
+<p align="center"><img src="img/ej22-boxplot-tecnicos.png" width="400" alt="Boxplot paralelo de las mediciones de los dos técnicos"></p>
 
 Se pide:
 
