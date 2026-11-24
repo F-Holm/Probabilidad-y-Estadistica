@@ -61,7 +61,7 @@ App para procesar datos y hacer algunos tests. Para ver la fórmula que usa cada
 |---|---|---|
 | **Estadística descriptiva** | Media, mediana, cuartiles, varianza, desvío, CV, error estándar a partir de datos sueltos | U4–U5: sacar x̄, s y s/√n de una muestra para armar IC o tests |
 | **Descriptiva con frecuencia** | Lo mismo pero con datos agrupados (valor + frecuencia) | Igual que la anterior, cuando los datos vienen en tabla |
-| **Regresión lineal** | Coeficientes y ecuación de la recta a partir de los pares (x, y) | U6: b₀, b₁, ŷ = b₀ + b₁x |
+| **Regresión lineal** | A partir de los pares (x, y): n, Σx², Σy², Σx, Σy, Σxy, medias, varianzas y desvíos **muestrales** (÷ n−1) de X e Y, **r**, **R²** (en %) y la ecuación `Y = b₀ b₁X` | U6: b₀, b₁, r, R²; Sxx = (n−1)·s²ₓ, Syy = (n−1)·s²ᵧ, Sxy = r·√(Sxx·Syy) |
 | **Regresión con suma** | Regresión cargando las sumas (Σx, Σy, Σxy, Σx², n) en vez de los datos | U6: cuando el ejercicio da las sumatorias directamente |
 | **Distribución de frecuencias** | Tabla de frecuencias | U1 |
 | **Binomial** | Probabilidades, esperanza, varianza y desvío | U2 |
@@ -75,7 +75,7 @@ App para procesar datos y hacer algunos tests. Para ver la fórmula que usa cada
 
 - Intervalos de confianza. Se arman con x̄ y s de la descriptiva más el valor t, z o χ² de Probability Distributions.
 - Test para la proporción p y test para la varianza σ². Se hacen a mano con la Normal o la χ² de la otra app.
-- Coeficiente de correlación r, R² y test de la pendiente. Verificar si la pantalla de regresión muestra r.
+- Test de la pendiente / de ρ e intervalos en x₀ (la pantalla de regresión sí muestra r y R², confirmado con captura del 24/11/2026). El estadístico t se calcula a mano y el valor crítico con la t(n−2) de Probability Distributions.
 
 ---
 
@@ -129,7 +129,7 @@ Menú principal: **Tasks**, con pestañas. Los datos se cargan con *New Dataset*
 | Tamaño de muestra | Minimum Sample Size | A mano: n = (z·σ/d)² (redondear hacia arriba) |
 | Diferencia de medias / proporciones | Difference of Two… | Test: Prueba T dos medias (Calc. estadística). IC y proporciones: fórmula + valor crítico de Prob. Distributions |
 | Igualdad de 2 varianzas | Chi-Square & F Tests | F = s₁²/s₂² y p-valor con F(ν₁;ν₂) de Prob. Distributions |
-| r, R², tests de β₁ y ρ, intervalos en x₀ (U6) | Simple Regression | b₀ y b₁ con Regresión lineal (Calc. estadística); r, R² y estadísticos a mano con las fórmulas de la hoja + t(n−2) de Prob. Distributions. **Es donde IntroStat ahorra más trabajo.** |
+| r, R², tests de β₁ y ρ, intervalos en x₀ (U6) | Simple Regression | b₀, b₁, r y R² con Regresión lineal (Calc. estadística); estadísticos a mano con las fórmulas de la hoja + t(n−2) de Prob. Distributions. **Es donde IntroStat ahorra más trabajo.** |
 
 ---
 
