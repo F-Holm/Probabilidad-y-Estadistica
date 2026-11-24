@@ -45,6 +45,12 @@ Diagrama de dispersión, coeficiente de correlación, recta de regresión por m�
 | [1.er Parcial — Tema 2](Parciales/1/primer-parcial-tema-2.md) | 05/2026 | Bayes, exponencial, normal + binomial, hipergeométrica, falta de memoria, función de distribución |
 | [Recuperatorio — Tema 1](Parciales/1/recuperatorio-primer-parcial-tema-1.md) | 16/07/2026 | Bayes, uniforme + binomial, hipergeométrica, exponencial + binomial, propiedades de E y V, densidad con k |
 
+### 2.º Parcial (Unidades 4 a 6)
+
+| Examen | Temas que evalúa |
+|---|---|
+| [Un ejercicio de cada tipo](Exámenes/2°%20Parcial/un-ejercicio-de-cada-tipo.md) | Distribución de x̄, comparación de estimadores, IC para μ y σ², tamaño de muestra, tests t, Z y para p con potencia y β, regresión, teóricos |
+
 ## Cómo usar los ejercicios
 
 Cada ejercicio tiene un botón **Solución** que muestra la respuesta. Dentro aparece otro botón, **Solución paso a paso**, con el desarrollo completo. Así se puede intentar resolverlo antes de mirar.
